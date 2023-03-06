@@ -1,0 +1,375 @@
+--==========================================================================================================================
+-- LOADING INFO
+--==========================================================================================================================
+-- LoadingInfo
+-------------------------------------	
+INSERT INTO LoadingInfo	
+		(LeaderType,				BackgroundImage,						ForegroundImage,						PlayDawnOfManAudio)
+VALUES	('LEADER_RWB_VYTAUTAS',	'LEADER_HOJO_BACKGROUND',				'LEADER_MER_YAROSLAV_NEUTRAL',					1);	
+
+--==========================================================================================================================
+-- LEADERS
+--==========================================================================================================================
+-- Types
+-------------------------------------	
+INSERT INTO Types	
+		(Type,												Kind)
+VALUES	('LEADER_RWB_VYTAUTAS',									'KIND_LEADER'),
+		('TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS',			'KIND_TRAIT'),	
+		('TRAIT_CIVILIZATION_UNIT_RWB_LEITIS',			'KIND_TRAIT'),	
+		('CIVILIZATION_RWB_LITHUANIA',					'KIND_CIVILIZATION');
+		
+-------------------------------------			
+-- Traits			
+-------------------------------------				
+INSERT INTO Traits				
+		(TraitType,						Name,					Description)
+VALUES	/*('TRAIT_LEADER_RWB_GRAND_DUKE_OF_CHRISTIANS_AND_PAGANS',					'LOC_TRAIT_LEADER_RWB_PILIAKALNIS_NAME',		'LOC_TRAIT_LEADER_RWB_PILIAKALNIS_DESCRIPTION'),
+		('TRAIT_CIVILIZATION_UNIT_RWB_LEITIS',					'LOC_TRAIT_CIVILIZATION_UNIT_RWB_LEITIS_NAME',		'LOC_TRAIT_CIVILIZATION_UNIT_RWB_LEITIS_DESCRIPTION'),
+		('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_NAME',		'LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION'),*/
+		('TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS',				'LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_NAME',		'LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION');		
+-------------------------------------
+-- Civilizations
+-------------------------------------	
+INSERT INTO Civilizations	
+		(CivilizationType,					Name,												Description,									Adjective,									StartingCivilizationLevelType,	RandomCityNameDepth)
+VALUES	('CIVILIZATION_RWB_LITHUANIA',	'LOC_CIVILIZATION_RWB_LITHUANIA_NAME',			'LOC_CIVILIZATION_RWB_LITHUANIA_DESCRIPTION',		'LOC_CIVILIZATION_RWB_LITHUANIA_ADJECTIVE',	'CIVILIZATION_LEVEL_FULL_CIV',	'10'     			);	
+-------------------------------------
+-- StartBias
+-------------------------------------	
+INSERT INTO StartBiasFeatures
+		(CivilizationType,						FeatureType,							Tier)
+VALUES	('CIVILIZATION_RWB_LITHUANIA',				'FEATURE_FOREST',						'1'	);
+----------------------------------------------------------------------------------------------------------------------------			
+-- CityNames			
+----------------------------------------------------------------------------------------------------------------------------		
+INSERT INTO CityNames	
+		(CivilizationType,			CityName)	
+VALUES	('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_1'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_2'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_3'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_4'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_5'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_6'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_7'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_8'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_9'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_10'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_11'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_12'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_13'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_14'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_15'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_16'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_17'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_18'),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_19'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_20'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_21'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_22'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_23'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_24'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_25'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_26'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_27'),	
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_28'),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_29'),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_30');
+----------------------------------------------------------------------------------------------------------------------------
+-- CivilizationCitizenNames
+----------------------------------------------------------------------------------------------------------------------------	
+INSERT INTO CivilizationCitizenNames	
+		(CivilizationType,			CitizenName,								Female,		Modern)
+VALUES	('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_1',				0,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_2',				0,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_3',				0,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_4',				0,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_5',				0,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_6',				0,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_7',				0,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_8',				0,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_9',				0,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_10',			0,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_FEMALE_1',			1,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_FEMALE_2',			1,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_FEMALE_3',			1,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_FEMALE_4',			1,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_FEMALE_5',			1,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_FEMALE_6',			1,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_FEMALE_7',			1,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_FEMALE_8',			1,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_FEMALE_9',			1,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_FEMALE_10',			1,			0),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_1',		0,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_2',		0,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_3',		0,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_4',		0,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_5',		0,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_6',		0,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_7',		0,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_8',		0,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_9',		0,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_10',		0,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_1',	1,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_2',	1,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_3',	1,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_4',	1,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_5',	1,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_6',	1,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_7',	1,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_8',	1,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_9',	1,			1),
+		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_10',	1,			1);	
+-------------------------------------
+-- Leaders
+-------------------------------------	
+INSERT INTO Leaders	
+		(LeaderType,					Name,												InheritFrom,		SceneLayers)
+VALUES	('LEADER_RWB_VYTAUTAS',		'LOC_LEADER_RWB_VYTAUTAS_NAME',									'LEADER_DEFAULT',	4);	
+-------------------------------------
+-- LeaderQuotes
+-------------------------------------	
+INSERT INTO LeaderQuotes	
+		(LeaderType,					Quote)
+VALUES	('LEADER_RWB_VYTAUTAS',			'LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_QUOTE');	
+-------------------------------------
+-- HistoricalAgendas
+-------------------------------------	
+INSERT INTO HistoricalAgendas	
+		(LeaderType,				AgendaType)
+VALUES	('LEADER_RWB_VYTAUTAS',			'AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS');
+-------------------------------------
+-- LeaderTraits
+-------------------------------------	
+/*INSERT INTO LeaderTraits	
+		(LeaderType,					TraitType)
+VALUES	('LEADER_RWB_VYTAUTAS',		'TRAIT_LEADER_RWB_GRAND_DUKE_OF_CHRISTIANS_AND_PAGANS');*/
+-------------------------------------
+-- CivilizationTraits
+-------------------------------------	
+INSERT INTO CivilizationTraits	
+		(CivilizationType,					TraitType)
+VALUES	/*('CIVILIZATION_RWB_LITHUANIA',		'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI'),
+		('CIVILIZATION_RWB_LITHUANIA',		'TRAIT_CIVILIZATION_UNIT_RWB_LEITIS'),*/
+		('CIVILIZATION_RWB_LITHUANIA',		'TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS');
+-------------------------------------
+-- FavoredReligions
+-------------------------------------	
+INSERT INTO FavoredReligions	
+		(LeaderType,				ReligionType)
+VALUES	('LEADER_RWB_VYTAUTAS',			'RELIGION_CATHOLICISM');			
+--==========================================================================================================================
+-- TRAITS
+--==========================================================================================================================
+-- Types
+-------------------------------------	
+/*INSERT INTO Types	
+		(Type,												Kind)
+VALUES	('TRAIT_LEADER_RWB_GRAND_DUKE_OF_CHRISTIANS_AND_PAGANS',						'KIND_TRAIT'		),
+		('MODTYPE_RWB_DIEVDIRBIAI_RIVER_POST',						'KIND_MODIFIER'		),
+		('MODTYPE_RWB_DIEVDIRBIAI_RIVER_BORDERS',						'KIND_MODIFIER'		),
+		('MODTYPE_RWB_DIEVDIRBIAI_BONUS_GOLD',						'KIND_MODIFIER'		),
+		('MODTYPE_RWB_DIEVDIRBIAI_FREE_DRUZHINA',						'KIND_MODIFIER'		),
+		('MODTYPE_RWB_PILIAKALNIS_CULTURE_TRADE',						'KIND_MODIFIER'		),
+		('MODTYPE_RWB_PILIAKALNIS_AMENITY_TRADE',						'KIND_MODIFIER'		),
+		('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',			'KIND_TRAIT');	*/
+-----------------------------------------------
+-- TraitModifiers
+-----------------------------------------------
+
+/*INSERT INTO	TraitModifiers	
+		(TraitType,											ModifierId									)
+VALUES	('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',			'MODIFIER_RWB_DIEVDIRBIAI_RIVER_IGNORE'	),
+		('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',			'MODIFIER_RWB_DIEVDIRBIAI_RIVER_POST_ATTACH'	),
+		('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',			'MODIFIER_RWB_DIEVDIRBIAI_RIVER_BORDERS_ATTACH'	),
+		('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',			'MODIFIER_RWB_DIEVDIRBIAI_BONUS_GOLD_ATTACH'	),
+		('TRAIT_LEADER_RWB_GRAND_DUKE_OF_CHRISTIANS_AND_PAGANS',						'MODIFIER_LEADER_RWB_PILIAKALNIS_CULTURE_TRADE_ATTACH'	),
+		('TRAIT_LEADER_RWB_GRAND_DUKE_OF_CHRISTIANS_AND_PAGANS',						'MODIFIER_LEADER_RWB_PILIAKALNIS_AMENITY_TRADE_ATTACH'	),
+		('TRAIT_LEADER_RWB_GRAND_DUKE_OF_CHRISTIANS_AND_PAGANS',						'MODIFIER_LEADER_RWB_PILIAKALNIS_ADDITIONAL_TRADE'	),
+		('TRAIT_LEADER_RWB_GRAND_DUKE_OF_CHRISTIANS_AND_PAGANS',						'MODIFIER_LEADER_RWB_PILIAKALNIS_GREAT_MERCHANT'	),
+		('TRAIT_LEADER_RWB_GRAND_DUKE_OF_CHRISTIANS_AND_PAGANS',						'MODIFIER_LEADER_RWB_PILIAKALNIS_GOVERNMENT_PLAZA'	),
+		('TRAIT_LEADER_RWB_GRAND_DUKE_OF_CHRISTIANS_AND_PAGANS',						'MODIFIER_LEADER_RWB_PILIAKALNIS_HARBOR'	),
+		('TRAIT_LEADER_RWB_GRAND_DUKE_OF_CHRISTIANS_AND_PAGANS',						'MODIFIER_LEADER_RWB_PILIAKALNIS_COMMERCIAL_HUB'	);*/
+		--('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',			'MODIFIER_RWB_DIEVDIRBIAI_LUXURY_GOLD_ATTACH'	);
+-----------------------------------------------
+-- DynamicModifiers
+-----------------------------------------------
+
+/*INSERT INTO	DynamicModifiers
+		(ModifierType,											CollectionType,				EffectType									)
+VALUES	('MODTYPE_RWB_DIEVDIRBIAI_RIVER_POST',		'COLLECTION_OWNER',			'EFFECT_GRANT_CITY_TRADING_POST'	),
+		('MODTYPE_RWB_DIEVDIRBIAI_RIVER_BORDERS',		'COLLECTION_OWNER',			'EFFECT_ADJUST_CITY_CULTURE_BORDER_EXPANSION'	),
+		('MODTYPE_RWB_DIEVDIRBIAI_BONUS_GOLD',		'COLLECTION_CITY_PLOT_YIELDS',		'EFFECT_ADJUST_PLOT_YIELD'	),
+		('MODTYPE_RWB_PILIAKALNIS_CULTURE_TRADE',		'COLLECTION_OWNER',			'EFFECT_ADJUST_CITY_YIELD_MODIFIER'	),
+		('MODTYPE_RWB_PILIAKALNIS_AMENITY_TRADE',		'COLLECTION_OWNER',		'EFFECT_ADJUST_POLICY_AMENITY'	);*/
+-----------------------------------------------
+-- Modifiers
+-----------------------------------------------
+
+/*INSERT INTO	Modifiers
+		(ModifierId,													ModifierType,										SubjectRequirementSetId						)
+VALUES	('MODIFIER_RWB_DIEVDIRBIAI_RIVER_IGNORE',			'MODIFIER_PLAYER_UNITS_ADJUST_IGNORE_RIVERS',			null										),
+		('MODIFIER_RWB_DIEVDIRBIAI_RIVER_POST_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',			null											),
+		('MODIFIER_RWB_DIEVDIRBIAI_RIVER_POST',			'MODTYPE_RWB_DIEVDIRBIAI_RIVER_POST',			'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS'	),
+		('MODIFIER_RWB_DIEVDIRBIAI_RIVER_BORDERS_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',			null											),
+		('MODIFIER_RWB_DIEVDIRBIAI_RIVER_BORDERS',			'MODTYPE_RWB_DIEVDIRBIAI_RIVER_BORDERS',			'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS'	),
+		('MODIFIER_RWB_DIEVDIRBIAI_BONUS_GOLD_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',			null											),
+		('MODIFIER_RWB_DIEVDIRBIAI_BONUS_GOLD',			'MODTYPE_RWB_DIEVDIRBIAI_BONUS_GOLD',			'PLOT_ADJACENT_TO_RIVER_REQUIREMENTS'	),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_CULTURE_TRADE_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',			null											),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_CULTURE_TRADE',			'MODTYPE_RWB_PILIAKALNIS_CULTURE_TRADE',			'ALLIANCE_CITY_HAS_TRADE_ROUTE_WITH_ALLY'	),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_AMENITY_TRADE_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',			null											),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_AMENITY_TRADE',			'MODTYPE_RWB_PILIAKALNIS_AMENITY_TRADE',			'ALLIANCE_CITY_HAS_TRADE_ROUTE_WITH_ALLY'	),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_ADDITIONAL_TRADE',			'MODIFIER_PLAYER_ADJUST_TRADE_ROUTE_CAPACITY',			'REQSET_MER_ACTIVE_ALLIANCE'	),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_GREAT_MERCHANT',			'MODIFIER_PLAYER_ADJUST_GREAT_PERSON_POINTS',			'REQSET_MER_ACTIVE_ALLIANCE'	),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_GOVERNMENT_PLAZA',			'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',			null	),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_HARBOR',			'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',			null	),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_COMMERCIAL_HUB',			'MODIFIER_PLAYER_CITIES_ADJUST_DISTRICT_PRODUCTION',			null	);*/
+		--('MODIFIER_RWB_DIEVDIRBIAI_LUXURY_GOLD_ATTACH',		'MODIFIER_PLAYER_CITIES_ATTACH_MODIFIER',			null											),
+	--	('MODIFIER_RWB_DIEVDIRBIAI_LUXURY_GOLD',			'MODTYPE_RWB_DIEVDIRBIAI_BONUS_GOLD',			'LUXURY_ADJACENT_TO_RIVER_REQUIREMENTS'	);
+-----------------------------------------------
+-- ModifierArguments
+-----------------------------------------------
+
+/*INSERT INTO ModifierArguments
+		(ModifierId,															Name,					Value													)
+VALUES	('MODIFIER_RWB_DIEVDIRBIAI_RIVER_IGNORE',					'Ignore',				1														),
+
+		('MODIFIER_RWB_DIEVDIRBIAI_RIVER_POST_ATTACH',				'ModifierId',			'MODIFIER_RWB_DIEVDIRBIAI_RIVER_POST'		),
+		('MODIFIER_RWB_DIEVDIRBIAI_RIVER_BORDERS_ATTACH',			'ModifierId',			'MODIFIER_RWB_DIEVDIRBIAI_RIVER_BORDERS'	),
+		('MODIFIER_RWB_DIEVDIRBIAI_RIVER_BORDERS',					'Amount',				100														),
+
+		('MODIFIER_RWB_DIEVDIRBIAI_BONUS_GOLD_ATTACH',				'ModifierId',			'MODIFIER_RWB_DIEVDIRBIAI_BONUS_GOLD'		),
+		('MODIFIER_RWB_DIEVDIRBIAI_BONUS_GOLD',					'YieldType',			'YIELD_GOLD'											),
+		('MODIFIER_RWB_DIEVDIRBIAI_BONUS_GOLD',					'Amount',				1														),
+
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_CULTURE_TRADE_ATTACH',			'ModifierId',			'MODIFIER_LEADER_RWB_PILIAKALNIS_CULTURE_TRADE'		),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_CULTURE_TRADE',					'YieldType',			'YIELD_CULTURE'											),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_CULTURE_TRADE',					'Amount',				15														),
+
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_AMENITY_TRADE_ATTACH',			'ModifierId',			'MODIFIER_LEADER_RWB_PILIAKALNIS_AMENITY_TRADE'		),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_AMENITY_TRADE',					'Amount',				1														),
+
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_ADDITIONAL_TRADE',				'Amount',				1														),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_GREAT_MERCHANT',					'GreatPersonClassType',	'GREAT_PERSON_CLASS_MERCHANT'							),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_GREAT_MERCHANT',					'Amount',				2														),
+
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_GOVERNMENT_PLAZA',				'DistrictType',			'DISTRICT_RWB_PILIAKALNIS'									),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_GOVERNMENT_PLAZA',				'Amount',				100														),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_HARBOR',							'DistrictType',			'DISTRICT_HARBOR'										),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_HARBOR',							'Amount',				100														),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_COMMERCIAL_HUB',					'DistrictType',			'DISTRICT_COMMERCIAL_HUB'								),
+		('MODIFIER_LEADER_RWB_PILIAKALNIS_COMMERCIAL_HUB',					'Amount',				100														);*/
+
+		--('MODIFIER_RWB_DIEVDIRBIAI_LUXURY_GOLD_ATTACH',			'ModifierId',			'MODIFIER_RWB_DIEVDIRBIAI_LUXURY_GOLD'		),
+		--('MODIFIER_RWB_DIEVDIRBIAI_LUXURY_GOLD',					'YieldType',		'YIELD_GOLD'		),
+		--('MODIFIER_RWB_DIEVDIRBIAI_LUXURY_GOLD',					'Amount',			1		);
+-----------------------------------------------
+-- RequirementSetRequirements
+-----------------------------------------------
+
+/*
+INSERT INTO RequirementSetRequirements
+		(RequirementSetId,					RequirementId					)
+VALUES	('REQSET_MER_ACTIVE_ALLIANCE',		'REQ_MER_ACTIVE_ALLIANCE'		);
+*/
+
+-----------------------------------------------
+-- RequirementSets
+-----------------------------------------------
+
+/*INSERT INTO RequirementSets
+		(RequirementSetId,					RequirementSetType			)
+VALUES	('REQSET_MER_ACTIVE_ALLIANCE',		'REQUIREMENTSET_TEST_ALL'	);*/
+
+-----------------------------------------------
+-- Requirements
+-----------------------------------------------
+
+/*INSERT INTO Requirements
+		(RequirementId,						RequirementType								)
+VALUES	('REQ_MER_ACTIVE_ALLIANCE',		'REQUIREMENT_PLAYER_HAS_ACTIVE_ALLIANCE_OF_AT_LEAST_LEVEL'	);*/
+-----------------------------------------------
+-- RequirementArguments
+-----------------------------------------------
+		
+/*INSERT INTO RequirementArguments
+		(RequirementId,					Name,						Value							)
+VALUES	('REQ_MER_ACTIVE_ALLIANCE',		'Level',					1	);		*/
+--==========================================================================================================================
+-- AGENDAS
+--==========================================================================================================================
+-- Types
+-------------------------------------	
+INSERT INTO Types	
+		(Type,									Kind)
+VALUES	('TRAIT_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS',		'KIND_TRAIT');			
+-------------------------------------			
+-- Agendas			
+-------------------------------------				
+INSERT INTO Agendas				
+		(AgendaType,							Name,									Description)
+VALUES	('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS',			'LOC_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_NAME',	'LOC_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_DESCRIPTION');	
+-------------------------------------			
+-- Traits			
+-------------------------------------				
+INSERT INTO Traits				
+		(TraitType,								Name,					Description)
+VALUES	('TRAIT_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS',		'LOC_PLACEHOLDER',		'LOC_PLACEHOLDER');	
+-------------------------------------			
+-- AgendaTraits			
+-------------------------------------				
+INSERT INTO AgendaTraits				
+		(AgendaType,							TraitType)
+VALUES	('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS',			'TRAIT_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS');	
+-------------------------------------		
+-- TraitModifiers		
+-------------------------------------			
+INSERT INTO TraitModifiers			
+		(TraitType,								ModifierId)
+VALUES	('TRAIT_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS',		'AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_ALLIANCES'),
+		('TRAIT_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS',		'AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_NO_ALLIANCES'),
+		('TRAIT_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS',		'AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_HIGH_INCOME'),
+		('TRAIT_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS',		'AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_LOW_INCOME');
+--------------------------------------------------------------------------------------------------------------------------
+-- Modifiers
+--------------------------------------------------------------------------------------------------------------------------
+INSERT INTO Modifiers	
+		(ModifierId,							ModifierType,										SubjectRequirementSetId)
+VALUES	('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_ALLIANCES',	'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',		'PLAYER_HAS_MANY_ALLIANCES'),
+		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_HIGH_INCOME',	'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',		'PLAYER_HAS_HIGH_INCOME'),
+		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_NO_ALLIANCES',	'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',		'PLAYER_HAS_FEW_ALLIANCES'),
+		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_LOW_INCOME',	'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',		'PLAYER_HAS_LOW_INCOME');
+--------------------------------------------------------------------------------------------------------------------------
+-- ModifierArguments
+--------------------------------------------------------------------------------------------------------------------------
+INSERT INTO ModifierArguments
+		(ModifierId,							Name,							Value,													Extra,				Type)
+VALUES	('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_ALLIANCES',		'InitialValue',					6,														null,				'ARGTYPE_IDENTITY'),
+		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_ALLIANCES',		'StatementKey',					'LOC_DIPLO_KUDOS_LEADER_RWB_VYTAUTAS_REASON_ALLIANCES',	null,				'ARGTYPE_IDENTITY'),
+		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_ALLIANCES',		'SimpleModifierDescription',	'LOC_DIPLO_MODIFIER_RWB_LITHUANIAN_CONSCIOUSNESS_ALLIANCES',		null,				'ARGTYPE_IDENTITY'),
+		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_NO_ALLIANCES',		'InitialValue',					-6,														null,				'ARGTYPE_IDENTITY'),
+		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_NO_ALLIANCES',		'StatementKey',					'LOC_DIPLO_WARNING_LEADER_RWB_VYTAUTAS_REASON_NO_ALLIANCES',	null,				'ARGTYPE_IDENTITY'),
+		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_NO_ALLIANCES',		'SimpleModifierDescription',	'LOC_DIPLO_MODIFIER_RWB_LITHUANIAN_CONSCIOUSNESS_NO_ALLIANCES',		null,				'ARGTYPE_IDENTITY'),
+		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_HIGH_INCOME',		'InitialValue',					4,														null,				'ARGTYPE_IDENTITY'),
+		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_HIGH_INCOME',		'StatementKey',					'LOC_DIPLO_KUDOS_LEADER_RWB_VYTAUTAS_REASON_HIGH_INCOME',	null,				'ARGTYPE_IDENTITY'),
+		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_HIGH_INCOME',		'SimpleModifierDescription',	'LOC_DIPLO_MODIFIER_RWB_LITHUANIAN_CONSCIOUSNESS_HIGH_INCOME',		null,				'ARGTYPE_IDENTITY'),
+		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_LOW_INCOME',		'InitialValue',					-4,														null,				'ARGTYPE_IDENTITY'),
+		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_LOW_INCOME',		'StatementKey',					'LOC_DIPLO_WARNING_LEADER_RWB_VYTAUTAS_REASON_LOW_INCOME',	null,				'ARGTYPE_IDENTITY'),
+		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_LOW_INCOME',		'SimpleModifierDescription',	'LOC_DIPLO_MODIFIER_RWB_LITHUANIAN_CONSCIOUSNESS_LOW_INCOME',		null,				'ARGTYPE_IDENTITY');
+-------------------------------------		
+-- ModifierStrings		
+-------------------------------------			
+INSERT INTO ModifierStrings			
+		(ModifierId,											Context,	Text)
+VALUES	('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_ALLIANCES',		'Sample',	'LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL'),
+		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_NO_ALLIANCES',		'Sample',	'LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL');	
+--==========================================================================================================================
+-- CIVILIZATIONS
+--==========================================================================================================================
+-- CivilizationLeaders
+-------------------------------------	
+INSERT INTO CivilizationLeaders 
+        (CivilizationType,			LeaderType,		CapitalName)
+VALUES  ('CIVILIZATION_RWB_LITHUANIA',	'LEADER_RWB_VYTAUTAS',	'LOC_CITY_NAME_RWB_LITHUANIA_1');
+--==========================================================================================================================
+--==========================================================================================================================

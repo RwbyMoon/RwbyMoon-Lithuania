@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Ed Beach (Firaxis Games) -->
+<GameData>
+	<LocalizedText>
+		<Row Tag="LOC_LEADER_RWB_VYTAUTAS_NAME" Language="en_US">
+			<Text>Vytautas</Text>
+		</Row>
+		<!--Traits-->
+		<Row Tag="LOC_TRAIT_LEADER_RWB_PILIAKALNIS_NAME" Language="en_US">
+			<Text>Grand Duke of Christians and Pagans</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_LEADER_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
+			<Text>+15% [ICON_Culture] Culture and +1 [ICON_Amenities] Amenity in cities with a Trade Route to an ally. Each active Alliance grants +1 [ICON_TradeRoute] Trade Route capacity and +2 [ICON_GreatMerchant] Great Merchant points. Construct the Veche, Harbor, and Commercial Hub districts twice as fast.</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_NAME" Language="en_US">
+			<Text>Dievirbiai</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="en_US">
+			<Text>Cities settled on Rivers receive a free [ICON_TradingPost] Trading Post and their borders expand twice as fast. Tiles adjacent to Rivers yield +1 [ICON_Gold] Gold. All units ignore the movement penalty from crossing rivers.</Text>
+		</Row> 
+		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_LEITIS_NAME" Language="en_US">
+			<Text>Leitis</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_LEITIS_DESCRIPTION" Language="en_US">
+			<Text>A unique land unit</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_RWB_LEITIS_NAME" Language="en_US">
+			<Text>Leitis</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_RWB_LEITIS_DESCRIPTION" Language="en_US">
+			<Text>Unique Kievan Rus' Light Cavalry unit, replacing the Courser. Does not suffer combat penalties when damaged when near a [ICON_GreatGeneral] Great General. +5 [ICON_Strength] Strength in or adjacent to your territory.</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_RWB_LEITIS_NAME" Language="en_US">
+			<Text>Defiance</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_RWB_LEITIS_STRENGTH_DESCRIPTION" Language="en_US">
+			<Text>+5 [ICON_Strength] Combat Strength from fighting in or adjacent to territory.</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_RWB_LEITIS_NO_REDUCTION_DESCRIPTION" Language="en_US">
+			<Text>No [ICON_Strength] Combat Strength reduction from damage due to nearby Great General.</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_NAME" Language="en_US">
+			<Text>Piliakalnis</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
+			<Text>A unique district</Text>
+		</Row>
+		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_NAME" Language="en_US">
+			<Text>Piliakalnis</Text>
+		</Row>
+		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
+			<Text>Kievan Rus' unique district that replaces the Government Plaza, can only be built once. Grants +2 Loyalty to each City within 6 tiles. Grants a Major (+2) adjacency bonus to the Commercial Hub, Harbor, and Holy Site. Trade Routes sent to and from this city yield +2 [ICON_Culture] Culture. +1 [ICON_GreatGeneral] Great General and +1 [ICON_GreatMerchant] Great Merchant point per turn.</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_NAME" Language="en_US">
+			<Text>Grand Duchy of Lithuania</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_DESCRIPTION" Language="en_US">
+			<Text>Grand Duchy of Lithuania</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_DESCRIPTION_JFD_CIVILIZATION" Language="en_US">
+			<Text>Lithuanian Civilization</Text>
+		</Row>
+		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_ADJECTIVE"	  Language="en_US">
+			<Text>Lithuanian</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_1" Language="en_US">
+			<Text>Kiev</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_2" Language="en_US">
+			<Text>Belgorod Kievsky</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_3" Language="en_US">
+			<Text>Chernihiv</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_4" Language="en_US">
+			<Text>Halych</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_5" Language="en_US">
+			<Text>Minsk</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_6" Language="en_US">
+			<Text>Pereyaslavets</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_7" Language="en_US">
+			<Text>Murom</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_8" Language="en_US">
+			<Text>Polotsk</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_9" Language="en_US">
+			<Text>Rostov Veliky</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_10" Language="en_US">
+			<Text>Ryazan</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_11" Language="en_US">
+			<Text>Smolensk</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_12" Language="en_US">
+			<Text>Staraya Ladoga</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_13" Language="en_US">
+			<Text>Suzdal</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_14" Language="en_US">
+			<Text>Tmutarakan</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_15" Language="en_US">
+			<Text>Veliky Novgorod</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_16" Language="en_US">
+			<Text>Vladimir</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_17" Language="en_US">
+			<Text>Vyshgorod</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_18" Language="en_US">
+			<Text>Kursk</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_19" Language="en_US">
+			<Text>Chernigov</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_20" Language="en_US">
+			<Text>Turov</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_21" Language="en_US">
+			<Text>Berestye</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_22" Language="en_US">
+			<Text>Volodimir</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_23" Language="en_US">
+			<Text>Terebovl</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_24" Language="en_US">
+			<Text>Suzdal</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_25" Language="en_US">
+			<Text>Toropets</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_26" Language="en_US">
+			<Text>Vitebsk</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_27" Language="en_US">
+			<Text>Gertsike</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_28" Language="en_US">
+			<Text>Pskov</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_29" Language="en_US">
+			<Text>Cherven</Text>
+		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_30" Language="en_US">
+			<Text>Pereyaslavl</Text>
+		</Row>
+		<!--Citizens-->
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_1" Language="en_US">
+			<Text>János</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_2" Language="en_US">
+			<Text>László</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_3" Language="en_US">
+			<Text>Miklós</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_4" Language="en_US">
+			<Text>Péter</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_5" Language="en_US">
+			<Text>István</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_6" Language="en_US">
+			<Text>György</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_7" Language="en_US">
+			<Text>Jakab</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_8" Language="en_US">
+			<Text>András</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_9" Language="en_US">
+			<Text>Mihály</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_10" Language="en_US">
+			<Text>Pál</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_1" Language="en_US">
+			<Text>András</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_2" Language="en_US">
+			<Text>Géza</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_3" Language="en_US">
+			<Text>Imre</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_4" Language="en_US">
+			<Text>János</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_5" Language="en_US">
+			<Text>József</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_6" Language="en_US">
+			<Text>Károly</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_7" Language="en_US">
+			<Text>Márk</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_8" Language="en_US">
+			<Text>Márton</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_9" Language="en_US">
+			<Text>Sándor</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_10" Language="en_US">
+			<Text>Zsigmond</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_1" Language="en_US">
+			<Text>Anna</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_2" Language="en_US">
+			<Text>Katalin</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_3" Language="en_US">
+			<Text>Borbála</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_4" Language="en_US">
+			<Text>Erzsébet</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_5" Language="en_US">
+			<Text>Margaréta</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_6" Language="en_US">
+			<Text>Zsófia</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_7" Language="en_US">
+			<Text>Józsa</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_8" Language="en_US">
+			<Text>Ilona</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_9" Language="en_US">
+			<Text>Dorottya</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_10" Language="en_US">
+			<Text>Orsolya</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_1" Language="en_US">
+			<Text>Klára</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_2" Language="en_US">
+			<Text>Sára</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_3" Language="en_US">
+			<Text>Heléna</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_4" Language="en_US">
+			<Text>Agáta</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_5" Language="en_US">
+			<Text>Krisztina</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_6" Language="en_US">
+			<Text>Zsuzsanna</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_7" Language="en_US">
+			<Text>Márta</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_8" Language="en_US">
+			<Text>Katherina</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_9" Language="en_US">
+			<Text>Barbara</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_10" Language="en_US">
+			<Text>Ade</Text>
+		</Row>
+	</LocalizedText>
+</GameData>
