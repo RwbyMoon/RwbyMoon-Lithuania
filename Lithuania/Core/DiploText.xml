@@ -6,7 +6,7 @@
 	<LocalizedText>
 	<!--Pedia-->
 		<Row Tag="LOC_CIVINFO_RWB_LITHUANIA_LOCATION" Language="en_US">
-			<Text>Kievan Rus'</Text>
+			<Text>Lithuania</Text>
 		</Row>
 		<Row Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_LITHUANIA_CHAPTER_HISTORY_PARA_1" Language="en_US">
 			<Text>Kievan Rus' was a loose federation of East Slavic tribes in Europe from the late 9th to the mid-13th century, under the reign of the Rurik dynasty. The modern peoples of Belarus, Russia and Ukraine all claim Kievan Rus' as their cultural ancestors, with Belarus and Russia deriving their names from it. At its greatest extent in the mid-11th century, it stretched from the Baltic Sea in the north to the Black Sea in the south and from the headwaters of the Vistula in the west to the Taman Peninsula in the east, uniting the majority of East Slavic tribes.</Text>
@@ -22,11 +22,11 @@
 		</Row>
 	<!--DOM-->
 	<Row Tag="LOC_LOADING_INFO_LEADER_RWB_VYTAUTAS" Language="en_US">
-		<Text>Truly you are Wise, Grand Prince Yaroslav. You have lead the Rus' through great victories, forged alliances with great kingdoms, and built lasting monuments. Your time has come again, as your people once again are in need of a leader to bring them into the future to come. Brave soldiers and wise council stand ready to serve you.</Text>
+		<Text>By your ambition you live, Grand-Duke Vytautas. Lithuania look to you not only as The Great general into war, but also as their reformator. Your links with noble Europe make Pagans and Christians unite under your martial valour to expand Lithuania against foreign menaces. Go, use your statesmanlike foresight, centralize your people's faith and become the sword to crystallize the world into icons.</Text>
 	</Row>
 	<!--Agenda-->
 	<Row Tag="LOC_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_NAME" Language="en_US">
-		<Text>Wise Ruler</Text>
+		<Text>Lithuanian Consciousness</Text>
 	</Row>
 	<Row Tag="LOC_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_DESCRIPTION" Language="en_US">
 		<Text>Likes Civilizations that establish alliances and who have high income. Dislikes those who don't establish alliances and have a low income.</Text>
@@ -57,10 +57,10 @@
 		</Row>
 	<!--Civilopedia-->
 	<Row Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_TITLE" Language="en_US">
-		<Text>Yaroslav</Text>
+		<Text>Vytautas the Great</Text>
 	</Row>
 	<Row Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_SUBTITLE" Language="en_US">
-		<Text>Grand Prince of Kiev and Novgorod</Text>
+		<Text>Grand Duke of Lithuania</Text>
 	</Row>
 	<Row Tag="LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_QUOTE" Language="en_US">
 		<Text></Text>

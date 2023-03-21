@@ -6,35 +6,48 @@
 			<Text>Vytautas</Text>
 		</Row>
 		<!--Traits-->
-		<Row Tag="LOC_TRAIT_LEADER_RWB_PILIAKALNIS_NAME" Language="en_US">
-			<Text>Grand Duke of Christians and Pagans</Text>
+		<Row Tag="LOC_TRAIT_LEADER_RWB_ASTRAVOS_SUTARTIS_NAME" Language="en_US">
+			<Text>Astravos Sutartis</Text>
 		</Row>
-		<Row Tag="LOC_TRAIT_LEADER_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
-			<Text>+15% [ICON_Culture] Culture and +1 [ICON_Amenities] Amenity in cities with a Trade Route to an ally. Each active Alliance grants +1 [ICON_TradeRoute] Trade Route capacity and +2 [ICON_GreatMerchant] Great Merchant points. Construct the Veche, Harbor, and Commercial Hub districts twice as fast.</Text>
+		<Row Tag="LOC_TRAIT_LEADER_RWB_ASTRAVOS_SUTARTIS_DESCRIPTION" Language="en_US">
+			<Text>
+				Upon attacking, Military and Religious units gain +1 [ICON_Strength] Combat or [ICON_Religion] Religious Strength for every 2 [ICON_GreatWork_Religious] Great Works in city territories adjacent to the defending tile.[NEWLINE][NEWLINE]After researching "Foreign Trade" , Lithuanian Cities generate +1 [ICON_Faith] Faith per Habitant not converted to Lithuania's Major Religion. Doubled if Lithuania has a founded a [ICON_Religion] Religion. [ICON_Religion]Inquisition Power of Inquisitors is reduced to 30%, but they gain +4 Charges.
+			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_NAME" Language="en_US">
 			<Text>Dievirbiai</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="en_US">
-			<Text>Cities settled on Rivers receive a free [ICON_TradingPost] Trading Post and their borders expand twice as fast. Tiles adjacent to Rivers yield +1 [ICON_Gold] Gold. All units ignore the movement penalty from crossing rivers.</Text>
-		</Row> 
-		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_LEITIS_NAME" Language="en_US">
-			<Text>Leitis</Text>
+			<Text>
+				Lithuanian [ICON_District] Districts do not gain usual Adjancencies but gain and lose Adjacency equal to the Appeal of the tile they are on, and do not destroy harvestable terrain [ICON_Terrain] Features.[NEWLINE][NEWLINE]Can buy a unique civilian with [ICON_Faith] Faith in the Capital or a possessed original Capital ; the Dievdirbys. It can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal. Buildings from Districts generating positive Appeal can be bought with [ICON_Faith] Faith.
+			</Text>
 		</Row>
-		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_LEITIS_DESCRIPTION" Language="en_US">
+		<Row Tag="LOC_UNIT_RWB_DIEVDIRBYS_NAME" Language="en_US">
+			<Text>Dievdirbys</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_DIEVDIRBYS_DESCRIPTION" Language="en_US">
+			<Text>Unique Lithuanian civilian unit that can only be purchased with [ICON_Faith] Faith in the Capital or a possessed original Capital. can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal.</Text>
+		</Row>
+		<Row Tag="LOC_UNIT_RWB_DIEVDIRBYS_DESCRIPTION" Language="en_US">
+			<Text>A unique civilian unit</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_NAME" Language="en_US">
+			<Text>Vytis</Text>
+		</Row>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_DESCRIPTION" Language="en_US">
 			<Text>A unique land unit</Text>
 		</Row>
-		<Row Tag="LOC_UNIT_RWB_LEITIS_NAME" Language="en_US">
-			<Text>Leitis</Text>
+		<Row Tag="LOC_UNIT_RWB_VYTIS_NAME" Language="en_US">
+			<Text>Vytis</Text>
 		</Row>
-		<Row Tag="LOC_UNIT_RWB_LEITIS_DESCRIPTION" Language="en_US">
-			<Text>Unique Kievan Rus' Light Cavalry unit, replacing the Courser. Does not suffer combat penalties when damaged when near a [ICON_GreatGeneral] Great General. +5 [ICON_Strength] Strength in or adjacent to your territory.</Text>
+		<Row Tag="LOC_UNIT_RWB_VYTIS_DESCRIPTION" Language="en_US">
+			<Text>Unique Lithuanian Light Cavalry unit, replacing the Horseman. Stronger (+4) than the Horseman, it is also way more expensive and can only upgrade into Cavalry. Gains +8 [ICON_Strength]Combat Strength against units with stronger base strength.</Text>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_LEITIS_NAME" Language="en_US">
 			<Text>Defiance</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_STRENGTH_DESCRIPTION" Language="en_US">
-			<Text>+5 [ICON_Strength] Combat Strength from fighting in or adjacent to territory.</Text>
+		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_DESCRIPTION" Language="en_US">
+			<Text>+8 [ICON_Strength] Combat Strength against a unit with higher [ICON_Strength] Base Combat Strength.</Text>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_LEITIS_NO_REDUCTION_DESCRIPTION" Language="en_US">
 			<Text>No [ICON_Strength] Combat Strength reduction from damage due to nearby Great General.</Text>
@@ -43,20 +56,23 @@
 			<Text>Piliakalnis</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
-			<Text>A unique district</Text>
+			<Text>A unique district replacing the Preserve for Faith and Cultural endeavors.</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_NAME" Language="en_US">
 			<Text>Piliakalnis</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
-			<Text>Kievan Rus' unique district that replaces the Government Plaza, can only be built once. Grants +2 Loyalty to each City within 6 tiles. Grants a Major (+2) adjacency bonus to the Commercial Hub, Harbor, and Holy Site. Trade Routes sent to and from this city yield +2 [ICON_Culture] Culture. +1 [ICON_GreatGeneral] Great General and +1 [ICON_GreatMerchant] Great Merchant point per turn.</Text>
+			<Text>
+				Lithuanian unique district that replaces the Preserve, that cannot be placed adjacent to City-Center.[NEWLINE][NEWLINE]• Units up to 4 tiles from a Piliakalnis gain +3 [ICON_Strength] Combat or [ICON_Religion] Religious Strength.[NEWLINE]• This District and all those adjacent to it generate [ICON_Faith] Faith equal to 50% of the Appeal of their tiles.[NEWLINE]• +1 Appeal on adjacent tiles[NEWLINE]• Causes a Cultural Bomb able to claim other civilizations tiles.[NEWLINE][NEWLINE]Can hold up to 2 [ICON_GreatWork_Religious] Great Works of any type.
+			</Text>
 		</Row>
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_NAME" Language="en_US">
-			<Text>Grand Duchy of Lithuania</Text>
+			<Text>Lithuania</Text>
 		</Row>
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_DESCRIPTION" Language="en_US">
-			<Text>Grand Duchy of Lithuania</Text>
+			<Text>Lithuanian Empire</Text>
 		</Row>
+	<!--	Grand Duchy of Lithuania-->
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_DESCRIPTION_JFD_CIVILIZATION" Language="en_US">
 			<Text>Lithuanian Civilization</Text>
 		</Row>
@@ -64,94 +80,94 @@
 			<Text>Lithuanian</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_1" Language="en_US">
-			<Text>Kiev</Text>
+			<Text>Vilnius</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_2" Language="en_US">
-			<Text>Belgorod Kievsky</Text>
+			<Text>Gardinas</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_3" Language="en_US">
-			<Text>Chernihiv</Text>
+			<Text>Senieji Trakai</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_4" Language="en_US">
-			<Text>Halych</Text>
+			<Text>Memel</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_5" Language="en_US">
-			<Text>Minsk</Text>
+			<Text>Varniai</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_6" Language="en_US">
-			<Text>Pereyaslavets</Text>
+			<Text>Lutsk</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_7" Language="en_US">
-			<Text>Murom</Text>
+			<Text>Grunwald</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_8" Language="en_US">
-			<Text>Polotsk</Text>
+			<Text>Kernavė</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_9" Language="en_US">
-			<Text>Rostov Veliky</Text>
+			<Text>Polatsk</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_10" Language="en_US">
-			<Text>Ryazan</Text>
+			<Text>Kaunas</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_11" Language="en_US">
 			<Text>Smolensk</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_12" Language="en_US">
-			<Text>Staraya Ladoga</Text>
+			<Text>Skirsnemunė</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_13" Language="en_US">
-			<Text>Suzdal</Text>
+			<Text>Jurbarkas</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_14" Language="en_US">
-			<Text>Tmutarakan</Text>
-		</Row>
-		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_15" Language="en_US">
 			<Text>Veliky Novgorod</Text>
 		</Row>
+		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_15" Language="en_US">
+			<Text>Pleskov</Text>
+		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_16" Language="en_US">
-			<Text>Vladimir</Text>
+			<Text>Polotsk</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_17" Language="en_US">
-			<Text>Vyshgorod</Text>
+			<Text>NONAME</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_18" Language="en_US">
-			<Text>Kursk</Text>
+			<Text>NONAME</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_19" Language="en_US">
-			<Text>Chernigov</Text>
+			<Text>NONAME</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_20" Language="en_US">
-			<Text>Turov</Text>
+			<Text>NONAME</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_21" Language="en_US">
-			<Text>Berestye</Text>
+			<Text>NONAME</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_22" Language="en_US">
-			<Text>Volodimir</Text>
+			<Text>NONAME</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_23" Language="en_US">
-			<Text>Terebovl</Text>
+			<Text>NONAME</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_24" Language="en_US">
-			<Text>Suzdal</Text>
+			<Text>NONAME</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_25" Language="en_US">
-			<Text>Toropets</Text>
+			<Text>NONAME</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_26" Language="en_US">
-			<Text>Vitebsk</Text>
+			<Text>NONAME</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_27" Language="en_US">
-			<Text>Gertsike</Text>
+			<Text>NONAME</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_28" Language="en_US">
-			<Text>Pskov</Text>
+			<Text>NONAME</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_29" Language="en_US">
-			<Text>Cherven</Text>
+			<Text>NONAME</Text>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_30" Language="en_US">
-			<Text>Pereyaslavl</Text>
+			<Text>NONAME</Text>
 		</Row>
 		<!--Citizens-->
 		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_1" Language="en_US">

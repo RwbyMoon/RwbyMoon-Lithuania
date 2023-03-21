@@ -12,8 +12,8 @@
 			<CivilizationAbilityName>LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_NAME</CivilizationAbilityName>
 			<CivilizationAbilityDescription>LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION</CivilizationAbilityDescription>
 			<CivilizationAbilityIcon>ICON_CIVILIZATION_RWB_LITHUANIA</CivilizationAbilityIcon>
-			<LeaderAbilityName>LOC_TRAIT_LEADER_RWB_PILIAKALNIS_NAME</LeaderAbilityName>
-			<LeaderAbilityDescription>LOC_TRAIT_LEADER_RWB_PILIAKALNIS_DESCRIPTION</LeaderAbilityDescription>
+			<LeaderAbilityName>LOC_TRAIT_LEADER_RWB_ASTRAVOS_SUTARTIS_NAME</LeaderAbilityName>
+			<LeaderAbilityDescription>LOC_TRAIT_LEADER_RWB_ASTRAVOS_SUTARTIS_DESCRIPTION</LeaderAbilityDescription>
 			<LeaderAbilityIcon>ICON_LEADER_RWB_VYTAUTAS</LeaderAbilityIcon>
 			<Portrait>LEADER_MER_YAROSLAV_NEUTRAL.dds</Portrait>
 			<PortraitBackground>LEADER_MONTEZUMA_BACKGROUND</PortraitBackground>
@@ -34,10 +34,10 @@
 			<Domain>Players:Expansion2_Players</Domain>
 			<CivilizationType>CIVILIZATION_RWB_LITHUANIA</CivilizationType>
 			<LeaderType>LEADER_RWB_VYTAUTAS</LeaderType>
-			<Type>UNIT_RWB_LEITIS</Type>
-			<Name>LOC_UNIT_RWB_LEITIS_NAME</Name>
-			<Description>LOC_UNIT_RWB_LEITIS_DESCRIPTION</Description>
-			<Icon>ICON_UNIT_RWB_LEITIS</Icon>
+			<Type>UNIT_RWB_VYTIS</Type>
+			<Name>LOC_UNIT_RWB_VYTIS_NAME</Name>
+			<Description>LOC_UNIT_RWB_VYTIS_DESCRIPTION</Description>
+			<Icon>ICON_UNIT_RWB_VYTIS</Icon>
 			<SortIndex>20</SortIndex>
 		</Row>
 	</PlayerItems>
