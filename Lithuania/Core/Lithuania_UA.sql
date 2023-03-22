@@ -171,9 +171,15 @@ INSERT INTO Types
 SELECT	    Buildings.BuildingType||'_RWB_DIEVDIRBIAI_FAITH_PURCHASE','KIND_MODIFIER'
 FROM Buildings WHERE PrereqDistrict IN (SELECT DistrictType FROM Districts WHERE Appeal >= 1);
 
+/*INSERT INTO Types
+                (Type,					                                        Kind)
+VALUES	        ('RWB_DIEVDIRBIAI_ALLOW_FAITH_PURCHASE_OF_SPECIFIC_BUILDING', 'KIND_MODIFIER');*/
+
+/*
 INSERT INTO DynamicModifiers
 (ModifierType,												                    CollectionType,				    EffectType)
 VALUES	('RWB_DIEVDIRBIAI_ALLOW_FAITH_PURCHASE_OF_SPECIFIC_BUILDING',		'COLLECTION_PLAYER_CITIES',	    'EFFECT_ENABLE_SPECIFIC_BUILDING_FAITH_PURCHASE');
+*/
 
 INSERT INTO	TraitModifiers
                     (TraitType,									  ModifierId								)
@@ -182,7 +188,7 @@ FROM Buildings WHERE PrereqDistrict IN (SELECT DistrictType FROM Districts WHERE
 
 INSERT INTO Modifiers
 (ModifierId, ModifierType)
-SELECT      Buildings.BuildingType||'_RWB_DIEVDIRBIAI_FAITH_PURCHASE','RWB_DIEVDIRBIAI_ALLOW_FAITH_PURCHASE_OF_SPECIFIC_BUILDING'
+SELECT      Buildings.BuildingType||'_RWB_DIEVDIRBIAI_FAITH_PURCHASE','MODIFIER_PLAYER_CITIES_ENABLE_SPECIFIC_BUILDING_FAITH_PURCHASE'
 FROM Buildings WHERE PrereqDistrict IN (SELECT DistrictType FROM Districts WHERE Appeal >= 1);
 
 INSERT INTO ModifierArguments
