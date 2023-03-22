@@ -6,12 +6,12 @@
 			<Text>Vytautas</Text>
 		</Row>
 		<!--Traits-->
-		<Row Tag="LOC_TRAIT_LEADER_RWB_ASTRAVOS_SUTARTIS_NAME" Language="en_US">
-			<Text>Astravos Sutartis</Text>
+		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_NAME" Language="en_US">
+			<Text>Union of Horodło</Text>
 		</Row>
-		<Row Tag="LOC_TRAIT_LEADER_RWB_ASTRAVOS_SUTARTIS_DESCRIPTION" Language="en_US">
+		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="en_US">
 			<Text>
-				Upon attacking, Military and Religious units gain +1 [ICON_Strength] Combat or [ICON_Religion] Religious Strength for every 2 [ICON_GreatWork_Religious] Great Works in city territories adjacent to the defending tile.[NEWLINE][NEWLINE]After researching "Foreign Trade" , Lithuanian Cities generate +1 [ICON_Faith] Faith per Habitant not converted to Lithuania's Major Religion. Doubled if Lithuania has a founded a [ICON_Religion] Religion. [ICON_Religion]Inquisition Power of Inquisitors is reduced to 30%, but they gain +4 Charges.
+				Upon attacking, Military and Religious units gain +1 [ICON_Strength] Combat or [ICON_Religion] Religious Strength for every 2 [ICON_GreatWork_Religious] Great Works in city territories adjacent to the defending tile.[NEWLINE][NEWLINE]Can buy a unique civilian with [ICON_Faith] Faith in the Capital or a possessed original Capital ; the Landowner. It can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal. Buildings from Districts generating positive Appeal can be bought with [ICON_Faith] Faith.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_NAME" Language="en_US">
@@ -19,16 +19,16 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian [ICON_District] Districts do not gain usual Adjancencies but gain and lose Adjacency equal to the Appeal of the tile they are on, and do not destroy harvestable terrain [ICON_Terrain] Features.[NEWLINE][NEWLINE]Can buy a unique civilian with [ICON_Faith] Faith in the Capital or a possessed original Capital ; the Dievdirbys. It can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal. Buildings from Districts generating positive Appeal can be bought with [ICON_Faith] Faith.
+				Lithuanian [ICON_District] Districts do not gain usual Adjancencies but gain and lose Adjacency equal to the Appeal of the tile they are on, and do not destroy harvestable terrain [ICON_Terrain] Features.[NEWLINE][NEWLINE]After researching "Foreign Trade", Lithuanian Cities generate +0.75 [ICON_Faith] Faith and [ICON_Gold] Gold per [ICON_Citizen] Population not converted to Lithuania's Founded [ICON_Religion] Religion. (Works even if Lithuania has not founded a Religion). Doubled if Lithuania has a founded a [ICON_Religion] Religion.
 			</Text>
 		</Row>
-		<Row Tag="LOC_UNIT_RWB_DIEVDIRBYS_NAME" Language="en_US">
-			<Text>Dievdirbys</Text>
+		<Row Tag="LOC_UNIT_RWB_LANDOWNER_NAME" Language="en_US">
+			<Text>Landowner</Text>
 		</Row>
-		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_DIEVDIRBYS_DESCRIPTION" Language="en_US">
+		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="en_US">
 			<Text>Unique Lithuanian civilian unit that can only be purchased with [ICON_Faith] Faith in the Capital or a possessed original Capital. can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal.</Text>
 		</Row>
-		<Row Tag="LOC_UNIT_RWB_DIEVDIRBYS_DESCRIPTION" Language="en_US">
+		<Row Tag="LOC_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="en_US">
 			<Text>A unique civilian unit</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_NAME" Language="en_US">
