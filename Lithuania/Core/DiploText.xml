@@ -8,6 +8,9 @@
 		<Row Tag="LOC_CIVINFO_RWB_LITHUANIA_LOCATION" Language="en_US">
 			<Text>Lithuania</Text>
 		</Row>
+		<Row Tag="LOC_CIVINFO_RWB_LITHUANIA_LOCATION" Language="fr_FR">
+			<Text>Lithuania</Text>
+		</Row>
 		<Row Tag="LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_LITHUANIA_CHAPTER_HISTORY_PARA_1" Language="en_US">
 			<Text>Kievan Rus' was a loose federation of East Slavic tribes in Europe from the late 9th to the mid-13th century, under the reign of the Rurik dynasty. The modern peoples of Belarus, Russia and Ukraine all claim Kievan Rus' as their cultural ancestors, with Belarus and Russia deriving their names from it. At its greatest extent in the mid-11th century, it stretched from the Baltic Sea in the north to the Black Sea in the south and from the headwaters of the Vistula in the west to the Taman Peninsula in the east, uniting the majority of East Slavic tribes.</Text>
 		</Row>
@@ -21,9 +24,12 @@
 			<Text>The state declined beginning in the late 11th century and during the 12th century, disintegrating into various rival regional powers.[10] It was further weakened by economic factors such as the collapse of Rus' commercial ties to Byzantium due to the decline of Constantinople and the accompanying diminution of trade routes through its territory. The state finally fell to the Mongol invasion of the 1240s.</Text>
 		</Row>
 	<!--DOM-->
-	<Row Tag="LOC_LOADING_INFO_LEADER_RWB_VYTAUTAS" Language="en_US">
-		<Text>By your ambition you live, Grand-Duke Vytautas. Lithuania look to you not only as The Great general into war, but also as their reformator. Your links with noble Europe make Pagans and Christians unite under your martial valour to expand Lithuania against foreign menaces. Go, use your statesmanlike foresight, centralize your people's faith and become the sword to crystallize the world into icons.</Text>
-	</Row>
+		<Row Tag="LOC_LOADING_INFO_LEADER_RWB_VYTAUTAS" Language="en_US">
+			<Text>By your ambition you live, Grand-Duke Vytautas. Lithuania look to you not only as The Great general into war, but also as their reformator. Your links with noble Europe make Pagans and Christians unite under your martial valour to expand Lithuania against foreign menaces. Go, use your statesmanlike foresight, centralize your people's faith and become the blade of the lithuanian consciousness.</Text>
+		</Row>
+		<Row Tag="LOC_LOADING_INFO_LEADER_RWB_VYTAUTAS" Language="fr_FR">
+			<Text>Par votre ambition vous vous épanouissez, Grand-Duc Vytautas. Vous n'êtes pas que Le Grand aux yeux de la Lituanie en tant que général, mais aussi comme un réformateur. Vos liens avec une Europe noble unissent Païens et Chrétiens sous votre valeur martiale, menant à l'expansion de la Lituanie face aux menaces étrangères. Allez, et centralisez avec lucidité la foi de votre peuple et devenez la lame de la conscience lituanienne.</Text>
+		</Row>
 	<!--Agenda-->
 	<Row Tag="LOC_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_NAME" Language="en_US">
 		<Text>Lithuanian Consciousness</Text>

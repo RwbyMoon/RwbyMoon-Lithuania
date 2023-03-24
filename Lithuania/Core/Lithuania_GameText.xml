@@ -33,12 +33,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian [ICON_District] Districts do not gain usual Adjancencies but gain and lose Adjacency equal to the Appeal of the tile they are on, and do not destroy harvestable terrain [ICON_Terrain] Features.[NEWLINE][NEWLINE]After researching "Foreign Trade", Lithuanian Cities generate +0.75 [ICON_Faith] Faith and [ICON_Gold] Gold per [ICON_Citizen] Population not converted to Lithuania's Founded [ICON_Religion] Religion. (Works even if Lithuania has not founded a Religion). Doubled if Lithuania has a founded a [ICON_Religion] Religion.
+				Lithuanian [ICON_District] Districts do not gain usual Adjancencies but gain and lose Adjacency equal to the Appeal of the tile they are on, and do not destroy harvestable terrain [ICON_Terrain] Features.[NEWLINE][NEWLINE]After researching "Mysticism", Lithuanian Cities generate +0.5 [ICON_Faith] Faith and [ICON_Gold] Gold per [ICON_Citizen] Population if ce city is not converted to Lithuania's Founded [ICON_Religion] Religion. (Works even if Lithuania has not founded a Religion). Doubled if Lithuania has a founded a [ICON_Religion] Religion.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Les [ICON_District] Quartiers Lituaniens ne disposent pas de leurs bonus de proximité habituels, mais gagnent un bonus de proximité équivalent à l’Attrait de la case sur lequel ils sont. Les Quartiers ne détruisent pas les [ICON_Terrain] Caractéristiques de terrain récoltables sur lesquelles ils sont placés.[NEWLINE][NEWLINE]Une fois que le dogme “Mysticisme” est recherché, les Villes Lituaniennes génèrent tous les tours +1 [ICON_Gold] Or et [ICON_Faith] Foi par [ICON_Citizen] Habitant dans les villes n’étant pas convertie à la religion fondée de la Lituanie. (Fonctionne même sans fonder de religion). Effet doublé si la Lituanie a fondé une [ICON_Religion] religion.
+				Les [ICON_District] Quartiers Lituaniens ne disposent pas de leurs bonus de proximité habituels, mais gagnent un bonus de proximité équivalent à l’Attrait de la case sur lequel ils sont. Les Quartiers ne détruisent pas les [ICON_Terrain] Caractéristiques de terrain récoltables sur lesquelles ils sont placés.[NEWLINE][NEWLINE]Une fois que le dogme “Mysticisme” est recherché, les Villes Lituaniennes génèrent tous les tours +0.5 [ICON_Gold] Or et [ICON_Faith] Foi par [ICON_Citizen] Habitant dans les villes n’étant pas convertie à la religion fondée de la Lituanie. (Fonctionne même sans fonder de religion). Effet doublé si la Lituanie a fondé une [ICON_Religion] religion.
 			</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_LANDOWNER_NAME" Language="en_US">
