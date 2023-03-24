@@ -8,7 +8,8 @@ INSERT INTO Types
 VALUES	    ('DISTRICT_RWB_PILIAKALNIS',		            'KIND_DISTRICT'),
             ('MODIFIER_RWB_PILIAKALNIS_FAITH_YIELD1',		'KIND_MODIFIER'),
             ('MODIFIER_RWB_PILIAKALNIS_FAITH_YIELD3',		'KIND_MODIFIER'),
-            ('MODIFIER_RWB_PILIAKALNIS_FAITH_YIELD5',		'KIND_MODIFIER');
+            ('MODIFIER_RWB_PILIAKALNIS_FAITH_YIELD5',		'KIND_MODIFIER'),
+            ('MODIFIER_RWB_PILIAKALNIS_FAITH_YIELD7',		'KIND_MODIFIER');
 
 -----------------------------------------------	
 -- Districts
@@ -61,8 +62,8 @@ SELECT
     PrereqCivic, -- PrereqCivic
 
     Cost/'2', -- Cost
-    CostProgressionModel, -- CostProgressionModel
-    CostProgressionParam1, -- CostProgressionParam1
+    'COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH', -- CostProgressionModel
+    '40', -- CostProgressionParam1
     Maintenance, -- Maintenance
 
     HitPoints, -- HitPoints
@@ -169,10 +170,6 @@ FROM District_TradeRouteYields WHERE DistrictType = 'DISTRICT_PRESERVE';
 -- DynamicModifiers
 -----------------------------------------------	
 
-/*INSERT INTO DynamicModifiers    
-    (ModifierType,                                CollectionType,                   EffectType                              )    VALUES
-    ('MODIFIER_RWB_PILIAKALNIS_FAITH_YIELD',    'COLLECTION_PLAYER_DISTRICTS',    'MODIFIER_PLAYER_DISTRICT_ADJUST_BASE_YIELD_CHANGE'    );*/
-
 -----------------------------------------------	
 -- TraitModifiers cuz sometimes, fuck.
 -----------------------------------------------	
@@ -187,11 +184,15 @@ INSERT INTO Modifiers
 VALUES	    ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD1',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS1'),
             ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD3',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS3'),
             ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD5',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS5'),
+            ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD7',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS7'),
 
             ('RWB_PILIAKALNIS_OWN_FAITH_YIELD1',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS1'),
             ('RWB_PILIAKALNIS_OWN_FAITH_YIELD3',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS3'),
-            ('RWB_PILIAKALNIS_OWN_FAITH_YIELD5',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS5')
+            ('RWB_PILIAKALNIS_OWN_FAITH_YIELD5',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS5'),
+            ('RWB_PILIAKALNIS_OWN_FAITH_YIELD7',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS7')
             ;
+
+
 
 -----------------------------------------------	   
 -- DistrictModifiers
@@ -201,7 +202,8 @@ INSERT INTO DistrictModifiers
                 (DistrictType,                  ModifierId)
 VALUES          ('DISTRICT_RWB_PILIAKALNIS',      'RWB_PILIAKALNIS_OWN_FAITH_YIELD1'),
                 ('DISTRICT_RWB_PILIAKALNIS',      'RWB_PILIAKALNIS_OWN_FAITH_YIELD3'),
-                ('DISTRICT_RWB_PILIAKALNIS',      'RWB_PILIAKALNIS_OWN_FAITH_YIELD5')
+                ('DISTRICT_RWB_PILIAKALNIS',      'RWB_PILIAKALNIS_OWN_FAITH_YIELD5'),
+                ('DISTRICT_RWB_PILIAKALNIS',      'RWB_PILIAKALNIS_OWN_FAITH_YIELD7')
                 ;
 
 
@@ -216,7 +218,9 @@ VALUES	    ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD1',	        'YieldType',            
             ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD3',	        'YieldType',                    'YIELD_FAITH'),
             ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD3',	        'Amount',                       '1'),
             ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD5',	        'YieldType',                    'YIELD_FAITH'),
-            ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD5',	        'Amount',                       '1')
+            ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD5',	        'Amount',                       '1'),
+            ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD7',	        'YieldType',                    'YIELD_FAITH'),
+            ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD7',	        'Amount',                       '1')
             ;
 
 -----------------------------------------------	
@@ -243,8 +247,8 @@ VALUES	   ('RWB_DIEVDIRBIAI_ALLOW_WOODS_DISTRICT_RWB_PILIAKALNIS',		            
 
 
 INSERT INTO District_BuildChargeProductions
-(DistrictType,                          UnitType,                                       PercentProductionPerCharge)
-VALUES      ('DISTRICT_RWB_PILIAKALNIS',                  'UNIT_RWB_DIEVDIRBYS',      100);
+(DistrictType,                                          UnitType,                               PercentProductionPerCharge)
+VALUES      ('DISTRICT_RWB_PILIAKALNIS',                  'UNIT_RWB_LANDOWNER',                 100);
 -----------------------------------------------	
 -- RequirementSets
 -----------------------------------------------	
@@ -254,10 +258,12 @@ INSERT INTO RequirementSets
 VALUES	    ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS1',        'REQUIREMENTSET_TEST_ALL'),
             ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS3',        'REQUIREMENTSET_TEST_ALL'),
             ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS5',        'REQUIREMENTSET_TEST_ALL'),
+            ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS7',        'REQUIREMENTSET_TEST_ALL'),
 
             ('REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS1',           'REQUIREMENTSET_TEST_ALL'),
             ('REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS3',           'REQUIREMENTSET_TEST_ALL'),
-            ('REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS5',           'REQUIREMENTSET_TEST_ALL')
+            ('REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS5',           'REQUIREMENTSET_TEST_ALL'),
+            ('REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS7',           'REQUIREMENTSET_TEST_ALL')
 			;
 
 -----------------------------------------------	
@@ -265,7 +271,7 @@ VALUES	    ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS1',        'REQUIREMENTS
 -----------------------------------------------	
 
 INSERT INTO RequirementSetRequirements
-                (RequirementSetId,								             RequirementId)
+                (RequirementSetId,								                        RequirementId)
 VALUES	        ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS1',		                'RWB_VYTAUTAS_REQUIRES_PLOT_ADJACENT_TO_PILIAKALNIS'),
                 ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS1',		                'RWB_VYTAUTAS_REQUIRES_APPEAL_1_OR_MORE'),
                 ('REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS1',		                    'RWB_VYTAUTAS_REQUIRES_APPEAL_1_OR_MORE'),
@@ -276,7 +282,11 @@ VALUES	        ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS1',		               
                 
                 ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS5',		                'RWB_VYTAUTAS_REQUIRES_PLOT_ADJACENT_TO_PILIAKALNIS'),
                 ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS5',		                'RWB_VYTAUTAS_REQUIRES_APPEAL_5_OR_MORE'),
-                ('REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS5',		                    'RWB_VYTAUTAS_REQUIRES_APPEAL_5_OR_MORE')
+                ('REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS5',		                    'RWB_VYTAUTAS_REQUIRES_APPEAL_5_OR_MORE'),
+
+                ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS7',		                'RWB_VYTAUTAS_REQUIRES_PLOT_ADJACENT_TO_PILIAKALNIS'),
+                ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS7',		                'RWB_VYTAUTAS_REQUIRES_APPEAL_7_OR_MORE'),
+                ('REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS7',		                    'RWB_VYTAUTAS_REQUIRES_APPEAL_7_OR_MORE')
                 ;
 	
 -----------------------------------------------	
@@ -288,7 +298,8 @@ INSERT INTO Requirements
 VALUES	        ('RWB_VYTAUTAS_REQUIRES_PLOT_ADJACENT_TO_PILIAKALNIS',	 'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES'),
                 ('RWB_VYTAUTAS_REQUIRES_APPEAL_1_OR_MORE',		         'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN'),
                 ('RWB_VYTAUTAS_REQUIRES_APPEAL_3_OR_MORE',		         'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN'),
-                ('RWB_VYTAUTAS_REQUIRES_APPEAL_5_OR_MORE',		         'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN')
+                ('RWB_VYTAUTAS_REQUIRES_APPEAL_5_OR_MORE',		         'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN'),
+                ('RWB_VYTAUTAS_REQUIRES_APPEAL_7_OR_MORE',		         'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN')
                 ;
 
 -----------------------------------------------	
@@ -300,5 +311,28 @@ INSERT INTO RequirementArguments
 VALUES	        ('RWB_VYTAUTAS_REQUIRES_PLOT_ADJACENT_TO_PILIAKALNIS',	 'DistrictType',                        'DISTRICT_RWB_PILIAKALNIS'),
                 ('RWB_VYTAUTAS_REQUIRES_APPEAL_1_OR_MORE',		         'MinimumAppeal',                       '1'),
                 ('RWB_VYTAUTAS_REQUIRES_APPEAL_3_OR_MORE',		         'MinimumAppeal',                       '3'),
-                ('RWB_VYTAUTAS_REQUIRES_APPEAL_5_OR_MORE',		         'MinimumAppeal',                       '5')
+                ('RWB_VYTAUTAS_REQUIRES_APPEAL_5_OR_MORE',		         'MinimumAppeal',                       '5'),
+                ('RWB_VYTAUTAS_REQUIRES_APPEAL_7_OR_MORE',		         'MinimumAppeal',                       '7')
                 ;
+
+-----------------------------------------------	
+-- Great Work Slots
+-----------------------------------------------	
+
+INSERT INTO Types
+(Type,      Kind) 
+VALUES  ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS','KIND_MODIFIER');
+
+INSERT INTO	TraitModifiers
+(TraitType,											ModifierId								)
+VALUES	 ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS');
+
+INSERT INTO Modifiers
+(ModifierId, ModifierType)
+VALUES ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS','MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS');
+
+INSERT INTO ModifierArguments
+        (ModifierId,                                                    Name,               Value)
+VALUES  ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS',        'DistrictType',     'DISTRICT_RWB_PILIAKALNIS'),
+        ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS',        'GreatWorkSlotType','GREATWORKSLOT_PALACE'),
+        ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS',        'Amount',           '2');

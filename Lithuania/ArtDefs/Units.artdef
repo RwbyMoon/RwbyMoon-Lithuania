@@ -228,7 +228,7 @@
 										<m_ParamName text="Count"/>
 									</Element>
 									<Element class="AssetObjects..ArtDefReferenceValue">
-										<m_ElementName text="Dievdirbys"/>
+										<m_ElementName text="Landowner"/>
 										<m_RootCollectionName text="UnitMemberTypes"/>
 										<m_ArtDefPath text="Units.artdef"/>
 										<m_CollectionIsLocked>true</m_CollectionIsLocked>
@@ -277,7 +277,7 @@
 						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
 					</Element>
 				</m_ChildCollections>
-				<m_Name text="UNIT_RWB_DIEVDIRBYS"/>
+				<m_Name text="UNIT_RWB_LANDOWNER"/>
 				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
 			</Element>
 		</Element>
@@ -728,7 +728,7 @@
 						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
 					</Element>
 				</m_ChildCollections>
-				<m_Name text="UNIT_RWB_DIEVDIRBYS"/>
+				<m_Name text="UNIT_RWB_LANDOWNER"/>
 				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
 			</Element>
 			<Element>
@@ -1740,7 +1740,7 @@
 						</Element>
 					</Element>
 				</m_ChildCollections>
-				<m_Name text="Dievdirbys"/>
+				<m_Name text="Landowner"/>
 				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
 			</Element>
 		</Element>

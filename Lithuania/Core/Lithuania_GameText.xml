@@ -337,65 +337,32 @@
 		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_1" Language="en_US">
 			<Text>János</Text>
 		</Row>
-		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_1" Language="fr_FR">
-			<Text>János</Text>
-		</Row>
 		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_2" Language="en_US">
-			<Text>László</Text>
-		</Row>
-		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_2" Language="fr_FR">
 			<Text>László</Text>
 		</Row>
 		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_3" Language="en_US">
 			<Text>Miklós</Text>
 		</Row>
-		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_3" Language="fr_FR">
-			<Text>Miklós</Text>
-		</Row>
 		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_4" Language="en_US">
-			<Text>Péter</Text>
-		</Row>
-		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_4" Language="fr_FR">
 			<Text>Péter</Text>
 		</Row>
 		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_5" Language="en_US">
 			<Text>István</Text>
 		</Row>
-		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_5" Language="fr_FR">
-			<Text>István</Text>
-		</Row>
 		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_6" Language="en_US">
-			<Text>György</Text>
-		</Row>
-		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_6" Language="fr_FR">
 			<Text>György</Text>
 		</Row>
 		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_7" Language="en_US">
 			<Text>Jakab</Text>
 		</Row>
-		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_7" Language="fr_FR">
-			<Text>Jakab</Text>
-		</Row>
 		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_8" Language="en_US">
-			<Text>András</Text>
-		</Row>
-		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_8" Language="fr_FR">
 			<Text>András</Text>
 		</Row>
 		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_9" Language="en_US">
 			<Text>Mihály</Text>
 		</Row>
-		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_9" Language="fr_FR">
-			<Text>Mihály</Text>
-		</Row>
 		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_10" Language="en_US">
 			<Text>Žydrūnas</Text>
-		</Row>
-		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MALE_10" Language="fr_FR">
-			<Text>Žydrūnas</Text>
-		</Row>
-		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_1" Language="en_US">
-			<Text>Filip</Text>
 		</Row>
 		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_1" Language="en_US">
 			<Text>Filip</Text>
