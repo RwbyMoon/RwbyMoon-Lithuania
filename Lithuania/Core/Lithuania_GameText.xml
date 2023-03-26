@@ -26,10 +26,10 @@
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_NAME" Language="en_US">
-			<Text>Dievirbiai</Text>
+			<Text>Dievdirbiai</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_NAME" Language="fr_FR">
-			<Text>Dievirbiai</Text>
+			<Text>Dievdirbiai</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="en_US">
 			<Text>
@@ -48,10 +48,10 @@
 			<Text>Seigneur</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="en_US">
-			<Text>Unique Lithuanian civilian unit that can only be purchased with [ICON_Faith] Faith in the Capital or a possessed original Capital. can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal.</Text>
+			<Text>Unique Lithuanian civilian unit that can only be purchased with [ICON_Faith] Faith in the Capital or a possessed original Capital. can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal.[NEWLINE][NEWLINE]Includes :[NEWLINE]• Piliakalnis (Preserve)[NEWLINE]• Holy Site[NEWLINE]• Theater Square[NEWLINE]• Entertainment Complex[NEWLINE]• Water Park[NEWLINE]• Dam[NEWLINE]• Canal</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="fr_FR">
-			<Text>Unité civile Lituanienne unique qui ne peut être qu'être achetée avec de la [ICON_Faith] Foi dans sa Capitale ou une Capitale originelle. Peut utiliser sa [ICON_Charges] Charge de Construction pour achever la construction d'un [ICON_District] Quartier positif en attrait.</Text>
+			<Text>Unité civile Lituanienne unique qui ne peut être qu'être achetée avec de la [ICON_Faith] Foi dans sa Capitale ou une Capitale originelle. Peut utiliser sa [ICON_Charges] Charge de Construction pour achever la construction d'un [ICON_District] Quartier positif en attrait.[NEWLINE][NEWLINE]Inclut :[NEWLINE]• Piliakalnis (Réserve)[NEWLINE]• Lieu Saint[NEWLINE]• Place du Théâtre[NEWLINE]• Complexe de Loisir[NEWLINE]• Parc Aquatique[NEWLINE]• Barrage[NEWLINE]• Canal</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="en_US">
 			<Text>A unique civilian unit</Text>
@@ -118,12 +118,12 @@
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian unique district that replaces the Preserve, that cannot be placed adjacent to City-Center.[NEWLINE][NEWLINE]• Units up to 4 tiles from a Piliakalnis gain +3 [ICON_Strength] Combat or [ICON_Religion] Religious Strength.[NEWLINE]• This District and all those adjacent to it generate [ICON_Faith] Faith equal to 50% of the Appeal of their tiles.[NEWLINE]• +1 Appeal on adjacent tiles[NEWLINE]• Causes a Cultural Bomb able to claim other civilizations tiles.[NEWLINE][NEWLINE]Can hold up to 2 [ICON_GreatWork_Religious] Great Works of any type.
+				Lithuanian unique district that replaces the Preserve, that cannot be placed adjacent to City-Center.[NEWLINE][NEWLINE]• Units up to 4 tiles from a Piliakalnis gain +3 [ICON_Strength] Combat or [ICON_Religion] Religious Strength.[NEWLINE]• This District and all those adjacent to it generate [ICON_Faith] Faith equal to 50% of the Appeal of their tiles.[NEWLINE]• +1 Appeal on adjacent tiles[NEWLINE]• Causes a Cultural Bomb able to claim other civilizations tiles.[NEWLINE][NEWLINE]Groves built in a Piliakalnis can hold up to 2 [ICON_GreatWork_Religious] Great Works of any type.
 			</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Remplacement unique de la Réserve (donc impossible à placer adjacent au Centre-Ville).[NEWLINE][NEWLINE] • Les Unités jusqu’à 4 cases d’un Piliakalnis gagnent +3 Puissance de [ICON_Strength] Combat ou [ICON_Religion] Religieuse.[NEWLINE] • Ce [ICON_District] Quartier et ceux qui lui sont adjacents génèrent de la [ICON_Faith] Foi équivalente à 50% de l’Attrait de leur case.[NEWLINE] • +1 Attrait sur ses cases adjacentes.[NEWLINE] • Cause une Bombe Culturelle, capable de capturer des cases d’autres civilisations.[NEWLINE][NEWLINE] Possède 2 [ICON_GreatWork_Religious] Emplacement d'Oeuvres d’Art de n’importe quel type.
+				Remplacement unique de la Réserve (donc impossible à placer adjacent au Centre-Ville).[NEWLINE][NEWLINE] • Les Unités jusqu’à 4 cases d’un Piliakalnis gagnent +3 Puissance de [ICON_Strength] Combat ou [ICON_Religion] Religieuse.[NEWLINE] • Ce [ICON_District] Quartier et ceux qui lui sont adjacents génèrent de la [ICON_Faith] Foi équivalente à 50% de l’Attrait de leur case.[NEWLINE] • +1 Attrait sur ses cases adjacentes.[NEWLINE] • Cause une Bombe Culturelle, capable de capturer des cases d’autres civilisations.[NEWLINE][NEWLINE]Les Bosquets construits dans un Piliakalnis possèdent 2 [ICON_GreatWork_Religious] Emplacement d'Oeuvres d’Art de n’importe quel type.
 			</Text>
 		</Row>
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_NAME" Language="en_US">
