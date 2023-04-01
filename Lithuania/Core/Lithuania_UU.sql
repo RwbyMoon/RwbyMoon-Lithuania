@@ -2,7 +2,7 @@
 -- Types
 -----------------------------------------------	
 
-INSERT INTO Types
+INSERT OR REPLACE INTO Types
 		(Type,								            Kind)
 VALUES	('UNIT_RWB_VYTIS',						        'KIND_UNIT');
 
@@ -10,7 +10,7 @@ VALUES	('UNIT_RWB_VYTIS',						        'KIND_UNIT');
 -- Units
 -----------------------------------------------	
 
-INSERT INTO Units (
+INSERT OR REPLACE INTO Units (
 		UnitType,
 		Name,
 		Description,
@@ -66,7 +66,7 @@ VALUES      ('UNIT_RWB_VYTIS',
 -- UnitReplaces
 -----------------------------------------------	
 
-INSERT INTO UnitReplaces
+INSERT OR REPLACE INTO UnitReplaces
 (CivUniqueUnitType,											ReplacesUnitType)
 VALUES	('UNIT_RWB_VYTIS',						                    'UNIT_HORSEMAN');
 
@@ -75,7 +75,7 @@ VALUES	('UNIT_RWB_VYTIS',						                    'UNIT_HORSEMAN');
 -- UnitUpgrades
 -----------------------------------------------	
 
-INSERT INTO UnitUpgrades
+INSERT OR REPLACE INTO UnitUpgrades
         (Unit,										UpgradeUnit)
 VALUES	('UNIT_RWB_VYTIS',						    'UNIT_CAVALRY');
 
@@ -83,7 +83,7 @@ VALUES	('UNIT_RWB_VYTIS',						    'UNIT_CAVALRY');
 -- UnitAiInfos
 -----------------------------------------------	
 
-INSERT INTO UnitAiInfos
+INSERT OR REPLACE INTO UnitAiInfos
         (UnitType,									AiType)
 VALUES	('UNIT_RWB_VYTIS',						    'UNITAI_COMBAT'),
         ('UNIT_RWB_VYTIS',						    'UNITAI_EXPLORE'),
@@ -95,17 +95,17 @@ VALUES	('UNIT_RWB_VYTIS',						    'UNITAI_COMBAT'),
 -- TypeTags
 -----------------------------------------------	
 
-INSERT INTO TypeTags
+INSERT OR REPLACE INTO TypeTags
         (Type,									    Tag)
 VALUES	('UNIT_RWB_VYTIS',						    'CLASS_LIGHT_CAVALRY'),
         ('UNIT_RWB_VYTIS',						    'CLASS_RWB_LEITIS'),
         ('ABILITY_RWB_LEITIS',						'CLASS_RWB_LEITIS');
 
-INSERT INTO Tags
+INSERT OR REPLACE INTO Tags
 (Tag,									            Vocabulary)
 VALUES	('CLASS_RWB_LEITIS',						        'ABILITY_CLASS');
 
-INSERT INTO Types
+INSERT OR REPLACE INTO Types
         (Type,									            Kind)
 VALUES	('ABILITY_RWB_LEITIS',						        'KIND_ABILITY');
 
@@ -113,12 +113,12 @@ VALUES	('ABILITY_RWB_LEITIS',						        'KIND_ABILITY');
 -- UnitAbilities
 -----------------------------------------------	
 
-INSERT INTO UnitAbilities
+INSERT OR REPLACE INTO UnitAbilities
         (UnitAbilityType,									 Name,                                   Description)
 VALUES	('ABILITY_RWB_LEITIS',						        'LOC_ABILITY_RWB_LEITIS_NAME',          'LOC_ABILITY_RWB_LEITIS_DESCRIPTION');
 
 
-INSERT INTO UnitAbilityModifiers
+INSERT OR REPLACE INTO UnitAbilityModifiers
         (UnitAbilityType,								            ModifierId)
 VALUES	('ABILITY_RWB_LEITIS',						                'RWB_LEITIS_NO_REDUCTION'),
         ('ABILITY_RWB_LEITIS',						                'RWB_LEITIS_STRENGTH');
@@ -127,19 +127,19 @@ VALUES	('ABILITY_RWB_LEITIS',						                'RWB_LEITIS_NO_REDUCTION'),
 -- Modifiers
 -----------------------------------------------	
 
-INSERT INTO Modifiers
+INSERT OR REPLACE INTO Modifiers
         (ModifierId,							ModifierType,                                           SubjectRequirementSetId)
 VALUES	('RWB_LEITIS_NO_REDUCTION',				'MODIFIER_PLAYER_UNIT_ADJUST_NO_REDUCTION_DAMAGE',      'UNIT_ADJACENT_TO_GREAT_GENERAL_REQUIREMENTS'),
         ('RWB_LEITIS_STRENGTH',					'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                 'COSSACK_PLOT_IS_OWNER_OR_ADJACENT_REQUIREMENTS');
 
 
-INSERT INTO ModifierArguments
+INSERT OR REPLACE INTO ModifierArguments
         (ModifierId,							Name,                                           Value)
 VALUES	('RWB_LEITIS_NO_REDUCTION',				'NoReduction',                                  'True'),
         ('RWB_LEITIS_STRENGTH',					'Value',                                        '5');
 
 
-INSERT INTO ModifierStrings
+INSERT OR REPLACE INTO ModifierStrings
         (ModifierId,							Context,                                Text)
 VALUES	('RWB_LEITIS_STRENGTH',				    'Preview',                              'LOC_ABILITY_RWB_LEITIS_DEFIANCE_DESCRIPTION'),
         ('RWB_LEITIS_NO_REDUCTION',				'Preview',                              'LOC_ABILITY_RWB_LEITIS_NO_REDUCTION_DESCRIPTION');

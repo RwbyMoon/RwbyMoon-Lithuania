@@ -10,7 +10,7 @@
 
 CREATE TABLE IF NOT EXISTS StartPosition (MapName TEXT, Civilization TEXT, Leader TEXT, X INT default 0, Y INT default 0);
 
-INSERT INTO StartPosition
+INSERT OR REPLACE INTO StartPosition
         (Civilization,                 Leader,                MapName,            X,        Y)
 VALUES  ('CIVILIZATION_RWB_LITHUANIA',    'LEADER_RWB_VYTAUTAS',        'GiantEarth',        29,        75),
         ('CIVILIZATION_RWB_LITHUANIA',    'LEADER_RWB_VYTAUTAS',        'FiraxisTSL',        43,        47),

@@ -3,7 +3,7 @@
 -----------------------------------------------	
 
 
-INSERT INTO Types
+INSERT OR REPLACE INTO Types
             (Type,								            Kind)
 VALUES	    ('DISTRICT_RWB_PILIAKALNIS',		            'KIND_DISTRICT'),
             ('MODIFIER_RWB_PILIAKALNIS_FAITH_YIELD1',		'KIND_MODIFIER'),
@@ -15,7 +15,7 @@ VALUES	    ('DISTRICT_RWB_PILIAKALNIS',		            'KIND_DISTRICT'),
 -- Districts
 -----------------------------------------------	
 
-INSERT INTO Districts
+INSERT OR REPLACE INTO Districts
 (
     DistrictType,
     Name,
@@ -93,13 +93,13 @@ FROM Districts WHERE DistrictType = 'DISTRICT_PRESERVE';
 -- DistrictReplaces
 -----------------------------------------------	
 
-INSERT INTO DistrictReplaces
+INSERT OR REPLACE INTO DistrictReplaces
 			(CivUniqueDistrictType,								ReplacesDistrictType)
 VALUES	    ('DISTRICT_RWB_PILIAKALNIS',		                'DISTRICT_PRESERVE');
 
 -- Preserve Buildings require the replacement to be added in Adjacent_AppealYieldChanges for their tile bonuses to work
 
-INSERT INTO Adjacent_AppealYieldChanges
+INSERT OR REPLACE INTO Adjacent_AppealYieldChanges
 			(DistrictType, 
 			 YieldType, 
 			 MaximumValue, 
@@ -125,7 +125,7 @@ FROM Adjacent_AppealYieldChanges WHERE DistrictType = 'DISTRICT_PRESERVE';
 -- District_Adjacencies
 -----------------------------------------------	
 
-INSERT INTO District_Adjacencies
+INSERT OR REPLACE INTO District_Adjacencies
             (DistrictType,
             YieldChangeId)
 SELECT	    'DISTRICT_RWB_PILIAKALNIS',
@@ -136,7 +136,7 @@ FROM District_Adjacencies WHERE DistrictType = 'DISTRICT_PRESERVE';
 -- District_GreatPersonPoints
 -----------------------------------------------	
 
-INSERT INTO District_GreatPersonPoints
+INSERT OR REPLACE INTO District_GreatPersonPoints
             (DistrictType,
             GreatPersonClassType,
             PointsPerTurn)
@@ -149,7 +149,7 @@ FROM District_GreatPersonPoints WHERE DistrictType = 'DISTRICT_PRESERVE';
 -- District_TradeRouteYields
 -----------------------------------------------	
 
-INSERT INTO District_TradeRouteYields
+INSERT OR REPLACE INTO District_TradeRouteYields
             (DistrictType,							
              YieldType,           
              YieldChangeAsOrigin,        
@@ -179,7 +179,7 @@ FROM District_TradeRouteYields WHERE DistrictType = 'DISTRICT_PRESERVE';
 -----------------------------------------------	
 
 --Appeal Yields
-INSERT INTO Modifiers
+INSERT OR REPLACE INTO Modifiers
             (ModifierId,						ModifierType,                                           		  SubjectRequirementSetId                )
 VALUES	    ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD1',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS1'),
             ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD3',	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS3'),
@@ -198,7 +198,7 @@ VALUES	    ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD1',	'MODIFIER_PLAYER_DISTRICTS_ADJUS
 -- DistrictModifiers
 -----------------------------------------------	
 
-INSERT INTO DistrictModifiers
+INSERT OR REPLACE INTO DistrictModifiers
                 (DistrictType,                  ModifierId)
 VALUES          ('DISTRICT_RWB_PILIAKALNIS',      'RWB_PILIAKALNIS_OWN_FAITH_YIELD1'),
                 ('DISTRICT_RWB_PILIAKALNIS',      'RWB_PILIAKALNIS_OWN_FAITH_YIELD3'),
@@ -211,7 +211,7 @@ VALUES          ('DISTRICT_RWB_PILIAKALNIS',      'RWB_PILIAKALNIS_OWN_FAITH_YIE
 -- ModifierArguments
 -----------------------------------------------	
 
-INSERT INTO ModifierArguments
+INSERT OR REPLACE INTO ModifierArguments
             (ModifierId,					            Name,                           Value)
 VALUES	    ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD1',	        'YieldType',                    'YIELD_FAITH'),
             ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD1',	        'Amount',                       '1'),
@@ -227,7 +227,7 @@ VALUES	    ('RWB_PILIAKALNIS_ADJ_FAITH_YIELD1',	        'YieldType',            
 -- For CivAbility of placable on features
 -----------------------------------------------	
 
-INSERT INTO	TraitModifiers
+INSERT OR REPLACE INTO	TraitModifiers
 (TraitType,											ModifierId								)
 VALUES	 ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_WOODS_DISTRICT_RWB_PILIAKALNIS'				),
     	 ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_JUNGLE_DISTRICT_RWB_PILIAKALNIS'			),
@@ -236,7 +236,7 @@ VALUES	 ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_WOODS_DIS
     	 ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_GRASSLAND_DISTRICT_RWB_PILIAKALNIS'),
     	 ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_PLAINS_DISTRICT_RWB_PILIAKALNIS'	);
 
-INSERT INTO Modifiers
+INSERT OR REPLACE INTO Modifiers
 (ModifierId,												                            ModifierType)
 VALUES	   ('RWB_DIEVDIRBIAI_ALLOW_WOODS_DISTRICT_RWB_PILIAKALNIS',		                'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT'),
            ('RWB_DIEVDIRBIAI_ALLOW_JUNGLE_DISTRICT_RWB_PILIAKALNIS',		            'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT'),
@@ -246,14 +246,14 @@ VALUES	   ('RWB_DIEVDIRBIAI_ALLOW_WOODS_DISTRICT_RWB_PILIAKALNIS',		            
            ('RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_PLAINS_DISTRICT_RWB_PILIAKALNIS',		'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT');
 
 
-INSERT INTO District_BuildChargeProductions
+INSERT OR REPLACE INTO District_BuildChargeProductions
 (DistrictType,                                          UnitType,                               PercentProductionPerCharge)
 VALUES      ('DISTRICT_RWB_PILIAKALNIS',                  'UNIT_RWB_LANDOWNER',                 100);
 -----------------------------------------------	
 -- RequirementSets
 -----------------------------------------------	
 
-INSERT INTO RequirementSets
+INSERT OR REPLACE INTO RequirementSets
             (RequirementSetId,                                      RequirementSetType)
 VALUES	    ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS1',        'REQUIREMENTSET_TEST_ALL'),
             ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS3',        'REQUIREMENTSET_TEST_ALL'),
@@ -270,7 +270,7 @@ VALUES	    ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS1',        'REQUIREMENTS
 -- RequirementSetRequirements
 -----------------------------------------------	
 
-INSERT INTO RequirementSetRequirements
+INSERT OR REPLACE INTO RequirementSetRequirements
                 (RequirementSetId,								                        RequirementId)
 VALUES	        ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS1',		                'RWB_VYTAUTAS_REQUIRES_PLOT_ADJACENT_TO_PILIAKALNIS'),
                 ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS1',		                'RWB_VYTAUTAS_REQUIRES_APPEAL_1_OR_MORE'),
@@ -293,7 +293,7 @@ VALUES	        ('REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS1',		               
 -- Requirements
 -----------------------------------------------	
 
-INSERT INTO Requirements
+INSERT OR REPLACE INTO Requirements
                 (RequirementId,								             RequirementType)
 VALUES	        ('RWB_VYTAUTAS_REQUIRES_PLOT_ADJACENT_TO_PILIAKALNIS',	 'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES'),
                 ('RWB_VYTAUTAS_REQUIRES_APPEAL_1_OR_MORE',		         'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN'),
@@ -306,7 +306,7 @@ VALUES	        ('RWB_VYTAUTAS_REQUIRES_PLOT_ADJACENT_TO_PILIAKALNIS',	 'REQUIREM
 -- RequirementArguments
 -----------------------------------------------	
 
-INSERT INTO RequirementArguments
+INSERT OR REPLACE INTO RequirementArguments
                 (RequirementId,								             Name,                                  Value)
 VALUES	        ('RWB_VYTAUTAS_REQUIRES_PLOT_ADJACENT_TO_PILIAKALNIS',	 'DistrictType',                        'DISTRICT_RWB_PILIAKALNIS'),
                 ('RWB_VYTAUTAS_REQUIRES_APPEAL_1_OR_MORE',		         'MinimumAppeal',                       '1'),
@@ -319,19 +319,19 @@ VALUES	        ('RWB_VYTAUTAS_REQUIRES_PLOT_ADJACENT_TO_PILIAKALNIS',	 'District
 -- Great Work Slots
 -----------------------------------------------	
 
-INSERT INTO Types
+INSERT OR REPLACE INTO Types
 (Type,      Kind) 
 VALUES  ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS','KIND_MODIFIER');
 
-INSERT INTO	TraitModifiers
+INSERT OR REPLACE INTO	TraitModifiers
 (TraitType,											ModifierId								)
 VALUES	 ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS');
 
-INSERT INTO Modifiers
+INSERT OR REPLACE INTO Modifiers
 (ModifierId, ModifierType)
 VALUES ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS','MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS');
 
-INSERT INTO ModifierArguments
+INSERT OR REPLACE INTO ModifierArguments
         (ModifierId,                                                    Name,               Value)
 VALUES  ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS',        'BuildingType',     'BUILDING_GROVE'),
         ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS',        'GreatWorkSlotType','GREATWORKSLOT_PALACE'),

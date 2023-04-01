@@ -3,7 +3,7 @@
 --==========================================================================================================================
 -- LoadingInfo
 -------------------------------------	
-INSERT INTO LoadingInfo	
+INSERT OR REPLACE INTO LoadingInfo	
 		(LeaderType,				BackgroundImage,						ForegroundImage,						PlayDawnOfManAudio)
 VALUES	('LEADER_RWB_VYTAUTAS',	'LEADER_HOJO_BACKGROUND',				'LEADER_MER_YAROSLAV_NEUTRAL',					1);	
 
@@ -12,7 +12,7 @@ VALUES	('LEADER_RWB_VYTAUTAS',	'LEADER_HOJO_BACKGROUND',				'LEADER_MER_YAROSLAV
 --==========================================================================================================================
 -- Types
 -------------------------------------	
-INSERT INTO Types	
+INSERT OR REPLACE INTO Types	
 		(Type,												    Kind)
 VALUES	('LEADER_RWB_VYTAUTAS',									'KIND_LEADER'),
 		('TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS',			'KIND_TRAIT'),	
@@ -36,19 +36,19 @@ VALUES	('TRAIT_LEADER_RWB_UNION_OF_HORODLO',					'LOC_TRAIT_LEADER_RWB_UNION_OF_
 -------------------------------------
 -- Civilizations
 -------------------------------------	
-INSERT INTO Civilizations	
+INSERT OR REPLACE INTO Civilizations	
 		(CivilizationType,					Name,												Description,									Adjective,									StartingCivilizationLevelType,	RandomCityNameDepth)
 VALUES	('CIVILIZATION_RWB_LITHUANIA',	'LOC_CIVILIZATION_RWB_LITHUANIA_NAME',			'LOC_CIVILIZATION_RWB_LITHUANIA_DESCRIPTION',		'LOC_CIVILIZATION_RWB_LITHUANIA_ADJECTIVE',	'CIVILIZATION_LEVEL_FULL_CIV',	'10'     			);	
 -------------------------------------
 -- StartBias
 -------------------------------------	
-INSERT INTO StartBiasFeatures
+INSERT OR REPLACE INTO StartBiasFeatures
 		(CivilizationType,						    FeatureType,							Tier)
 VALUES	('CIVILIZATION_RWB_LITHUANIA',				'FEATURE_FOREST',						'1'	);
 ----------------------------------------------------------------------------------------------------------------------------			
 -- CityNames			
 ----------------------------------------------------------------------------------------------------------------------------		
-INSERT INTO CityNames	
+INSERT OR REPLACE INTO CityNames	
 		(CivilizationType,			    CityName)	
 VALUES	('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_1'),	
 		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_2'),	
@@ -83,7 +83,7 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_1'),
 ----------------------------------------------------------------------------------------------------------------------------
 -- CivilizationCitizenNames
 ----------------------------------------------------------------------------------------------------------------------------	
-INSERT INTO CivilizationCitizenNames	
+INSERT OR REPLACE INTO CivilizationCitizenNames	
 		(CivilizationType,			CitizenName,								Female,		Modern)
 VALUES	('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_1',				0,			0),
 		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_2',				0,			0),
@@ -128,25 +128,25 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_1',				0,	
 -------------------------------------
 -- Leaders
 -------------------------------------	
-INSERT INTO Leaders	
+INSERT OR REPLACE INTO Leaders	
 		(LeaderType,					Name,												InheritFrom,		SceneLayers)
 VALUES	('LEADER_RWB_VYTAUTAS',		'LOC_LEADER_RWB_VYTAUTAS_NAME',									'LEADER_DEFAULT',	4);	
 -------------------------------------
 -- LeaderQuotes
 -------------------------------------	
-INSERT INTO LeaderQuotes	
+INSERT OR REPLACE INTO LeaderQuotes	
 		(LeaderType,					Quote)
 VALUES	('LEADER_RWB_VYTAUTAS',			'LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_QUOTE');	
 -------------------------------------
 -- LeaderTraits
 -------------------------------------	
-INSERT INTO LeaderTraits	
+INSERT OR REPLACE INTO LeaderTraits	
 		(LeaderType,					TraitType)
 VALUES	('LEADER_RWB_VYTAUTAS',		'TRAIT_LEADER_RWB_UNION_OF_HORODLO');
 -------------------------------------
 -- CivilizationTraits
 -------------------------------------	
-INSERT INTO CivilizationTraits	
+INSERT OR REPLACE INTO CivilizationTraits	
 		(CivilizationType,					TraitType)
 VALUES	('CIVILIZATION_RWB_LITHUANIA',		'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI'),
 		('CIVILIZATION_RWB_LITHUANIA',		'TRAIT_CIVILIZATION_UNIT_RWB_VYTIS'),
@@ -155,7 +155,7 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',		'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI'),
 -------------------------------------
 -- FavoredReligions
 -------------------------------------	
-INSERT INTO FavoredReligions	
+INSERT OR REPLACE INTO FavoredReligions	
 		(LeaderType,				ReligionType)
 VALUES	('LEADER_RWB_VYTAUTAS',			'RELIGION_CATHOLICISM');			
 --==========================================================================================================================
@@ -166,11 +166,11 @@ VALUES	('LEADER_RWB_VYTAUTAS',			'RELIGION_CATHOLICISM');
 -- FEATURES NOT SCRABOUILLED
 -----------------------------------------------
     
-INSERT INTO Types
+INSERT OR REPLACE INTO Types
 (Type,														Kind)
 VALUES	('MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',		'KIND_MODIFIER'); 
 
-INSERT INTO	TraitModifiers
+INSERT OR REPLACE INTO	TraitModifiers
 (TraitType,											                    ModifierId								) 
 SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_WOODS_'||DistrictType						FROM Districts WHERE RequiresPlacement = 1 UNION
 SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_JUNGLE_'||DistrictType						FROM Districts WHERE RequiresPlacement = 1 UNION
@@ -179,11 +179,11 @@ SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAIN
 SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_GRASSLAND_'||DistrictType		FROM Districts WHERE RequiresPlacement = 1 UNION
 SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_PLAINS_'||DistrictType			FROM Districts WHERE RequiresPlacement = 1;
 
-INSERT INTO DynamicModifiers
+INSERT OR REPLACE INTO DynamicModifiers
 (ModifierType,												                    CollectionType,				    EffectType)
 VALUES	('MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',		'COLLECTION_PLAYER_CITIES',	    'EFFECT_ADJUST_VALID_FEATURES_DISTRICTS');
 
-INSERT INTO Modifiers
+INSERT OR REPLACE INTO Modifiers
                 (ModifierId,												               ModifierType,                                                            Permanent)
 SELECT	'RWB_DIEVDIRBIAI_ALLOW_WOODS_'||DistrictType,					'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0		FROM Districts WHERE RequiresPlacement = 1 UNION
 SELECT	'RWB_DIEVDIRBIAI_ALLOW_JUNGLE_'||DistrictType,					'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0		FROM Districts WHERE RequiresPlacement = 1 UNION
@@ -192,7 +192,7 @@ SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_'||DistrictType,			'MODIFIER_RWB_DIEVD
 SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_GRASSLAND_'||DistrictType,	'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0		FROM Districts WHERE RequiresPlacement = 1 UNION
 SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_PLAINS_'||DistrictType,		'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0		FROM Districts WHERE RequiresPlacement = 1;
 
-INSERT INTO ModifierArguments
+INSERT OR REPLACE INTO ModifierArguments
 (ModifierId,												                    Name,				        Value)
 --
 SELECT	'RWB_DIEVDIRBIAI_ALLOW_WOODS_'||DistrictType,					'DistrictType',		DistrictType						    FROM Districts WHERE RequiresPlacement = 1 UNION
@@ -217,7 +217,7 @@ SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_PLAINS_'||DistrictType,		'FeatureType'
 -- PILIAKALNIS YIELDS
 -----------------------------------------------
 
-INSERT INTO	TraitModifiers
+INSERT OR REPLACE INTO	TraitModifiers
 (TraitType,											    ModifierId								)
 
 VALUES	  ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_PILIAKALNIS_ADJ_FAITH_YIELD1'	),
@@ -255,7 +255,7 @@ VALUES  ('LEU_DISABLE_PLANT_FOREST',        'MODIFIER_LEU_CHANGE_UNIT_OPERATION_
         ('LEU_DISABLE_REMOVE_FEATURE',      'MODIFIER_LEU_CHANGE_UNIT_OPERATION_AVAILABILITY');
 
 
-INSERT INTO ModifierArguments
+INSERT OR REPLACE INTO ModifierArguments
 (ModifierId,                        Name,            Value)
 VALUES  ('LEU_DISABLE_PLANT_FOREST',        'OperationType',    'UNITOPERATION_PLANT_FOREST'),
         ('LEU_DISABLE_PLANT_FOREST',        'Available',        0),
@@ -275,37 +275,37 @@ VALUES  ('LEU_DISABLE_PLANT_FOREST',        'OperationType',    'UNITOPERATION_P
 --==========================================================================================================================
 -- Types
 -------------------------------------	
-INSERT INTO Types	
+INSERT OR REPLACE INTO Types	
 		(Type,									            Kind)
 VALUES	('TRAIT_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS',		'KIND_TRAIT');			
 -------------------------------------			
 -- Agendas			
 -------------------------------------				
-INSERT INTO Agendas				
+INSERT OR REPLACE INTO Agendas				
 		(AgendaType,							Name,									Description)
 VALUES	('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS',			'LOC_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_NAME',	'LOC_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_DESCRIPTION');
 -------------------------------------
 -- HistoricalAgendas
 -------------------------------------	
-INSERT INTO HistoricalAgendas
+INSERT OR REPLACE INTO HistoricalAgendas
 (LeaderType,				AgendaType)
 VALUES	('LEADER_RWB_VYTAUTAS',			'AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS');
 -------------------------------------			
 -- Traits			
 -------------------------------------				
-INSERT INTO Traits				
+INSERT OR REPLACE INTO Traits				
 		(TraitType,								Name,					Description)
 VALUES	('TRAIT_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS',		'LOC_PLACEHOLDER',		'LOC_PLACEHOLDER');	
 -------------------------------------			
 -- AgendaTraits			
 -------------------------------------				
-INSERT INTO AgendaTraits				
+INSERT OR REPLACE INTO AgendaTraits				
 		(AgendaType,							TraitType)
 VALUES	('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS',			'TRAIT_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS');	
 -------------------------------------		
 -- TraitModifiers		
 -------------------------------------			
-INSERT INTO TraitModifiers			
+INSERT OR REPLACE INTO TraitModifiers			
 		(TraitType,								ModifierId)
 VALUES	('TRAIT_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS',		'AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_ALLIANCES'),
 		('TRAIT_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS',		'AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_NO_ALLIANCES'),
@@ -314,7 +314,7 @@ VALUES	('TRAIT_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS',		'AGENDA_RWB_LITHUANIAN_CON
 --------------------------------------------------------------------------------------------------------------------------
 -- Modifiers
 --------------------------------------------------------------------------------------------------------------------------
-INSERT INTO Modifiers	
+INSERT OR REPLACE INTO Modifiers	
 		(ModifierId,							ModifierType,										SubjectRequirementSetId)
 VALUES	('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_ALLIANCES',	'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',		'PLAYER_HAS_MANY_ALLIANCES'),
 		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_HIGH_INCOME',	'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',		'PLAYER_HAS_HIGH_INCOME'),
@@ -323,7 +323,7 @@ VALUES	('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_ALLIANCES',	'MODIFIER_PLAYER_DIPLOM
 --------------------------------------------------------------------------------------------------------------------------
 -- ModifierArguments
 --------------------------------------------------------------------------------------------------------------------------  
-INSERT INTO ModifierArguments
+INSERT OR REPLACE INTO ModifierArguments
 		(ModifierId,							Name,							Value,													Extra,				Type)
 VALUES	('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_ALLIANCES',		'InitialValue',					6,														null,				'ARGTYPE_IDENTITY'),
 		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_ALLIANCES',		'StatementKey',					'LOC_DIPLO_KUDOS_LEADER_RWB_VYTAUTAS_REASON_ALLIANCES',	null,				'ARGTYPE_IDENTITY'),
@@ -340,7 +340,7 @@ VALUES	('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_ALLIANCES',		'InitialValue',					6,
 -------------------------------------		
 -- ModifierStrings		
 -------------------------------------			
-INSERT INTO ModifierStrings			
+INSERT OR REPLACE INTO ModifierStrings			
 		(ModifierId,											Context,	Text)
 VALUES	('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_ALLIANCES',		'Sample',	'LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL'),
 		('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_NO_ALLIANCES',		'Sample',	'LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL');	
@@ -349,7 +349,7 @@ VALUES	('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_ALLIANCES',		'Sample',	'LOC_TOOLTIP
 --==========================================================================================================================
 -- CivilizationLeaders
 -------------------------------------	
-INSERT INTO CivilizationLeaders 
+INSERT OR REPLACE INTO CivilizationLeaders 
         (CivilizationType,			LeaderType,		CapitalName)
 VALUES  ('CIVILIZATION_RWB_LITHUANIA',	'LEADER_RWB_VYTAUTAS',	'LOC_CITY_NAME_RWB_LITHUANIA_1');
 --==========================================================================================================================

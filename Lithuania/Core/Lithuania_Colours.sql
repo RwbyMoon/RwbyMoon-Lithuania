@@ -10,7 +10,7 @@ VALUES	('COLOR_PLAYER_RWB_VYTAUTAS_SECONDARY',		'229,224,168,255'),	--#E5E0A8
 -------------------------------------
 -- PlayerColors
 -------------------------------------	
-INSERT INTO PlayerColors
+INSERT OR REPLACE INTO PlayerColors
 		(
 			Type,
 			Usage,
