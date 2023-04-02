@@ -1,4 +1,56 @@
 -----------------------------------------------
+-- FEATURES NOT SCRABOUILLED
+-----------------------------------------------
+
+INSERT OR REPLACE INTO Types
+(Type,														Kind)
+VALUES	('MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',		'KIND_MODIFIER');
+
+INSERT OR REPLACE INTO	TraitModifiers
+(TraitType,											                    ModifierId								)
+SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_WOODS_'||DistrictType						FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_JUNGLE_'||DistrictType						FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_MARSH_'||DistrictType						FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_'||DistrictType					FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_GRASSLAND_'||DistrictType		FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_PLAINS_'||DistrictType			FROM Districts WHERE RequiresPlacement = 1;
+
+INSERT OR REPLACE INTO DynamicModifiers
+(ModifierType,												                    CollectionType,				    EffectType)
+VALUES	('MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',		'COLLECTION_PLAYER_CITIES',	    'EFFECT_ADJUST_VALID_FEATURES_DISTRICTS');
+
+INSERT OR REPLACE INTO Modifiers
+(ModifierId,												               ModifierType,                                                            Permanent)
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_WOODS_'||DistrictType,					'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0		FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_JUNGLE_'||DistrictType,					'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0		FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_MARSH_'||DistrictType,					'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0		FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_'||DistrictType,			'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0	    FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_GRASSLAND_'||DistrictType,	'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0		FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_PLAINS_'||DistrictType,		'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0		FROM Districts WHERE RequiresPlacement = 1;
+
+INSERT OR REPLACE INTO ModifierArguments
+(ModifierId,												                    Name,				        Value)
+--
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_WOODS_'||DistrictType,					'DistrictType',		DistrictType						    FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_WOODS_'||DistrictType,					'FeatureType',		'FEATURE_FOREST'					FROM Districts WHERE RequiresPlacement = 1 UNION
+--
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_JUNGLE_'||DistrictType,					'DistrictType',		DistrictType						    FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_JUNGLE_'||DistrictType,					'FeatureType',		'FEATURE_JUNGLE'					FROM Districts WHERE RequiresPlacement = 1 UNION
+--
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_MARSH_'||DistrictType,					'DistrictType',		DistrictType						    FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_MARSH_'||DistrictType,					'FeatureType',		'FEATURE_MARSH'					FROM Districts WHERE RequiresPlacement = 1 UNION
+--
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_'||DistrictType,			'DistrictType',		DistrictType						    FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_'||DistrictType,			'FeatureType',		'FEATURE_FLOODPLAINS'				FROM Districts WHERE RequiresPlacement = 1 UNION
+--
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_GRASSLAND_'||DistrictType,	'DistrictType',		DistrictType						    FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_GRASSLAND_'||DistrictType,	'FeatureType',		'FEATURE_FLOODPLAINS_GRASSLAND'	FROM Districts WHERE RequiresPlacement = 1 UNION
+--
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_PLAINS_'||DistrictType,		'DistrictType',		DistrictType						    FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_PLAINS_'||DistrictType,		'FeatureType',		'FEATURE_FLOODPLAINS_PLAINS'		FROM Districts WHERE RequiresPlacement = 1;
+
+
+-----------------------------------------------
 -- YIELDS FROM POPULATION
 -----------------------------------------------
 
@@ -90,9 +142,9 @@ VALUES      ('RWB_DIEVDIRBIAI_FAITH_BONUS_BASE',                                
             ('RWB_DIEVDIRBIAI_FAITH_BONUS_BASE',                                     'YieldType',            'YIELD_FAITH'),
             ('RWB_DIEVDIRBIAI_GOLD_BONUS_BASE',                                      'Amount',               '0.5'),
             ('RWB_DIEVDIRBIAI_GOLD_BONUS_BASE',                                      'YieldType',            'YIELD_GOLD'),
-            ('RWB_DIEVDIRBIAI_FAITH_BONUS_RELIGION',                                 'Amount',               '0.5'),
+            ('RWB_DIEVDIRBIAI_FAITH_BONUS_RELIGION',                                 'Amount',               '1'),
             ('RWB_DIEVDIRBIAI_FAITH_BONUS_RELIGION',                                 'YieldType',            'YIELD_FAITH'),
-            ('RWB_DIEVDIRBIAI_GOLD_BONUS_RELIGION',                                  'Amount',               '0.5'),
+            ('RWB_DIEVDIRBIAI_GOLD_BONUS_RELIGION',                                  'Amount',               '1'),
             ('RWB_DIEVDIRBIAI_GOLD_BONUS_RELIGION',                                  'YieldType',            'YIELD_GOLD'),
     
             
@@ -103,9 +155,9 @@ VALUES      ('RWB_DIEVDIRBIAI_FAITH_BONUS_BASE',                                
             ('RWB_DIEVDIRBIAI_GOLD_MALUS_RWB_LEADER_VYTAUTAS_FOUNDER_MODIFIER',                 'ModifierId',           'RWB_DIEVDIRBIAI_GOLD_MALUS_RWB_LEADER_VYTAUTAS'),
             
             
-            ('RWB_DIEVDIRBIAI_FAITH_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',       'Amount',               '-1'),
+            ('RWB_DIEVDIRBIAI_FAITH_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',       'Amount',               '-1.5'),
             ('RWB_DIEVDIRBIAI_FAITH_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',       'YieldType',            'YIELD_FAITH'),
-            ('RWB_DIEVDIRBIAI_GOLD_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',        'Amount',               '-1'),
+            ('RWB_DIEVDIRBIAI_GOLD_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',        'Amount',               '-1.5'),
             ('RWB_DIEVDIRBIAI_GOLD_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',        'YieldType',            'YIELD_GOLD');
 
 			
@@ -152,6 +204,7 @@ INSERT OR REPLACE INTO RequirementArguments
             (RequirementId,                                                 Name,                       Value) 
 VALUES      ('RWB_DIEVDIRBIAI_REQUIRES_CIVIC',                              'CivicType',                'CIVIC_MYSTICISM'),
             ('RWB_DIEVDIRBIAI_REQUIRES_IS_LITHUANIAN_RWB_LEADER_VYTAUTAS',  'CivilizationType',         'CIVILIZATION_RWB_LITHUANIA');
+
 --- Leadertype LEADER_RWB_VYTAUTAS
 
 /*INSERT OR REPLACE INTO BeliefModifiers
@@ -228,15 +281,6 @@ FROM LeaderTraits WHERE LeaderType IN (SELECT LeaderType FROM CivilizationLeader
 
 --- Remove Adjacency for all specialty districts
 
-/*INSERT OR REPLACE INTO Types
-            (Type, Kind)
-VALUES      ('TRAIT_CIVILIZATION_DIEVDIRBIAI_NO_ADJACENCY_TO_ALL',      'KIND_MODIFIER');
-
-INSERT OR REPLACE INTO	TraitModifiers
-(TraitType,											    ModifierId								)
-
-VALUES	  ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'TRAIT_CIVILIZATION_DIEVDIRBIAI_NO_ADJACENCY_TO_ALL'	);*/
-
 INSERT OR REPLACE INTO ExcludedAdjacencies
     (TraitType, YieldChangeId) 
 SELECT 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI', YieldChangeId
@@ -245,13 +289,14 @@ FROM District_Adjacencies WHERE DistrictType IS (SELECT DistrictType FROM Distri
 
 
 -- Adjacency from Appeal on Districts MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_APPEAL
-/*
-INSERT OR REPLACE INTO Types
+
+-- 1 modifier = 1 quartier -> je me base sur le yieldchangeid District_something de DistrictAdjacencies
+
+/*INSERT OR REPLACE INTO Types
             (Type,                                                          Kind)
 SELECT      'TRAIT_CIVILIZATION_DIEVDIRBIAI_'||a.DistrictType||'_GOLD'||b.Size,     'KIND_MODIFIER' 
 FROM Districts a, AppealReference b WHERE a.TraitType IS NULL AND a.RequiresPopulation = 1 AND b.Size > -10;
 
--- 1 modifier = 1 quartier -> je me base sur le yieldchangeid District_something de DistrictAdjacencies
 
 CREATE TABLE IF NOT EXISTS AppealReference
 (
@@ -282,127 +327,3 @@ SELECT	'RWB_PRODUCTION_FROM_'||Size||'_APPEAL',	'P0K_SINGLE_CITY_ADJUST_CITY_YIE
 
 
 DROP TABLE AppealReference;*/
------------------------------------------------
--- LANDOWNER
------------------------------------------------
-
-INSERT OR REPLACE INTO Types
-(Type,					                Kind)
-VALUES	        ('UNIT_RWB_LANDOWNER',	                'KIND_UNIT'),
-                ('ABILITY_RWB_LANDOWNER',				'KIND_ABILITY'	),
-                ('TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK',				'KIND_MODIFIER'	);
-
-INSERT OR REPLACE INTO	TraitModifiers
-(TraitType,											    ModifierId								)
-
-VALUES	  ('TRAIT_CIVILIZATION_RWB_UNIT_LANDOWNER',		'TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK'	);
-
-INSERT OR REPLACE INTO Units
-(UnitType,
- Name,
- Description,
- BaseSightRange,
- BaseMoves,
- Combat,
- RangedCombat,
- Range,
- Bombard,
- Domain,
- FormationClass,
- Cost,
- BuildCharges,
- CanCapture,
- CanRetreatWhenCaptured,
- CostProgressionModel,
- CostProgressionParam1,
- CanTrain,
- PurchaseYield,
- MustPurchase,
- Maintenance,
- AdvisorType,
- PrereqCivic,
- TraitType)
-
-
-VALUES	        ('UNIT_RWB_LANDOWNER',
-                   'LOC_UNIT_RWB_LANDOWNER_NAME',
-                   'LOC_TRAIT_CIVILIZATION_UNIT_RWB_LANDOWNER_DESCRIPTION',
-                   '3',
-                   '4',
-                   '0',
-                   '0',
-                   '0',
-                   '0',
-                   'DOMAIN_LAND',
-                   'FORMATION_CLASS_CIVILIAN',
-                   '54',
-                   '1',
-                   '0',
-                   '0',
-                   'COST_PROGRESSION_GAME_PROGRESS',
-                   '1000',
-                   '0',
-                   'YIELD_FAITH',
-                   '1',
-                   '0',
-                   'ADVISOR_GENERIC',
-                   'CIVIC_MYSTICISM',
-                   'TRAIT_CIVILIZATION_RWB_UNIT_LANDOWNER');
-
-INSERT OR REPLACE INTO Modifiers
-(ModifierId, ModifierType)
-VALUES      ('TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK','MODIFIER_PLAYER_ADJUST_VALID_UNIT_BUILD');
-
-INSERT OR REPLACE INTO ModifierArguments
-(ModifierId,Name,Value)
-VALUES      ('TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK','UnitType','UNIT_RWB_LANDOWNER');
-
-INSERT OR REPLACE INTO Tags
-(Tag,					Vocabulary)
-VALUES	    ('CLASS_RWB_LANDOWNER',	'ABILITY_CLASS');
-
-INSERT OR REPLACE INTO TypeTags
-(Type,                       Tag)
-
-VALUES      ('UNIT_RWB_LANDOWNER',     'CLASS_LANDCIVILIAN'),
-            ('UNIT_RWB_LANDOWNER',     'CLASS_ALL_ERAS'),
-            ('UNIT_RWB_LANDOWNER',     'CLASS_RWB_LANDOWNER'),
-            ('ABILITY_RWB_LANDOWNER',  'CLASS_RWB_LANDOWNER');
-
-INSERT OR REPLACE INTO UnitAiInfos
-(UnitType, AiType)
-VALUES      ('UNIT_RWB_LANDOWNER','UNITAI_BUILD'),
-            ('UNIT_RWB_LANDOWNER','UNITTYPE_CIVILIAN');
-
-INSERT OR REPLACE INTO UnitCaptures
-(CapturedUnitType, BecomesUnitType)
-VALUES      ('UNIT_RWB_LANDOWNER','UNIT_BUILDER');
-
-INSERT OR REPLACE INTO District_BuildChargeProductions
-(DistrictType,                          UnitType,                                       PercentProductionPerCharge)
-SELECT      DistrictType,                  'UNIT_RWB_LANDOWNER',      '100'
-FROM Districts WHERE Appeal >= 1;
-
------------------------------------------------
--- BUILDING FAITH BUYING
------------------------------------------------
-
-INSERT OR REPLACE INTO Types
-(Type,					                                        Kind)
-SELECT	    Buildings.BuildingType||'_RWB_DIEVDIRBIAI_FAITH_PURCHASE','KIND_MODIFIER'
-FROM Buildings WHERE PrereqDistrict IN (SELECT DistrictType FROM Districts WHERE Appeal >= 1);
-
-INSERT OR REPLACE INTO	TraitModifiers
-(TraitType,									  ModifierId								)
-SELECT      'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',Buildings.BuildingType||'_RWB_DIEVDIRBIAI_FAITH_PURCHASE'
-FROM Buildings WHERE PrereqDistrict IN (SELECT DistrictType FROM Districts WHERE Appeal >= 1);
-
-INSERT OR REPLACE INTO Modifiers
-(ModifierId, ModifierType)
-SELECT      Buildings.BuildingType||'_RWB_DIEVDIRBIAI_FAITH_PURCHASE','MODIFIER_PLAYER_CITIES_ENABLE_SPECIFIC_BUILDING_FAITH_PURCHASE'
-FROM Buildings WHERE PrereqDistrict IN (SELECT DistrictType FROM Districts WHERE Appeal >= 1);
-
-INSERT OR REPLACE INTO ModifierArguments
-(ModifierId,                                                                     Name,               Value)
-SELECT      Buildings.BuildingType||'_RWB_DIEVDIRBIAI_FAITH_PURCHASE',   'BuildingType',       Buildings.BuildingType
-FROM Buildings WHERE PrereqDistrict IN (SELECT DistrictType FROM Districts WHERE Appeal >= 1);

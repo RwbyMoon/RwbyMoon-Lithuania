@@ -17,12 +17,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="en_US">
 			<Text>
-				Upon attacking, Military and Religious units gain +1 [ICON_Strength] Combat or [ICON_Religion] Religious Strength for every 2 [ICON_GreatWork_Religious] Great Works in city territories adjacent to the defending tile.[NEWLINE][NEWLINE]Can buy a unique civilian with [ICON_Faith] Faith in the Capital or a possessed original Capital ; the Landowner. It can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal. Buildings from Districts generating positive Appeal can be bought with [ICON_Faith] Faith.
+				Lithuanian [ICON_District] Districts do not gain usual Adjancencies but gain and lose Adjacency equal to the Appeal of the tile they are on, [NEWLINE][NEWLINE]Can buy a unique civilian with [ICON_Faith] Faith in the Capital or a possessed original Capital ; the Landowner. It can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal. Buildings from Districts generating positive Appeal can be bought with [ICON_Faith] Faith.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Lorsqu’elles attaquent, les Unités Militaires et Religieuses adjacentes au territoire d’une ville gagnent +1 Puissance de [ICON_Strength] Combat ou [ICON_Religion] Religieuse pour toutes les 2 [ICON_GreatWork_Religious] Œuvres d’Art dans celle-ci.[NEWLINE][NEWLINE]Peut acheter une unité civile unique avec de la [ICON_Faith] Foi dans sa capitale et les capitales originelles possédées ; le Seigneur. Il peut consommer sa [ICON_Charges] charge de construction pour achever la construction d'un [ICON_District] Quartier positif en attrait. Les bâtiments de ces derniers peuvent aussi être achetés avec de la [ICON_Faith] Foi.
+				Les [ICON_District] Quartiers Lituaniens ne disposent pas de leurs bonus de proximité habituels, mais gagnent un bonus de proximité équivalent à l’Attrait de la case sur lequel ils sont.[NEWLINE][NEWLINE]Peut acheter une unité civile unique avec de la [ICON_Faith] Foi dans sa capitale et les capitales originelles possédées ; le Seigneur. Il peut consommer sa [ICON_Charges] charge de construction pour achever la construction d'un [ICON_District] Quartier positif en attrait. Les bâtiments de ces derniers peuvent aussi être achetés avec de la [ICON_Faith] Foi.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_NAME" Language="en_US">
@@ -33,12 +33,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian [ICON_District] Districts do not gain usual Adjancencies but gain and lose Adjacency equal to the Appeal of the tile they are on, and do not destroy harvestable terrain [ICON_Terrain] Features.[NEWLINE][NEWLINE]After researching "Mysticism", Lithuanian Cities generate +0.5 [ICON_Faith] Faith and [ICON_Gold] Gold per [ICON_Citizen] Population if ce city is not converted to Lithuania's Founded [ICON_Religion] Religion. (Works even if Lithuania has not founded a Religion). Doubled if Lithuania has a founded a [ICON_Religion] Religion.
+				After researching "Mysticism", Lithuanian Cities generate +0.5 [ICON_Faith] Faith and [ICON_Gold] Gold per [ICON_Citizen] Population if the city is not converted to Lithuania's Founded [ICON_Religion] Religion. (Works even if Lithuania has not founded a Religion). Tripled if Lithuania has a founded a [ICON_Religion] Religion.[NEWLINE][NEWLINE]Districts (excluding City-Centers) do not destroy harvestable terrain [ICON_Terrain] Features.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Les [ICON_District] Quartiers Lituaniens ne disposent pas de leurs bonus de proximité habituels, mais gagnent un bonus de proximité équivalent à l’Attrait de la case sur lequel ils sont. Les Quartiers ne détruisent pas les [ICON_Terrain] Caractéristiques de terrain récoltables sur lesquelles ils sont placés.[NEWLINE][NEWLINE]Une fois que le dogme “Mysticisme” est recherché, les Villes Lituaniennes génèrent tous les tours +0.5 [ICON_Gold] Or et [ICON_Faith] Foi par [ICON_Citizen] Habitant dans les villes n’étant pas convertie à la religion fondée de la Lituanie. (Fonctionne même sans fonder de religion). Effet doublé si la Lituanie a fondé une [ICON_Religion] religion.
+				Une fois que le dogme “Mysticisme” est recherché, les Villes Lituaniennes génèrent tous les tours +0.5 [ICON_Gold] Or et [ICON_Faith] Foi par [ICON_Citizen] Habitant lorsqu'elles ne sont pas converties à la religion fondée de la Lituanie. (Fonctionne même sans fonder de religion). Effet triplé si la Lituanie a fondé une [ICON_Religion] religion.[NEWLINE][NEWLINE]Les Quartiers ne détruisent pas les [ICON_Terrain] Caractéristiques de terrain récoltables sur lesquelles ils sont placés.
 			</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_LANDOWNER_NAME" Language="en_US">
@@ -118,12 +118,12 @@
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian unique district that replaces the Preserve, that cannot be placed adjacent to City-Center.[NEWLINE][NEWLINE]• Units up to 4 tiles from a Piliakalnis gain +3 [ICON_Strength] Combat or [ICON_Religion] Religious Strength.[NEWLINE]• This District and all those adjacent to it generate [ICON_Faith] Faith equal to 50% of the Appeal of their tiles.[NEWLINE]• +1 Appeal on adjacent tiles[NEWLINE]• Causes a Cultural Bomb able to claim other civilizations tiles.[NEWLINE][NEWLINE]Groves built in a Piliakalnis can hold up to 2 [ICON_GreatWork_Religious] Great Works of any type.
+				Lithuanian unique district that replaces the Preserve, that cannot be placed adjacent to City-Center.[NEWLINE][NEWLINE]• Units up to 4 tiles from a Piliakalnis gain +3 [ICON_Strength] Combat or [ICON_Religion] Religious Strength.[NEWLINE]• This District and all those adjacent to it generate [ICON_Faith] Faith equal to 50% of the Appeal of their tiles.[NEWLINE]• +1 Appeal on adjacent tiles[NEWLINE]• Causes a Cultural Bomb able to claim other civilizations tiles.
 			</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Remplacement unique de la Réserve (donc impossible à placer adjacent au Centre-Ville).[NEWLINE][NEWLINE] • Les Unités jusqu’à 4 cases d’un Piliakalnis gagnent +3 Puissance de [ICON_Strength] Combat ou [ICON_Religion] Religieuse.[NEWLINE] • Ce [ICON_District] Quartier et ceux qui lui sont adjacents génèrent de la [ICON_Faith] Foi équivalente à 50% de l’Attrait de leur case.[NEWLINE] • +1 Attrait sur ses cases adjacentes.[NEWLINE] • Cause une Bombe Culturelle, capable de capturer des cases d’autres civilisations.[NEWLINE][NEWLINE]Les Bosquets construits dans un Piliakalnis possèdent 2 [ICON_GreatWork_Religious] Emplacement d'Oeuvres d’Art de n’importe quel type.
+				Remplacement unique de la Réserve (donc impossible à placer adjacent au Centre-Ville).[NEWLINE][NEWLINE] • Les Unités jusqu’à 4 cases d’un Piliakalnis gagnent +3 Puissance de [ICON_Strength] Combat ou [ICON_Religion] Religieuse.[NEWLINE] • Ce [ICON_District] Quartier et ceux qui lui sont adjacents génèrent de la [ICON_Faith] Foi équivalente à 50% de l’Attrait de leur case.[NEWLINE] • +1 Attrait sur ses cases adjacentes.[NEWLINE] • Cause une Bombe Culturelle, capable de capturer des cases d’autres civilisations.
 			</Text>
 		</Row>
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_NAME" Language="en_US">

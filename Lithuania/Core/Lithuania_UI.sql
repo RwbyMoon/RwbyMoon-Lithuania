@@ -1,3 +1,14 @@
+-----------------------------------------------
+-- PILIAKALNIS YIELDS
+-----------------------------------------------
+
+INSERT OR REPLACE INTO	TraitModifiers
+(TraitType,											    ModifierId								)
+
+VALUES	  ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_PILIAKALNIS_ADJ_FAITH_YIELD1'	),
+          ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_PILIAKALNIS_ADJ_FAITH_YIELD3'	),
+          ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_PILIAKALNIS_ADJ_FAITH_YIELD5'	);
+
 -----------------------------------------------	
 -- Types
 -----------------------------------------------	
@@ -245,6 +256,9 @@ VALUES	   ('RWB_DIEVDIRBIAI_ALLOW_WOODS_DISTRICT_RWB_PILIAKALNIS',		            
            ('RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_GRASSLAND_DISTRICT_RWB_PILIAKALNIS',		'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT'),
            ('RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_PLAINS_DISTRICT_RWB_PILIAKALNIS',		'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT');
 
+-----------------------------------------------	
+-- For CivAbility of placable on features
+-----------------------------------------------	
 
 INSERT OR REPLACE INTO District_BuildChargeProductions
 (DistrictType,                                          UnitType,                               PercentProductionPerCharge)
@@ -319,7 +333,7 @@ VALUES	        ('RWB_VYTAUTAS_REQUIRES_PLOT_ADJACENT_TO_PILIAKALNIS',	 'District
 -- Great Work Slots
 -----------------------------------------------	
 
-INSERT OR REPLACE INTO Types
+/*INSERT OR REPLACE INTO Types
 (Type,      Kind) 
 VALUES  ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS','KIND_MODIFIER');
 
@@ -335,4 +349,4 @@ INSERT OR REPLACE INTO ModifierArguments
         (ModifierId,                                                    Name,               Value)
 VALUES  ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS',        'BuildingType',     'BUILDING_GROVE'),
         ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS',        'GreatWorkSlotType','GREATWORKSLOT_PALACE'),
-        ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS',        'Amount',           '2');
+        ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS',        'Amount',           '2');*/
