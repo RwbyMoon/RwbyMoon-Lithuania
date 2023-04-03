@@ -161,12 +161,28 @@ VALUES      ('RWB_DIEVDIRBIAI_FAITH_BONUS_BASE',                                
             ('RWB_DIEVDIRBIAI_GOLD_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',        'YieldType',            'YIELD_GOLD');
 
 			
-INSERT OR REPLACE INTO BeliefModifiers
+/*INSERT OR REPLACE INTO BeliefModifiers
 (BeliefType, ModifierID)
-VALUES          ('BELIEF_FEED_THE_WORLD','RWB_DIEVDIRBIAI_FAITH_MALUS_RWB_LEADER_VYTAUTAS')/*,
-                ('BELIEF_FEED_THE_WORLD','RWB_DIEVDIRBIAI_FAITH_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER')*/,
-                ('BELIEF_FEED_THE_WORLD','RWB_DIEVDIRBIAI_GOLD_MALUS_RWB_LEADER_VYTAUTAS')/*,
-                ('BELIEF_FEED_THE_WORLD','RWB_DIEVDIRBIAI_GOLD_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER')*/;
+VALUES          ('BELIEF_FEED_THE_WORLD','RWB_DIEVDIRBIAI_FAITH_MALUS_RWB_LEADER_VYTAUTAS'),
+                ('BELIEF_FEED_THE_WORLD','RWB_DIEVDIRBIAI_GOLD_MALUS_RWB_LEADER_VYTAUTAS');*/
+
+INSERT OR REPLACE INTO BeliefModifiers
+            (BeliefType, ModifierID)
+SELECT      BeliefType,'RWB_DIEVDIRBIAI_FAITH_MALUS_RWB_LEADER_VYTAUTAS'
+FROM Beliefs WHERE BeliefClassType = 'BELIEF_CLASS_FOLLOWER' UNION
+                                                       
+SELECT      BeliefType,'RWB_DIEVDIRBIAI_GOLD_MALUS_RWB_LEADER_VYTAUTAS'
+FROM Beliefs WHERE BeliefClassType = 'BELIEF_CLASS_FOLLOWER';
+
+/*INSERT OR REPLACE INTO BeliefModifiers
+(BeliefType, ModifierID)
+SELECT      a.BeliefType,'RWB_DIEVDIRBIAI_FAITH_MALUS_'||b.LeaderType
+FROM Beliefs a, LeaderTraits b WHERE a.BeliefClassType = 'BELIEF_CLASS_FOLLOWER'
+                                 AND b.LeaderType IN (SELECT LeaderType FROM CivilizationLeaders WHERE CivilizationType IS 'CIVILIZATION_RWB_LITHUANIA') UNION
+
+SELECT      a.BeliefType,'RWB_DIEVDIRBIAI_GOLD_MALUS_'||b.LeaderType
+FROM Beliefs a, LeaderTraits b WHERE a.BeliefClassType = 'BELIEF_CLASS_FOLLOWER'
+                                 AND b.LeaderType IN (SELECT LeaderType FROM CivilizationLeaders WHERE CivilizationType IS 'CIVILIZATION_RWB_LITHUANIA');*/
 
 INSERT OR REPLACE INTO RequirementSets
             (RequirementSetId,                                                                          RequirementSetType) 
@@ -274,56 +290,3 @@ FROM LeaderTraits WHERE LeaderType IN (SELECT LeaderType FROM CivilizationLeader
                         (RequirementId,                                     Name,               Value)
 SELECT      'RWB_DIEVDIRBIAI_REQUIRES_IS_LITHUANIAN_'||LeaderType,          'LeaderType',   LeaderType
 FROM LeaderTraits WHERE LeaderType IN (SELECT LeaderType FROM CivilizationLeaders WHERE CivilizationType IS 'CIVILIZATION_RWB_LITHUANIA');*/
-
------------------------------------------------
--- NO ADJACENCY + ADJACENCY FROM APPEAL
------------------------------------------------
-
---- Remove Adjacency for all specialty districts
-
-INSERT OR REPLACE INTO ExcludedAdjacencies
-    (TraitType, YieldChangeId) 
-SELECT 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI', YieldChangeId
-FROM District_Adjacencies WHERE DistrictType IS (SELECT DistrictType FROM Districts WHERE TraitType IS NULL AND RequiresPopulation = 1);
-
-
-
--- Adjacency from Appeal on Districts MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_APPEAL
-
--- 1 modifier = 1 quartier -> je me base sur le yieldchangeid District_something de DistrictAdjacencies
-
-/*INSERT OR REPLACE INTO Types
-            (Type,                                                          Kind)
-SELECT      'TRAIT_CIVILIZATION_DIEVDIRBIAI_'||a.DistrictType||'_GOLD'||b.Size,     'KIND_MODIFIER' 
-FROM Districts a, AppealReference b WHERE a.TraitType IS NULL AND a.RequiresPopulation = 1 AND b.Size > -10;
-
-
-CREATE TABLE IF NOT EXISTS AppealReference
-(
-    Size INT
-);
-WITH RECURSIVE t(val) AS (SELECT 1 UNION ALL SELECT val - 10 FROM t LIMIT 20)
-INSERT INTO AppealReference (Size) SELECT val FROM t;
-
-INSERT INTO Requirements
-(RequirementId,									RequirementType)
-SELECT	'RWB_REQUIRES_DISTRICT_HAS_'||Size||'_APPEAL',	'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN' FROM AppealReference WHERE Size > 0;
-
-INSERT INTO RequirementArguments
-(RequirementId,									Name,		Value)
-SELECT	'RWB_REQUIRES_DISTRICT_HAS_'||Size||'_APPEAL',	    'Amount',	Size FROM AppealReference WHERE Size > 0;
-
-INSERT INTO RequirementSets
-(RequirementSetId,						RequirementSetType)
-SELECT	'RWB_DISTRICT_HAS_'||Size||'_APPEAL',	'REQUIREMENTSET_TEST_ALL' FROM AppealReference WHERE Size > 0;
-
-INSERT INTO RequirementSetRequirements
-(RequirementSetId,						RequirementId)
-SELECT	'RWB_DISTRICT_HAS_'||Size||'_APPEAL',	'RWB_REQUIRES_DISTRICT_HAS_'||Size||'_APPEAL' FROM AppealReference WHERE Size > 0;
-
-INSERT INTO Modifiers
-(ModifierId,									ModifierType,										SubjectRequirementSetId)
-SELECT	'RWB_PRODUCTION_FROM_'||Size||'_APPEAL',	'P0K_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	'RWB_DISTRICT_HAS_'||Size||'_APPEAL' FROM AppealReference WHERE Size > 1;
-
-
-DROP TABLE AppealReference;*/

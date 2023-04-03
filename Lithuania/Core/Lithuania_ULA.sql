@@ -1,4 +1,56 @@
 -----------------------------------------------
+-- NO ADJACENCY + ADJACENCY FROM APPEAL
+-----------------------------------------------
+
+--- Remove Adjacency for all specialty districts
+
+INSERT OR REPLACE INTO ExcludedAdjacencies
+(TraitType, YieldChangeId)
+SELECT 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI', YieldChangeId
+FROM District_Adjacencies WHERE DistrictType IN (SELECT DistrictType FROM Districts WHERE TraitType IS NULL AND RequiresPopulation = 1);
+
+
+-- Adjacency from Appeal on Districts MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_APPEAL
+-- 1 modifier = 1 quartier -> je me base sur le yieldchangeid District_something de DistrictAdjacencies
+
+INSERT OR REPLACE INTO Types
+            (Type,                                                          Kind)
+SELECT      'TRAIT_CIVILIZATION_DIEVDIRBIAI_'||a.DistrictType||'_GOLD'||b.Size,     'KIND_MODIFIER' 
+FROM Districts a, AppealReference b WHERE a.TraitType IS NULL AND a.RequiresPopulation = 1 AND b.Size > -10;
+
+
+CREATE TABLE IF NOT EXISTS AppealReference
+(
+    Size INT
+);
+WITH RECURSIVE t(val) AS (SELECT 1 UNION ALL SELECT val - 10 FROM t LIMIT 20)
+INSERT INTO AppealReference (Size) SELECT val FROM t;
+
+INSERT INTO Requirements
+(RequirementId,									RequirementType)
+SELECT	'RWB_REQUIRES_DISTRICT_HAS_'||Size||'_APPEAL',	'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN' FROM AppealReference WHERE Size > -10;
+
+INSERT INTO RequirementArguments
+(RequirementId,									Name,		Value)
+SELECT	'RWB_REQUIRES_DISTRICT_HAS_'||Size||'_APPEAL',	    'Amount',	Size FROM AppealReference WHERE Size > -10;
+
+INSERT INTO RequirementSets
+(RequirementSetId,						RequirementSetType)
+SELECT	'RWB_DISTRICT_HAS_'||Size||'_APPEAL',	'REQUIREMENTSET_TEST_ALL' FROM AppealReference WHERE Size > -10;
+
+INSERT INTO RequirementSetRequirements
+(RequirementSetId,						RequirementId)
+SELECT	'RWB_DISTRICT_HAS_'||Size||'_APPEAL',	'RWB_REQUIRES_DISTRICT_HAS_'||Size||'_APPEAL' FROM AppealReference WHERE Size > -10;
+
+INSERT INTO Modifiers
+(ModifierId,									ModifierType,										SubjectRequirementSetId)
+SELECT	'RWB_PRODUCTION_FROM_'||Size||'_APPEAL',	'P0K_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	'RWB_DISTRICT_HAS_'||Size||'_APPEAL' 
+FROM AppealReference WHERE Size > -10;
+
+
+DROP TABLE AppealReference;
+
+-----------------------------------------------
 -- LANDOWNER
 -----------------------------------------------
 
