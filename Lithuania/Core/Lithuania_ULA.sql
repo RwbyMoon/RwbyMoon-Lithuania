@@ -4,7 +4,7 @@
 
 --- Remove Adjacency for all specialty districts
 
-INSERT OR REPLACE INTO ExcludedAdjacencies
+/*INSERT OR REPLACE INTO ExcludedAdjacencies
 (TraitType, YieldChangeId)
 SELECT 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI', YieldChangeId
 FROM District_Adjacencies WHERE DistrictType IN (SELECT DistrictType FROM Districts WHERE TraitType IS NULL AND RequiresPopulation = 1);
@@ -48,7 +48,7 @@ SELECT	'RWB_PRODUCTION_FROM_'||Size||'_APPEAL',	'P0K_SINGLE_CITY_ADJUST_CITY_YIE
 FROM AppealReference WHERE Size > -10;
 
 
-DROP TABLE AppealReference;
+DROP TABLE AppealReference;*/
 
 -----------------------------------------------
 -- LANDOWNER
