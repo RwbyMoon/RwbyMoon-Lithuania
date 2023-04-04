@@ -2,6 +2,32 @@
 -- NO ADJACENCY + ADJACENCY FROM APPEAL
 -----------------------------------------------
 
+--- Preparation of tables to ease next things
+
+CREATE TABLE IF NOT EXISTS Rwb_AdjacencyDistrictList
+(
+    DistrictType TEXT,
+    YieldType TEXT,
+    YieldText TEXT
+);
+
+INSERT OR REPLACE INTO Rwb_AdjacencyDistrictList
+(DistrictType, YieldType, YieldText)
+SELECT a.DistrictType, b.YieldType, 'LOC_RWB_APPEAL_'||b.YieldType
+FROM District_Adjacencies a, Adjacency_YieldChanges b
+
+WHERE a.DistrictType IN (SELECT DistrictType FROM Districts WHERE TraitType IS NULL AND RequiresPopulation = 1) AND a.YieldChangeId LIKE 'District_%'
+
+  AND b.ID = (SELECT YieldChangeId FROM District_Adjacencies WHERE DistrictType = a.DistrictType);
+
+CREATE TABLE IF NOT EXISTS Rwb_AppealReference
+(
+    Size INT
+);
+
+WITH RECURSIVE t(val) AS (SELECT 1 UNION ALL SELECT val + 1 FROM t LIMIT 45)
+INSERT OR REPLACE INTO Rwb_AppealReference (Size) SELECT val FROM t;
+
 --- Remove Adjacency for all specialty districts
 
 INSERT OR REPLACE INTO ExcludedAdjacencies
@@ -13,42 +39,39 @@ FROM District_Adjacencies WHERE DistrictType IN (SELECT DistrictType FROM Distri
 -- Adjacency from Appeal on Districts MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_APPEAL
 -- 1 modifier = 1 quartier -> je me base sur le yieldchangeid District_something de DistrictAdjacencies
 
-CREATE TABLE IF NOT EXISTS AppealReference
-(
-    Size INT
-);
 
-WITH RECURSIVE t(val) AS (SELECT 1 UNION ALL SELECT val - 10 FROM t LIMIT 20)
-INSERT INTO AppealReference (Size) SELECT val FROM t;
-
-INSERT OR REPLACE INTO Types
+/*INSERT OR REPLACE INTO Types
 (Type,                                                          Kind)
 SELECT      'TRAIT_CIVILIZATION_DIEVDIRBIAI_'||a.DistrictType||'_GOLD'||b.Size,     'KIND_MODIFIER'
-FROM Districts a, AppealReference b WHERE a.TraitType IS NULL AND a.RequiresPopulation = 1 AND b.Size > -10;
-
-INSERT INTO Requirements
-(RequirementId,									RequirementType)
-SELECT	'RWB_REQUIRES_DISTRICT_HAS_'||Size||'_APPEAL',	'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN' FROM AppealReference WHERE Size > -10;
-
-INSERT INTO RequirementArguments
-(RequirementId,									Name,		Value)
-SELECT	'RWB_REQUIRES_DISTRICT_HAS_'||Size||'_APPEAL',	    'Amount',	Size FROM AppealReference WHERE Size > -10;
-
-INSERT INTO RequirementSets
-(RequirementSetId,						RequirementSetType)
-SELECT	'RWB_DISTRICT_HAS_'||Size||'_APPEAL',	'REQUIREMENTSET_TEST_ALL' FROM AppealReference WHERE Size > -10;
-
-INSERT INTO RequirementSetRequirements
-(RequirementSetId,						RequirementId)
-SELECT	'RWB_DISTRICT_HAS_'||Size||'_APPEAL',	'RWB_REQUIRES_DISTRICT_HAS_'||Size||'_APPEAL' FROM AppealReference WHERE Size > -10;
-
-INSERT INTO Modifiers
-(ModifierId,									ModifierType,										SubjectRequirementSetId)
-SELECT	'RWB_PRODUCTION_FROM_'||Size||'_APPEAL',	'P0K_SINGLE_CITY_ADJUST_CITY_YIELD_PER_POPULATION',	'RWB_DISTRICT_HAS_'||Size||'_APPEAL' 
-FROM AppealReference WHERE Size > -10;
+FROM Districts a, AppealReference b WHERE a.TraitType IS NULL AND a.RequiresPopulation = 1 AND b.Size > -10;*/
 
 
-DROP TABLE AppealReference;
+INSERT OR REPLACE  INTO Modifiers
+                         (ModifierId,
+                         ModifierType)
+SELECT	            'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,
+                      'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_APPEAL'
+FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType ;
+
+INSERT OR REPLACE INTO ModifierArguments
+       (ModifierId,                                                        Name,                            Value)
+SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'YieldType'      ,b.YieldType              FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
+SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'RequiredAppeal' ,a.Size                   FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
+SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'YieldChange'    ,'1'               FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
+SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'DistrictType'   ,b.DistrictType           FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
+SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'Description'    ,b.YieldText              FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType
+;
+
+INSERT OR REPLACE  INTO TraitModifiers
+(TraitType,
+ ModifierId)
+SELECT	            'TRAIT_LEADER_RWB_UNION_OF_HORODLO',
+                      'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size
+FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType ;
+
+
+DROP TABLE Rwb_AppealReference;
+DROP TABLE Rwb_AdjacencyDistrictList;
 
 -----------------------------------------------
 -- LANDOWNER

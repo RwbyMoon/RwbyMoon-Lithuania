@@ -22,7 +22,7 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Les [ICON_District] Quartiers Lituaniens ne disposent pas de leurs bonus de proximité habituels, mais gagnent un bonus de proximité équivalent à l’Attrait de la case sur lequel ils sont.[NEWLINE][NEWLINE]Peut acheter une unité civile unique avec de la [ICON_Faith] Foi dans sa capitale et les capitales originelles possédées ; le Seigneur. Il peut consommer sa [ICON_Charges] charge de construction pour achever la construction d'un [ICON_District] Quartier positif en attrait. Les bâtiments de ces derniers peuvent aussi être achetés avec de la [ICON_Faith] Foi.
+				Les [ICON_District] Quartiers Lituaniens ne disposent pas de leurs bonus de proximité habituels, mais gagnent un bonus de proximité équivalent à l’Attrait de la case sur lequel ils sont.[NEWLINE][NEWLINE]Peut acheter une unité civile unique avec de la [ICON_Faith] Foi dans sa capitale et les capitales originelles possédées ; le Seigneur. Il peut consommer sa [ICON_Charges] charge de construction pour achever la construction d'un [ICON_District] Quartier positif en attrait. Les bâtiments de Quartiers positifs en attrait peuvent être achetés avec de la [ICON_Faith] Foi.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_NAME" Language="en_US">
@@ -33,12 +33,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="en_US">
 			<Text>
-				After researching "Mysticism", Lithuanian Cities generate +0.5 [ICON_Faith] Faith and [ICON_Gold] Gold per [ICON_Citizen] Population if the city is not converted to Lithuania's Founded [ICON_Religion] Religion. (Works even if Lithuania has not founded a Religion). Tripled if Lithuania has a founded a [ICON_Religion] Religion.[NEWLINE][NEWLINE]Districts (excluding City-Centers) do not destroy harvestable terrain [ICON_Terrain] Features.
+				After researching "Mysticism", Lithuanian Cities generate +0.5 [ICON_Faith] Faith and [ICON_Gold] Gold per [ICON_Citizen] Population if the city is not converted to Lithuania's Founded [ICON_Religion] Religion. (Works even if Lithuania has not founded a Religion). +1 Appeal in city plots if Lithuania has also founded a [ICON_Religion] Religion.[NEWLINE][NEWLINE]Districts (excluding City-Centers) do not destroy harvestable terrain [ICON_Terrain] Features.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Une fois que le dogme “Mysticisme” est recherché, les Villes Lituaniennes génèrent tous les tours +0.5 [ICON_Gold] Or et [ICON_Faith] Foi par [ICON_Citizen] Habitant lorsqu'elles ne sont pas converties à la religion fondée de la Lituanie. (Fonctionne même sans fonder de religion). Effet triplé si la Lituanie a fondé une [ICON_Religion] religion.[NEWLINE][NEWLINE]Les Quartiers ne détruisent pas les [ICON_Terrain] Caractéristiques de terrain récoltables sur lesquelles ils sont placés.
+				Une fois que le dogme “Mysticisme” est recherché, les Villes Lituaniennes génèrent tous les tours +0.5 [ICON_Gold] Or et [ICON_Faith] Foi par [ICON_Citizen] Habitant lorsqu'elles ne sont pas converties à la religion fondée de la Lituanie. (Fonctionne même sans fonder de religion). +1 Attrait dans les cases de la ville si la Lituanie a fondé une [ICON_Religion] religion.[NEWLINE][NEWLINE]Les Quartiers ne détruisent pas les [ICON_Terrain] Caractéristiques de terrain récoltables sur lesquelles ils sont placés.
 			</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_LANDOWNER_NAME" Language="en_US">
@@ -48,16 +48,16 @@
 			<Text>Seigneur</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="en_US">
-			<Text>Unique Lithuanian civilian unit that can only be purchased with [ICON_Faith] Faith in the Capital or a possessed original Capital. can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal.[NEWLINE][NEWLINE]Includes :[NEWLINE]• Piliakalnis (Preserve)[NEWLINE]• Holy Site[NEWLINE]• Theater Square[NEWLINE]• Entertainment Complex[NEWLINE]• Water Park[NEWLINE]• Dam[NEWLINE]• Canal</Text>
+			<Text>A unique civilian unit helping District construction</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="fr_FR">
-			<Text>Unité civile Lituanienne unique qui ne peut être qu'être achetée avec de la [ICON_Faith] Foi dans sa Capitale ou une Capitale originelle. Peut utiliser sa [ICON_Charges] Charge de Construction pour achever la construction d'un [ICON_District] Quartier positif en attrait.[NEWLINE][NEWLINE]Inclut :[NEWLINE]• Piliakalnis (Réserve)[NEWLINE]• Lieu Saint[NEWLINE]• Place du Théâtre[NEWLINE]• Complexe de Loisir[NEWLINE]• Parc Aquatique[NEWLINE]• Barrage[NEWLINE]• Canal</Text>
+			<Text>Une unité civile unique aidant à la construction de Quartiers</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="en_US">
-			<Text>A unique civilian unit</Text>
+			<Text>Unique Lithuanian civilian unit that can only be purchased with [ICON_Faith] Faith in the Capital or a possessed original Capital. can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal.[NEWLINE][NEWLINE]Includes :[NEWLINE]• Piliakalnis (Preserve)[NEWLINE]• Holy Site[NEWLINE]• Theater Square[NEWLINE]• Entertainment Complex[NEWLINE]• Water Park[NEWLINE]• Dam[NEWLINE]• Canal</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="fr_FR">
-			<Text>Une unité civile unique</Text>
+			<Text>Unité civile Lituanienne unique qui ne peut être qu'être achetée avec de la [ICON_Faith] Foi dans sa Capitale ou une Capitale originelle. Peut utiliser sa [ICON_Charges] Charge de Construction pour achever la construction d'un [ICON_District] Quartier positif en attrait.[NEWLINE][NEWLINE]Inclut :[NEWLINE]• Piliakalnis (Réserve)[NEWLINE]• Lieu Saint[NEWLINE]• Place du Théâtre[NEWLINE]• Complexe de Loisir[NEWLINE]• Parc Aquatique[NEWLINE]• Barrage[NEWLINE]• Canal</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_NAME" Language="en_US">
 			<Text>Vytis</Text>
@@ -78,10 +78,10 @@
 			<Text>Vytis</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_VYTIS_DESCRIPTION" Language="en_US">
-			<Text>Unique Lithuanian Light Cavalry unit, replacing the Horseman. Stronger (+4) than the Horseman, it is also way more expensive and can only upgrade into Cavalry. Gains +8 [ICON_Strength]Combat Strength against units with stronger base strength.</Text>
+			<Text>Unique Lithuanian Light Cavalry unit, replacing the Horseman. Stronger (+4) than the Horseman, it is also way more expensive and can only upgrade into Cavalry. Gains +7 [ICON_Strength]Combat Strength against units with stronger base strength.</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_VYTIS_DESCRIPTION" Language="fr_FR">
-			<Text>Unité unique lituanienne de Cavalerie Légère remplaçant le Cavalier. Plus puissant (+4) que le Cavalier, il est également bien plus cher que celui-ci et ne peut être amélioré qu'en Cavalerie. Gagne +8 [ICON_Strength] Puissance de Combat contre des unités avec une [ICON_Strength] Puissance de Combat plus haute.</Text>
+			<Text>Unité unique lituanienne de Cavalerie Légère remplaçant le Cavalier. Plus puissant (+4) que le Cavalier, il est également bien plus cher que celui-ci et ne peut être amélioré qu'en Cavalerie. Gagne +7 [ICON_Strength] Puissance de Combat contre des unités avec une [ICON_Strength] Puissance de Combat plus haute.</Text>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_LEITIS_NAME" Language="en_US">
 			<Text>Defiance</Text>
@@ -90,10 +90,10 @@
 			<Text>Défiance</Text>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_DESCRIPTION" Language="en_US">
-			<Text>+8 [ICON_Strength] Combat Strength against a unit with higher [ICON_Strength] Base Combat Strength.</Text>
+			<Text>+7 [ICON_Strength] Combat Strength against a unit with higher [ICON_Strength] Base Combat Strength.</Text>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_DESCRIPTION" Language="fr_FR">
-			<Text>+8 [ICON_Strength] Puissance de Combat contre des unités avec une [ICON_Strength] Puissance de Combat plus haute.</Text>
+			<Text>+7 [ICON_Strength] Puissance de Combat contre des unités avec une [ICON_Strength] Puissance de Combat plus haute.</Text>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_LEITIS_NO_REDUCTION_DESCRIPTION" Language="en_US">
 			<Text>No [ICON_Strength] Combat Strength reduction from damage due to nearby Great General.</Text>
@@ -453,6 +453,37 @@
 		</Row>
 		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_10" Language="en_US">
 			<Text>Ade</Text>
+		</Row>
+		<!--Appeal Modifier Localized Text-->
+		<Row Tag="LOC_RWB_APPEAL_YIELD_GOLD" Language="en_US">
+			<Text>+{1_num} [ICON_Gold] Gold from the tile's Appeal.</Text>
+		</Row>
+		<Row Tag="LOC_RWB_APPEAL_YIELD_GOLD" Language="fr_FR">
+			<Text>Attrait de la case : [ICON_Gold] or +{1_num}.</Text>
+		</Row>
+		<Row Tag="LOC_RWB_APPEAL_YIELD_FAITH" Language="en_US">
+			<Text>+{1_num} [ICON_Faith] Faith from the tile's Appeal.</Text>
+		</Row>
+		<Row Tag="LOC_RWB_APPEAL_YIELD_FAITH" Language="fr_FR">
+			<Text>Attrait de la case : [ICON_Faith] foi +{1_num}.</Text>
+		</Row>
+		<Row Tag="LOC_RWB_APPEAL_YIELD_PRODUCTION" Language="en_US">
+			<Text>+{1_num} [ICON_Production] Production from the tile's Appeal.</Text>
+		</Row>
+		<Row Tag="LOC_RWB_APPEAL_YIELD_PRODUCTION" Language="fr_FR">
+			<Text>Attrait de la case : [ICON_Production] production +{1_num}.</Text>
+		</Row>
+		<Row Tag="LOC_RWB_APPEAL_YIELD_SCIENCE" Language="en_US">
+			<Text>+{1_num} [ICON_Science] Science from the tile's Appeal.</Text>
+		</Row>
+		<Row Tag="LOC_RWB_APPEAL_YIELD_SCIENCE" Language="fr_FR">
+			<Text>Attrait de la case : [ICON_Science] science +{1_num}.</Text>
+		</Row>
+		<Row Tag="LOC_RWB_APPEAL_YIELD_CULTURE" Language="en_US">
+			<Text>+{1_num} [ICON_Culture] Culture from the tile's Appeal.</Text>
+		</Row>
+		<Row Tag="LOC_RWB_APPEAL_YIELD_CULTURE" Language="fr_FR">
+			<Text>Attrait de la case : [ICON_Culture] culture +{1_num}.</Text>
 		</Row>
 	</LocalizedText>
 </GameData>
