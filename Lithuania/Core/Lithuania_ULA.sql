@@ -13,18 +13,18 @@ FROM District_Adjacencies WHERE DistrictType IN (SELECT DistrictType FROM Distri
 -- Adjacency from Appeal on Districts MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_APPEAL
 -- 1 modifier = 1 quartier -> je me base sur le yieldchangeid District_something de DistrictAdjacencies
 
-INSERT OR REPLACE INTO Types
-            (Type,                                                          Kind)
-SELECT      'TRAIT_CIVILIZATION_DIEVDIRBIAI_'||a.DistrictType||'_GOLD'||b.Size,     'KIND_MODIFIER' 
-FROM Districts a, AppealReference b WHERE a.TraitType IS NULL AND a.RequiresPopulation = 1 AND b.Size > -10;
-
-
 CREATE TABLE IF NOT EXISTS AppealReference
 (
     Size INT
 );
+
 WITH RECURSIVE t(val) AS (SELECT 1 UNION ALL SELECT val - 10 FROM t LIMIT 20)
 INSERT INTO AppealReference (Size) SELECT val FROM t;
+
+INSERT OR REPLACE INTO Types
+(Type,                                                          Kind)
+SELECT      'TRAIT_CIVILIZATION_DIEVDIRBIAI_'||a.DistrictType||'_GOLD'||b.Size,     'KIND_MODIFIER'
+FROM Districts a, AppealReference b WHERE a.TraitType IS NULL AND a.RequiresPopulation = 1 AND b.Size > -10;
 
 INSERT INTO Requirements
 (RequirementId,									RequirementType)
