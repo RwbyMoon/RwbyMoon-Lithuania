@@ -11,8 +11,6 @@ CREATE TABLE IF NOT EXISTS Rwb_AdjacencyDistrictList
     YieldText TEXT
 );
 
-
-
 INSERT OR REPLACE INTO Rwb_AdjacencyDistrictList
 (DistrictType, YieldType, YieldText)
 --
@@ -83,7 +81,7 @@ INSERT OR REPLACE INTO ModifierArguments
        (ModifierId,                                                        Name,                            Value)
 SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'YieldType'      ,b.YieldType              FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
 SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'RequiredAppeal' ,a.Size                   FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
-SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'YieldChange'    ,a.Size                   FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
+SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'YieldChange'    ,'1'                     FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
 SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'DistrictType'   ,b.DistrictType           FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
 SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'Description'    ,b.YieldText              FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType
 ;
@@ -113,6 +111,7 @@ INSERT OR REPLACE INTO	TraitModifiers
 (TraitType,											    ModifierId								)
 
 VALUES	  ('TRAIT_CIVILIZATION_RWB_UNIT_LANDOWNER',		'TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK'	);
+/*VALUES	  ('TRAIT_LEADER_RWB_UNION_OF_HORODLO',		'TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK'	);*/
 
 INSERT OR REPLACE INTO Units
 (UnitType,
@@ -162,15 +161,26 @@ VALUES	        ('UNIT_RWB_LANDOWNER',
                    '1',
                    '0',
                    'ADVISOR_GENERIC',
-                   'CIVIC_MYSTICISM');
+                   'CIVIC_POLITICAL_PHILOSOPHY');
 
 INSERT OR REPLACE INTO Modifiers
-(ModifierId, ModifierType)
-VALUES      ('TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK','MODIFIER_PLAYER_ADJUST_VALID_UNIT_BUILD');
+(ModifierId, ModifierType/*, SubjectRequirementSetId*/)
+VALUES      ('TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK','MODIFIER_PLAYER_ADJUST_VALID_UNIT_BUILD'/*,'REQSET_CITY_IS_CAPITAL_OR_NOT_FOUNDED_CITY'*/);
 
-INSERT OR REPLACE INTO ModifierArguments
+/*INSERT OR REPLACE INTO ModifierArguments
 (ModifierId,Name,Value)
 VALUES      ('TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK','UnitType','UNIT_RWB_LANDOWNER');
+
+INSERT OR REPLACE INTO RequirementSets
+(RequirementSetId, RequirementSetType) 
+VALUES ('REQSET_CITY_IS_CAPITAL_OR_NOT_FOUNDED_CITY','REQUIREMENTSET_TEST_ANY');
+
+INSERT OR REPLACE INTO RequirementSetRequirements
+(RequirementSetId, RequirementId) 
+VALUES          ('REQSET_CITY_IS_CAPITAL_OR_NOT_FOUNDED_CITY','REQUIRES_CITY_HAS_PALACE'),
+                ('REQSET_CITY_IS_CAPITAL_OR_NOT_FOUNDED_CITY','REQUIRES_CITY_WAS_NOT_FOUNDED');*/
+
+--- 
 
 INSERT OR REPLACE INTO Tags
 (Tag,					Vocabulary)

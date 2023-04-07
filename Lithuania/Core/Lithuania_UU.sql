@@ -59,7 +59,7 @@ INSERT OR REPLACE INTO Units_XP2
              ResourceCost,
              ResourceMaintenanceType)
 VALUES      ('UNIT_RWB_VYTIS',
-             '10',
+             '20',
              'RESOURCE_HORSES');          
 
 -----------------------------------------------	
@@ -112,7 +112,7 @@ VALUES	('ABILITY_RWB_LEITIS',						        'KIND_ABILITY');
 -----------------------------------------------	
 -- UnitAbilities
 -----------------------------------------------	
-
+    
 INSERT OR REPLACE INTO UnitAbilities
         (UnitAbilityType,									 Name,                                   Description)
 VALUES	('ABILITY_RWB_LEITIS',						        'LOC_ABILITY_RWB_LEITIS_NAME',          'LOC_ABILITY_RWB_LEITIS_DESCRIPTION');
@@ -120,8 +120,7 @@ VALUES	('ABILITY_RWB_LEITIS',						        'LOC_ABILITY_RWB_LEITIS_NAME',       
 
 INSERT OR REPLACE INTO UnitAbilityModifiers
         (UnitAbilityType,								            ModifierId)
-VALUES	('ABILITY_RWB_LEITIS',						                'RWB_LEITIS_NO_REDUCTION'),
-        ('ABILITY_RWB_LEITIS',						                'RWB_LEITIS_STRENGTH');
+VALUES	('ABILITY_RWB_LEITIS',						                'RWB_LEITIS_DEFIANCE');
 
 -----------------------------------------------	
 -- Modifiers
@@ -129,19 +128,15 @@ VALUES	('ABILITY_RWB_LEITIS',						                'RWB_LEITIS_NO_REDUCTION'),
 
 INSERT OR REPLACE INTO Modifiers
         (ModifierId,							ModifierType,                                           SubjectRequirementSetId)
-VALUES	('RWB_LEITIS_NO_REDUCTION',				'MODIFIER_PLAYER_UNIT_ADJUST_NO_REDUCTION_DAMAGE',      'UNIT_ADJACENT_TO_GREAT_GENERAL_REQUIREMENTS'),
-        ('RWB_LEITIS_STRENGTH',					'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',                 'COSSACK_PLOT_IS_OWNER_OR_ADJACENT_REQUIREMENTS');
+VALUES	('RWB_LEITIS_DEFIANCE',				    'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',      'COMBAT_AGAINST_STRONGER_UNIT_REQUIREMENTS');
 
 
 INSERT OR REPLACE INTO ModifierArguments
         (ModifierId,							Name,                                           Value)
-VALUES	('RWB_LEITIS_NO_REDUCTION',				'NoReduction',                                  'True'),
-        ('RWB_LEITIS_STRENGTH',					'Value',                                        '5');
+VALUES	('RWB_LEITIS_DEFIANCE',					'Value',                                        '7');
 
 
 INSERT OR REPLACE INTO ModifierStrings
         (ModifierId,							Context,                                Text)
-VALUES	('RWB_LEITIS_STRENGTH',				    'Preview',                              'LOC_ABILITY_RWB_LEITIS_DEFIANCE_DESCRIPTION'),
-        ('RWB_LEITIS_NO_REDUCTION',				'Preview',                              'LOC_ABILITY_RWB_LEITIS_NO_REDUCTION_DESCRIPTION');
+VALUES	('RWB_LEITIS_DEFIANCE',				    'Preview',                              'LOC_ABILITY_RWB_LEITIS_DEFIANCE_DESCRIPTION');
 
-	
