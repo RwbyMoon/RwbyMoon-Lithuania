@@ -133,7 +133,7 @@ VALUES	('RWB_LEITIS_DEFIANCE',				    'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',   
 
 INSERT OR REPLACE INTO ModifierArguments
         (ModifierId,							Name,                                           Value)
-VALUES	('RWB_LEITIS_DEFIANCE',					'Value',                                        '7');
+VALUES	('RWB_LEITIS_DEFIANCE',					'Amount',                                        '7');
 
 
 INSERT OR REPLACE INTO ModifierStrings
