@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <AssetObjects..ArtDefSet>
 	<m_Version>
-		<major>4</major>
+		<major>1</major>
 		<minor>0</minor>
-		<build>315</build>
-		<revision>805</revision>
+		<build>0</build>
+		<revision>0</revision>
 	</m_Version>
 	<m_TemplateName text="LeaderFallback"/>
 	<m_RootCollections>
@@ -23,17 +23,17 @@
 							<m_Fields>
 								<m_Values>
 									<Element class="AssetObjects..BLPEntryValue">
-										<m_EntryName text="FALLBACK_NEUTRAL_MER_YAROSLAV"/>
+										<m_EntryName text=""/>
 										<m_XLPClass text="LeaderFallback"/>
-										<m_XLPPath text="leaderfallbacks.xlp"/>
-										<m_BLPPackage text="LeaderFallbacks"/>
+										<m_XLPPath text=""/>
+										<m_BLPPackage text=""/>
 										<m_LibraryName text="LeaderFallback"/>
 										<m_ParamName text="BLP Entry"/>
 									</Element>
 								</m_Values>
 							</m_Fields>
 							<m_ChildCollections/>
-							<m_Name text="DEFAULT"/>
+							<m_Name text="RwbyMoon's Lithuania_LeaderFallbacks_Animations"/>
 							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
 						</Element>
 					</Element>

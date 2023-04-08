@@ -17,7 +17,7 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian [ICON_District] Districts do not gain usual Adjancencies but gain and lose Adjacency equal to the Appeal of the tile they are on, [NEWLINE][NEWLINE]After researching "Political Philosophy", can buy a unique civilian with [ICON_Faith] Faith ; the Landowner. It can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal. Buildings from Districts generating positive Appeal can be bought with [ICON_Faith] Faith.
+				Lithuanian [ICON_District] Districts do not gain their usual Adjancencies but gain Adjacency equal to the Appeal of the tile they are on, [NEWLINE][NEWLINE]After researching "Political Philosophy", can buy a unique civilian with [ICON_Faith] Faith ; the Landowner. It can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal. Buildings from Districts generating positive Appeal can be bought with [ICON_Faith] Faith.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="fr_FR">

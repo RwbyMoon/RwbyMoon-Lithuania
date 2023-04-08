@@ -130,7 +130,7 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_1',				0,	
 -------------------------------------	
 INSERT OR REPLACE INTO Leaders	
 		(LeaderType,					Name,												InheritFrom,		SceneLayers)
-VALUES	('LEADER_RWB_VYTAUTAS',		'LOC_LEADER_RWB_VYTAUTAS_NAME',									'LEADER_DEFAULT',	4);	
+VALUES	('LEADER_RWB_VYTAUTAS',		'LOC_LEADER_RWB_VYTAUTAS_NAME',							'LEADER_DEFAULT',	4);	
 -------------------------------------
 -- LeaderQuotes
 -------------------------------------	
