@@ -23,17 +23,17 @@
 							<m_Fields>
 								<m_Values>
 									<Element class="AssetObjects..BLPEntryValue">
-										<m_EntryName text=""/>
+										<m_EntryName text="FALLBACK_NEUTRAL_LEADER_RWB_VYTAUTAS"/>
 										<m_XLPClass text="LeaderFallback"/>
-										<m_XLPPath text=""/>
-										<m_BLPPackage text=""/>
+										<m_XLPPath text="leaderfallbacks.xlp"/>
+										<m_BLPPackage text="LeaderFallbacks"/>
 										<m_LibraryName text="LeaderFallback"/>
 										<m_ParamName text="BLP Entry"/>
 									</Element>
 								</m_Values>
 							</m_Fields>
 							<m_ChildCollections/>
-							<m_Name text="RwbyMoon's Lithuania_LeaderFallbacks_Animations"/>
+							<m_Name text="DEFAULT"/>
 							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
 						</Element>
 					</Element>
