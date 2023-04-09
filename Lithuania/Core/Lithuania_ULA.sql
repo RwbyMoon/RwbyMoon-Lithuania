@@ -14,12 +14,33 @@ CREATE TABLE IF NOT EXISTS Rwb_AdjacencyDistrictList
 INSERT OR REPLACE INTO Rwb_AdjacencyDistrictList
 (DistrictType, YieldType, YieldText)
 --
+SELECT 'DISTRICT_HOLY_SITE', b.YieldType, 'LOC_RWB_APPEAL_'||b.YieldType 
+
+FROM Adjacency_YieldChanges b
+WHERE b.ID = (SELECT YieldChangeId FROM District_Adjacencies WHERE DistrictType = 'DISTRICT_HOLY_SITE') UNION
+--
+SELECT 'DISTRICT_INDUSTRIAL_ZONE', b.YieldType, 'LOC_RWB_APPEAL_'||b.YieldType
+
+FROM Adjacency_YieldChanges b
+WHERE b.ID = (SELECT YieldChangeId FROM District_Adjacencies WHERE DistrictType = 'DISTRICT_INDUSTRIAL_ZONE') UNION
+--
+SELECT 'DISTRICT_THEATER', b.YieldType, 'LOC_RWB_APPEAL_'||b.YieldType
+
+FROM Adjacency_YieldChanges b
+WHERE b.ID = (SELECT YieldChangeId FROM District_Adjacencies WHERE DistrictType = 'DISTRICT_THEATER');
+--
+
+-- only holy site & theatre ? vs commercial hub, IZ, harbor, campus (lui c'sur que non)
+
+/*INSERT OR REPLACE INTO Rwb_AdjacencyDistrictList
+(DistrictType, YieldType, YieldText)
+--
 SELECT a.DistrictType, b.YieldType, 'LOC_RWB_APPEAL_'||b.YieldType
 --
 FROM District_Adjacencies a, Adjacency_YieldChanges b
 
 WHERE a.DistrictType IN (SELECT DistrictType FROM Districts WHERE TraitType IS NULL AND RequiresPopulation = 1) AND a.YieldChangeId LIKE 'District_%'
-  AND b.ID = (SELECT YieldChangeId FROM District_Adjacencies WHERE DistrictType = a.DistrictType);
+  AND b.ID = (SELECT YieldChangeId FROM District_Adjacencies WHERE DistrictType = a.DistrictType);*/
 
 
 
@@ -37,7 +58,7 @@ INSERT OR REPLACE INTO Rwb_AppealReference (Size) SELECT val FROM t;
 INSERT OR REPLACE INTO ExcludedAdjacencies
 (TraitType, YieldChangeId)
 SELECT 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI', YieldChangeId
-FROM District_Adjacencies WHERE DistrictType IN (SELECT DistrictType FROM Districts WHERE TraitType IS NULL AND RequiresPopulation = 1);
+FROM District_Adjacencies WHERE DistrictType IN (SELECT DistrictType FROM Rwb_AdjacencyDistrictList);
 
 
 -- Adjacency from Appeal on Districts MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_APPEAL
@@ -73,8 +94,6 @@ INSERT OR REPLACE INTO RequirementArguments
                                     (RequirementId,                          Name,Value)
 SELECT                  'REQUIRES_EXACTLY_APPEAL_'||a.Size,'MinimumValue',a.Size FROM Rwb_AppealReference a WHERE a.Size > 0 UNION
 SELECT                  'REQUIRES_EXACTLY_APPEAL_'||a.Size,'MaximumValue',a.Size FROM Rwb_AppealReference a WHERE a.Size > 0;
-
-
 
 
 INSERT OR REPLACE INTO ModifierArguments
@@ -143,14 +162,14 @@ VALUES	        ('UNIT_RWB_LANDOWNER',
                    'LOC_UNIT_RWB_LANDOWNER_NAME',
                    'LOC_TRAIT_CIVILIZATION_UNIT_RWB_LANDOWNER_DESCRIPTION',
                    '3',
-                   '4',
+                   '3',
                    '0',
                    '0',
                    '0',
                    '0',
                    'DOMAIN_LAND',
                    'FORMATION_CLASS_CIVILIAN',
-                   '54',
+                   '108',
                    '1',
                    '0',
                    '0',
@@ -164,14 +183,18 @@ VALUES	        ('UNIT_RWB_LANDOWNER',
                    'CIVIC_POLITICAL_PHILOSOPHY');
 
 INSERT OR REPLACE INTO Modifiers
-(ModifierId, ModifierType/*, SubjectRequirementSetId*/)
-VALUES      ('TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK','MODIFIER_PLAYER_ADJUST_VALID_UNIT_BUILD'/*,'REQSET_CITY_IS_CAPITAL_OR_NOT_FOUNDED_CITY'*/);
+(ModifierId, ModifierType)
+VALUES      ('TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK','MODIFIER_PLAYER_ADJUST_VALID_UNIT_BUILD');
 
-/*INSERT OR REPLACE INTO ModifierArguments
+INSERT OR REPLACE INTO ModifierArguments
 (ModifierId,Name,Value)
 VALUES      ('TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK','UnitType','UNIT_RWB_LANDOWNER');
 
-INSERT OR REPLACE INTO RequirementSets
+/*INSERT OR REPLACE INTO Modifiers
+(ModifierId, ModifierType, SubjectRequirementSetId)
+VALUES      ('TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK','MODIFIER_PLAYER_ADJUST_VALID_UNIT_BUILD','REQSET_CITY_IS_CAPITAL_OR_NOT_FOUNDED_CITY');*/
+
+/*INSERT OR REPLACE INTO RequirementSets
 (RequirementSetId, RequirementSetType) 
 VALUES ('REQSET_CITY_IS_CAPITAL_OR_NOT_FOUNDED_CITY','REQUIREMENTSET_TEST_ANY');
 
