@@ -287,39 +287,16 @@
 			<relativeArtDefPaths>
 				<Element text="Civilizations.artdef"/>
 				<Element text="Districts.artdef"/>
-				<Element text="Leaders.artdef"/>
+				<Element text="LeaderFallbacks.artdef"/>
 				<Element text="Units.artdef"/>
 			</relativeArtDefPaths>
 			<libraryDependencies/>
 			<loadsLibraries>false</loadsLibraries>
 		</Element>
 		<Element>
-			<consumerName text="LeaderLighting"/>
-			<relativeArtDefPaths>
-				<Element text="Leaders.artdef"/>
-			</relativeArtDefPaths>
-			<libraryDependencies>
-				<Element text="LeaderLighting"/>
-				<Element text="ColorKey"/>
-			</libraryDependencies>
-			<loadsLibraries>true</loadsLibraries>
-		</Element>
-		<Element>
-			<consumerName text="Leaders"/>
-			<relativeArtDefPaths>
-				<Element text="Leaders.artdef"/>
-			</relativeArtDefPaths>
-			<libraryDependencies>
-				<Element text="Leader"/>
-				<Element text="LeaderLighting"/>
-				<Element text="ColorKey"/>
-			</libraryDependencies>
-			<loadsLibraries>true</loadsLibraries>
-		</Element>
-		<Element>
 			<consumerName text="LeaderFallback"/>
 			<relativeArtDefPaths>
-				<Element text="FallbackLeaders.artdef"/>
+				<Element text="LeaderFallbacks.artdef"/>
 			</relativeArtDefPaths>
 			<libraryDependencies>
 				<Element text="LeaderFallback"/>
@@ -403,6 +380,18 @@
 			</libraryDependencies>
 			<loadsLibraries>true</loadsLibraries>
 		</Element>
+		<Element>
+			<consumerName text="Leaders"/>
+			<relativeArtDefPaths>
+				<Element text="Leaders.artdef"/>
+			</relativeArtDefPaths>
+			<libraryDependencies>
+				<Element text="ColorKey"/>
+				<Element text="Leader"/>
+				<Element text="LeaderLighting"/>
+			</libraryDependencies>
+			<loadsLibraries>true</loadsLibraries>
+		</Element>
 	</artConsumers>
 	<gameLibraries>
 		<Element>
@@ -439,7 +428,9 @@
 		</Element>
 		<Element>
 			<libraryName text="LeaderFallback"/>
-			<relativePackagePaths/>
+			<relativePackagePaths>
+				<Element text="LeaderFallbacks"/>
+			</relativePackagePaths>
 		</Element>
 		<Element>
 			<libraryName text="LeaderLighting"/>
@@ -511,7 +502,10 @@
 		</Element>
 		<Element>
 			<libraryName text="UITexture"/>
-			<relativePackagePaths/>
+			<relativePackagePaths>
+				<Element text="UI/Icons"/>
+				<Element text="UILeaders"/>
+			</relativePackagePaths>
 		</Element>
 		<Element>
 			<libraryName text="Unit"/>

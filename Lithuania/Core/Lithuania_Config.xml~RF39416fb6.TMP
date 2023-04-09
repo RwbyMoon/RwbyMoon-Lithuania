@@ -15,7 +15,7 @@
 			<LeaderAbilityName>LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_NAME</LeaderAbilityName>
 			<LeaderAbilityDescription>LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION</LeaderAbilityDescription>
 			<LeaderAbilityIcon>ICON_LEADER_RWB_VYTAUTAS</LeaderAbilityIcon>
-			<Portrait>LEADER_RWB_VYTAUTAS_NEUTRAL.dds</Portrait>
+			<Portrait>LEADER_MER_YAROSLAV_NEUTRAL.dds</Portrait>
 			<PortraitBackground>LEADER_MONTEZUMA_BACKGROUND</PortraitBackground>
 		</Row>
 	</Players>

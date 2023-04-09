@@ -5,7 +5,7 @@
 -------------------------------------	
 INSERT OR REPLACE INTO LoadingInfo	
 		(LeaderType,				BackgroundImage,						ForegroundImage,						PlayDawnOfManAudio)
-VALUES	('LEADER_RWB_VYTAUTAS',	'LEADER_HOJO_BACKGROUND',				'LEADER_MER_YAROSLAV_NEUTRAL',					1);	
+VALUES	('LEADER_RWB_VYTAUTAS',	'LEADER_HOJO_BACKGROUND',				'LEADER_RWB_VYTAUTAS_NEUTRAL',					1);	
 
 --==========================================================================================================================
 -- LEADERS

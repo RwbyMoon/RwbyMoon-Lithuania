@@ -17,8 +17,8 @@
     <CompatibleVersions>1.2,2.0</CompatibleVersions>
     <AssemblyName>Lithuania</AssemblyName>
     <RootNamespace>Lithuania</RootNamespace>
-    <FrontEndActionData><![CDATA[<FrontEndActions><UpdateDatabase id="Database"><File>Core/Lithuania_Config.xml</File></UpdateDatabase><UpdateArt id="Art"><File>RwbyMoon's Lithuania.dep</File><File>(Mod Art Dependency File)</File></UpdateArt><UpdateIcons id="Icons"><File>Core/Lithuania_IconDefinitions.xml</File></UpdateIcons><UpdateText id="Text"><File>Core/Lithuania_GameText.xml</File></UpdateText><UpdateColors id="Colors"><File>Core/Lithuania_Colours.sql</File></UpdateColors></FrontEndActions>]]></FrontEndActionData>
-    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="Database"><Properties><LoadOrder>100</LoadOrder></Properties><File priority="110">Core/Lithuania_UI.sql</File><File priority="130">Core/Lithuania_ULA.sql</File><File priority="140">Core/Lithuania_UA.sql</File><File priority="150">Core/Lithuania_Moments.sql</File><File priority="160">Core/Support.sql</File><File priority="100">Core/Lithuania_CoreBase.sql</File><File priority="125">Core/Lithuania_UU.sql</File></UpdateDatabase><UpdateArt id="Art"><Properties><LoadOrder>100</LoadOrder></Properties><File>RwbyMoon's Lithuania.dep</File><File>(Mod Art Dependency File)</File></UpdateArt><UpdateText id="Text"><Properties><LoadOrder>170</LoadOrder></Properties><File>Core/Lithuania_GameText.xml</File><File>Core/DiploText.xml</File></UpdateText><UpdateColors id="Colors"><Properties><LoadOrder>100</LoadOrder></Properties><File>Core/Lithuania_Colours.sql</File></UpdateColors><UpdateIcons id="Icons"><Properties><LoadOrder>100</LoadOrder></Properties><File>Core/Lithuania_IconDefinitions.xml</File></UpdateIcons><AddGameplayScripts id="Lua"><Properties><LoadOrder>140</LoadOrder></Properties></AddGameplayScripts></InGameActions>]]></InGameActionData>
+    <FrontEndActionData><![CDATA[<FrontEndActions><UpdateDatabase id="Database"><File>Core/Lithuania_Config.xml</File></UpdateDatabase><UpdateArt id="Art"><File>(Mod Art Dependency File)</File></UpdateArt><UpdateIcons id="Icons"><File>Core/Lithuania_IconDefinitions.xml</File></UpdateIcons><UpdateText id="Text"><File>Core/Lithuania_GameText.xml</File></UpdateText><UpdateColors id="Colors"><File>Core/Lithuania_Colours.sql</File></UpdateColors></FrontEndActions>]]></FrontEndActionData>
+    <InGameActionData><![CDATA[<InGameActions><UpdateDatabase id="Database"><Properties><LoadOrder>100</LoadOrder></Properties><File priority="110">Core/Lithuania_UI.sql</File><File priority="130">Core/Lithuania_ULA.sql</File><File priority="140">Core/Lithuania_UA.sql</File><File priority="150">Core/Lithuania_Moments.sql</File><File priority="160">Core/Support.sql</File><File priority="100">Core/Lithuania_CoreBase.sql</File><File priority="125">Core/Lithuania_UU.sql</File></UpdateDatabase><UpdateArt id="Art"><Properties><LoadOrder>100</LoadOrder></Properties><File>(Mod Art Dependency File)</File></UpdateArt><UpdateText id="Text"><Properties><LoadOrder>170</LoadOrder></Properties><File>Core/Lithuania_GameText.xml</File><File>Core/DiploText.xml</File></UpdateText><UpdateColors id="Colors"><Properties><LoadOrder>100</LoadOrder></Properties><File>Core/Lithuania_Colours.sql</File></UpdateColors><UpdateIcons id="Icons"><Properties><LoadOrder>100</LoadOrder></Properties><File>Core/Lithuania_IconDefinitions.xml</File></UpdateIcons><AddGameplayScripts id="Lua"><Properties><LoadOrder>140</LoadOrder></Properties></AddGameplayScripts></InGameActions>]]></InGameActionData>
     <ModProperties>
       <CustomProperties />
     </ModProperties>
@@ -40,6 +40,12 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="ArtDefs\Landmarks.artdef">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ArtDefs\LeaderFallbacks.artdef">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ArtDefs\Leaders.artdef">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ArtDefs\Overlay.artdef">
@@ -823,6 +829,15 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="RwbyMoon%27s Lithuania.modinfo">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="XLPs\Atlas.xlp">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="XLPs\LeaderFallbacks.xlp">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="XLPs\UILeaders.xlp">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
