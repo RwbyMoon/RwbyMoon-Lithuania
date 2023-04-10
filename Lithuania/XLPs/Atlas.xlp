@@ -405,6 +405,54 @@
 			<m_EntryID text="ICON_RWB_CIVILIZATION_LITHUANIA_803"/>
 			<m_ObjectName text="ICON_RWB_CIVILIZATION_LITHUANIA_80"/>
 		</Element>
+		<Element>
+			<m_EntryID text="ICON_RWB_CIVILIZATION_LITHUANIA_1284"/>
+			<m_ObjectName text="ICON_RWB_CIVILIZATION_LITHUANIA_128"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_RWB_CIVILIZATION_LITHUANIA_2004"/>
+			<m_ObjectName text="ICON_RWB_CIVILIZATION_LITHUANIA_200"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_RWB_CIVILIZATION_LITHUANIA_224"/>
+			<m_ObjectName text="ICON_RWB_CIVILIZATION_LITHUANIA_22"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_RWB_CIVILIZATION_LITHUANIA_2564"/>
+			<m_ObjectName text="ICON_RWB_CIVILIZATION_LITHUANIA_256"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_RWB_CIVILIZATION_LITHUANIA_304"/>
+			<m_ObjectName text="ICON_RWB_CIVILIZATION_LITHUANIA_30"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_RWB_CIVILIZATION_LITHUANIA_324"/>
+			<m_ObjectName text="ICON_RWB_CIVILIZATION_LITHUANIA_32"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_RWB_CIVILIZATION_LITHUANIA_364"/>
+			<m_ObjectName text="ICON_RWB_CIVILIZATION_LITHUANIA_36"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_RWB_CIVILIZATION_LITHUANIA_444"/>
+			<m_ObjectName text="ICON_RWB_CIVILIZATION_LITHUANIA_44"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_RWB_CIVILIZATION_LITHUANIA_484"/>
+			<m_ObjectName text="ICON_RWB_CIVILIZATION_LITHUANIA_48"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_RWB_CIVILIZATION_LITHUANIA_504"/>
+			<m_ObjectName text="ICON_RWB_CIVILIZATION_LITHUANIA_50"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_RWB_CIVILIZATION_LITHUANIA_644"/>
+			<m_ObjectName text="ICON_RWB_CIVILIZATION_LITHUANIA_64"/>
+		</Element>
+		<Element>
+			<m_EntryID text="ICON_RWB_CIVILIZATION_LITHUANIA_804"/>
+			<m_ObjectName text="ICON_RWB_CIVILIZATION_LITHUANIA_80"/>
+		</Element>
 	</m_Entries>
 	<m_AllowedPlatforms>
 		<Element>WINDOWS</Element>

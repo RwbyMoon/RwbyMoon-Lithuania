@@ -17,12 +17,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian Theather Squares, Industrial Zones and Holy Sites do not gain their usual Adjancencies but gain Adjacency equal to the Appeal of the tile they are on. [NEWLINE][NEWLINE]After researching "Political Philosophy", can buy a unique civilian with [ICON_Faith] Faith ; the Landowner. It can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal when finished. Buildings from Districts generating positive Appeal can be bought with [ICON_Faith] Faith.
+				Lithuanian Theather Squares, Industrial Zones and Holy Sites do not gain their usual Adjancencies but gain Adjacency equal to the Appeal of the tile they are on. Buildings from Districts generating positive Appeal can be bought with [ICON_Faith] Faith.[NEWLINE][NEWLINE]After researching "Political Philosophy", can buy a unique civilian with [ICON_Faith] Faith at double the price of a [ICON_District] District ; the Landowner. It can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal when finished.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Les Places du Théâtres, Zones Industrielles et Lieux Saints Lituaniens ne disposent pas de leurs bonus de proximité habituels, mais gagnent un bonus de proximité équivalent à l’Attrait de la case sur lequel ils sont.[NEWLINE][NEWLINE]Après avoir recherché "Philosophie Politique", peut acheter une unité civile unique avec de la [ICON_Faith] Foi ; le Seigneur. Il peut consommer sa [ICON_Charges] charge de construction pour achever la construction d'un [ICON_District] Quartier générant de l'attrait positif lorsque terminé. Les bâtiments de Quartiers positifs en attrait peuvent être achetés avec de la [ICON_Faith] Foi.
+				Les Places du Théâtres, Zones Industrielles et Lieux Saints Lituaniens ne disposent pas de leurs bonus de proximité habituels, mais gagnent un bonus de proximité équivalent à l’Attrait de la case sur lequel ils sont. Les bâtiments de Quartiers générant de l'attrait positif en attrait peuvent être achetés avec de la [ICON_Faith] Foi.[NEWLINE][NEWLINE]Après avoir recherché "Philosophie Politique", peut acheter une unité civile unique avec de la [ICON_Faith] Foi à double prix d'un [ICON_District] Quartier ; le Seigneur. Il peut consommer sa [ICON_Charges] charge de construction pour achever la construction d'un [ICON_District] Quartier générant de l'attrait positif lorsque terminé.
 			</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_LANDOWNER_NAME" Language="en_US">
@@ -51,12 +51,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="en_US">
 			<Text>
-				After researching "Mysticism", Lithuanian Cities generate +0.5 [ICON_Faith] Faith and [ICON_Gold] Gold per [ICON_Citizen] Population if the city is not converted to Lithuania's Founded [ICON_Religion] Religion. (Works even if Lithuania has not founded a Religion). +1 Appeal in city plots if Lithuania has also founded a [ICON_Religion] Religion.[NEWLINE][NEWLINE]Districts (excluding City-Centers) do not destroy harvestable terrain [ICON_Terrain] Features.
+				After researching "Mysticism", Lithuanian Cities generate +0.5 [ICON_Faith] Faith and [ICON_Gold] Gold per [ICON_Citizen] Population if the city is not converted to Lithuania's Founded [ICON_Religion] Religion. (Works even if Lithuania has not founded a Religion). Also grant +1 Appeal in city plots if Lithuania has also founded a [ICON_Religion] Religion.[NEWLINE][NEWLINE]Districts (excluding City-Centers) do not destroy harvestable terrain [ICON_Terrain] Features (Woods, Rainforests, Marshes...).
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Une fois que le dogme “Mysticisme” est recherché, les Villes Lituaniennes génèrent tous les tours +0.5 [ICON_Gold] Or et [ICON_Faith] Foi par [ICON_Citizen] Habitant lorsqu'elles ne sont pas converties à la religion fondée de la Lituanie. (Fonctionne même sans fonder de religion). +1 Attrait dans les cases de la ville si la Lituanie a fondé une [ICON_Religion] religion.[NEWLINE][NEWLINE]Les Quartiers ne détruisent pas les [ICON_Terrain] Caractéristiques de terrain récoltables sur lesquelles ils sont placés.
+				Une fois que le dogme “Mysticisme” est recherché, les Villes Lituaniennes génèrent tous les tours +0.5 [ICON_Gold] Or et [ICON_Faith] Foi par [ICON_Citizen] Habitant lorsqu'elles ne sont pas converties à la religion fondée de la Lituanie. (Fonctionne même sans fonder de religion). Confère aussi +1 Attrait dans les cases de la ville si la Lituanie a fondé une [ICON_Religion] religion.[NEWLINE][NEWLINE]Les Quartiers ne détruisent pas les [ICON_Terrain] Caractéristiques de terrain récoltables (Bois, Forêts Tropicales, Marais...) sur lesquelles ils sont placés.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_NAME" Language="en_US">
