@@ -3,10 +3,10 @@
 <GameData>
 	<LocalizedText>
 		<Row Tag="LOC_LEADER_RWB_VYTAUTAS_NAME" Language="en_US">
-			<Text>Vytautas</Text>
+			<Text>Vytautas the Great</Text>
 		</Row>
 		<Row Tag="LOC_LEADER_RWB_VYTAUTAS_NAME" Language="fr_FR">
-			<Text>Vytautas</Text>
+			<Text>Vytautas le Grand</Text>
 		</Row>
 		<!--Traits-->
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_NAME" Language="en_US">
@@ -17,12 +17,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian [ICON_District] Districts do not gain their usual Adjancencies but gain Adjacency equal to the Appeal of the tile they are on, [NEWLINE][NEWLINE]After researching "Political Philosophy", can buy a unique civilian with [ICON_Faith] Faith ; the Landowner. It can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal. Buildings from Districts generating positive Appeal can be bought with [ICON_Faith] Faith.
+				Lithuanian Theather Squares, Industrial Zones and Holy Sites do not gain their usual Adjancencies but gain Adjacency equal to the Appeal of the tile they are on. [NEWLINE][NEWLINE]After researching "Political Philosophy", can buy a unique civilian with [ICON_Faith] Faith ; the Landowner. It can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal when finished. Buildings from Districts generating positive Appeal can be bought with [ICON_Faith] Faith.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Les [ICON_District] Quartiers Lituaniens ne disposent pas de leurs bonus de proximité habituels, mais gagnent un bonus de proximité équivalent à l’Attrait de la case sur lequel ils sont.[NEWLINE][NEWLINE]Après avoir recherché "Philosophie Politique", peut acheter une unité civile unique avec de la [ICON_Faith] Foi ; le Seigneur. Il peut consommer sa [ICON_Charges] charge de construction pour achever la construction d'un [ICON_District] Quartier positif en attrait. Les bâtiments de Quartiers positifs en attrait peuvent être achetés avec de la [ICON_Faith] Foi.
+				Les Places du Théâtres, Zones Industrielles et Lieux Saints Lituaniens ne disposent pas de leurs bonus de proximité habituels, mais gagnent un bonus de proximité équivalent à l’Attrait de la case sur lequel ils sont.[NEWLINE][NEWLINE]Après avoir recherché "Philosophie Politique", peut acheter une unité civile unique avec de la [ICON_Faith] Foi ; le Seigneur. Il peut consommer sa [ICON_Charges] charge de construction pour achever la construction d'un [ICON_District] Quartier générant de l'attrait positif lorsque terminé. Les bâtiments de Quartiers positifs en attrait peuvent être achetés avec de la [ICON_Faith] Foi.
 			</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_LANDOWNER_NAME" Language="en_US">
