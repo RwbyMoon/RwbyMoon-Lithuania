@@ -168,7 +168,7 @@ VALUES      ('RWB_DIEVDIRBIAI_FAITH_BONUS_BASE',                                
             ('RWB_DIEVDIRBIAI_FAITH_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',       'YieldType',            'YIELD_FAITH'),
             ('RWB_DIEVDIRBIAI_GOLD_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',        'Amount',               '-0.5'),
             ('RWB_DIEVDIRBIAI_GOLD_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',        'YieldType',            'YIELD_GOLD'),
-            ('RWB_DIEVDIRBIAI_APPEAL_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',        'Amount',               '-1');
+            ('RWB_DIEVDIRBIAI_APPEAL_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',        'Amount',               '-2');
 
 			
 /*INSERT OR REPLACE INTO BeliefModifiers

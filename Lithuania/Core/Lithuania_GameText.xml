@@ -51,12 +51,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="en_US">
 			<Text>
-				After researching "Mysticism", Lithuanian Cities generate +0.5 [ICON_Faith] Faith and [ICON_Gold] Gold per [ICON_Citizen] Population if the city is not converted to Lithuania's Founded [ICON_Religion] Religion. (Works even if Lithuania has not founded a Religion). Also grant +1 Appeal in city plots if Lithuania has also founded a [ICON_Religion] Religion.[NEWLINE][NEWLINE]Districts (excluding City-Centers) do not destroy harvestable terrain [ICON_Terrain] Features (Woods, Rainforests, Marshes...).
+				After researching "Mysticism", Lithuanian Cities generate +0.5 [ICON_Faith] Faith and [ICON_Gold] Gold per [ICON_Citizen] Population if the city is not converted to Lithuania's Founded [ICON_Religion] Religion. (Works even if Lithuania has not founded a Religion). Also grant +1 Appeal in city plots if Lithuania has also founded a [ICON_Religion] Religion, but reduces Appeal by -1 if the city is converted to it.[NEWLINE][NEWLINE]Districts (excluding City-Centers) do not destroy harvestable terrain [ICON_Terrain] Features (Woods, Rainforests, Marshes...).
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Une fois que le dogme “Mysticisme” est recherché, les Villes Lituaniennes génèrent tous les tours +0.5 [ICON_Gold] Or et [ICON_Faith] Foi par [ICON_Citizen] Habitant lorsqu'elles ne sont pas converties à la religion fondée de la Lituanie. (Fonctionne même sans fonder de religion). Confère aussi +1 Attrait dans les cases de la ville si la Lituanie a fondé une [ICON_Religion] religion.[NEWLINE][NEWLINE]Les Quartiers ne détruisent pas les [ICON_Terrain] Caractéristiques de terrain récoltables (Bois, Forêts Tropicales, Marais...) sur lesquelles ils sont placés.
+				Une fois que le dogme “Mysticisme” est recherché, les Villes Lituaniennes génèrent tous les tours +0.5 [ICON_Gold] Or et [ICON_Faith] Foi par [ICON_Citizen] Habitant lorsqu'elles ne sont pas converties à la religion fondée de la Lituanie. (Fonctionne même sans fonder de religion). Confère aussi +1 Attrait dans les cases de la ville si la Lituanie a fondé une [ICON_Religion] religion, mais au contraire la réduit de -1 si la ville y est convertie.[NEWLINE][NEWLINE]Les Quartiers ne détruisent pas les [ICON_Terrain] Caractéristiques de terrain récoltables (Bois, Forêts Tropicales, Marais...) sur lesquelles ils sont placés.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_NAME" Language="en_US">
