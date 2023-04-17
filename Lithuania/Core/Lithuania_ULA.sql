@@ -30,8 +30,7 @@ FROM Adjacency_YieldChanges b
 WHERE b.ID = (SELECT YieldChangeId FROM District_Adjacencies WHERE DistrictType = 'DISTRICT_THEATER');
 --
 
--- only holy site & theatre ? vs commercial hub, IZ, harbor, campus (lui c'sur que non)
-
+-- only holy site & theatre & IZ --- below is every districts
 /*INSERT OR REPLACE INTO Rwb_AdjacencyDistrictList
 (DistrictType, YieldType, YieldText)
 --
@@ -41,7 +40,6 @@ FROM District_Adjacencies a, Adjacency_YieldChanges b
 
 WHERE a.DistrictType IN (SELECT DistrictType FROM Districts WHERE TraitType IS NULL AND RequiresPopulation = 1) AND a.YieldChangeId LIKE 'District_%'
   AND b.ID = (SELECT YieldChangeId FROM District_Adjacencies WHERE DistrictType = a.DistrictType);*/
-
 
 
 CREATE TABLE IF NOT EXISTS Rwb_AppealReference
@@ -59,7 +57,7 @@ INSERT OR REPLACE INTO ExcludedAdjacencies
 (TraitType, YieldChangeId)
 SELECT 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI', YieldChangeId
 FROM District_Adjacencies WHERE DistrictType IN (SELECT DistrictType FROM Rwb_AdjacencyDistrictList);
-
+            
 
 -- Adjacency from Appeal on Districts MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_APPEAL
 -- 1 modifier = 1 quartier -> je me base sur le yieldchangeid District_something de DistrictAdjacencies
@@ -72,6 +70,17 @@ SELECT	            'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Si
                       'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_APPEAL',
                     'REQSET_LIMITS_APPEAL_'||a.Size
 FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType ;
+
+--- ModifierArguments, so effects
+
+INSERT OR REPLACE INTO ModifierArguments
+       (ModifierId,                                                        Name,                            Value)
+SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'YieldType'      ,b.YieldType              FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
+SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'RequiredAppeal' ,a.Size                   FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
+SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'YieldChange'    ,'1'                      FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
+SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'DistrictType'   ,b.DistrictType           FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
+SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'Description'    ,b.YieldText              FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType
+;
 
 --- Sooo.... The requirement just doesn't work ?
 
@@ -94,16 +103,6 @@ INSERT OR REPLACE INTO RequirementArguments
                                     (RequirementId,                          Name,Value)
 SELECT                  'REQUIRES_EXACTLY_APPEAL_'||a.Size,'MinimumValue',a.Size FROM Rwb_AppealReference a WHERE a.Size > 0 UNION
 SELECT                  'REQUIRES_EXACTLY_APPEAL_'||a.Size,'MaximumValue',a.Size FROM Rwb_AppealReference a WHERE a.Size > 0;
-
-
-INSERT OR REPLACE INTO ModifierArguments
-       (ModifierId,                                                        Name,                            Value)
-SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'YieldType'      ,b.YieldType              FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
-SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'RequiredAppeal' ,a.Size                   FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
-SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'YieldChange'    ,'1'                     FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
-SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'DistrictType'   ,b.DistrictType           FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
-SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'Description'    ,b.YieldText              FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType
-;
 
 INSERT OR REPLACE  INTO TraitModifiers
 (TraitType,
@@ -169,12 +168,12 @@ VALUES	        ('UNIT_RWB_LANDOWNER',
                    '0',
                    'DOMAIN_LAND',
                    'FORMATION_CLASS_CIVILIAN',
-                   '108',
+                   '160',
                    '1',
                    '0',
                    '0',
-                   'COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH',
-                   '40',
+                   'COST_PROGRESSION_PREVIOUS_COPIES',
+                   '80',
                    '0',
                    'YIELD_FAITH',
                    '1',
