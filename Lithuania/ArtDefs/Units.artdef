@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <AssetObjects..ArtDefSet>
 	<m_Version>
-		<major>4</major>
+		<major>1</major>
 		<minor>0</minor>
-		<build>451</build>
-		<revision>343</revision>
+		<build>0</build>
+		<revision>0</revision>
 	</m_Version>
 	<m_TemplateName text="Units"/>
 	<m_RootCollections>
@@ -96,11 +96,11 @@
 										<m_ParamName text="Scale"/>
 									</Element>
 									<Element class="AssetObjects..IntValue">
-										<m_nValue>3</m_nValue>
+										<m_nValue>2</m_nValue>
 										<m_ParamName text="Count"/>
 									</Element>
 									<Element class="AssetObjects..ArtDefReferenceValue">
-										<m_ElementName text="Mer_Druzhina"/>
+										<m_ElementName text="Horseman"/>
 										<m_RootCollectionName text="UnitMemberTypes"/>
 										<m_ArtDefPath text="Units.artdef"/>
 										<m_CollectionIsLocked>true</m_CollectionIsLocked>
@@ -110,7 +110,7 @@
 								</m_Values>
 							</m_Fields>
 							<m_ChildCollections/>
-							<m_Name text="Druzhina"/>
+							<m_Name text="Members1"/>
 							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
 						</Element>
 					</Element>
@@ -127,7 +127,7 @@
 								</m_Values>
 							</m_Fields>
 							<m_ChildCollections/>
-							<m_Name text="Druzhina"/>
+							<m_Name text="UNIT_RWB_VYTIS"/>
 							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
 						</Element>
 					</Element>
@@ -167,7 +167,7 @@
 							<m_ParamName text="EscortFormation"/>
 						</Element>
 						<Element class="AssetObjects..ArtDefReferenceValue">
-							<m_ElementName text="UNIT_MODERNEMBARK"/>
+							<m_ElementName text="UNIT_ANCIENTEMBARK"/>
 							<m_RootCollectionName text="Units"/>
 							<m_ArtDefPath text="Units.artdef"/>
 							<m_CollectionIsLocked>true</m_CollectionIsLocked>
@@ -228,11 +228,11 @@
 										<m_ParamName text="Count"/>
 									</Element>
 									<Element class="AssetObjects..ArtDefReferenceValue">
-										<m_ElementName text="Landowner"/>
+										<m_ElementName text=""/>
 										<m_RootCollectionName text="UnitMemberTypes"/>
 										<m_ArtDefPath text="Units.artdef"/>
 										<m_CollectionIsLocked>true</m_CollectionIsLocked>
-										<m_TemplateName text="Units"/>
+										<m_TemplateName text=""/>
 										<m_ParamName text="Type"/>
 									</Element>
 								</m_Values>
@@ -268,7 +268,7 @@
 								</m_Values>
 							</m_Fields>
 							<m_ChildCollections/>
-							<m_Name text="NATURALIST"/>
+							<m_Name text="UNIT_RWB_LANDOWNER"/>
 							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
 						</Element>
 					</Element>
@@ -316,421 +316,10 @@
 		<Element>
 			<m_CollectionName text="UnitAttachmentBins"/>
 			<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-			<Element>
-				<m_Fields>
-					<m_Values/>
-				</m_Fields>
-				<m_ChildCollections>
-					<Element>
-						<m_CollectionName text="Groups"/>
-						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-						<Element>
-							<m_Fields>
-								<m_Values/>
-							</m_Fields>
-							<m_ChildCollections>
-								<Element>
-									<m_CollectionName text="Cultures"/>
-									<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-									<Element>
-										<m_Fields>
-											<m_Values>
-												<Element class="AssetObjects..ArtDefReferenceValue">
-													<m_ElementName text=""/>
-													<m_RootCollectionName text="UnitTintTypes"/>
-													<m_ArtDefPath text=""/>
-													<m_CollectionIsLocked>true</m_CollectionIsLocked>
-													<m_TemplateName text=""/>
-													<m_ParamName text="Tint"/>
-												</Element>
-											</m_Values>
-										</m_Fields>
-										<m_ChildCollections>
-											<Element>
-												<m_CollectionName text="Assets"/>
-												<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-												<Element>
-													<m_Fields>
-														<m_Values>
-															<Element class="AssetObjects..BLPEntryValue">
-																<m_EntryName text="Druzhina_Armor"/>
-																<m_XLPClass text="Unit"/>
-																<m_XLPPath text="Units.xlp"/>
-																<m_BLPPackage text="units/units"/>
-																<m_LibraryName text="Unit"/>
-																<m_ParamName text="Asset"/>
-															</Element>
-															<Element class="AssetObjects..FloatValue">
-																<m_fValue>1.000000</m_fValue>
-																<m_ParamName text="Scale"/>
-															</Element>
-														</m_Values>
-													</m_Fields>
-													<m_ChildCollections/>
-													<m_Name text="A"/>
-													<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-												</Element>
-											</Element>
-										</m_ChildCollections>
-										<m_Name text="Any"/>
-										<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-									</Element>
-								</Element>
-							</m_ChildCollections>
-							<m_Name text="Mer_Druzhina"/>
-							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-						</Element>
-					</Element>
-				</m_ChildCollections>
-				<m_Name text="Armor"/>
-				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-			</Element>
-			<Element>
-				<m_Fields>
-					<m_Values/>
-				</m_Fields>
-				<m_ChildCollections>
-					<Element>
-						<m_CollectionName text="Groups"/>
-						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-						<Element>
-							<m_Fields>
-								<m_Values/>
-							</m_Fields>
-							<m_ChildCollections>
-								<Element>
-									<m_CollectionName text="Cultures"/>
-									<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-									<Element>
-										<m_Fields>
-											<m_Values>
-												<Element class="AssetObjects..ArtDefReferenceValue">
-													<m_ElementName text=""/>
-													<m_RootCollectionName text="UnitTintTypes"/>
-													<m_ArtDefPath text=""/>
-													<m_CollectionIsLocked>true</m_CollectionIsLocked>
-													<m_TemplateName text=""/>
-													<m_ParamName text="Tint"/>
-												</Element>
-											</m_Values>
-										</m_Fields>
-										<m_ChildCollections>
-											<Element>
-												<m_CollectionName text="Assets"/>
-												<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-												<Element>
-													<m_Fields>
-														<m_Values>
-															<Element class="AssetObjects..BLPEntryValue">
-																<m_EntryName text="Druzhina_Helmet"/>
-																<m_XLPClass text="Unit"/>
-																<m_XLPPath text="Units.xlp"/>
-																<m_BLPPackage text="units/units"/>
-																<m_LibraryName text="Unit"/>
-																<m_ParamName text="Asset"/>
-															</Element>
-															<Element class="AssetObjects..FloatValue">
-																<m_fValue>1.000000</m_fValue>
-																<m_ParamName text="Scale"/>
-															</Element>
-														</m_Values>
-													</m_Fields>
-													<m_ChildCollections/>
-													<m_Name text="A"/>
-													<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-												</Element>
-											</Element>
-										</m_ChildCollections>
-										<m_Name text="Any"/>
-										<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-									</Element>
-								</Element>
-							</m_ChildCollections>
-							<m_Name text="Mer_Druzhina"/>
-							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-						</Element>
-					</Element>
-				</m_ChildCollections>
-				<m_Name text="Hats"/>
-				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-			</Element>
-			<Element>
-				<m_Fields>
-					<m_Values/>
-				</m_Fields>
-				<m_ChildCollections>
-					<Element>
-						<m_CollectionName text="Groups"/>
-						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-						<Element>
-							<m_Fields>
-								<m_Values/>
-							</m_Fields>
-							<m_ChildCollections>
-								<Element>
-									<m_CollectionName text="Cultures"/>
-									<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-									<Element>
-										<m_Fields>
-											<m_Values>
-												<Element class="AssetObjects..ArtDefReferenceValue">
-													<m_ElementName text=""/>
-													<m_RootCollectionName text="UnitTintTypes"/>
-													<m_ArtDefPath text=""/>
-													<m_CollectionIsLocked>true</m_CollectionIsLocked>
-													<m_TemplateName text=""/>
-													<m_ParamName text="Tint"/>
-												</Element>
-											</m_Values>
-										</m_Fields>
-										<m_ChildCollections>
-											<Element>
-												<m_CollectionName text="Assets"/>
-												<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-												<Element>
-													<m_Fields>
-														<m_Values>
-															<Element class="AssetObjects..BLPEntryValue">
-																<m_EntryName text="Russian_KiteShieldA"/>
-																<m_XLPClass text="Unit"/>
-																<m_XLPPath text="Units.xlp"/>
-																<m_BLPPackage text="units/units"/>
-																<m_LibraryName text="Unit"/>
-																<m_ParamName text="Asset"/>
-															</Element>
-															<Element class="AssetObjects..FloatValue">
-																<m_fValue>0.800000</m_fValue>
-																<m_ParamName text="Scale"/>
-															</Element>
-														</m_Values>
-													</m_Fields>
-													<m_ChildCollections/>
-													<m_Name text="Assets"/>
-													<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-												</Element>
-												<Element>
-													<m_Fields>
-														<m_Values>
-															<Element class="AssetObjects..BLPEntryValue">
-																<m_EntryName text="Russian_KiteShieldB"/>
-																<m_XLPClass text="Unit"/>
-																<m_XLPPath text="Units.xlp"/>
-																<m_BLPPackage text="units/units"/>
-																<m_LibraryName text="Unit"/>
-																<m_ParamName text="Asset"/>
-															</Element>
-															<Element class="AssetObjects..FloatValue">
-																<m_fValue>0.800000</m_fValue>
-																<m_ParamName text="Scale"/>
-															</Element>
-														</m_Values>
-													</m_Fields>
-													<m_ChildCollections/>
-													<m_Name text="Assets001"/>
-													<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-												</Element>
-												<Element>
-													<m_Fields>
-														<m_Values>
-															<Element class="AssetObjects..BLPEntryValue">
-																<m_EntryName text="Russian_KiteShieldC"/>
-																<m_XLPClass text="Unit"/>
-																<m_XLPPath text="Units.xlp"/>
-																<m_BLPPackage text="units/units"/>
-																<m_LibraryName text="Unit"/>
-																<m_ParamName text="Asset"/>
-															</Element>
-															<Element class="AssetObjects..FloatValue">
-																<m_fValue>0.800000</m_fValue>
-																<m_ParamName text="Scale"/>
-															</Element>
-														</m_Values>
-													</m_Fields>
-													<m_ChildCollections/>
-													<m_Name text="Assets002"/>
-													<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-												</Element>
-												<Element>
-													<m_Fields>
-														<m_Values>
-															<Element class="AssetObjects..BLPEntryValue">
-																<m_EntryName text="Russian_KiteShieldD"/>
-																<m_XLPClass text="Unit"/>
-																<m_XLPPath text="Units.xlp"/>
-																<m_BLPPackage text="units/units"/>
-																<m_LibraryName text="Unit"/>
-																<m_ParamName text="Asset"/>
-															</Element>
-															<Element class="AssetObjects..FloatValue">
-																<m_fValue>0.800000</m_fValue>
-																<m_ParamName text="Scale"/>
-															</Element>
-														</m_Values>
-													</m_Fields>
-													<m_ChildCollections/>
-													<m_Name text="Assets003"/>
-													<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-												</Element>
-											</Element>
-										</m_ChildCollections>
-										<m_Name text="Any"/>
-										<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-									</Element>
-								</Element>
-							</m_ChildCollections>
-							<m_Name text="Mer_Druzhina"/>
-							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-						</Element>
-					</Element>
-				</m_ChildCollections>
-				<m_Name text="Shields"/>
-				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-			</Element>
 		</Element>
 		<Element>
 			<m_CollectionName text="UnitMemberTypes"/>
 			<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-			<Element>
-				<m_Fields>
-					<m_Values>
-						<Element class="AssetObjects..ArtDefReferenceValue">
-							<m_ElementName text="Archer"/>
-							<m_RootCollectionName text="UnitFormationTypes"/>
-							<m_ArtDefPath text="Units.artdef"/>
-							<m_CollectionIsLocked>false</m_CollectionIsLocked>
-							<m_TemplateName text=""/>
-							<m_ParamName text="Formation"/>
-						</Element>
-						<Element class="AssetObjects..ArtDefReferenceValue">
-							<m_ElementName text=""/>
-							<m_RootCollectionName text="UnitCombat"/>
-							<m_ArtDefPath text="Units.artdef"/>
-							<m_CollectionIsLocked>false</m_CollectionIsLocked>
-							<m_TemplateName text=""/>
-							<m_ParamName text="UnitCombat"/>
-						</Element>
-						<Element class="AssetObjects..ArtDefReferenceValue">
-							<m_ElementName text=""/>
-							<m_RootCollectionName text="UnitFormationTypes"/>
-							<m_ArtDefPath text="Units.artdef"/>
-							<m_CollectionIsLocked>true</m_CollectionIsLocked>
-							<m_TemplateName text=""/>
-							<m_ParamName text="EscortFormation"/>
-						</Element>
-						<Element class="AssetObjects..ArtDefReferenceValue">
-							<m_ElementName text="UNIT_MODERNEMBARK"/>
-							<m_RootCollectionName text="Units"/>
-							<m_ArtDefPath text="Units.artdef"/>
-							<m_CollectionIsLocked>true</m_CollectionIsLocked>
-							<m_TemplateName text="Units"/>
-							<m_ParamName text="EmbarkedUnit"/>
-						</Element>
-						<Element class="AssetObjects..BoolValue">
-							<m_bValue>false</m_bValue>
-							<m_ParamName text="DoNotDisplayCharges"/>
-						</Element>
-						<Element class="AssetObjects..ArtDefReferenceValue">
-							<m_ElementName text=""/>
-							<m_RootCollectionName text="UnitCulture"/>
-							<m_ArtDefPath text="Cultures.artdef"/>
-							<m_CollectionIsLocked>true</m_CollectionIsLocked>
-							<m_TemplateName text=""/>
-							<m_ParamName text="Culture"/>
-						</Element>
-						<Element class="AssetObjects..ArtDefReferenceValue">
-							<m_ElementName text=""/>
-							<m_RootCollectionName text="Era"/>
-							<m_ArtDefPath text="Eras.artdef"/>
-							<m_CollectionIsLocked>true</m_CollectionIsLocked>
-							<m_TemplateName text=""/>
-							<m_ParamName text="Era"/>
-						</Element>
-						<Element class="AssetObjects..ArtDefReferenceValue">
-							<m_ElementName text=""/>
-							<m_RootCollectionName text="Units"/>
-							<m_ArtDefPath text="Units.artdef"/>
-							<m_CollectionIsLocked>true</m_CollectionIsLocked>
-							<m_TemplateName text=""/>
-							<m_ParamName text="ProxyUnit"/>
-						</Element>
-						<Element class="AssetObjects..BoolValue">
-							<m_bValue>false</m_bValue>
-							<m_ParamName text="PlayDeathOnDestroy"/>
-						</Element>
-						<Element class="AssetObjects..IntValue">
-							<m_nValue>-500</m_nValue>
-							<m_ParamName text="DisplayLevel"/>
-						</Element>
-					</m_Values>
-				</m_Fields>
-				<m_ChildCollections>
-					<Element>
-						<m_CollectionName text="Members"/>
-						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-						<Element>
-							<m_Fields>
-								<m_Values>
-									<Element class="AssetObjects..FloatValue">
-										<m_fValue>1.000000</m_fValue>
-										<m_ParamName text="Scale"/>
-									</Element>
-									<Element class="AssetObjects..IntValue">
-										<m_nValue>1</m_nValue>
-										<m_ParamName text="Count"/>
-									</Element>
-									<Element class="AssetObjects..ArtDefReferenceValue">
-										<m_ElementName text="Naturalist"/>
-										<m_RootCollectionName text="UnitMemberTypes"/>
-										<m_ArtDefPath text="Units.artdef"/>
-										<m_CollectionIsLocked>true</m_CollectionIsLocked>
-										<m_TemplateName text="Units"/>
-										<m_ParamName text="Type"/>
-									</Element>
-								</m_Values>
-							</m_Fields>
-							<m_ChildCollections/>
-							<m_Name text="Members1"/>
-							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-						</Element>
-					</Element>
-					<Element>
-						<m_CollectionName text="Audio"/>
-						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-						<Element>
-							<m_Fields>
-								<m_Values>
-									<Element class="AssetObjects..StringValue">
-										<m_Value text=""/>
-										<m_ParamName text="XrefName"/>
-									</Element>
-								</m_Values>
-							</m_Fields>
-							<m_ChildCollections/>
-							<m_Name text="Entry"/>
-							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-						</Element>
-						<Element>
-							<m_Fields>
-								<m_Values>
-									<Element class="AssetObjects..StringValue">
-										<m_Value text="Naturalist"/>
-										<m_ParamName text="XrefName"/>
-									</Element>
-								</m_Values>
-							</m_Fields>
-							<m_ChildCollections/>
-							<m_Name text="NATURALIST"/>
-							<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-						</Element>
-					</Element>
-					<Element>
-						<m_CollectionName text="AttachmentVisibility"/>
-						<m_ReplaceMergedCollectionElements>false</m_ReplaceMergedCollectionElements>
-					</Element>
-				</m_ChildCollections>
-				<m_Name text="UNIT_RWB_LANDOWNER"/>
-				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
-			</Element>
 			<Element>
 				<m_Fields>
 					<m_Values>
@@ -1259,7 +848,7 @@
 						</Element>
 					</Element>
 				</m_ChildCollections>
-				<m_Name text="Mer_Druzhina"/>
+				<m_Name text="UNIT_RWB_VYTIS"/>
 				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
 			</Element>
 			<Element>
@@ -1740,7 +1329,7 @@
 						</Element>
 					</Element>
 				</m_ChildCollections>
-				<m_Name text="Landowner"/>
+				<m_Name text="UNIT_RWB_LANDOWNER"/>
 				<m_AppendMergedParameterCollections>false</m_AppendMergedParameterCollections>
 			</Element>
 		</Element>

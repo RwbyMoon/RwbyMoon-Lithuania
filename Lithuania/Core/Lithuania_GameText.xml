@@ -17,12 +17,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian Theather Squares, Industrial Zones and Holy Sites do not gain their usual Adjancencies but gain Adjacency equal to the Appeal of the tile they are on. Buildings from Districts generating positive Appeal (Theatre Square, Holy Site, Entertainement Complex...) can be bought with [ICON_Faith] Faith.[NEWLINE][NEWLINE]After researching "Political Philosophy", can buy a unique civilian with [ICON_Faith] Faith ; the Landowner. It can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal (Theatre Square, Holy Site, Entertainement Complex...) when finished.
+				Lithuanian Theather Squares, Industrial Zones and Holy Sites do not gain their usual Adjacencies but gain Adjacency equal to the Appeal of the tile they are on. Buildings from Districts generating positive Appeal (Theatre Square, Holy Site, Entertainement Complex...) can be bought with [ICON_Faith] Faith.[NEWLINE][NEWLINE]After researching "Political Philosophy", can buy a unique civilian with [ICON_Faith] Faith ; the Landowner ; able to [ICON_Charges] complete any [ICON_District] District generating positive Appeal when finished.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Les Places du Théâtres, Zones Industrielles et Lieux Saints Lituaniens ne disposent pas de leurs bonus de proximité habituels, mais gagnent un bonus de proximité équivalent à l’Attrait de la case sur lequel ils sont. Les bâtiments de Quartiers générant de l'attrait positif (Place du Théâtre, Lieu Saint, Complexe de Loisir...) peuvent être achetés avec de la [ICON_Faith] Foi.[NEWLINE][NEWLINE]Après avoir recherché "Philosophie Politique", peut acheter une unité civile unique avec de la [ICON_Faith] Foi ; le Seigneur. Il peut consommer sa [ICON_Charges] charge de construction pour achever la construction d'un [ICON_District] Quartier générant de l'attrait positif (Place du Théâtre, Lieu Saint, Complexe de Loisir...) lorsque terminé.
+				Les Places du Théâtre, Zones Industrielles et Lieux Saints Lituaniens ne disposent pas de leurs bonus de proximité habituels, mais gagnent un bonus de proximité équivalent à l’Attrait de la case sur lequel ils sont. Les bâtiments de Quartiers générant de l'attrait positif (Place du Théâtre, Lieu Saint, Complexe de Loisir...) peuvent être achetés avec de la [ICON_Faith] Foi.[NEWLINE][NEWLINE]Après avoir recherché "Philosophie Politique", peut acheter une unité civile unique avec de la [ICON_Faith] Foi ; le Seigneur ; capable [ICON_Charges] d'achever la construction d'un [ICON_District] Quartier générant de l'attrait positif lorsque terminé.
 			</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_LANDOWNER_NAME" Language="en_US">
@@ -51,12 +51,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="en_US">
 			<Text>
-				Faith Buying is 15% more expensive in Lithuanian Cities. After founding a religion, Faith Buying is further 15% more expensive. Plots in Lithuanian Cities also gain +1 Appeal and if the city is not converted to Lithuania's Founded [ICON_Religion] Religion. However, if it is converted to it, Appeal in the city is reduced by -1.[NEWLINE][NEWLINE]Districts (excluding City-Centers) do not destroy harvestable terrain [ICON_Terrain] Features (Woods, Rainforests, Marshes...).
+				Faith Buying is 15% more expensive in Lithuanian Cities. Founding a religion makes it 15% more expensive and grant +1 Governor title. Lithuanian Cities also gain +1 Appeal and if the city is not converted to Lithuania's Founded [ICON_Religion] Religion, inversed to a -1 if they are converted to it.[NEWLINE][NEWLINE]Districts (excluding City-Centers) do not destroy harvestable terrain [ICON_Terrain] Features (Woods, Rainforests, Marshes...).
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Les achats avec de la Foi sont +15% plus chers. Après avoir fondé une religion, +15% supplémentaires. Confère aussi +1 Attrait dans les cases des Villes Lituaniennes lorsqu'elles ne sont pas converties à la religion fondée de la Lituanie. Attrait -1 si la ville est convertie.[NEWLINE][NEWLINE]Les Quartiers ne détruisent pas les [ICON_Terrain] Caractéristiques de terrain récoltables (Bois, Forêts Tropicales, Marais...) sur lesquelles ils sont placés.
+				Les achats avec de la Foi sont +15% plus chers. Fonder une religion l'augmente de +15% supplémentaires et confère +1 titre de Gouverneur. Confère aussi +1 Attrait dans les Villes Lituaniennes lorsqu'elles ne sont pas converties à la religion fondée de la Lituanie, inversé en un -1 si la ville est convertie.[NEWLINE][NEWLINE]Les Quartiers ne détruisent pas les [ICON_Terrain] Caractéristiques de terrain récoltables (Bois, Forêts Tropicales, Marais...) sur lesquelles ils sont placés.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_NAME" Language="en_US">
@@ -78,15 +78,15 @@
 			<Text>Vytis</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_VYTIS_DESCRIPTION" Language="en_US">
-			<Text>Unique Lithuanian Light Cavalry unit, replacing the Horseman. Stronger (+4) and significatively more expensive than the Horseman it replaces, has higher [ICON_Gold] Gold upkeep and can only upgrade into Cavalry. Gains +7 [ICON_Strength]Combat Strength against units with stronger base strength.</Text>
+			<Text>Unique Lithuanian Light Cavalry unit, replacing the Horseman. Significatively more expensive than the Horseman it replaces, has higher [ICON_Gold] Gold upkeep and can only upgrade into Cavalry. Gains +7 [ICON_Strength]Combat Strength against units with stronger base strength. Once the technology "Castles" has been researched, it gains +4 [ICON_Strength]Combat Strength.</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_VYTIS_DESCRIPTION" Language="fr_FR">
-			<Text>Unité unique lituanienne de Cavalerie Légère remplaçant le Cavalier. Plus puissant (+4) et à l'entretien plus élevé en [ICON_Gold] Or que le Cavalier qu'il remplace, il est également significativement plus cher que celui-ci et ne peut être amélioré qu'en Cavalerie. Gagne +7 [ICON_Strength] Puissance de Combat contre des unités avec une [ICON_Strength] Puissance de Combat plus haute.</Text>
+			<Text>Unité unique lituanienne de Cavalerie Légère remplaçant le Cavalier. Significativement plus cher que le Cavalier qu'il remplace, son entretien en [ICON_Gold] Or est plus élevé que celui-ci et ne peut être amélioré qu'en Cavalerie. Gagne +7 [ICON_Strength] Puissance de Combat contre des unités avec une [ICON_Strength] Puissance de Combat plus haute. Après avoir recherché la technologie des "Châteaux", gagne +4 [ICON_Strength] Puissance de Combat.</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_NAME" Language="en_US">
+		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_NAME" Language="en_US">
 			<Text>Defiance</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_NAME" Language="fr_FR">
+		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_NAME" Language="fr_FR">
 			<Text>Défiance</Text>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_DESCRIPTION" Language="en_US">
@@ -95,11 +95,29 @@
 		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_DESCRIPTION" Language="fr_FR">
 			<Text>+7 [ICON_Strength] de Défiance.</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_DESCRIPTION" Language="en_US">
+		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_LONG_DESCRIPTION" Language="en_US">
 			<Text>+7 [ICON_Strength] Combat Strength against a unit with higher [ICON_Strength] Base Combat Strength.</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_DESCRIPTION" Language="fr_FR">
+		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_LONG_DESCRIPTION" Language="fr_FR">
 			<Text>+7 [ICON_Strength] Puissance de Combat contre des unités avec une [ICON_Strength] Puissance de Combat plus haute.</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_RWB_LEITIS_CUIRASS_NAME" Language="en_US">
+			<Text>Cuirass</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_RWB_LEITIS_CUIRASS_NAME" Language="fr_FR">
+			<Text>Cuirasse</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_RWB_LEITIS_CUIRASS_DESCRIPTION" Language="en_US">
+			<Text>+4 [ICON_Strength] from Cuirass.</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_RWB_LEITIS_CUIRASS_DESCRIPTION" Language="fr_FR">
+			<Text>+4 [ICON_Strength] de Cuirasse.</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_RWB_LEITIS_CUIRASS_LONG_DESCRIPTION" Language="en_US">
+			<Text>+4 [ICON_Strength] Combat Strength after "Castles" has been researched.</Text>
+		</Row>
+		<Row Tag="LOC_ABILITY_RWB_LEITIS_CUIRASS_LONG_DESCRIPTION" Language="fr_FR">
+			<Text>+4 [ICON_Strength] Puissance de Combat après avoir recherché "Châteaux".</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_NAME" Language="en_US">
 			<Text>Piliakalnis</Text>

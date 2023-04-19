@@ -40,8 +40,8 @@ VALUES	('UNIT_RWB_VYTIS', -- UnitType
 		'DOMAIN_LAND', -- Domain
 		'FORMATION_CLASS_LAND_COMBAT', -- FormationClass
         'PROMOTION_CLASS_LIGHT_CAVALRY', -- PromotionClass
-        '40', -- CombatStrength
-		'240', -- Cost
+        '36', -- CombatStrength
+		'160', -- Cost
 		'0', -- CanCapture
 		'1', -- CanTrain
 		'YIELD_GOLD', -- PurchaseYield
@@ -99,7 +99,8 @@ INSERT OR REPLACE INTO TypeTags
         (Type,									    Tag)
 VALUES	('UNIT_RWB_VYTIS',						    'CLASS_LIGHT_CAVALRY'),
         ('UNIT_RWB_VYTIS',						    'CLASS_RWB_LEITIS'),
-        ('ABILITY_RWB_LEITIS',						'CLASS_RWB_LEITIS');
+        ('ABILITY_RWB_LEITIS_DEFIANCE',				'CLASS_RWB_LEITIS'),
+        ('ABILITY_RWB_LEITIS_CUIRASS',				'CLASS_RWB_LEITIS');
 
 INSERT OR REPLACE INTO Tags
 (Tag,									            Vocabulary)
@@ -107,7 +108,8 @@ VALUES	('CLASS_RWB_LEITIS',						        'ABILITY_CLASS');
 
 INSERT OR REPLACE INTO Types
         (Type,									            Kind)
-VALUES	('ABILITY_RWB_LEITIS',						        'KIND_ABILITY');
+VALUES	('ABILITY_RWB_LEITIS_DEFIANCE',						        'KIND_ABILITY'),
+        ('ABILITY_RWB_LEITIS_CUIRASS',						        'KIND_ABILITY');
 
 -----------------------------------------------	
 -- UnitAbilities
@@ -115,28 +117,32 @@ VALUES	('ABILITY_RWB_LEITIS',						        'KIND_ABILITY');
     
 INSERT OR REPLACE INTO UnitAbilities
         (UnitAbilityType,									 Name,                                   Description)
-VALUES	('ABILITY_RWB_LEITIS',						        'LOC_ABILITY_RWB_LEITIS_NAME',          'LOC_ABILITY_RWB_LEITIS_DESCRIPTION');
+VALUES	('ABILITY_RWB_LEITIS_DEFIANCE',						        'LOC_ABILITY_RWB_LEITIS_DEFIANCE_NAME',          'LOC_ABILITY_RWB_LEITIS_DEFIANCE_DESCRIPTION'),
+        ('ABILITY_RWB_LEITIS_CUIRASS',						        'LOC_ABILITY_RWB_LEITIS_CUIRASS_NAME',          'LOC_ABILITY_RWB_LEITIS_CUIRASS_DESCRIPTION');
 
 
 INSERT OR REPLACE INTO UnitAbilityModifiers
         (UnitAbilityType,								            ModifierId)
-VALUES	('ABILITY_RWB_LEITIS',						                'RWB_LEITIS_DEFIANCE');
+VALUES	('ABILITY_RWB_LEITIS_DEFIANCE',						                'RWB_LEITIS_DEFIANCE'),
+        ('ABILITY_RWB_LEITIS_CUIRASS',						                'RWB_LEITIS_CUIRASS');
 
 -----------------------------------------------	
 -- Modifiers
 -----------------------------------------------	
 
 INSERT OR REPLACE INTO Modifiers
-        (ModifierId,							ModifierType,                                           SubjectRequirementSetId)
-VALUES	('RWB_LEITIS_DEFIANCE',				    'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',      'COMBAT_AGAINST_STRONGER_UNIT_REQUIREMENTS');
-
+        (ModifierId,							ModifierType,                                SubjectRequirementSetId)
+VALUES	('RWB_LEITIS_DEFIANCE',				    'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',      'COMBAT_AGAINST_STRONGER_UNIT_REQUIREMENTS'),
+        ('RWB_LEITIS_CUIRASS',				    'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',      'PLAYER_HAS_CASTLES_TECHNOLOGY');
 
 INSERT OR REPLACE INTO ModifierArguments
         (ModifierId,							Name,                                           Value)
-VALUES	('RWB_LEITIS_DEFIANCE',					'Amount',                                        '7');
+VALUES	('RWB_LEITIS_DEFIANCE',					'Amount',                                        '7'),
+        ('RWB_LEITIS_CUIRASS',					'Amount',                                        '4');
 
 
 INSERT OR REPLACE INTO ModifierStrings
         (ModifierId,							Context,                                Text)
-VALUES	('RWB_LEITIS_DEFIANCE',				    'Preview',                              'LOC_ABILITY_RWB_LEITIS_DEFIANCE_DESCRIPTION');
+VALUES	('RWB_LEITIS_DEFIANCE',				    'Preview',                              'LOC_ABILITY_RWB_LEITIS_DEFIANCE_LONG_DESCRIPTION'),
+        ('RWB_LEITIS_CUIRASS',				    'Preview',                              'LOC_ABILITY_RWB_LEITIS_DEFIANCE_LONG_DESCRIPTION');
 
