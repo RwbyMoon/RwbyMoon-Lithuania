@@ -6,8 +6,8 @@ Opened output file: C:\Users\b.andula\AppData\Local\Firaxis Games\Sid Meier's Ci
 Could not load digest key: ''.  Using mod key to sign BLP.
 Starting 'UILeaders'
 Load finished for: 'UILeaders' in 0.027 seconds
-Cook finished for: 'UILeaders' in 0.283 seconds
-Disk write finished for: 'UILeaders' in 0.088 seconds
+Cook finished for: 'UILeaders' in 0.271 seconds
+Disk write finished for: 'UILeaders' in 0.096 seconds
 Cleanup finished for: 'UILeaders' in 0.004 seconds
 XLP cook completed with success.
-Cook completed in 0.412 seconds
+Cook completed in 0.409 seconds

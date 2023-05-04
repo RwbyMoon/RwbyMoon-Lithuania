@@ -115,7 +115,7 @@ INSERT OR REPLACE INTO ModifierArguments
 VALUES      ('RWB_DIEVDIRBIAI_APPEAL_BONUS_RELIGION',                                'Amount',               '1'),
             
             ('RWB_DIEVDIRBIAI_FAITH_PURCHASE_MALUS_BASE',                            'BonusType',            'GOVERNMENTBONUS_FAITH_PURCHASES'),
-            ('RWB_DIEVDIRBIAI_FAITH_PURCHASE_MALUS_BASE',                            'Amount',               '-15'),
+            ('RWB_DIEVDIRBIAI_FAITH_PURCHASE_MALUS_BASE',                            'Amount',               '-20'),
             ('RWB_DIEVDIRBIAI_FAITH_PURCHASE_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',    'BonusType',            'GOVERNMENTBONUS_FAITH_PURCHASES'),
             ('RWB_DIEVDIRBIAI_FAITH_PURCHASE_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',    'Amount',               '-20'),
             
