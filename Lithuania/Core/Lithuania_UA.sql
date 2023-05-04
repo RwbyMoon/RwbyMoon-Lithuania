@@ -8,12 +8,13 @@ VALUES	('MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',		'KIND_M
 
 INSERT OR REPLACE INTO	TraitModifiers
 (TraitType,											                    ModifierId								)
-SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_WOODS_'||DistrictType						FROM Districts WHERE RequiresPlacement = 1 UNION
-SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_JUNGLE_'||DistrictType						FROM Districts WHERE RequiresPlacement = 1 UNION
-SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_MARSH_'||DistrictType						FROM Districts WHERE RequiresPlacement = 1 UNION
-SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_'||DistrictType					FROM Districts WHERE RequiresPlacement = 1 UNION
-SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_GRASSLAND_'||DistrictType		FROM Districts WHERE RequiresPlacement = 1 UNION
-SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_PLAINS_'||DistrictType			FROM Districts WHERE RequiresPlacement = 1;
+
+SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_'||a.FeatureType||'_'||b.DistrictType
+FROM Features a, Districts b WHERE a.Quote IS null AND a.FeatureType IS NOT 'FEATURE_REEF' AND b.RequiresPlacement = 1 AND b.Coast = 0 UNION
+
+SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_REEF_'||DistrictType
+FROM Districts WHERE RequiresPlacement = 1 AND Coast = 1
+;
 
 INSERT OR REPLACE INTO DynamicModifiers
 (ModifierType,												                    CollectionType,				    EffectType)
@@ -21,33 +22,29 @@ VALUES	('MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',		'COLLEC
 
 INSERT OR REPLACE INTO Modifiers
 (ModifierId,												               ModifierType,                                                            Permanent)
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_WOODS_'||DistrictType,					'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0		FROM Districts WHERE RequiresPlacement = 1 UNION
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_JUNGLE_'||DistrictType,					'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0		FROM Districts WHERE RequiresPlacement = 1 UNION
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_MARSH_'||DistrictType,					'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0		FROM Districts WHERE RequiresPlacement = 1 UNION
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_'||DistrictType,			'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0	    FROM Districts WHERE RequiresPlacement = 1 UNION
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_GRASSLAND_'||DistrictType,	'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0		FROM Districts WHERE RequiresPlacement = 1 UNION
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_PLAINS_'||DistrictType,		'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0		FROM Districts WHERE RequiresPlacement = 1;
+
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_'||a.FeatureType||'_'||b.DistrictType,	'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0
+FROM Features a, Districts b WHERE a.Quote IS null AND a.FeatureType IS NOT 'FEATURE_REEF' AND b.RequiresPlacement = 1 AND b.Coast = 0 UNION
+
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_REEF_'||DistrictType,					'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0		
+FROM Districts WHERE RequiresPlacement = 1 AND Coast = 1 
+;
 
 INSERT OR REPLACE INTO ModifierArguments
-(ModifierId,												                    Name,				        Value)
+(ModifierId,												            Name,				Value)
 --
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_WOODS_'||DistrictType,					'DistrictType',		DistrictType						    FROM Districts WHERE RequiresPlacement = 1 UNION
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_WOODS_'||DistrictType,					'FeatureType',		'FEATURE_FOREST'					FROM Districts WHERE RequiresPlacement = 1 UNION
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_'||a.FeatureType||'_'||b.DistrictType,					'DistrictType',		b.DistrictType
+FROM Features a, Districts b WHERE a.Quote IS null AND a.FeatureType IS NOT 'FEATURE_REEF' AND b.RequiresPlacement = 1 AND b.Coast = 0 UNION
+                                                         
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_'||a.FeatureType||'_'||b.DistrictType,					'FeatureType',		a.FeatureType
+FROM Features a, Districts b WHERE a.Quote IS null AND a.FeatureType IS NOT 'FEATURE_REEF' AND b.RequiresPlacement = 1 AND b.Coast = 0 UNION
 --
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_JUNGLE_'||DistrictType,					'DistrictType',		DistrictType						    FROM Districts WHERE RequiresPlacement = 1 UNION
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_JUNGLE_'||DistrictType,					'FeatureType',		'FEATURE_JUNGLE'					FROM Districts WHERE RequiresPlacement = 1 UNION
---
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_MARSH_'||DistrictType,					'DistrictType',		DistrictType						    FROM Districts WHERE RequiresPlacement = 1 UNION
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_MARSH_'||DistrictType,					'FeatureType',		'FEATURE_MARSH'					FROM Districts WHERE RequiresPlacement = 1 UNION
---
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_'||DistrictType,			'DistrictType',		DistrictType						    FROM Districts WHERE RequiresPlacement = 1 UNION
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_'||DistrictType,			'FeatureType',		'FEATURE_FLOODPLAINS'				FROM Districts WHERE RequiresPlacement = 1 UNION
---
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_GRASSLAND_'||DistrictType,	'DistrictType',		DistrictType						    FROM Districts WHERE RequiresPlacement = 1 UNION
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_GRASSLAND_'||DistrictType,	'FeatureType',		'FEATURE_FLOODPLAINS_GRASSLAND'	FROM Districts WHERE RequiresPlacement = 1 UNION
---
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_PLAINS_'||DistrictType,		'DistrictType',		DistrictType						    FROM Districts WHERE RequiresPlacement = 1 UNION
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_PLAINS_'||DistrictType,		'FeatureType',		'FEATURE_FLOODPLAINS_PLAINS'		FROM Districts WHERE RequiresPlacement = 1;
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_REEF_'||DistrictType,					'DistrictType',		DistrictType					
+FROM Districts WHERE RequiresPlacement = 1 AND Coast = 1 UNION
+                                                         
+SELECT	'RWB_DIEVDIRBIAI_ALLOW_REEF_'||DistrictType,					'FeatureType',		'FEATURE_REEF'					
+FROM Districts WHERE RequiresPlacement = 1 AND Coast = 1
+;
 
 
 -----------------------------------------------
@@ -58,9 +55,9 @@ SELECT	'RWB_DIEVDIRBIAI_ALLOW_FLOODPLAINS_PLAINS_'||DistrictType,		'FeatureType'
 INSERT OR REPLACE INTO	TraitModifiers
             (TraitType,									                    ModifierId								)
 VALUES      ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',          'RWB_DIEVDIRBIAI_FAITH_PURCHASE_MALUS_BASE'     ),
-            ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',          'RWB_DIEVDIRBIAI_APPEAL_BONUS_RELIGION'),
-            ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',          'RWB_DIEVDIRBIAI_GIVE_GOVERNOR_TITLE'),
-            ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',          'RWB_DIEVDIRBIAI_FAITH_PURCHASE_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER');
+            /*('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',          'RWB_DIEVDIRBIAI_APPEAL_BONUS_RELIGION'),*/
+            ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',          'RWB_DIEVDIRBIAI_GIVE_GOVERNOR_TITLE')/*,
+            ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',          'RWB_DIEVDIRBIAI_FAITH_PURCHASE_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER')*/;
 
 INSERT OR REPLACE INTO Modifiers
             (ModifierId,
@@ -120,22 +117,22 @@ VALUES      ('RWB_DIEVDIRBIAI_APPEAL_BONUS_RELIGION',                           
             ('RWB_DIEVDIRBIAI_FAITH_PURCHASE_MALUS_BASE',                            'BonusType',            'GOVERNMENTBONUS_FAITH_PURCHASES'),
             ('RWB_DIEVDIRBIAI_FAITH_PURCHASE_MALUS_BASE',                            'Amount',               '-15'),
             ('RWB_DIEVDIRBIAI_FAITH_PURCHASE_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',    'BonusType',            'GOVERNMENTBONUS_FAITH_PURCHASES'),
-            ('RWB_DIEVDIRBIAI_FAITH_PURCHASE_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',    'Amount',               '-15'),
+            ('RWB_DIEVDIRBIAI_FAITH_PURCHASE_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',    'Amount',               '-20'),
             
             ('RWB_DIEVDIRBIAI_GIVE_GOVERNOR_TITLE',                            'Delta',               '1'),
-    
-           
+            
+            
             ('RWB_DIEVDIRBIAI_APPEAL_MALUS_RWB_LEADER_VYTAUTAS',                    'ModifierId',           'RWB_DIEVDIRBIAI_APPEAL_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER'),
             ('RWB_DIEVDIRBIAI_APPEAL_MALUS_RWB_LEADER_VYTAUTAS_FOUNDER_MODIFIER',   'ModifierId',           'RWB_DIEVDIRBIAI_APPEAL_MALUS_RWB_LEADER_VYTAUTAS'),
             
             ('RWB_DIEVDIRBIAI_APPEAL_MALUS_RWB_LEADER_VYTAUTAS_MODIFIER',        'Amount',               '-2');
 
 			
-INSERT OR REPLACE INTO BeliefModifiers
+/*INSERT OR REPLACE INTO BeliefModifiers
             (BeliefType, ModifierID)
 
 SELECT      BeliefType,'RWB_DIEVDIRBIAI_APPEAL_MALUS_RWB_LEADER_VYTAUTAS'
-FROM Beliefs WHERE BeliefClassType = 'BELIEF_CLASS_FOLLOWER';
+FROM Beliefs WHERE BeliefClassType = 'BELIEF_CLASS_FOLLOWER';*/
 
 /*INSERT OR REPLACE INTO BeliefModifiers
 (BeliefType, ModifierID)

@@ -42,13 +42,13 @@ WHERE a.DistrictType IN (SELECT DistrictType FROM Districts WHERE TraitType IS N
   AND b.ID = (SELECT YieldChangeId FROM District_Adjacencies WHERE DistrictType = a.DistrictType);*/
 
 
-CREATE TABLE IF NOT EXISTS Rwb_AppealReference
+CREATE TABLE IF NOT EXISTS Rwb_AppealReference_ULA
 (
     Size INT
 );
 
 WITH RECURSIVE t(val) AS (SELECT 1 UNION ALL SELECT val + 1 FROM t LIMIT 45)
-INSERT OR REPLACE INTO Rwb_AppealReference (Size) SELECT val FROM t;
+INSERT OR REPLACE INTO Rwb_AppealReference_ULA (Size) SELECT val FROM t;
 
 
 --- Now I can Remove Adjacency for all specialty districts
@@ -69,17 +69,17 @@ INSERT OR REPLACE  INTO Modifiers
 SELECT	            'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,
                       'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_APPEAL',
                     'REQSET_LIMITS_APPEAL_'||a.Size
-FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType ;
+FROM Rwb_AppealReference_ULA a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType ;
 
 --- ModifierArguments, so effects
 
 INSERT OR REPLACE INTO ModifierArguments
        (ModifierId,                                                        Name,                            Value)
-SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'YieldType'      ,b.YieldType              FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
-SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'RequiredAppeal' ,a.Size                   FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
-SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'YieldChange'    ,'1'                      FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
-SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'DistrictType'   ,b.DistrictType           FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
-SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'Description'    ,b.YieldText              FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType
+SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'YieldType'      ,b.YieldType              FROM Rwb_AppealReference_ULA a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
+SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'RequiredAppeal' ,a.Size                   FROM Rwb_AppealReference_ULA a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
+SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'YieldChange'    ,'1'                      FROM Rwb_AppealReference_ULA a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
+SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'DistrictType'   ,b.DistrictType           FROM Rwb_AppealReference_ULA a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType UNION
+SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'Description'    ,b.YieldText              FROM Rwb_AppealReference_ULA a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType
 ;
 
 --- Sooo.... The requirement just doesn't work ?
@@ -87,32 +87,32 @@ SELECT 'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size,   'Descr
 INSERT OR REPLACE INTO RequirementSets
                         (RequirementSetId, RequirementSetType) 
 SELECT                  'REQSET_LIMITS_APPEAL_'||a.Size,'REQUIREMENTSET_TEST_ALL'
-FROM Rwb_AppealReference a WHERE a.Size > 0 ;
+FROM Rwb_AppealReference_ULA a WHERE a.Size > 0 ;
 
 INSERT OR REPLACE INTO RequirementSetRequirements
                         (RequirementSetId, RequirementId)
 SELECT                  'REQSET_LIMITS_APPEAL_'||a.Size,'REQUIRES_EXACTLY_APPEAL_'||a.Size
-FROM Rwb_AppealReference a WHERE a.Size > 0 ;
+FROM Rwb_AppealReference_ULA a WHERE a.Size > 0 ;
 
 INSERT OR REPLACE INTO Requirements
                         (RequirementId, RequirementType)
 SELECT                  'REQUIRES_EXACTLY_APPEAL_'||a.Size,'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN'
-FROM Rwb_AppealReference a WHERE a.Size > 0 ;
+FROM Rwb_AppealReference_ULA a WHERE a.Size > 0 ;
 
 INSERT OR REPLACE INTO RequirementArguments
                                     (RequirementId,                          Name,Value)
-SELECT                  'REQUIRES_EXACTLY_APPEAL_'||a.Size,'MinimumValue',a.Size FROM Rwb_AppealReference a WHERE a.Size > 0 UNION
-SELECT                  'REQUIRES_EXACTLY_APPEAL_'||a.Size,'MaximumValue',a.Size FROM Rwb_AppealReference a WHERE a.Size > 0;
+SELECT                  'REQUIRES_EXACTLY_APPEAL_'||a.Size,'MinimumValue',a.Size FROM Rwb_AppealReference_ULA a WHERE a.Size > 0 UNION
+SELECT                  'REQUIRES_EXACTLY_APPEAL_'||a.Size,'MaximumValue',a.Size FROM Rwb_AppealReference_ULA a WHERE a.Size > 0;
 
 INSERT OR REPLACE  INTO TraitModifiers
 (TraitType,
  ModifierId)
 SELECT	            'TRAIT_LEADER_RWB_UNION_OF_HORODLO',
                       'RWB'||b.DistrictType||'_'||b.YieldType||'_FROM_APPEAL'||a.Size
-FROM Rwb_AppealReference a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType ;
+FROM Rwb_AppealReference_ULA a, Rwb_AdjacencyDistrictList b WHERE a.Size > 0 AND b.DistrictType = b.DistrictType ;
 
 
-DROP TABLE Rwb_AppealReference;
+DROP TABLE Rwb_AppealReference_ULA;
 DROP TABLE Rwb_AdjacencyDistrictList;
 
 -----------------------------------------------
@@ -128,8 +128,8 @@ VALUES	        ('UNIT_RWB_LANDOWNER',	                'KIND_UNIT'),
 INSERT OR REPLACE INTO	TraitModifiers
 (TraitType,											    ModifierId								)
 
-VALUES	  ('TRAIT_CIVILIZATION_RWB_UNIT_LANDOWNER',		'TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK'	);
-/*VALUES	  ('TRAIT_LEADER_RWB_UNION_OF_HORODLO',		'TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK'	);*/
+/*VALUES	  ('TRAIT_CIVILIZATION_RWB_UNIT_LANDOWNER',		'TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK'	);*/
+VALUES	  ('TRAIT_LEADER_RWB_UNION_OF_HORODLO',		'TRAIT_CIVILIZATION_LANDOWNER_UNIQUE_UNIT_UNLOCK'	);
 
 INSERT OR REPLACE INTO Units
 (UnitType,

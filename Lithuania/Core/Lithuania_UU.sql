@@ -131,9 +131,9 @@ VALUES	('ABILITY_RWB_LEITIS_DEFIANCE',						                'RWB_LEITIS_DEFIANCE
 -----------------------------------------------	
 
 INSERT OR REPLACE INTO Modifiers
-        (ModifierId,							ModifierType,                                SubjectRequirementSetId)
-VALUES	('RWB_LEITIS_DEFIANCE',				    'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',      'COMBAT_AGAINST_STRONGER_UNIT_REQUIREMENTS'),
-        ('RWB_LEITIS_CUIRASS',				    'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',      'PLAYER_HAS_CASTLES_TECHNOLOGY');
+        (ModifierId,							ModifierType,                                SubjectRequirementSetId,						OwnerRequirementSetId)
+VALUES	('RWB_LEITIS_DEFIANCE',				    'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',      'COMBAT_AGAINST_STRONGER_UNIT_REQUIREMENTS',	null),
+        ('RWB_LEITIS_CUIRASS',				    'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',      null,											'PLAYER_HAS_CASTLES_TECHNOLOGY');
 
 INSERT OR REPLACE INTO ModifierArguments
         (ModifierId,							Name,                                           Value)
@@ -144,5 +144,5 @@ VALUES	('RWB_LEITIS_DEFIANCE',					'Amount',                                    
 INSERT OR REPLACE INTO ModifierStrings
         (ModifierId,							Context,                                Text)
 VALUES	('RWB_LEITIS_DEFIANCE',				    'Preview',                              'LOC_ABILITY_RWB_LEITIS_DEFIANCE_LONG_DESCRIPTION'),
-        ('RWB_LEITIS_CUIRASS',				    'Preview',                              'LOC_ABILITY_RWB_LEITIS_DEFIANCE_LONG_DESCRIPTION');
+        ('RWB_LEITIS_CUIRASS',				    'Preview',                              'LOC_ABILITY_RWB_LEITIS_CUIRASS_LONG_DESCRIPTION');
 
