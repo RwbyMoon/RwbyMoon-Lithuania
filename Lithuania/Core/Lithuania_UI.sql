@@ -231,7 +231,7 @@ VALUES	('PLOT_IS_UNIMPROVED_ADJACENT_TO_PILIAKALNIS_REQSET',	            'PLOT_I
         ('PLOT_IS_UNIMPROVED_ADJACENT_TO_PILIAKALNIS_REQSET',               'PLOT_HAS_NO_IMPROVEMENT_REQ'),
         ('PLOT_IS_UNIMPROVED_HIGH_APPEAL_ADJACENT_TO_PILIAKALNIS_REQSET',   'PLOT_IS_ADJACENT_TO_PILIAKALNIS_REQ'),
         ('PLOT_IS_UNIMPROVED_HIGH_APPEAL_ADJACENT_TO_PILIAKALNIS_REQSET',   'PLOT_HAS_NO_IMPROVEMENT_REQ'),
-        ('PLOT_IS_UNIMPROVED_HIGH_APPEAL_ADJACENT_TO_PILIAKALNIS_REQSET',   'PLOT_HAS_COAST_REQ'),
+        ('PLOT_IS_UNIMPROVED_HIGH_APPEAL_ADJACENT_TO_PILIAKALNIS_REQSET',   'PLOT_IS_NOT_COAST_REQ'),
         ('PLOT_IS_UNIMPROVED_HIGH_APPEAL_ADJACENT_TO_PILIAKALNIS_REQSET',   'RWB_REQUIRES_APPEAL_4_OR_MORE_REQ'),
         ('DISTRICT_IS_ADJACENT_TO_PILIAKALNIS_REQSET',                      'RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS');
 
@@ -239,14 +239,14 @@ INSERT INTO Requirements
 (RequirementId,									                            RequirementType,								        Inverse )
 VALUES	('PLOT_IS_ADJACENT_TO_PILIAKALNIS_REQ',		                        'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES',	    '0'	),
         ('RWB_REQUIRES_APPEAL_4_OR_MORE_REQ',	                            'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN',                   '0'),
-        ('PLOT_HAS_COAST_REQ',	                                            'REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES',                '0'),
+        ('PLOT_IS_NOT_COAST_REQ',	                                            'REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES',                '0'),
         ('PLOT_HAS_NO_IMPROVEMENT_REQ',	                                    'REQUIREMENT_PLOT_HAS_ANY_IMPROVEMENT',                 '1');
 
 INSERT INTO RequirementArguments
 (RequirementId,									                            Name,					Value)
 VALUES	  ('PLOT_IS_ADJACENT_TO_PILIAKALNIS_REQ',				            'DistrictType',			'DISTRICT_RWB_PILIAKALNIS'),
           ('RWB_REQUIRES_APPEAL_4_OR_MORE_REQ',		                        'MinimumAppeal',        '4'),
-          ('PLOT_HAS_COAST_REQ',				                            'TerrainType',			'TERRAIN_COAST'),
+          ('PLOT_IS_NOT_COAST_REQ',				                            'TerrainType',			'TERRAIN_COAST'),
           ('PLOT_IS_ADJACENT_TO_PILIAKALNIS_REQ',				            'MinRange',				'1'),
           ('PLOT_IS_ADJACENT_TO_PILIAKALNIS_REQ',				            'MaxRange',				'1');
 
