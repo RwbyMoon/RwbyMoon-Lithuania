@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # ModBuddy Solution File, Format Version 12.00
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{5DAE07AF-E217-45C1-8DE7-FF99D6011E8A}") = "RwbyMoon's Lithuania", "RwbyMoon's Lithuania.civ6proj", "{E7D7967F-BB11-4D6A-8A30-8EDD48A6EEBA}"
+Project("{5DAE07AF-E217-45C1-8DE7-FF99D6011E8A}") = "RwbyMoonsLithuania", "RwbyMoonsLithuania.civ6proj", "{E7D7967F-BB11-4D6A-8A30-8EDD48A6EEBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -2,7 +2,7 @@
 <Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
-    <Name>[COLOR:112,67,145,255]RwbyMoon[ENDCOLOR]'s Lithuania</Name>
+    <Name>RwbyMoonsLithuania</Name>
     <Guid>ffd7d44b-5ada-4262-97e6-9d889a953a78</Guid>
     <ProjectGuid>e7d7967f-bb11-4d6a-8a30-8edd48a6eeba</ProjectGuid>
     <ModVersion>1</ModVersion>
@@ -27,9 +27,6 @@
     <OutputPath>.</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="RwbyMoon's Lithuania.Art.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="ArtDefs\Civilizations.artdef">
       <SubType>Content</SubType>
     </Content>
@@ -52,6 +49,18 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="ArtDefs\Units.artdef">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Assets\Loyalty_Overlay_CIVILIZATION_RWB_LITHUANIA_Box.ast">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Assets\Loyalty_Overlay_CIVILIZATION_RWB_LITHUANIA_material.mtl">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Assets\Loyalty_Pressure_CIVILIZATION_RWB_LITHUANIA_Box.ast">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Assets\Loyalty_Pressure_CIVILIZATION_RWB_LITHUANIA_material.mtl">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Core\AppealDummyFeature.lua">
@@ -825,10 +834,13 @@
     <Content Include="Platforms\Windows\BLPs\units\units.blp">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="RwbyMoon%27s Lithuania.dep">
+    <Content Include="RwbyMoonsLithuania.Art.xml">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="RwbyMoon%27s Lithuania.modinfo">
+    <Content Include="RwbyMoonsLithuania.dep">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="RwbyMoonsLithuania.modinfo">
       <SubType>Content</SubType>
     </Content>
     <Content Include="XLPs\Atlas.xlp">
@@ -843,6 +855,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ArtDefs\" />
+    <Folder Include="Assets\" />
     <Folder Include="Core\" />
     <Folder Include="XLPs" />
     <Folder Include="Platforms\" />

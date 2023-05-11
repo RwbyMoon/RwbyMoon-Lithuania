@@ -203,7 +203,7 @@ VALUES  	('MODIFIER_RWB_PILIAKALNIS_OWN_FOOD_ADJACENCY_1',		                    
             ('MODIFIER_RWB_PILIAKALNIS_OWN_PRODUCTION_ADJACENCY_1',		                'Amount',				    '1'),
             ('MODIFIER_RWB_PILIAKALNIS_PRODUCTION_ADJACENCY_1_ATTACH',	                'ModifierId',				'MODIFIER_RWB_PILIAKALNIS_PRODUCTION_ADJACENCY_1'),
             ('MODIFIER_RWB_PILIAKALNIS_PRODUCTION_ADJACENCY_1',			                'YieldType',				'YIELD_PRODUCTION'),
-            ('MODIFIER_RWB_PILIAKALNIS_PRODUCTION_ADJACENCY_1',			                'Amount',					'1'),
+            ('MODIFIER_RWB_PILIAKALNIS_PRODUCTION_ADJACENCY_1',			                'Amount',					'2'),
 
             ('MODIFIER_RWB_PILIAKALNIS_OWN_BREATHTAKING_FOOD_ADJACENCY_1',		        'YieldType',				'YIELD_FOOD'),
             ('MODIFIER_RWB_PILIAKALNIS_OWN_BREATHTAKING_FOOD_ADJACENCY_1',		        'Amount',				    '1'),
@@ -215,7 +215,7 @@ VALUES  	('MODIFIER_RWB_PILIAKALNIS_OWN_FOOD_ADJACENCY_1',		                    
             ('MODIFIER_RWB_PILIAKALNIS_OWN_BREATHTAKING_PRODUCTION_ADJACENCY_1',		'Amount',				    '1'),
             ('MODIFIER_RWB_PILIAKALNIS_BREATHTAKING_PRODUCTION_ADJACENCY_1_ATTACH',	    'ModifierId',				'MODIFIER_RWB_PILIAKALNIS_BREATHTAKING_PRODUCTION_ADJACENCY_1'),
             ('MODIFIER_RWB_PILIAKALNIS_BREATHTAKING_PRODUCTION_ADJACENCY_1',			'YieldType',				'YIELD_PRODUCTION'),
-            ('MODIFIER_RWB_PILIAKALNIS_BREATHTAKING_PRODUCTION_ADJACENCY_1',			'Amount',					'1');
+            ('MODIFIER_RWB_PILIAKALNIS_BREATHTAKING_PRODUCTION_ADJACENCY_1',			'Amount',					'2');
 
 
 
@@ -239,7 +239,7 @@ INSERT INTO Requirements
 (RequirementId,									                            RequirementType,								        Inverse )
 VALUES	('PLOT_IS_ADJACENT_TO_PILIAKALNIS_REQ',		                        'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES',	    '0'	),
         ('RWB_REQUIRES_APPEAL_4_OR_MORE_REQ',	                            'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN',                   '0'),
-        ('PLOT_IS_NOT_COAST_REQ',	                                            'REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES',                '0'),
+        ('PLOT_IS_NOT_COAST_REQ',	                                        'REQUIREMENT_PLOT_TERRAIN_TYPE_MATCHES',                '0'),
         ('PLOT_HAS_NO_IMPROVEMENT_REQ',	                                    'REQUIREMENT_PLOT_HAS_ANY_IMPROVEMENT',                 '1');
 
 INSERT INTO RequirementArguments
@@ -475,10 +475,8 @@ FROM Features a WHERE a.Quote IS null AND a.FeatureType IS NOT 'FEATURE_REEF'
 
 
 -----------------------------------------------	
--- Strength Aura
+-- Strength Aura for Combat & Religious units in a 4-tile range from the UD.
 -----------------------------------------------	
-
---- TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS
 
 INSERT OR REPLACE INTO Modifiers
 (ModifierId,                                                            ModifierType,                               SubjectRequirementSetId)

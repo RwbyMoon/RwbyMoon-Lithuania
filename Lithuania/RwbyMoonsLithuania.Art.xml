@@ -498,7 +498,9 @@
 		</Element>
 		<Element>
 			<libraryName text="UILensAsset"/>
-			<relativePackagePaths/>
+			<relativePackagePaths>
+				<Element text="UILensAssets.blp"/>
+			</relativePackagePaths>
 		</Element>
 		<Element>
 			<libraryName text="UITexture"/>
