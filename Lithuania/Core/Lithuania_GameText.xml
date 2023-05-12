@@ -175,15 +175,15 @@
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian unique standalone District for Faith generation, city protection and the growth of it.[NEWLINE][NEWLINE]• Unimproved tiles adjacent to this district BELONGING to its city gain +1 [ICON_Food] Food and +2 [ICON_Production] Production, further augmented for each [ICON_District] District OF THIS CITY adjacent to the Piliakalnis. Doubled on Breathtaking tiles.[NEWLINE]• This district and those adjacent to it generate [ICON_Faith] Faith equal to 100% of the Appeal of their tile.[NEWLINE]• +2 Appeal on adjacent tiles[NEWLINE]• Causes Zone of Control on enemy units.[NEWLINE]• Units up to 4 tiles from a Piliakalnis gain +3 [ICON_Strength] Combat or [ICON_Religion] Religious Strength.
+				Lithuanian unique standalone District scaling with other districts proximity for Faith generation, growing the city and protecting it.[NEWLINE][NEWLINE]• This district and those adjacent to it generate [ICON_Food] Food, [ICON_Production] Production and [ICON_Faith] Faith equal to 50% of the Appeal of their tiles, doubled for the Piliakalnis.[NEWLINE]• Units up to 4 tiles from a Piliakalnis gain +3 [ICON_Strength] Combat or [ICON_Religion] Religious Strength.[NEWLINE]• +2 Appeal on adjacent tiles[NEWLINE]• Zone of Control on adjacent enemy units.
 			</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Quartier unique Lituanien pour de la génération de Foi, protéger sa ville et supporter sa croissance.[NEWLINE][NEWLINE]• Les cases non-aménagées adjacentes à ce quartier APPARTENANT à sa ville gagnent +1 [ICON_Food] Nourriture et +2 [ICON_Production] Production, augmentés davantage pour chaque [ICON_District] Quartier DE CETTE VILLE adjacent au Piliakalnis. Doublé sur les cases Epoustouflantes.[NEWLINE] • Ce quartier et ceux qui lui sont adjacents génèrent de la [ICON_Faith] Foi équivalente à 100% de l’Attrait de leur case.[NEWLINE] • +2 Attrait sur les cases adjacentes.[NEWLINE]• Cause une Zone de Contrôle sur les unités ennemies.[NEWLINE]• Les Unités jusqu’à 4 cases d’un Piliakalnis gagnent +3 Puissance de [ICON_Strength] Combat ou [ICON_Religion] Religieuse.
+				Quartier unique Lituanien évoluant avec la proximité d'autres Quartiers pour de la génération de Foi, protéger sa ville et supporter sa croissance.[NEWLINE][NEWLINE]• Ce quartier et ceux qui lui sont adjacents génèrent de la [ICON_Food] Nourriture, [ICON_Production] Production et [ICON_Faith] Foi équivalente à 50% de l’Attrait de leurs cases, doublés pour le Piliakalnis.[NEWLINE]• Vos Unités jusqu’à 4 cases d’un Piliakalnis gagnent +3 Puissance de [ICON_Strength] Combat ou [ICON_Religion] Religieuse.[NEWLINE]• +2 Attrait sur les cases adjacentes.[NEWLINE]• Zone de Contrôle sur les unités ennemies adjacentes.
 			</Text>
 		</Row>
-		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION_PRESERVE" Language="en_US">
+<!--		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION_PRESERVE" Language="en_US">
 			<Text>
 				Lithuanian unique standalone district for Faith generation, city protection and the growth of it. Cannot be built in a city already possessing a Preserve.[NEWLINE][NEWLINE]• Unimproved tiles adjacent to this district BELONGING to its city gain +1 [ICON_Food] Food and +2 [ICON_Production] Production, further augmented for each [ICON_District] District OF THIS CITY adjacent to the Piliakalnis. Doubled on Breathtaking tiles.[NEWLINE]• This district and those adjacent to it generate [ICON_Faith] Faith equal to 100% of the Appeal of their tile.[NEWLINE]• +2 Appeal on adjacent tiles[NEWLINE]• Causes Zone of Control on enemy units.[NEWLINE]• Units up to 4 tiles from a Piliakalnis gain +3 [ICON_Strength] Combat or [ICON_Religion] Religious Strength.
 			</Text>
@@ -212,7 +212,7 @@
 			<Text>
 				Quartier unique Lituanien pour de la génération de Foi, protéger sa ville et supporter sa croissance. Ne peut pas être construit dans une ville possédant déjà un Jardin ou une Réserve. [NEWLINE][NEWLINE]• Les cases non-aménagées adjacentes à ce quartier APPARTENANT à sa ville gagnent +1 [ICON_Food] Nourriture et +2 [ICON_Production] Production, augmentés davantage pour chaque [ICON_District] Quartier DE CETTE VILLE adjacent au Piliakalnis. Doublé sur les cases Epoustouflantes.[NEWLINE] • Ce quartier et ceux qui lui sont adjacents génèrent de la [ICON_Faith] Foi équivalente à 100% de l’Attrait de leur case.[NEWLINE] • +2 Attrait sur les cases adjacentes.[NEWLINE]• Cause une Zone de Contrôle sur les unités ennemies.[NEWLINE]• Les Unités jusqu’à 4 cases d’un Piliakalnis gagnent +3 Puissance de [ICON_Strength] Combat ou [ICON_Religion] Religieuse.
 			</Text>
-		</Row>
+		</Row>-->
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_NAME" Language="en_US">
 			<Text>Lithuania</Text>
 		</Row>

@@ -53,7 +53,7 @@
 							<m_Fields>
 								<m_Values>
 									<Element class="AssetObjects..ArtDefReferenceValue">
-										<m_ElementName text="Encampment"/>
+										<m_ElementName text="Mbanza"/>
 										<m_RootCollectionName text="Districts"/>
 										<m_ArtDefPath text="StrategicView.artdef"/>
 										<m_CollectionIsLocked>true</m_CollectionIsLocked>
@@ -78,7 +78,7 @@
 							<m_Fields>
 								<m_Values>
 									<Element class="AssetObjects..ArtDefReferenceValue">
-										<m_ElementName text="Encampment_Pillaged"/>
+										<m_ElementName text="Mbanza_Pillaged"/>
 										<m_RootCollectionName text="Districts"/>
 										<m_ArtDefPath text="StrategicView.artdef"/>
 										<m_CollectionIsLocked>true</m_CollectionIsLocked>
@@ -103,7 +103,7 @@
 							<m_Fields>
 								<m_Values>
 									<Element class="AssetObjects..ArtDefReferenceValue">
-										<m_ElementName text="Encampment_UnderConstruction"/>
+										<m_ElementName text="Mbanza_UnderConstruction"/>
 										<m_RootCollectionName text="Districts"/>
 										<m_ArtDefPath text="StrategicView.artdef"/>
 										<m_CollectionIsLocked>true</m_CollectionIsLocked>
@@ -132,7 +132,7 @@
 							<m_Fields>
 								<m_Values>
 									<Element class="AssetObjects..StringValue">
-										<m_Value text="Build_District_Lavra"/>
+										<m_Value text="Build_District_Mbanza"/>
 										<m_ParamName text="XrefName"/>
 									</Element>
 								</m_Values>

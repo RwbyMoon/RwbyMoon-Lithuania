@@ -11,6 +11,15 @@ WITH RECURSIVE t(val) AS (SELECT 1 UNION ALL SELECT val + 1 FROM t LIMIT 45)
 INSERT OR REPLACE INTO Rwb_AppealReference_UI (Size) SELECT val FROM t;
 
 
+
+CREATE TABLE IF NOT EXISTS Rwb_HalfAppealReference_UI
+(
+    Size INT
+);
+
+WITH RECURSIVE tB(valB) AS (SELECT 1 UNION ALL SELECT valB + 2 FROM tB LIMIT 23)
+INSERT OR REPLACE INTO Rwb_HalfAppealReference_UI (Size) SELECT valB FROM tB;
+
 -----------------------------------------------	
 -- Types
 -----------------------------------------------	
@@ -23,7 +32,11 @@ VALUES	    ('DISTRICT_RWB_PILIAKALNIS',		            'KIND_DISTRICT');
 INSERT OR REPLACE INTO Types
 (Type,								            Kind)
 SELECT    'RWB_PILIAKALNIS_ADJ_FAITH_YIELD_'||Size,		'KIND_MODIFIER'
-FROM Rwb_AppealReference_UI;
+FROM Rwb_HalfAppealReference_UI UNION
+SELECT    'RWB_PILIAKALNIS_ADJ_FOOD_YIELD_'||Size,		'KIND_MODIFIER'
+FROM Rwb_HalfAppealReference_UI UNION
+SELECT    'RWB_PILIAKALNIS_ADJ_PRODUCTION_YIELD_'||Size,		'KIND_MODIFIER'
+FROM Rwb_HalfAppealReference_UI;
 
 -----------------------------------------------	
 -- Districts
@@ -81,7 +94,7 @@ VALUES
 
     '0', -- HitPoints
 
-    '1', -- Appeal
+    '2', -- Appeal
     '2', -- CityStrengthModifier
 
     'PLUNDER_GOLD', -- PlunderType
@@ -102,7 +115,7 @@ VALUES
     '1', -- ZOC
     'NO_DOMAIN'); -- MilitaryDomain
 
-INSERT INTO MutuallyExclusiveDistricts
+/*INSERT INTO MutuallyExclusiveDistricts
 (District,						MutuallyExclusiveDistrict)
 SELECT	'DISTRICT_RWB_PILIAKALNIS',			'DISTRICT_PRESERVE'
 WHERE EXISTS (SELECT DistrictType FROM Districts WHERE DistrictType = 'DISTRICT_PRESERVE') UNION
@@ -127,28 +140,13 @@ UPDATE Districts
 SET Description = 'LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION_GARDEN_PLUS_PRESERVE'
 WHERE DistrictType = 'DISTRICT_RWB_PILIAKALNIS'
   AND EXISTS (SELECT DistrictType FROM Districts WHERE DistrictType = 'DISTRICT_PRESERVE') 
-  AND EXISTS (SELECT DistrictType FROM Districts WHERE DistrictType = 'DISTRICT_LEU_GARDEN');
+  AND EXISTS (SELECT DistrictType FROM Districts WHERE DistrictType = 'DISTRICT_LEU_GARDEN');*/
 
 -----------------------------------------------	
--- District-made yields
+-- District-made yields on adjacent tiles
 -----------------------------------------------	
 
-/*CREATE TABLE IF NOT EXISTS Rwb_DistrictAmountReference_UI
-(
-    Size INT
-);
-
-WITH RECURSIVE t(val) AS (SELECT 0 UNION ALL SELECT val + 1 FROM t LIMIT 6)
-INSERT OR REPLACE INTO Rwb_DistrictAmountReference_UI (Size) SELECT val FROM t;
-
-CREATE TABLE IF NOT EXISTS Rwb_EffectList
-(
-    YieldType1 TEXT,
-    YieldType2 TEXT,
-    YieldAmount1 TEXT,
-    YieldAmount2 TEXT
-);*/
-
+/*
 INSERT OR REPLACE INTO Types
 (Type, Kind)
 VALUES  ('MODTYPE_RWB_PILIAKALNIS_YIELD_FOOD',			'KIND_MODIFIER'),
@@ -249,46 +247,7 @@ VALUES	  ('PLOT_IS_ADJACENT_TO_PILIAKALNIS_REQ',				            'DistrictType',	
           ('PLOT_IS_NOT_COAST_REQ',				                            'TerrainType',			'TERRAIN_COAST'),
           ('PLOT_IS_ADJACENT_TO_PILIAKALNIS_REQ',				            'MinRange',				'1'),
           ('PLOT_IS_ADJACENT_TO_PILIAKALNIS_REQ',				            'MaxRange',				'1');
-
-
-/*INSERT OR REPLACE INTO Types
-(Type, Kind) 
-SELECT 'RWB_DUMMY_PROXIMITYBUILDING_'||Size,'KIND_BUILDING'
-FROM Rwb_DistrictAmountReference_UI;
-
-
-INSERT OR REPLACE INTO Buildings
-(BuildingType, Name, Description, PrereqDistrict, ObsoleteEra, Cost)
-SELECT 'RWB_DUMMY_PROXIMITYBUILDING_'||Size,'LOC_DISTRICT_RWB_DUMMY_PROXIMITYBUILDING_NAME'||Size,'LOC_DISTRICT_RWB_DUMMY_PROXIMITYBUILDING_DESCRIPTION'||Size,'DISTRICT_RWB_PILIAKALNIS', 'ERA_ANCIENT','1'
-FROM Rwb_DistrictAmountReference_UI;
-
-
-INSERT OR REPLACE INTO Rwb_DummyBuildingList
-(BuildingType, YieldType1, YieldType2, YieldAmount1, YieldAmount2, RequiredAppeal)
-
-SELECT 'RWB_DUMMY_PROXIMITYBUILDING_'||Size,'YIELD_FOOD','YIELD_PRODUCTION',Size,Size*2,Size
-FROM Rwb_DistrictAmountReference_UI;*/
-/*INSERT OR REPLACE INTO Adjacent_AppealYieldChanges
-(DistrictType,
- YieldType,
- MaximumValue,
- BuildingType,
- MinimumValue,
- YieldChange,
- Description,
- Unimproved)
-
-SELECT 'DISTRICT_RWB_PILIAKALNIS', 
-       'YIELD_FOOD',              
-       '100',        
-       BuildingType,        
-       MinimumValue,        
-       YieldChange,        
-       Description,        
-       Unimproved
-FROM ;*/
-
-
+*/
 
 -----------------------------------------------	
 -- District_TradeRouteYields
@@ -296,16 +255,17 @@ FROM ;*/
 
 INSERT OR REPLACE INTO District_TradeRouteYields
             (DistrictType,							
-             YieldType,           
-             YieldChangeAsOrigin,        
+             YieldType,             
              YieldChangeAsDomesticDestination,      
              YieldChangeAsInternationalDestination)
-SELECT	    'DISTRICT_RWB_PILIAKALNIS',							
-            YieldType,           
-            YieldChangeAsOrigin,        
-            YieldChangeAsDomesticDestination,      
-            YieldChangeAsInternationalDestination
-FROM District_TradeRouteYields WHERE DistrictType = 'DISTRICT_PRESERVE';
+VALUES	    (  'DISTRICT_RWB_PILIAKALNIS',
+               'YIELD_FOOD',
+               '1',
+               '0'),
+            (  'DISTRICT_RWB_PILIAKALNIS',
+               'YIELD_CULTURE',
+               '0',
+               '1');
 
 -----------------------------------------------	
 -- Adjacency_YieldChanges
@@ -316,26 +276,37 @@ FROM District_TradeRouteYields WHERE DistrictType = 'DISTRICT_PRESERVE';
 -----------------------------------------------	
 
 -----------------------------------------------	
--- TraitModifiers cuz sometimes, fuck.
------------------------------------------------	
-
------------------------------------------------	
 -- Modifiers
 -----------------------------------------------	
 
---Appeal Yields
 INSERT OR REPLACE INTO Modifiers
 (ModifierId,						ModifierType,                                           		  SubjectRequirementSetId                )
-SELECT    'RWB_PILIAKALNIS_ADJ_FAITH_YIELD_'||Size,	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS_'||Size
+SELECT    'RWB_PILIAKALNIS_ADJ_FAITH_YIELD_'||Size,	        'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS_'||Size
+FROM Rwb_HalfAppealReference_UI UNION
+SELECT    'RWB_PILIAKALNIS_OWN_FAITH_YIELD_'||Size,	        'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS_'||Size
 FROM Rwb_AppealReference_UI UNION
-SELECT    'RWB_PILIAKALNIS_OWN_FAITH_YIELD_'||Size,	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS_'||Size
+SELECT    'RWB_PILIAKALNIS_ADJ_FOOD_YIELD_'||Size,	        'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS_'||Size
+FROM Rwb_HalfAppealReference_UI UNION
+SELECT    'RWB_PILIAKALNIS_OWN_FOOD_YIELD_'||Size,	        'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS_'||Size
+FROM Rwb_AppealReference_UI UNION
+SELECT    'RWB_PILIAKALNIS_ADJ_PRODUCTION_YIELD_'||Size,	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS_'||Size
+FROM Rwb_HalfAppealReference_UI UNION
+SELECT    'RWB_PILIAKALNIS_OWN_PRODUCTION_YIELD_'||Size,	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',              'REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS_'||Size
 FROM Rwb_AppealReference_UI
                          ;
+
+-----------------------------------------------	
+-- TraitModifiers cuz sometimes, fuck.
+-----------------------------------------------	
 
 INSERT OR REPLACE INTO	TraitModifiers
 (TraitType,											    ModifierId								)
 SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_PILIAKALNIS_ADJ_FAITH_YIELD_'||Size	
-FROM Rwb_AppealReference_UI;
+FROM Rwb_HalfAppealReference_UI UNION
+SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_PILIAKALNIS_ADJ_FOOD_YIELD_'||Size
+FROM Rwb_HalfAppealReference_UI UNION
+SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_PILIAKALNIS_ADJ_PRODUCTION_YIELD_'||Size
+FROM Rwb_HalfAppealReference_UI;
 
 -----------------------------------------------	   
 -- DistrictModifiers
@@ -344,6 +315,10 @@ FROM Rwb_AppealReference_UI;
 INSERT OR REPLACE INTO DistrictModifiers
                 (DistrictType,						ModifierId)
 SELECT          'DISTRICT_RWB_PILIAKALNIS',              'RWB_PILIAKALNIS_OWN_FAITH_YIELD_'||Size
+FROM Rwb_AppealReference_UI UNION
+SELECT          'DISTRICT_RWB_PILIAKALNIS',              'RWB_PILIAKALNIS_OWN_FOOD_YIELD_'||Size
+FROM Rwb_AppealReference_UI UNION
+SELECT          'DISTRICT_RWB_PILIAKALNIS',              'RWB_PILIAKALNIS_OWN_PRODUCTION_YIELD_'||Size
 FROM Rwb_AppealReference_UI
                 ;
 
@@ -355,19 +330,33 @@ FROM Rwb_AppealReference_UI
 INSERT OR REPLACE INTO ModifierArguments
             (ModifierId,					            Name,                           Value)
 SELECT    'RWB_PILIAKALNIS_ADJ_FAITH_YIELD_'||Size,	'YieldType',           'YIELD_FAITH'
-FROM Rwb_AppealReference_UI UNION
+FROM Rwb_HalfAppealReference_UI UNION
 SELECT    'RWB_PILIAKALNIS_ADJ_FAITH_YIELD_'||Size,	'Amount',              '1'
-FROM Rwb_AppealReference_UI UNION
+FROM Rwb_HalfAppealReference_UI UNION
 SELECT    'RWB_PILIAKALNIS_OWN_FAITH_YIELD_'||Size,	'YieldType',           'YIELD_FAITH'
 FROM Rwb_AppealReference_UI UNION
 SELECT    'RWB_PILIAKALNIS_OWN_FAITH_YIELD_'||Size,	'Amount',              '1'
+FROM Rwb_AppealReference_UI UNION
+SELECT    'RWB_PILIAKALNIS_ADJ_FOOD_YIELD_'||Size,	'YieldType',           'YIELD_FOOD'
+FROM Rwb_HalfAppealReference_UI UNION
+SELECT    'RWB_PILIAKALNIS_ADJ_FOOD_YIELD_'||Size,	'Amount',              '1'
+FROM Rwb_HalfAppealReference_UI UNION
+SELECT    'RWB_PILIAKALNIS_OWN_FOOD_YIELD_'||Size,	'YieldType',           'YIELD_FOOD'
+FROM Rwb_AppealReference_UI UNION
+SELECT    'RWB_PILIAKALNIS_OWN_FOOD_YIELD_'||Size,	'Amount',              '1'
+FROM Rwb_AppealReference_UI UNION
+SELECT    'RWB_PILIAKALNIS_ADJ_PRODUCTION_YIELD_'||Size,	'YieldType',           'YIELD_PRODUCTION'
+FROM Rwb_HalfAppealReference_UI UNION
+SELECT    'RWB_PILIAKALNIS_ADJ_PRODUCTION_YIELD_'||Size,	'Amount',              '1'
+FROM Rwb_HalfAppealReference_UI UNION
+SELECT    'RWB_PILIAKALNIS_OWN_PRODUCTION_YIELD_'||Size,	'YieldType',           'YIELD_PRODUCTION'
+FROM Rwb_AppealReference_UI UNION
+SELECT    'RWB_PILIAKALNIS_OWN_PRODUCTION_YIELD_'||Size,	'Amount',              '1'
 FROM Rwb_AppealReference_UI
 ;
 
 
------------------------------------------------	
--- RequirementSets
------------------------------------------------	
+
 
 INSERT OR REPLACE INTO RequirementSets
             (RequirementSetId,                                      RequirementSetType)
@@ -378,27 +367,25 @@ SELECT          'REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS_'||Size,               
 FROM Rwb_AppealReference_UI
 			;
 
------------------------------------------------	
--- RequirementSetRequirements
------------------------------------------------	
+
+
 
 INSERT OR REPLACE INTO RequirementSetRequirements
                 (RequirementSetId,								                        RequirementId)
 
 SELECT    'REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS_'||Size,	                         'RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS'
-FROM Rwb_AppealReference_UI UNION
+FROM Rwb_HalfAppealReference_UI UNION
 SELECT    'REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS_'||Size,	                         'RWB_REQUIRES_APPEAL_'||Size||'_OR_MORE'
-FROM Rwb_AppealReference_UI UNION
+FROM Rwb_HalfAppealReference_UI UNION
 SELECT    'REQSET_SUB_RWB_LITHUANIA_ADJ_TO_PILIAKALNIS_'||Size,	                         'RWB_REQUIRES_IS_NOT_PILIAKALNIS'
-FROM Rwb_AppealReference_UI UNION
+FROM Rwb_HalfAppealReference_UI UNION
 SELECT    'REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS_'||Size,	                             'RWB_REQUIRES_APPEAL_'||Size||'_OR_MORE'
 FROM Rwb_AppealReference_UI UNION 
 SELECT    'REQSET_SUB_RWB_LITHUANIA_IS_PILIAKALNIS_'||Size,	                             'RWB_REQUIRES_IS_PILIAKALNIS'
 FROM Rwb_AppealReference_UI
 ;
------------------------------------------------	
--- Requirements
------------------------------------------------	
+
+
 
 INSERT OR REPLACE INTO Requirements
                 (RequirementId,								            RequirementType,                                       Inverse)
@@ -411,9 +398,7 @@ INSERT OR REPLACE INTO Requirements
 SELECT    'RWB_REQUIRES_APPEAL_'||Size||'_OR_MORE',	        'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN',              '0'
 FROM Rwb_AppealReference_UI;
 
------------------------------------------------	
--- RequirementArguments
------------------------------------------------	
+
 
 INSERT OR REPLACE INTO RequirementArguments
                 (RequirementId,								             Name,                      Value)
@@ -421,12 +406,7 @@ VALUES	        ('RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS',     'District
 				('RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS',     'MinRange',                 '1'),
 				('RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS',     'MaxRange',                 '1'),
 				('RWB_REQUIRES_IS_PILIAKALNIS',                         'DistrictType',             'DISTRICT_RWB_PILIAKALNIS'),
-				('RWB_REQUIRES_IS_NOT_PILIAKALNIS',                     'DistrictType',             'DISTRICT_RWB_PILIAKALNIS'),
-				('RWB_REQUIRES_APPEAL_1_OR_MORE',		                'MinimumAppeal',            '1'),
-                ('RWB_REQUIRES_APPEAL_3_OR_MORE',		                'MinimumAppeal',            '3'),
-                ('RWB_REQUIRES_APPEAL_5_OR_MORE',		                'MinimumAppeal',            '5'),
-                ('RWB_REQUIRES_APPEAL_7_OR_MORE',		                'MinimumAppeal',            '7'),
-                ('RWB_REQUIRES_APPEAL_9_OR_MORE',		                'MinimumAppeal',            '9')
+				('RWB_REQUIRES_IS_NOT_PILIAKALNIS',                     'DistrictType',             'DISTRICT_RWB_PILIAKALNIS')
                 ;
 
 INSERT OR REPLACE INTO RequirementArguments
@@ -435,6 +415,7 @@ SELECT    'RWB_REQUIRES_APPEAL_'||Size||'_OR_MORE',	        'MinimumAppeal',				
 FROM Rwb_AppealReference_UI;
 
 DROP TABLE Rwb_AppealReference_UI;
+DROP TABLE Rwb_HalfAppealReference_UI;
 -----------------------------------------------	
 -- For CivAbility of placable on features
 -----------------------------------------------	

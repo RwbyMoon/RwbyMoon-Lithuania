@@ -31,14 +31,6 @@
 							<m_ParamName text="UnitCombat"/>
 						</Element>
 						<Element class="AssetObjects..ArtDefReferenceValue">
-							<m_ElementName text="Horsemen"/>
-							<m_RootCollectionName text="UnitFormationTypes"/>
-							<m_ArtDefPath text="Units.artdef"/>
-							<m_CollectionIsLocked>true</m_CollectionIsLocked>
-							<m_TemplateName text="Units"/>
-							<m_ParamName text="EscortFormation"/>
-						</Element>
-						<Element class="AssetObjects..ArtDefReferenceValue">
 							<m_ElementName text="UNIT_ANCIENTEMBARK"/>
 							<m_RootCollectionName text="Units"/>
 							<m_ArtDefPath text="Units.artdef"/>
@@ -81,6 +73,14 @@
 						<Element class="AssetObjects..IntValue">
 							<m_nValue>0</m_nValue>
 							<m_ParamName text="DisplayLevel"/>
+						</Element>
+						<Element class="AssetObjects..ArtDefReferenceValue">
+							<m_ElementName text=""/>
+							<m_RootCollectionName text="UnitFormationTypes"/>
+							<m_ArtDefPath text="Units.artdef"/>
+							<m_CollectionIsLocked>true</m_CollectionIsLocked>
+							<m_TemplateName text=""/>
+							<m_ParamName text="EscortFormation"/>
 						</Element>
 					</m_Values>
 				</m_Fields>

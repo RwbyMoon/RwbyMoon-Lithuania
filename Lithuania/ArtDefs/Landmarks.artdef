@@ -58,7 +58,7 @@
 							<m_Fields>
 								<m_Values>
 									<Element class="AssetObjects..ArtDefReferenceValue">
-										<m_ElementName text=""/>
+										<m_ElementName text="Empty"/>
 										<m_RootCollectionName text="BuildingSets"/>
 										<m_ArtDefPath text="Landmarks.artdef"/>
 										<m_CollectionIsLocked>true</m_CollectionIsLocked>
@@ -74,11 +74,11 @@
 										<m_ParamName text="Tag_Era"/>
 									</Element>
 									<Element class="AssetObjects..ArtDefReferenceValue">
-										<m_ElementName text="DEFAULT"/>
-										<m_RootCollectionName text="Culture"/>
-										<m_ArtDefPath text="Cultures.artdef"/>
+										<m_ElementName text="CIVILIZATION_RWB_LITHUANIA"/>
+										<m_RootCollectionName text="Civilization"/>
+										<m_ArtDefPath text="Civilizations.artdef"/>
 										<m_CollectionIsLocked>true</m_CollectionIsLocked>
-										<m_TemplateName text="Cultures"/>
+										<m_TemplateName text="Civilizations"/>
 										<m_ParamName text="Tag_Culture"/>
 									</Element>
 									<Element class="AssetObjects..ArtDefReferenceValue">
@@ -90,7 +90,7 @@
 										<m_ParamName text="Tag_Appeal"/>
 									</Element>
 									<Element class="AssetObjects..BLPEntryValue">
-										<m_EntryName text="DIS_ENC_Classical_Base_02"/>
+										<m_EntryName text="DIS_Mbanza_Base_01"/>
 										<m_XLPClass text="TileBase"/>
 										<m_XLPPath text="tilebases.xlp"/>
 										<m_BLPPackage text="landmarks/tilebases"/>
