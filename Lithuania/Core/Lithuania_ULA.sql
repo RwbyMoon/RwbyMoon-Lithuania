@@ -153,8 +153,7 @@ INSERT OR REPLACE INTO Units
  PurchaseYield,
  MustPurchase,
  Maintenance,
- AdvisorType,
- PrereqCivic)
+ AdvisorType)
 
 
 VALUES	        ('UNIT_RWB_LANDOWNER',
@@ -178,8 +177,7 @@ VALUES	        ('UNIT_RWB_LANDOWNER',
                    'YIELD_FAITH',
                    '1',
                    '0',
-                   'ADVISOR_GENERIC',
-                   'CIVIC_POLITICAL_PHILOSOPHY');
+                   'ADVISOR_GENERIC');
 
 INSERT OR REPLACE INTO Modifiers
 (ModifierId, ModifierType)

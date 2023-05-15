@@ -25,10 +25,10 @@
 		</Row>
 	<!--DOM-->
 		<Row Tag="LOC_LOADING_INFO_LEADER_RWB_VYTAUTAS" Language="en_US">
-			<Text>By your ambition you live, Grand-Duke Vytautas. Lithuania look to you not only as The Great general into war, but also as their reformator. Your links with noble Europe make Pagans and Christians unite under your martial valour to expand Lithuania against foreign menaces. Go, use your statesmanlike foresight, centralize your people's faith and become the blade of the lithuanian consciousness.</Text>
+			<Text>By your ambition you live, Grand-Duke Vytautas. Lithuania look to you not only as The Great general into war, but also as their reformator uniting Pagans and Christians under a martial valour. Go, use your statesmanlike foresight, centralize your people's faith and become the blade of the lithuanian consciousness.</Text>
 		</Row>
 		<Row Tag="LOC_LOADING_INFO_LEADER_RWB_VYTAUTAS" Language="fr_FR">
-			<Text>Par votre ambition vous vous épanouissez, Grand-Duc Vytautas. Vous n'êtes pas que Le Grand aux yeux de la Lituanie en tant que général, mais aussi comme un réformateur. Vos liens avec une Europe noble unissent Païens et Chrétiens sous votre valeur martiale, menant à l'expansion de la Lituanie face aux menaces étrangères. Allez, et centralisez avec lucidité la foi de votre peuple et devenez la lame de la conscience lituanienne.</Text>
+			<Text>Par votre ambition vous vous épanouissez, Grand-Duc Vytautas. Vous n'êtes pas que Le Grand aux yeux de la Lituanie en tant que général, mais aussi comme un réformateur unissent Païens et Chrétiens sous une valeur martiale. Allez, et centralisez avec lucidité la foi de votre peuple et devenez la lame de la conscience lituanienne.</Text>
 		</Row>
 	<!--Agenda-->
 	<Row Tag="LOC_AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_NAME" Language="en_US">

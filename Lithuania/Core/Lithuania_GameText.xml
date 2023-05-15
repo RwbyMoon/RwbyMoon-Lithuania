@@ -17,12 +17,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian Theather Squares, Industrial Zones and Holy Sites do not gain their usual Adjacencies but gain Adjacency equal to the Appeal of the tile they are on. Buildings from Districts generating positive Appeal (Theatre Square, Holy Site, Entertainement Complex...) can be bought with [ICON_Faith] Faith.[NEWLINE][NEWLINE]After researching "Political Philosophy", can buy a unique civilian with [ICON_Faith] Faith ; the Landowner ; able to [ICON_Charges] complete any [ICON_District] District generating positive Appeal when finished.
+				Lithuanian Theather Squares, Industrial Zones and Holy Sites do not gain their usual Adjacencies but gain one equal to the Appeal of their tile. Buildings from Districts generating positive Appeal* can be bought with [ICON_Faith] Faith.[NEWLINE]Can buy a unique civilian with [ICON_Faith] Faith ; the Landowner ; able to [ICON_Charges] complete [ICON_District] Districts generating positive Appeal*. (*see Landowner for an exhaustive list)
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Les Places du Théâtre, Zones Industrielles et Lieux Saints Lituaniens ne disposent pas de leurs bonus de proximité habituels, mais gagnent un bonus de proximité équivalent à l’Attrait de la case sur lequel ils sont. Les bâtiments de Quartiers générant de l'attrait positif (Place du Théâtre, Lieu Saint, Complexe de Loisir...) peuvent être achetés avec de la [ICON_Faith] Foi.[NEWLINE][NEWLINE]Après avoir recherché "Philosophie Politique", peut acheter une unité civile unique avec de la [ICON_Faith] Foi ; le Seigneur ; capable [ICON_Charges] d'achever la construction d'un [ICON_District] Quartier générant de l'attrait positif lorsque terminé.
+				Les Places du Théâtre, Zones Industrielles et Lieux Saints Lituaniens ne disposent pas de leurs bonus de proximité usuels, mais en gagnent un équivalent à l’Attrait de leur case. Les bâtiments de Quartiers générant de l'attrait positif* sont achetables avec de la [ICON_Faith] Foi.[NEWLINE]Peut acheter une unité civile unique avec de la [ICON_Faith] Foi ; le Seigneur ; capable [ICON_Charges] d'achever la construction d'un [ICON_District] Quartier générant de l'attrait positif*. (*voir le Seigneur pour une liste exhaustive.)
 			</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_LANDOWNER_NAME" Language="en_US">
@@ -38,10 +38,10 @@
 			<Text>Une unité civile unique aidant à la construction de Quartiers</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="en_US">
-			<Text>Unique Lithuanian civilian unit that can only be purchased with [ICON_Faith] Faith once the civic "Political Philosophy" has been researched. Can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal once finished. After each purchase, its cost rises significantly.[NEWLINE][NEWLINE]Includes :[NEWLINE]• Piliakalnis (Preserve)[NEWLINE]• Holy Site[NEWLINE]• Theater Square[NEWLINE]• Entertainment Complex[NEWLINE]• Water Park[NEWLINE]• Dam[NEWLINE]• Canal</Text>
+			<Text>Unique Lithuanian civilian unit that can only be purchased with [ICON_Faith] Faith. Can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal once finished. After each purchase, its cost rises significantly.[NEWLINE]Includes :[NEWLINE]• Piliakalnis)[NEWLINE]• Preserve[NEWLINE]• Holy Site[NEWLINE]• Theater Square[NEWLINE]• Entertainment Complex[NEWLINE]• Water Park[NEWLINE]• Dam[NEWLINE]• Canal</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="fr_FR">
-			<Text>Unité civile Lituanienne unique qui ne peut être qu'être achetée avec de la [ICON_Faith] Foi une fois que le dogme "Philosophie Politique" a été recherché. Peut utiliser sa [ICON_Charges] Charge de Construction pour achever la construction d'un [ICON_District] Quartier générant de l'attrait une fois terminé. Après chaque achat, son coût augmente significativement.[NEWLINE][NEWLINE]Inclut :[NEWLINE]• Piliakalnis (Réserve)[NEWLINE]• Lieu Saint[NEWLINE]• Place du Théâtre[NEWLINE]• Complexe de Loisir[NEWLINE]• Parc Aquatique[NEWLINE]• Barrage[NEWLINE]• Canal</Text>
+			<Text>Unité civile Lituanienne unique qui ne peut être qu'être achetée avec de la [ICON_Faith] Foi. Peut utiliser sa [ICON_Charges] Charge de Construction pour achever la construction d'un [ICON_District] Quartier générant de l'attrait une fois terminé. Après chaque achat, son coût augmente significativement.[NEWLINE]Inclut :[NEWLINE]• Piliakalnis[NEWLINE]• Réserve[NEWLINE]• Lieu Saint[NEWLINE]• Place du Théâtre[NEWLINE]• Complexe de Loisir[NEWLINE]• Parc Aquatique[NEWLINE]• Barrage[NEWLINE]• Canal</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_NAME" Language="en_US">
 			<Text>Dievdirbiai</Text>
@@ -51,12 +51,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="en_US">
 			<Text>
-				Districts (excluding City-Centers) can be placed on any non-Wonder terrain [ICON_Terrain] Feature (Reefs, Geothermal Fissures, Oasis...), and do not destroy those harvestable (Woods, Rainforests, Marshes...), becoming unharvestable. Only Appeal and proximity bonuses generated by these Features is kept.[NEWLINE][NEWLINE]Faith Buying is 20% more expensive in Lithuanian Cities. Founding a religion makes it 20% more expensive and grant +1 Governor title.
+				Districts (excluding City-Centers) can be placed on any passable non-Wonder terrain [ICON_Terrain] Feature (Woods, Marshes, Reefs, Oasis...) without destroying them.[NEWLINE]Faith Buying is 20% more expensive in Lithuanian Cities. Founding a religion makes it 20% more expensive and grant +1 Governor title.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Les Quartiers (hors Centre-Villes) peuvent être placés sur les [ICON_Terrain] Caractéristiques de terrain non-Merveille (Récifs, Fissures Géothermales, Oasis...), et ne détruisent pas celles récoltables (Bois, Forêts Tropicales, Marais...) -- qui deviennent alors irrécoltable. Seul l'Attrait et les bonus de proximité généré par ces Caractéristiques sont conservés.[NEWLINE][NEWLINE]Les achats avec de la Foi sont +20% plus chers. Fonder une religion l'augmente de +20% supplémentaires et confère +1 titre de Gouverneur.
+				Les Quartiers (hors Centre-Villes) peuvent être placés sur les [ICON_Terrain] Caractéristiques de terrain non-Merveille (Bois, Marais, Récifs, Oasis...) sans les détruire.[NEWLINE]Les achats avec de la Foi sont +20% plus chers. Fonder une religion l'augmente de +20% supplémentaires et confère +1 titre de Gouverneur.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_NAME" Language="en_US">
@@ -175,12 +175,12 @@
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian unique standalone District scaling with other districts proximity for Faith generation, growing the city and protecting it.[NEWLINE][NEWLINE]• This district and those adjacent to it generate [ICON_Food] Food, [ICON_Production] Production and [ICON_Faith] Faith equal to 50% of the Appeal of their tiles, doubled for the Piliakalnis.[NEWLINE]• Units up to 4 tiles from a Piliakalnis gain +3 [ICON_Strength] Combat or [ICON_Religion] Religious Strength.[NEWLINE]• +2 Appeal on adjacent tiles[NEWLINE]• Zone of Control on adjacent enemy units.
+				Lithuanian unique standalone District for city growth, protection and faith scaling with Appeal and other districts.[NEWLINE][NEWLINE]• This district and those adjacent to it generate [ICON_Food] Food and [ICON_Faith] Faith equal to 50% of the Appeal of their tiles, doubled for the Piliakalnis.[NEWLINE]• Units up to 4 tiles from a Piliakalnis gain +3 [ICON_Strength] Combat or [ICON_Religion] Religious Strength.[NEWLINE]• +2 Appeal on adjacent tiles[NEWLINE]• Zone of Control on adjacent enemy units.
 			</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Quartier unique Lituanien évoluant avec la proximité d'autres Quartiers pour de la génération de Foi, protéger sa ville et supporter sa croissance.[NEWLINE][NEWLINE]• Ce quartier et ceux qui lui sont adjacents génèrent de la [ICON_Food] Nourriture, [ICON_Production] Production et [ICON_Faith] Foi équivalente à 50% de l’Attrait de leurs cases, doublés pour le Piliakalnis.[NEWLINE]• Vos Unités jusqu’à 4 cases d’un Piliakalnis gagnent +3 Puissance de [ICON_Strength] Combat ou [ICON_Religion] Religieuse.[NEWLINE]• +2 Attrait sur les cases adjacentes.[NEWLINE]• Zone de Contrôle sur les unités ennemies adjacentes.
+				Quartier unique Lituanien dédié à la croissance, protection et foi de la ville, évoluant avec l'Attrait et la proximité d'autres Quartiers.[NEWLINE][NEWLINE]• Ce quartier et ceux qui lui sont adjacents génèrent de la [ICON_Food] Nourriture et [ICON_Faith] Foi équivalente à 50% de l’Attrait de leurs cases, doublés pour le Piliakalnis.[NEWLINE]• Vos Unités jusqu’à 4 cases d’un Piliakalnis gagnent +3 Puissance de [ICON_Strength] Combat ou [ICON_Religion] Religieuse.[NEWLINE]• +2 Attrait sur les cases adjacentes.[NEWLINE]• Zone de Contrôle sur les unités ennemies adjacentes.
 			</Text>
 		</Row>
 <!--		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION_PRESERVE" Language="en_US">

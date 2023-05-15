@@ -300,27 +300,20 @@ FROM Rwb_AppealReference_UI
 -----------------------------------------------	
 
 INSERT OR REPLACE INTO	TraitModifiers
-(TraitType,											    ModifierId								)
-SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_PILIAKALNIS_ADJ_FAITH_YIELD_'||Size	
+            (TraitType,											    ModifierId								)
+SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		                'RWB_PILIAKALNIS_ADJ_FAITH_YIELD_'||Size	
 FROM Rwb_HalfAppealReference_UI UNION
-SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_PILIAKALNIS_ADJ_FOOD_YIELD_'||Size
+SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		                'RWB_PILIAKALNIS_ADJ_FOOD_YIELD_'||Size
 FROM Rwb_HalfAppealReference_UI UNION
-SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_PILIAKALNIS_ADJ_PRODUCTION_YIELD_'||Size
-FROM Rwb_HalfAppealReference_UI;
-
------------------------------------------------	   
--- DistrictModifiers
------------------------------------------------	
-
-INSERT OR REPLACE INTO DistrictModifiers
-                (DistrictType,						ModifierId)
-SELECT          'DISTRICT_RWB_PILIAKALNIS',              'RWB_PILIAKALNIS_OWN_FAITH_YIELD_'||Size
+/*SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		                'RWB_PILIAKALNIS_ADJ_PRODUCTION_YIELD_'||Size
+FROM Rwb_HalfAppealReference_UI UNION*/
+SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',                     'RWB_PILIAKALNIS_OWN_FAITH_YIELD_'||Size
 FROM Rwb_AppealReference_UI UNION
-SELECT          'DISTRICT_RWB_PILIAKALNIS',              'RWB_PILIAKALNIS_OWN_FOOD_YIELD_'||Size
-FROM Rwb_AppealReference_UI UNION
-SELECT          'DISTRICT_RWB_PILIAKALNIS',              'RWB_PILIAKALNIS_OWN_PRODUCTION_YIELD_'||Size
-FROM Rwb_AppealReference_UI
-                ;
+SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',                     'RWB_PILIAKALNIS_OWN_FOOD_YIELD_'||Size
+FROM Rwb_AppealReference_UI /*UNION
+SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',                     'RWB_PILIAKALNIS_OWN_PRODUCTION_YIELD_'||Size
+FROM Rwb_AppealReference_UI*/
+;
 
 
 -----------------------------------------------	

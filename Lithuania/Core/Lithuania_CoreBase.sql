@@ -244,7 +244,7 @@ VALUES	('AGENDA_RWB_LITHUANIAN_CONSCIOUSNESS_ALLIANCES',		'Sample',	'LOC_TOOLTIP
 --==========================================================================================================================
 -- CivilizationLeaders
 -------------------------------------	
-INSERT OR REPLACE INTO CivilizationLeaders 
+INSERT OR REPLACE INTO CivilizationLeaders
         (CivilizationType,			LeaderType,		CapitalName)
 VALUES  ('CIVILIZATION_RWB_LITHUANIA',	'LEADER_RWB_VYTAUTAS',	'LOC_CITY_NAME_RWB_LITHUANIA_1');
 --==========================================================================================================================
