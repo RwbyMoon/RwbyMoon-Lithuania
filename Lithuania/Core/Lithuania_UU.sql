@@ -41,7 +41,7 @@ VALUES	('UNIT_RWB_VYTIS', -- UnitType
 		'FORMATION_CLASS_LAND_COMBAT', -- FormationClass
         'PROMOTION_CLASS_LIGHT_CAVALRY', -- PromotionClass
         '36', -- CombatStrength
-		'160', -- Cost
+		'100', -- Cost
 		'0', -- CanCapture
 		'1', -- CanTrain
 		'YIELD_GOLD', -- PurchaseYield

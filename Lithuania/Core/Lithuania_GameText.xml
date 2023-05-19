@@ -5,8 +5,10 @@
 		<Row Tag="LOC_LEADER_RWB_VYTAUTAS_NAME" Language="en_US">
 			<Text>Vytautas the Great</Text>
 		</Row>
-		<Row Tag="LOC_LEADER_RWB_VYTAUTAS_NAME" Language="fr_FR">
+		<Row Tag="LOC_LEADER_RWB_VYTAUTAS_NAME"	  Language="fr_FR">
 			<Text>Vytautas le Grand</Text>
+			<Gender>masculine:vowel</Gender>
+			<Plurality>1</Plurality>
 		</Row>
 		<!--Traits-->
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_NAME" Language="en_US">
@@ -28,8 +30,10 @@
 		<Row Tag="LOC_UNIT_RWB_LANDOWNER_NAME" Language="en_US">
 			<Text>Landowner</Text>
 		</Row>
-		<Row Tag="LOC_UNIT_RWB_LANDOWNER_NAME" Language="fr_FR">
+		<Row Tag="LOC_UNIT_RWB_LANDOWNER_NAME"	  Language="fr_FR">
 			<Text>Seigneur</Text>
+			<Gender>masculine:vowel</Gender>
+			<Plurality>1</Plurality>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="en_US">
 			<Text>A unique civilian unit helping District construction</Text>
@@ -51,19 +55,21 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="en_US">
 			<Text>
-				Districts (excluding City-Centers) can be placed on any passable non-Wonder terrain [ICON_Terrain] Feature (Woods, Marshes, Reefs, Oasis...) without destroying them.[NEWLINE]Faith Buying is 20% more expensive in Lithuanian Cities. Founding a religion makes it 20% more expensive and grant +1 Governor title.
+				Districts (excluding City-Centers) can be placed on any passable non-Wonder terrain [ICON_Terrain] Feature (Woods, Marshes, Reefs, Oasis...) without destroying them.[NEWLINE][ICON_Faith]Faith generation in Lithuanian cities is reduced by 50%. Grants a burst of 10 [ICON_Faith] Faith per finished district on a Breathtaking tile in the empire and permanent +10% [ICON_FoodSurplus] Growth to City-Centers adjacent to a Great Prophet [ICON_District] District is finished in the empire. Founding a [ICON_Religion] religion grant +1 [ICON_Governor] Governor Title.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Les Quartiers (hors Centre-Villes) peuvent être placés sur les [ICON_Terrain] Caractéristiques de terrain non-Merveille (Bois, Marais, Récifs, Oasis...) sans les détruire.[NEWLINE]Les achats avec de la Foi sont +20% plus chers. Fonder une religion l'augmente de +20% supplémentaires et confère +1 titre de Gouverneur.
+				Les Quartiers (hors centre-ville) peuvent être placés sur les [ICON_Terrain] Caractéristiques de terrain non-Merveille (Bois, Marais, Récifs, Oasis...) sans les détruire.[NEWLINE]-50% génération de [ICON_Faith] Foi. Confère 10 [ICON_Faith] Foi par quartier terminé sur une case Epoustouflante ou mieux dans l'empire et +10% [ICON_FoodSurplus] Croissance permanente aux Centre-villes adjacentes à un Prophète Illustre lorsqu'un [ICON_District] Quartier se termine dans l'empire. Fonder une [ICON_Religion] religion confère +1 [ICON_Governor] Titre de Gouverneur.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_NAME" Language="en_US">
 			<Text>Vytis</Text>
 		</Row>
-		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_NAME" Language="fr_FR">
+		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_NAME"	  Language="fr_FR">
 			<Text>Vytis</Text>
+			<Gender>masculine:vowel</Gender>
+			<Plurality>1</Plurality>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_DESCRIPTION" Language="en_US">
 			<Text>A unique land unit</Text>
@@ -74,14 +80,16 @@
 		<Row Tag="LOC_UNIT_RWB_VYTIS_NAME" Language="en_US">
 			<Text>Vytis</Text>
 		</Row>
-		<Row Tag="LOC_UNIT_RWB_VYTIS_NAME" Language="fr_FR">
+		<Row Tag="LOC_UNIT_RWB_VYTIS_NAME"	  Language="fr_FR">
 			<Text>Vytis</Text>
+			<Gender>masculine:vowel</Gender>
+			<Plurality>1</Plurality>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_VYTIS_DESCRIPTION" Language="en_US">
-			<Text>Unique Lithuanian Light Cavalry unit, replacing the Horseman. Significatively more expensive than the Horseman it replaces, has higher [ICON_Gold] Gold upkeep and can only upgrade into Cavalry. Gains +7 [ICON_Strength]Combat Strength against units with stronger base strength. Once the technology "Castles" has been researched, it gains +4 [ICON_Strength]Combat Strength.</Text>
+			<Text>Unique Lithuanian Light Cavalry unit, replacing the Horseman. More expensive than the Horseman it replaces, it has triple its [ICON_Gold] Gold upkeep and can only upgrade into Cavalry.[NEWLINE][NEWLINE]• Gains +7 [ICON_Strength]Combat Strength against units with stronger base strength.[NEWLINE]Once the technology "Castles" has been researched, it gains +4 [ICON_Strength]Combat Strength.</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_VYTIS_DESCRIPTION" Language="fr_FR">
-			<Text>Unité unique lituanienne de Cavalerie Légère remplaçant le Cavalier. Significativement plus cher que le Cavalier qu'il remplace, son entretien en [ICON_Gold] Or est plus élevé que celui-ci et ne peut être amélioré qu'en Cavalerie. Gagne +7 [ICON_Strength] Puissance de Combat contre des unités avec une [ICON_Strength] Puissance de Combat plus haute. Après avoir recherché la technologie des "Châteaux", gagne +4 [ICON_Strength] Puissance de Combat.</Text>
+			<Text>Unité unique lituanienne de Cavalerie Légère remplaçant le Cavalier. Plus cher que le Cavalier qu'il remplace, son entretien en [ICON_Gold] Or est triplé comparé à celui-ci et ne peut être amélioré qu'en Cavalerie.[NEWLINE][NEWLINE]Gagne +7 [ICON_Strength] Puissance de Combat contre des unités avec une [ICON_Strength] Puissance de Combat plus haute.[NEWLINE]Après avoir recherché la technologie des "Châteaux", gagne +4 [ICON_Strength] Puissance de Combat.</Text>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_NAME" Language="en_US">
 			<Text>Defiance</Text>
@@ -122,8 +130,10 @@
 		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_NAME" Language="en_US">
 			<Text>Piliakalnis</Text>
 		</Row>
-		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_NAME" Language="fr_FR">
-			<Text>Piliakalnis</Text>
+		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_NAME"	  Language="fr_FR">
+			<Text>Piliakalnis|Piliakalnis</Text>
+			<Gender>masculine:vowel</Gender>
+			<Plurality>1|2</Plurality>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
 			<Text>A unique district exclusive to Lithuania for Faith generation, city protection and the growth of it.</Text>
@@ -135,13 +145,17 @@
 			<Text>Piliakalnis</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_NAME" Language="fr_FR">
-			<Text>Piliakalnis</Text>
+			<Text>Piliakalnis|Piliakalnis</Text>
+			<Gender>masculine:vowel|masculine:vowel</Gender>
+			<Plurality>1|2</Plurality>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH_NAME" Language="en_US">
 			<Text>Leičiai Patrol</Text>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH_NAME" Language="fr_FR">
 			<Text>Patrouille de Leičiai</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH_DESCRIPTION" Language="en_US">
 			<Text>+3 [ICON_Strength] Combat Strength when within 4 tiles of a Piliakalnis.</Text>
@@ -175,12 +189,12 @@
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian unique standalone District for city growth, protection and faith scaling with Appeal and other districts.[NEWLINE][NEWLINE]• This district and those adjacent to it generate [ICON_Food] Food and [ICON_Faith] Faith equal to 50% of the Appeal of their tiles, doubled for the Piliakalnis.[NEWLINE]• Units up to 4 tiles from a Piliakalnis gain +3 [ICON_Strength] Combat or [ICON_Religion] Religious Strength.[NEWLINE]• +2 Appeal on adjacent tiles[NEWLINE]• Zone of Control on adjacent enemy units.
+				Lithuanian unique standalone District for city growth, protection and faith scaling with Appeal and other districts.[NEWLINE][NEWLINE]• This district and those adjacent to it generate [ICON_Food] Food and [ICON_Faith] Faith equal to 25% of the Appeal of their tiles, doubled for the Piliakalnis.[NEWLINE]• Units up to 4 tiles from a Piliakalnis gain +3 [ICON_Strength] Combat or [ICON_Religion] Religious Strength.[NEWLINE]• +2 Appeal on adjacent tiles[NEWLINE]• Zone of Control on adjacent enemy units.
 			</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Quartier unique Lituanien dédié à la croissance, protection et foi de la ville, évoluant avec l'Attrait et la proximité d'autres Quartiers.[NEWLINE][NEWLINE]• Ce quartier et ceux qui lui sont adjacents génèrent de la [ICON_Food] Nourriture et [ICON_Faith] Foi équivalente à 50% de l’Attrait de leurs cases, doublés pour le Piliakalnis.[NEWLINE]• Vos Unités jusqu’à 4 cases d’un Piliakalnis gagnent +3 Puissance de [ICON_Strength] Combat ou [ICON_Religion] Religieuse.[NEWLINE]• +2 Attrait sur les cases adjacentes.[NEWLINE]• Zone de Contrôle sur les unités ennemies adjacentes.
+				Quartier unique Lituanien dédié à la croissance, protection et foi de la ville, évoluant avec l'Attrait et la proximité d'autres Quartiers.[NEWLINE][NEWLINE]• Ce quartier et ceux qui lui sont adjacents génèrent de la [ICON_Food] Nourriture et [ICON_Faith] Foi équivalente à 25% de l’Attrait de leurs cases, doublés pour le Piliakalnis.[NEWLINE]• Vos Unités jusqu’à 4 cases d’un Piliakalnis gagnent +3 Puissance de [ICON_Strength] Combat ou [ICON_Religion] Religieuse.[NEWLINE]• +2 Attrait sur les cases adjacentes.[NEWLINE]• Zone de Contrôle sur les unités ennemies adjacentes.
 			</Text>
 		</Row>
 <!--		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION_PRESERVE" Language="en_US">
@@ -216,8 +230,10 @@
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_NAME" Language="en_US">
 			<Text>Lithuania</Text>
 		</Row>
-		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_NAME" Language="fr_FR">
+		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_NAME"	  Language="fr_FR">
 			<Text>Lituanie</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
 		</Row>
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_DESCRIPTION" Language="en_US">
 			<Text>Lithuanian Empire</Text>
@@ -231,6 +247,8 @@
 		</Row>
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_DESCRIPTION_JFD_CIVILIZATION" Language="fr_FR">
 			<Text>Civilisation Lituanienne</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
 		</Row>
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_ADJECTIVE"	  Language="en_US">
 			<Text>Lithuanian</Text>
@@ -540,6 +558,106 @@
 		</Row>
 		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_10" Language="en_US">
 			<Text>Ade</Text>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_1" Language="fr_FR">
+			<Text>Anna</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_2" Language="fr_FR">
+			<Text>Katalin</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_3" Language="fr_FR">
+			<Text>Borbála</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_4" Language="fr_FR">
+			<Text>Erzsébet</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_5" Language="fr_FR">
+			<Text>Margaréta</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_6" Language="fr_FR">
+			<Text>Zsófia</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_7" Language="fr_FR">
+			<Text>Józsa</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_8" Language="fr_FR">
+			<Text>Ilona</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_9" Language="fr_FR">
+			<Text>Dorottya</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_FEMALE_10" Language="fr_FR">
+			<Text>Orsolya</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_1" Language="fr_FR">
+			<Text>Klára</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_2" Language="fr_FR">
+			<Text>Sára</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_3" Language="fr_FR">
+			<Text>Heléna</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_4" Language="fr_FR">
+			<Text>Agáta</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_5" Language="fr_FR">
+			<Text>Krisztina</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_6" Language="fr_FR">
+			<Text>Zsuzsanna</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_7" Language="fr_FR">
+			<Text>Janina</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_8" Language="fr_FR">
+			<Text>Katherina</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_9" Language="fr_FR">
+			<Text>Barbara</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
+		</Row>
+		<Row Tag="LOC_CITIZEN_RWB_LITHUANIA_MODERN_FEMALE_10" Language="fr_FR">
+			<Text>Ade</Text>
+			<Gender>feminine:vowel</Gender>
+			<Plurality>1</Plurality>
 		</Row>
 		<!--Appeal Modifier Localized Text-->
 		<Row Tag="LOC_RWB_APPEAL_YIELD_GOLD" Language="en_US">

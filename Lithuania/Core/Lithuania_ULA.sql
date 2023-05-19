@@ -156,7 +156,7 @@ INSERT OR REPLACE INTO Units
  AdvisorType)
 
 
-VALUES	        ('UNIT_RWB_LANDOWNER',
+VALUES	          ('UNIT_RWB_LANDOWNER',
                    'LOC_UNIT_RWB_LANDOWNER_NAME',
                    'LOC_UNIT_RWB_LANDOWNER_DESCRIPTION',
                    '3',
@@ -167,12 +167,12 @@ VALUES	        ('UNIT_RWB_LANDOWNER',
                    '0',
                    'DOMAIN_LAND',
                    'FORMATION_CLASS_CIVILIAN',
-                   '160',
+                   '200',
                    '1',
                    '0',
                    '0',
                    'COST_PROGRESSION_PREVIOUS_COPIES',
-                   '104',
+                   '75',
                    '0',
                    'YIELD_FAITH',
                    '1',

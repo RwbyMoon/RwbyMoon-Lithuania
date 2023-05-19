@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS Rwb_AppealReference_UI
     Size INT
 );
 
-WITH RECURSIVE t(val) AS (SELECT 1 UNION ALL SELECT val + 1 FROM t LIMIT 45)
+WITH RECURSIVE t(val) AS (SELECT 1 UNION ALL SELECT val + 2 FROM t LIMIT 23)
 INSERT OR REPLACE INTO Rwb_AppealReference_UI (Size) SELECT val FROM t;
 
 
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS Rwb_HalfAppealReference_UI
     Size INT
 );
 
-WITH RECURSIVE tB(valB) AS (SELECT 1 UNION ALL SELECT valB + 2 FROM tB LIMIT 23)
+WITH RECURSIVE tB(valB) AS (SELECT 1 UNION ALL SELECT valB + 4 FROM tB LIMIT 12)
 INSERT OR REPLACE INTO Rwb_HalfAppealReference_UI (Size) SELECT valB FROM tB;
 
 -----------------------------------------------	
@@ -90,7 +90,7 @@ VALUES
     '27', -- Cost
     'COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH', -- CostProgressionModel
     '40', -- CostProgressionParam1
-    '0', -- Maintenance
+    '3', -- Maintenance
 
     '0', -- HitPoints
 
@@ -305,7 +305,7 @@ SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		                'RWB_PILIAKALNI
 FROM Rwb_HalfAppealReference_UI UNION
 SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		                'RWB_PILIAKALNIS_ADJ_FOOD_YIELD_'||Size
 FROM Rwb_HalfAppealReference_UI UNION
-/*SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		                'RWB_PILIAKALNIS_ADJ_PRODUCTION_YIELD_'||Size
+/*SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		            'RWB_PILIAKALNIS_ADJ_PRODUCTION_YIELD_'||Size
 FROM Rwb_HalfAppealReference_UI UNION*/
 SELECT    'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',                     'RWB_PILIAKALNIS_OWN_FAITH_YIELD_'||Size
 FROM Rwb_AppealReference_UI UNION
