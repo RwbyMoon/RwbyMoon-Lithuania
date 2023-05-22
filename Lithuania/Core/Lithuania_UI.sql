@@ -7,7 +7,10 @@ CREATE TABLE IF NOT EXISTS Rwb_AppealReference_UI
     Size INT
 );
 
-WITH RECURSIVE t(val) AS (SELECT 1 UNION ALL SELECT val + 2 FROM t LIMIT 23)
+WITH RECURSIVE t(val) AS (SELECT 1 UNION ALL SELECT val + 3 FROM t LIMIT 16)
+INSERT OR REPLACE INTO Rwb_AppealReference_UI (Size) SELECT val FROM t;
+
+WITH RECURSIVE t(val) AS (SELECT 2 UNION ALL SELECT val + 3 FROM t LIMIT 16)
 INSERT OR REPLACE INTO Rwb_AppealReference_UI (Size) SELECT val FROM t;
 
 
@@ -17,7 +20,7 @@ CREATE TABLE IF NOT EXISTS Rwb_HalfAppealReference_UI
     Size INT
 );
 
-WITH RECURSIVE tB(valB) AS (SELECT 1 UNION ALL SELECT valB + 4 FROM tB LIMIT 12)
+WITH RECURSIVE tB(valB) AS (SELECT 1 UNION ALL SELECT valB + 3 FROM tB LIMIT 16)
 INSERT OR REPLACE INTO Rwb_HalfAppealReference_UI (Size) SELECT valB FROM tB;
 
 -----------------------------------------------	

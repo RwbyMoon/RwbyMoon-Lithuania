@@ -7,7 +7,7 @@
 		</Row>
 		<Row Tag="LOC_LEADER_RWB_VYTAUTAS_NAME"	  Language="fr_FR">
 			<Text>Vytautas le Grand</Text>
-			<Gender>masculine:vowel</Gender>
+			<Gender>masculine</Gender>
 			<Plurality>1</Plurality>
 		</Row>
 		<!--Traits-->
@@ -32,7 +32,7 @@
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_LANDOWNER_NAME"	  Language="fr_FR">
 			<Text>Seigneur</Text>
-			<Gender>masculine:vowel</Gender>
+			<Gender>masculine</Gender>
 			<Plurality>1</Plurality>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="en_US">
@@ -55,12 +55,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="en_US">
 			<Text>
-				Districts (excluding City-Centers) can be placed on any passable non-Wonder terrain [ICON_Terrain] Feature (Woods, Marshes, Reefs, Oasis...) without destroying them.[NEWLINE][ICON_Faith]Faith generation in Lithuanian cities is reduced by 50%. Grants a burst of 10 [ICON_Faith] Faith per finished district on a Breathtaking tile in the empire and permanent +10% [ICON_FoodSurplus] Growth to City-Centers adjacent to a Great Prophet [ICON_District] District is finished in the empire. Founding a [ICON_Religion] religion grant +1 [ICON_Governor] Governor Title.
+				Districts (excluding City-Centers) can be placed on any passable non-Wonder terrain [ICON_Terrain] Feature (Woods, Marshes, Reefs...) without destroying them.[NEWLINE]Your cities generate -50%[ICON_Faith]Faith per turn. Once a Great Prophet acquired, you gain bursts of 50 [ICON_Faith] Faith when finishing [ICON_District] Districts on Breathtaking tile or better. Founding a [ICON_Religion] religion halves this Faith gain and grant +1 [ICON_Governor] Governor Title.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Les Quartiers (hors centre-ville) peuvent être placés sur les [ICON_Terrain] Caractéristiques de terrain non-Merveille (Bois, Marais, Récifs, Oasis...) sans les détruire.[NEWLINE]-50% génération de [ICON_Faith] Foi. Confère 10 [ICON_Faith] Foi par quartier terminé sur une case Epoustouflante ou mieux dans l'empire et +10% [ICON_FoodSurplus] Croissance permanente aux Centre-villes adjacentes à un Prophète Illustre lorsqu'un [ICON_District] Quartier se termine dans l'empire. Fonder une [ICON_Religion] religion confère +1 [ICON_Governor] Titre de Gouverneur.
+				Les Quartiers (hors centre-ville) peuvent être placés sur les [ICON_Terrain] Caractéristiques de terrain non-Merveille (Bois, Marais, Récifs...) sans les détruire.[NEWLINE]Vos villes génèrent -50% [ICON_Faith] Foi par tour. Une fois un Prophète Illustre acquis, finir un [ICON_District] Quartier sur une case Époustouflante ou mieux génère 50 [ICON_Faith] Foi. Fonder une [ICON_Religion] religion divise par 2 ce gain de Foi et confère +1 [ICON_Governor] Titre de Gouverneur.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_NAME" Language="en_US">
@@ -68,7 +68,7 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_NAME"	  Language="fr_FR">
 			<Text>Vytis</Text>
-			<Gender>masculine:vowel</Gender>
+			<Gender>masculine</Gender>
 			<Plurality>1</Plurality>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_DESCRIPTION" Language="en_US">
@@ -82,7 +82,7 @@
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_VYTIS_NAME"	  Language="fr_FR">
 			<Text>Vytis</Text>
-			<Gender>masculine:vowel</Gender>
+			<Gender>masculine</Gender>
 			<Plurality>1</Plurality>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_VYTIS_DESCRIPTION" Language="en_US">
@@ -132,7 +132,7 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_NAME"	  Language="fr_FR">
 			<Text>Piliakalnis|Piliakalnis</Text>
-			<Gender>masculine:vowel</Gender>
+			<Gender>masculine</Gender>
 			<Plurality>1|2</Plurality>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
@@ -146,7 +146,7 @@
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_NAME" Language="fr_FR">
 			<Text>Piliakalnis|Piliakalnis</Text>
-			<Gender>masculine:vowel|masculine:vowel</Gender>
+			<Gender>masculine|masculine</Gender>
 			<Plurality>1|2</Plurality>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH_NAME" Language="en_US">
@@ -232,7 +232,7 @@
 		</Row>
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_NAME"	  Language="fr_FR">
 			<Text>Lituanie</Text>
-			<Gender>feminine:vowel</Gender>
+			<Gender>feminine</Gender>
 			<Plurality>1</Plurality>
 		</Row>
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_DESCRIPTION" Language="en_US">
@@ -240,6 +240,8 @@
 		</Row>
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_DESCRIPTION" Language="fr_FR">
 			<Text>Empire Lituanien</Text>
+			<Gender>masculine:vowel</Gender>
+			<Plurality>1</Plurality>
 		</Row>
 	<!--	Grand Duchy of Lithuania-->
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_DESCRIPTION_JFD_CIVILIZATION" Language="en_US">
@@ -247,7 +249,7 @@
 		</Row>
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_DESCRIPTION_JFD_CIVILIZATION" Language="fr_FR">
 			<Text>Civilisation Lituanienne</Text>
-			<Gender>feminine:vowel</Gender>
+			<Gender>feminine</Gender>
 			<Plurality>1</Plurality>
 		</Row>
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_ADJECTIVE"	  Language="en_US">
@@ -255,7 +257,7 @@
 		</Row>
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_ADJECTIVE"	  Language="fr_FR">
 			<Text>lituanien|lituanienne|lituaniens|lituaniennes</Text>
-			<Gender>masculine:vowel|feminine:vowel|masculine:vowel|feminine:vowel</Gender>
+			<Gender>masculine|feminine|masculine|feminine</Gender>
 			<Plurality>1|1|2|2</Plurality>
 		</Row>
 		<Row Tag="LOC_CITY_NAME_RWB_LITHUANIA_1" Language="en_US">
