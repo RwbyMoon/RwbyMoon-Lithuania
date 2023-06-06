@@ -19,12 +19,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian Theather Squares, Industrial Zones and Holy Sites do not gain their usual Adjacencies but gain one equal to the Appeal of their tile. Buildings from Districts generating positive Appeal* can be bought with [ICON_Faith] Faith.[NEWLINE]Can buy a unique civilian with [ICON_Faith] Faith ; the Landowner ; able to [ICON_Charges] complete [ICON_District] Districts generating positive Appeal*. (*see Landowner for an exhaustive list)
+				Lithuanian Theather Squares, Industrial Zones and Holy Sites do not gain their usual Adjacencies but gain one equal to 50% of the Appeal of their tile. Buildings from Districts generating positive Appeal* can be bought with [ICON_Faith] Faith.[NEWLINE]Can buy a unique civilian with [ICON_Faith] Faith ; the Landowner ; able to [ICON_Charges] complete [ICON_District] Districts generating positive Appeal*. (*see Landowner for an exhaustive list)
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Les Places du Théâtre, Zones Industrielles et Lieux Saints Lituaniens ne disposent pas de leurs bonus de proximité usuels, mais en gagnent un équivalent à l’Attrait de leur case. Les bâtiments de Quartiers générant de l'attrait positif* sont achetables avec de la [ICON_Faith] Foi.[NEWLINE]Peut acheter une unité civile unique avec de la [ICON_Faith] Foi ; le Seigneur ; capable [ICON_Charges] d'achever la construction d'un [ICON_District] Quartier générant de l'attrait positif*. (*voir le Seigneur pour une liste exhaustive.)
+				Les Places du Théâtre, Zones Industrielles et Lieux Saints Lituaniens ne disposent pas de leurs bonus de proximité usuels, mais en gagnent un équivalent à 50% de l’Attrait de leur case. Les bâtiments de Quartiers générant de l'attrait positif* sont achetables avec de la [ICON_Faith] Foi.[NEWLINE]Peut acheter une unité civile unique avec de la [ICON_Faith] Foi ; le Seigneur ; capable [ICON_Charges] d'achever la construction d'un [ICON_District] Quartier générant de l'attrait positif*. (*voir le Seigneur pour une liste exhaustive.)
 			</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_LANDOWNER_NAME" Language="en_US">
@@ -55,12 +55,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="en_US">
 			<Text>
-				Districts (excluding City-Centers) can be placed on any passable non-Wonder terrain [ICON_Terrain] Feature (Woods, Marshes, Reefs...) without destroying them.[NEWLINE]Your cities generate -50%[ICON_Faith]Faith per turn. Once a Great Prophet acquired, you gain bursts of 50 [ICON_Faith] Faith when finishing [ICON_District] Districts on Breathtaking tile or better. Founding a [ICON_Religion] religion halves this Faith gain and grant +1 [ICON_Governor] Governor Title.
+				Districts (excluding City-Centers) can be placed on any passable non-Wonder terrain [ICON_Terrain] Feature (Woods, Marshes, Reefs...) without destroying them.[NEWLINE]Your cities generate -50%[ICON_Faith]Faith per turn. Once a Great Prophet acquired, you gain bursts of 30 [ICON_Faith] Faith when finishing [ICON_District] Districts on Breathtaking tile or better. Founding a [ICON_Religion] religion halves this Faith gain and grant +1 [ICON_Governor] Governor Title.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Les Quartiers (hors centre-ville) peuvent être placés sur les [ICON_Terrain] Caractéristiques de terrain non-Merveille (Bois, Marais, Récifs...) sans les détruire.[NEWLINE]Vos villes génèrent -50% [ICON_Faith] Foi par tour. Une fois un Prophète Illustre acquis, finir un [ICON_District] Quartier sur une case Époustouflante ou mieux génère 50 [ICON_Faith] Foi. Fonder une [ICON_Religion] religion divise par 2 ce gain de Foi et confère +1 [ICON_Governor] Titre de Gouverneur.
+				Les Quartiers (hors centre-ville) peuvent être placés sur les [ICON_Terrain] Caractéristiques de terrain non-Merveille (Bois, Marais, Récifs...) sans les détruire.[NEWLINE]Vos villes génèrent -50% [ICON_Faith] Foi par tour. Une fois un Prophète Illustre acquis, finir un [ICON_District] Quartier sur une case Époustouflante ou mieux génère 30 [ICON_Faith] Foi. Fonder une [ICON_Religion] religion divise par 2 ce gain de Foi et confère +1 [ICON_Governor] Titre de Gouverneur.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_NAME" Language="en_US">
@@ -189,12 +189,12 @@
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian unique standalone District for city growth, protection and faith scaling with Appeal and other districts.[NEWLINE][NEWLINE]• This district and those adjacent to it generate [ICON_Food] Food and [ICON_Faith] Faith equal to 25% of the Appeal of their tiles, doubled for the Piliakalnis.[NEWLINE]• Units up to 4 tiles from a Piliakalnis gain +3 [ICON_Strength] Combat or [ICON_Religion] Religious Strength.[NEWLINE]• +2 Appeal on adjacent tiles[NEWLINE]• Zone of Control on adjacent enemy units.
+				Lithuanian unique standalone District for city growth and protection  scaling with Appeal and other districts.[NEWLINE][NEWLINE]• This district and those adjacent to it generate [ICON_Food] Food equal to 33% of the Appeal of their tiles, doubled for the Piliakalnis.[NEWLINE]• Units up to 4 tiles from a Piliakalnis gain +3 [ICON_Strength] Combat or [ICON_Religion] Religious Strength.[NEWLINE]• +2 Appeal on adjacent tiles[NEWLINE]• Zone of Control on adjacent enemy units.
 			</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Quartier unique Lituanien dédié à la croissance, protection et foi de la ville, évoluant avec l'Attrait et la proximité d'autres Quartiers.[NEWLINE][NEWLINE]• Ce quartier et ceux qui lui sont adjacents génèrent de la [ICON_Food] Nourriture et [ICON_Faith] Foi équivalente à 25% de l’Attrait de leurs cases, doublés pour le Piliakalnis.[NEWLINE]• Vos Unités jusqu’à 4 cases d’un Piliakalnis gagnent +3 Puissance de [ICON_Strength] Combat ou [ICON_Religion] Religieuse.[NEWLINE]• +2 Attrait sur les cases adjacentes.[NEWLINE]• Zone de Contrôle sur les unités ennemies adjacentes.
+				Quartier unique Lituanien dédié à la croissance et protection de la ville, évoluant avec l'Attrait et la proximité d'autres Quartiers.[NEWLINE][NEWLINE]• Ce quartier et ceux qui lui sont adjacents génèrent de la [ICON_Food] Nourriture équivalente à 33% de l’Attrait de leurs cases, doublés pour le Piliakalnis.[NEWLINE]• Vos Unités jusqu’à 4 cases d’un Piliakalnis gagnent +3 Puissance de [ICON_Strength] Combat ou [ICON_Religion] Religieuse.[NEWLINE]• +2 Attrait sur les cases adjacentes.[NEWLINE]• Zone de Contrôle sur les unités ennemies adjacentes.
 			</Text>
 		</Row>
 <!--		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION_PRESERVE" Language="en_US">

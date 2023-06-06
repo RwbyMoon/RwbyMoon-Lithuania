@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS Rwb_AppealReference_ULA
     Size INT
 );
 
-WITH RECURSIVE t(val) AS (SELECT 1 UNION ALL SELECT val + 1 FROM t LIMIT 45)
+WITH RECURSIVE t(val) AS (SELECT 1 UNION ALL SELECT val + 2 FROM t LIMIT 23)
 INSERT OR REPLACE INTO Rwb_AppealReference_ULA (Size) SELECT val FROM t;
 
 
@@ -167,12 +167,12 @@ VALUES	          ('UNIT_RWB_LANDOWNER',
                    '0',
                    'DOMAIN_LAND',
                    'FORMATION_CLASS_CIVILIAN',
-                   '200',
+                   '300',
                    '1',
                    '0',
                    '0',
                    'COST_PROGRESSION_PREVIOUS_COPIES',
-                   '75',
+                   '50',
                    '0',
                    'YIELD_FAITH',
                    '1',

@@ -127,11 +127,11 @@ VALUES      ('RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER',                  
             
             ('RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER_RELIGION_FOUNDED',     'ModifierId',        'RWB_DIEVDIRBIAI_RELIGION_FAITH_GAIN'),
 
-            ('RWB_DIEVDIRBIAI_GREATPROPHET_FAITH_GAIN',                             'Amount',            '100'),
+            ('RWB_DIEVDIRBIAI_GREATPROPHET_FAITH_GAIN',                             'Amount',            '60'),
             ('RWB_DIEVDIRBIAI_GREATPROPHET_FAITH_GAIN',                             'Scale',             '1'),
             ('RWB_DIEVDIRBIAI_GREATPROPHET_FAITH_GAIN',                             'YieldType',         'YIELD_FAITH'),
             
-            ('RWB_DIEVDIRBIAI_RELIGION_FAITH_GAIN',                             'Amount',            '50'),
+            ('RWB_DIEVDIRBIAI_RELIGION_FAITH_GAIN',                             'Amount',            '30'),
             ('RWB_DIEVDIRBIAI_RELIGION_FAITH_GAIN',                             'Scale',             '1'),
             ('RWB_DIEVDIRBIAI_RELIGION_FAITH_GAIN',                             'YieldType',         'YIELD_FAITH'),
             
