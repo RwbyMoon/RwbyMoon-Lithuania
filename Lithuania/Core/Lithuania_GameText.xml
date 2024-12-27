@@ -19,8 +19,7 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian Theater Squares and Industrial Zones do not gain their usual Adjacencies but gain one equal to 50% of the Appeal of their tile.[NEWLINE] 
-				Buildings from the Government Plaza, Diplomatic Quarter and Encampments can be bought with [ICON_Faith] Faith. These three districts grant +0.25 [ICON_Alliance] alliance points per turn when built on Breathtaking tiles, doubled while at war.
+				Lithuanian Theater Squares and Industrial Zones do not gain their usual Adjacencies but gain one equal to 50% of the Appeal of their tile.[NEWLINE]Buildings from the Government Plaza, Diplomatic Quarter and Encampments can be bought with [ICON_Faith] Faith. These three districts grant +0.25 [ICON_Alliance] alliance points per turn when built on Breathtaking tiles, doubled while at war.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="fr_FR">
