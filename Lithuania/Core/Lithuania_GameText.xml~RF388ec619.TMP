@@ -25,24 +25,6 @@
 				Les Places du Théâtre, Zones Industrielles et Lieux Saints Lituaniens ne disposent pas de leurs bonus de proximité habituels, mais gagnent un bonus de proximité équivalent à l’Attrait de la case sur lequel ils sont. Les bâtiments de Quartiers générant de l'attrait positif (Place du Théâtre, Lieu Saint, Complexe de Loisir...) peuvent être achetés avec de la [ICON_Faith] Foi.[NEWLINE][NEWLINE]Après avoir recherché "Philosophie Politique", peut acheter une unité civile unique avec de la [ICON_Faith] Foi ; le Seigneur ; capable [ICON_Charges] d'achever la construction d'un [ICON_District] Quartier générant de l'attrait positif lorsque terminé.
 			</Text>
 		</Row>
-		<Row Tag="LOC_UNIT_RWB_LANDOWNER_NAME" Language="en_US">
-			<Text>Landowner</Text>
-		</Row>
-		<Row Tag="LOC_UNIT_RWB_LANDOWNER_NAME" Language="fr_FR">
-			<Text>Seigneur</Text>
-		</Row>
-		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="en_US">
-			<Text>A unique civilian unit helping District construction</Text>
-		</Row>
-		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="fr_FR">
-			<Text>Une unité civile unique aidant à la construction de Quartiers</Text>
-		</Row>
-		<Row Tag="LOC_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="en_US">
-			<Text>Unique Lithuanian civilian unit that can only be purchased with [ICON_Faith] Faith once the civic "Political Philosophy" has been researched. Can use its [ICON_Charges] Charge to complete a [ICON_District] District generating positive Appeal once finished. After each purchase, its cost rises significantly.[NEWLINE][NEWLINE]Includes :[NEWLINE]• Piliakalnis (Preserve)[NEWLINE]• Holy Site[NEWLINE]• Theater Square[NEWLINE]• Entertainment Complex[NEWLINE]• Water Park[NEWLINE]• Dam[NEWLINE]• Canal</Text>
-		</Row>
-		<Row Tag="LOC_UNIT_RWB_LANDOWNER_DESCRIPTION" Language="fr_FR">
-			<Text>Unité civile Lituanienne unique qui ne peut être qu'être achetée avec de la [ICON_Faith] Foi une fois que le dogme "Philosophie Politique" a été recherché. Peut utiliser sa [ICON_Charges] Charge de Construction pour achever la construction d'un [ICON_District] Quartier générant de l'attrait une fois terminé. Après chaque achat, son coût augmente significativement.[NEWLINE][NEWLINE]Inclut :[NEWLINE]• Piliakalnis (Réserve)[NEWLINE]• Lieu Saint[NEWLINE]• Place du Théâtre[NEWLINE]• Complexe de Loisir[NEWLINE]• Parc Aquatique[NEWLINE]• Barrage[NEWLINE]• Canal</Text>
-		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_NAME" Language="en_US">
 			<Text>Dievdirbiai</Text>
 		</Row>

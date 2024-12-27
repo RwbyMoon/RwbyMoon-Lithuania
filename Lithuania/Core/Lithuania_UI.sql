@@ -531,33 +531,3 @@ INSERT OR REPLACE INTO RequirementArguments
 VALUES      ('RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',  'DistrictType',     'DISTRICT_RWB_PILIAKALNIS'),
             ('RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',  'MinRange',         '0'),
             ('RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',  'MaxRange',         '4');
-
-
------------------------------------------------	
--- For CivAbility of placable on features
------------------------------------------------	
-
-INSERT OR REPLACE INTO District_BuildChargeProductions
-(DistrictType,                                          UnitType,                               PercentProductionPerCharge)
-VALUES      ('DISTRICT_RWB_PILIAKALNIS',                  'UNIT_RWB_LANDOWNER',                 100);
------------------------------------------------	
--- Great Work Slots
------------------------------------------------	
-
-/*INSERT OR REPLACE INTO Types
-(Type,      Kind) 
-VALUES  ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS','KIND_MODIFIER');
-
-INSERT OR REPLACE INTO	TraitModifiers
-(TraitType,											ModifierId								)
-VALUES	 ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS');
-
-INSERT OR REPLACE INTO Modifiers
-(ModifierId, ModifierType)
-VALUES ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS','MODIFIER_PLAYER_CITIES_ADJUST_EXTRA_GREAT_WORK_SLOTS');
-
-INSERT OR REPLACE INTO ModifierArguments
-        (ModifierId,                                                    Name,               Value)
-VALUES  ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS',        'BuildingType',     'BUILDING_GROVE'),
-        ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS',        'GreatWorkSlotType','GREATWORKSLOT_PALACE'),
-        ('MODIFIER_RWB_PILIAKALNIS_GROVE_GREAT_WORK_SLOTS',        'Amount',           '2');*/

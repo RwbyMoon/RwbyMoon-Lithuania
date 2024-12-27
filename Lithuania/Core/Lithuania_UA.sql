@@ -144,7 +144,7 @@ INSERT OR REPLACE INTO RequirementSets
             (RequirementSetId,                                                                          RequirementSetType) 
 VALUES      ('REQSET_RWB_DIEVDIRBIAI_GREATPROPHET_EXISTS_AND_IS_LITHUANIA',                             'REQUIREMENTSET_TEST_ALL'),
             ('REQSET_RWB_DIEVDIRBIAI_HAS_BREATHTAKING_TILE',                                            'REQUIREMENTSET_TEST_ALL'),
-            ('REQSET_RWB_DIEVDIRBIAI_GREATPROPHET_EXISTS',                                            'REQUIREMENTSET_TEST_ALL'),
+            ('REQSET_RWB_DIEVDIRBIAI_GREATPROPHET_EXISTS',                                              'REQUIREMENTSET_TEST_ALL'),
             ('REQSET_RWB_DIEVDIRBIAI_FOUNDED_RELIGION_ONCE',                                            'REQUIREMENTSET_TEST_ALL'),
             ('REQSET_RWB_DIEVDIRBIAI_FOUNDED_RELIGION_ONCE_AND_IS_LITHUANIA',                           'REQUIREMENTSET_TEST_ALL');
 
