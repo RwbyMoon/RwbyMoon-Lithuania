@@ -19,12 +19,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="en_US">
 			<Text>
-				Lithuanian Theater Squares and Industrial Zones do not gain their usual Adjacencies but gain one equal to 50% of the Appeal of their tile.[NEWLINE]Buildings from the Government Plaza, Diplomatic Quarter and Encampments can be bought with [ICON_Faith] Faith. These three districts grant +0.25 [ICON_Alliance] alliance points per turn when built on Breathtaking tiles, doubled while at war.
+				Lithuanian Theater Squares and Commercial Hubs do not gain their usual Adjacencies but gain one equal to 50% of the Appeal of their tile.[NEWLINE]Buildings from the Government Plaza, Diplomatic Quarter and Encampments can be bought with [ICON_Faith] Faith. These three districts grant +0.25 [ICON_Alliance] alliance points per turn when built on Breathtaking tiles, doubled while at war.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Les Places du Théâtre et Zones Industrielles Lituaniennes ne disposent pas de leurs bonus de proximité usuels, mais en gagnent un équivalent à 50% de l’Attrait de leur case.[NEWLINE]Les bâtiments de la Place de Gouvernance, du Quartier Diplomatique et des Campements peuvent être achetés avec de la [ICON_Faith] Foi. Ces trois quartiers confèrent +0.25 [ICON_Alliance] points d'alliance par tour lorsque construites sur une case ayant un attrait époustouflant, doublés en temps de guerre.
+				Les Places du Théâtre et Plateformes Commerciales Lituaniennes ne disposent pas de leurs bonus de proximité usuels, mais en gagnent un équivalent à 50% de l’Attrait de leur case.[NEWLINE]Les bâtiments de la Place de Gouvernance, du Quartier Diplomatique et des Campements peuvent être achetés avec de la [ICON_Faith] Foi. Ces trois quartiers confèrent +0.25 [ICON_Alliance] points d'alliance par tour lorsque construites sur une case ayant un attrait époustouflant, doublés en temps de guerre.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_NAME" Language="en_US">

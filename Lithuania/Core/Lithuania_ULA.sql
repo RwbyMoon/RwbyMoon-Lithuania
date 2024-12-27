@@ -14,10 +14,10 @@ CREATE TABLE IF NOT EXISTS Rwb_AdjacencyDistrictList
 INSERT OR REPLACE INTO Rwb_AdjacencyDistrictList
 (DistrictType, YieldType, YieldText)
 --
-SELECT 'DISTRICT_INDUSTRIAL_ZONE', b.YieldType, 'LOC_RWB_APPEAL_'||b.YieldType
+SELECT 'DISTRICT_COMMERCIAL_HUB', b.YieldType, 'LOC_RWB_APPEAL_'||b.YieldType
 
 FROM Adjacency_YieldChanges b
-WHERE b.ID = (SELECT YieldChangeId FROM District_Adjacencies WHERE DistrictType = 'DISTRICT_INDUSTRIAL_ZONE') UNION
+WHERE b.ID = (SELECT YieldChangeId FROM District_Adjacencies WHERE DistrictType = 'DISTRICT_COMMERCIAL_HUB') UNION
 --
 SELECT 'DISTRICT_THEATER', b.YieldType, 'LOC_RWB_APPEAL_'||b.YieldType
 

@@ -56,22 +56,22 @@ FROM Districts WHERE RequiresPlacement = 1 AND Coast = 1
 CREATE TABLE IF NOT EXISTS Rwb_FaithReference_UA
 (
     EraType TEXT,
-    Value INT
+    BurstValue INT
 );
 
 CREATE TABLE IF NOT EXISTS TempFaithTable
 (
-    Value INT
+    BurstValue INT
 );
 
 WITH RECURSIVE t(val) AS (SELECT 13 UNION ALL SELECT val + 4 + val/3 FROM t LIMIT (SELECT COUNT(*) FROM Eras))
-INSERT OR REPLACE INTO TempFaithTable (Value) SELECT val FROM t;
+INSERT OR REPLACE INTO TempFaithTable (BurstValue) SELECT val FROM t;
 
 INSERT OR REPLACE INTO Rwb_FaithReference_UA
-(EraType,Value)
+(EraType,BurstValue)
 SELECT
     e.EraType,
-    f.Value
+    f.BurstValue
 FROM TempFaithTable f, Eras e
 WHERE f.rowid = e.rowid;
 
@@ -79,20 +79,21 @@ DROP TABLE TempFaithTable;
 
 ------------------------
 
+
 INSERT OR REPLACE INTO Types
             (Type,                                        Kind) 
 VALUES      ('MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER', 'KIND_MODIFIER');
 
 INSERT OR REPLACE INTO DynamicModifiers
             (ModifierType,                                  CollectionType,                 EffectType) 
-VALUES      ('MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',   'COLLECTION_PLAYER_DISTRICTS',  'EFFECT_ATTACH_MODIFIER'); 
+VALUES      ('MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',   'COLLECTION_PLAYER_DISTRICTS',  'EFFECT_ATTACH_MODIFIER');
 
+--
 
 INSERT OR REPLACE INTO	TraitModifiers
             (TraitType,									    ModifierId								)
-VALUES      ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',          'RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER'),
-
-            ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',          'RWB_DIEVDIRBIAI_FAITH_GENERATION_MALUS');
+SELECT      'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',   'RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER_'||EraType FROM Rwb_FaithReference_UA UNION
+VALUES      ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',   'RWB_DIEVDIRBIAI_FAITH_GENERATION_MALUS');
 
 
 			
@@ -101,58 +102,69 @@ INSERT OR REPLACE INTO Modifiers
              ModifierType,
              SubjectRequirementSetId,
              OwnerRequirementSetId,
-             RunOnce)
+             RunOnce,
+             NewOnly)
 
-VALUES      ('RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER',
-             'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',
-             'REQSET_RWB_DIEVDIRBIAI_HAS_BREATHTAKING_TILE',
-             null,
-             0),
-    
-    
-            ('RWB_DIEVDIRBIAI_FAITH_BURSTS',
-             'MODIFIER_PLAYER_GRANT_YIELD',
-             null,
-             null,
-             1),
+SELECT      'RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER_'||EraType,
+            'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',
+            'REQSET_RWB_DIEVDIRBIAI_HAS_BREATHTAKING_TILE',
+            'REQSET_RWB_DIEVDIRBIAI_PLAYER_IN_'||EraType,
+            0,
+            1
+             FROM Rwb_FaithReference_UA UNION
 
 
-			 ('RWB_DIEVDIRBIAI_FAITH_GENERATION_MALUS',
-             'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',
-             null,
-             null,
-             0);
+SELECT      'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||EraType,
+            'MODIFIER_PLAYER_GRANT_YIELD',
+            null,
+            null,
+            1,
+            0
+             FROM Rwb_FaithReference_UA UNION
+
+
+VALUES     ('RWB_DIEVDIRBIAI_FAITH_GENERATION_MALUS',
+            'MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_MODIFIER',
+            null,
+            null,
+            0,
+            0);
+
 
 
 INSERT OR REPLACE INTO ModifierArguments
-            (ModifierId,                                                                                Name,                   Value)
-VALUES      ('RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER',                      'ModifierId',        'RWB_DIEVDIRBIAI_FAITH_BURSTS'),
+            (ModifierId,                                                            Name,                Value)
+SELECT      'RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER_'||EraType,    'ModifierId',  'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||EraType FROM Rwb_FaithReference_UA UNION
 
-            ('RWB_DIEVDIRBIAI_FAITH_BURSTS',                             'Amount',            '60'),
-            ('RWB_DIEVDIRBIAI_FAITH_BURSTS',                             'Scale',             '1'),
-            ('RWB_DIEVDIRBIAI_FAITH_BURSTS',                             'YieldType',         'YIELD_FAITH'),
-            
-            ('RWB_DIEVDIRBIAI_FAITH_GENERATION_MALUS',                              'YieldType',         'YIELD_FAITH'),
+SELECT      'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||EraType,                      'Value',       BurstValue FROM Rwb_FaithReference_UA UNION
+SELECT      'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||EraType,                      'Scale',       '1' FROM Rwb_FaithReference_UA UNION
+SELECT      'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||EraType,                      'YieldType',   'YIELD_FAITH' FROM Rwb_FaithReference_UA UNION
+
+VALUES      ('RWB_DIEVDIRBIAI_FAITH_GENERATION_MALUS',                              'YieldType',         'YIELD_FAITH'),
             ('RWB_DIEVDIRBIAI_FAITH_GENERATION_MALUS',                              'Amount',            '-50');
 
 
 INSERT OR REPLACE INTO RequirementSets
-            (RequirementSetId,                                                                          RequirementSetType) 
-VALUES      ('REQSET_RWB_DIEVDIRBIAI_HAS_BREATHTAKING_TILE',                                            'REQUIREMENTSET_TEST_ALL');
+            (RequirementSetId,                                              RequirementSetType) 
+SELECT      'REQSET_RWB_DIEVDIRBIAI_PLAYER_IN_'||EraType,     'REQUIREMENTSET_TEST_ALL' FROM Rwb_FaithReference_UA UNION
+VALUES      ('REQSET_RWB_DIEVDIRBIAI_HAS_BREATHTAKING_TILE',                'REQUIREMENTSET_TEST_ALL');
 
 
 INSERT OR REPLACE INTO RequirementSetRequirements
-            (RequirementSetId,                                                                              RequirementId) 
-VALUES      ('REQSET_RWB_DIEVDIRBIAI_HAS_BREATHTAKING_TILE',                        'RWB_DIEVDIRBIAI_REQUIRES_APPEAL_4');
+            (RequirementSetId,                                              RequirementId)
+SELECT      'REQSET_RWB_DIEVDIRBIAI_PLAYER_IN_'||EraType,     'RWB_DIEVDIRBIAI_PLAYER_IN_'||EraType      FROM Rwb_FaithReference_UA UNION
+VALUES      ('REQSET_RWB_DIEVDIRBIAI_HAS_BREATHTAKING_TILE',                'RWB_DIEVDIRBIAI_REQUIRES_APPEAL_4');
 
 
 INSERT OR REPLACE INTO Requirements
-            (RequirementId,                                                         RequirementType,                                         Inverse) 
-VALUES      ('RWB_DIEVDIRBIAI_REQUIRES_APPEAL_4',                                   'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN',                0);
+            (RequirementId,                                                 RequirementType)
+SELECT      'RWB_DIEVDIRBIAI_PLAYER_IN_'||EraType,              'REQUIREMENT_PLAYER_ERA_AT_LEAST'  FROM Rwb_FaithReference_UA UNION
+VALUES      ('RWB_DIEVDIRBIAI_REQUIRES_APPEAL_4',                           'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN');
 
 
 INSERT OR REPLACE INTO RequirementArguments
-            (RequirementId,                                                 Name,                       Value) 
+            (RequirementId,                                                 Name,                       Value)
+SELECT      'RWB_DIEVDIRBIAI_PLAYER_IN_'||EraType,              'EraType',          EraType FROM Rwb_FaithReference_UA UNION
 VALUES      ('RWB_DIEVDIRBIAI_REQUIRES_APPEAL_4',                           'MinimumAppeal',            '4');
 
 -----------------------------------------------
