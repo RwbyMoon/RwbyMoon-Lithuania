@@ -127,18 +127,31 @@ VALUES	    ('MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT_ON_ADJACENT_DISTRICT',		        
     	    ('MODIFIER_RWB_PILIAKALNIS_FOOD_BREATHTAKING_ON_ADJACENT_DISTRICT',		                'KIND_MODIFIER'),
     	    ('MODIFIER_RWB_PILIAKALNIS_FOOD_BREATHTAKING',		                                    'KIND_MODIFIER') UNION
 SELECT      'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_ON_ADJACENT_DISTRICT_'||FeatureType,		'KIND_MODIFIER' FROM Rwb_PiliakalnisFeatures_UI UNION
-SELECT    	'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_'||FeatureType,		                    'KIND_MODIFIER' FROM Rwb_PiliakalnisFeatures_UI;
+SELECT    	'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_'||FeatureType,		                        'KIND_MODIFIER' FROM Rwb_PiliakalnisFeatures_UI;
 ;
 
 INSERT OR REPLACE INTO Modifiers
-            (ModifierId,                                                                            ModifierType)
-VALUES	    ('MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT_ON_ADJACENT_DISTRICT',		                        'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE'),
-            ('MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT',		                                            'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE'),
-            ('MODIFIER_RWB_PILIAKALNIS_FOOD_BREATHTAKING_ON_ADJACENT_DISTRICT',		                'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE'),
-            ('MODIFIER_RWB_PILIAKALNIS_FOOD_BREATHTAKING',		                                    'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE') UNION
-SELECT      'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_ON_ADJACENT_DISTRICT_'||FeatureType,	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE' FROM Rwb_PiliakalnisFeatures_UI UNION
-SELECT    	'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_'||FeatureType,		                'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE' FROM Rwb_PiliakalnisFeatures_UI;
+            (ModifierId,                                                                            ModifierType,                                                   SubjectRequirementSetId)
+VALUES	    ('MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT_ON_ADJACENT_DISTRICT',		                        'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',                'REQSET_RWB_PILIAKALNIS_ADJACENT_TO_PILIAKALNIS'),
+            ('MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT',		                                            'MODIFIER_PLAYER_DISTRICT_ADJUST_YIELD_CHANGE',                 null),
+            ('MODIFIER_RWB_PILIAKALNIS_FOOD_BREATHTAKING_ON_ADJACENT_DISTRICT',		                'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',                'REQSET_RWB_PILIAKALNIS_ON_BREATHTAKING_ADJACENT_TO_PILIAKALNIS'),
+            ('MODIFIER_RWB_PILIAKALNIS_FOOD_BREATHTAKING',		                                    'MODIFIER_PLAYER_DISTRICT_ADJUST_YIELD_CHANGE',                 'REQSET_RWB_PILIAKALNIS_ON_BREATHTAKING') UNION
+SELECT      'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_ON_ADJACENT_DISTRICT_'||FeatureType,	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',    'REQSET_RWB_PILIAKALNIS_ADJACENT_TO_PILIAKALNIS_ON'||FeatureType FROM Rwb_PiliakalnisFeatures_UI UNION
+SELECT    	'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_'||FeatureType,		                'MODIFIER_PLAYER_DISTRICT_ADJUST_YIELD_CHANGE',     'REQSET_RWB_PILIAKALNIS_ON'||FeatureType FROM Rwb_PiliakalnisFeatures_UI;
 
+--
+
+INSERT OR REPLACE INTO DistrictModifiers
+            (DistrictType,                                                  ModifierId) 
+VALUES      ('DISTRICT_RWB_PILIAKALNIS',                                    'MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT'),
+            ('DISTRICT_RWB_PILIAKALNIS',                                    'MODIFIER_RWB_PILIAKALNIS_FOOD_BREATHTAKING') UNION
+SELECT      'DISTRICT_RWB_PILIAKALNIS',                         'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_'||FeatureType  FROM Rwb_PiliakalnisFeatures_UI;
+                                        
+INSERT OR REPLACE INTO TraitModifiers
+            (TraitType,                                                     ModifierId)
+VALUES      ('TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS',                 'MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT_ON_ADJACENT_DISTRICT'),
+            ('TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS',                 'MODIFIER_RWB_PILIAKALNIS_FOOD_BREATHTAKING_ON_ADJACENT_DISTRICT') UNION
+SELECT      'TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS',        'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_ON_ADJACENT_DISTRICT_'||FeatureType  FROM Rwb_PiliakalnisFeatures_UI;
 
 -- MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE
 -- REQUIREMENT_DISTRICT_TYPE_MATCHES (à inverse pour faire les non-Pilia)
@@ -149,12 +162,37 @@ SELECT    	'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_'||FeatureType,		             
 -- REQUIREMENT_PLOT_IS_APPEAL_BETWEEN
 ------ MinimumAppeal
 
+INSERT OR REPLACE INTO RequirementSets
+                (RequirementSetId,                                                                  RequirementSetType) 
+VALUES          ('REQSET_RWB_PILIAKALNIS_ADJACENT_TO_PILIAKALNIS',                                  'REQUIREMENTSET_TEST_ALL'),
+                ('REQSET_RWB_PILIAKALNIS_ON_BREATHTAKING_ADJACENT_TO_PILIAKALNIS',                  'REQUIREMENTSET_TEST_ALL'),
+                ('REQSET_RWB_PILIAKALNIS_ON_BREATHTAKING',                                          'REQUIREMENTSET_TEST_ALL') UNION
+SELECT          'REQSET_RWB_PILIAKALNIS_ADJACENT_TO_PILIAKALNIS_ON'||FeatureType,   'REQUIREMENTSET_TEST_ALL' FROM Rwb_PiliakalnisFeatures_UI UNION
+SELECT          'REQSET_RWB_PILIAKALNIS_ON'||FeatureType,                           'REQUIREMENTSET_TEST_ALL' FROM Rwb_PiliakalnisFeatures_UI;
 
+INSERT OR REPLACE INTO RequirementSetRequirements
+(RequirementSetId,                                                                                  RequirementId)
+VALUES          ('REQSET_RWB_PILIAKALNIS_ADJACENT_TO_PILIAKALNIS',                                  'RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS') UNION
+VALUES          ('REQSET_RWB_PILIAKALNIS_ADJACENT_TO_PILIAKALNIS',                                  'RWB_REQUIRES_IS_NOT_PILIAKALNIS') UNION
+                                                                                                                                       
+VALUES          ('REQSET_RWB_PILIAKALNIS_ON_BREATHTAKING_ADJACENT_TO_PILIAKALNIS',                  'RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS') UNION
+VALUES          ('REQSET_RWB_PILIAKALNIS_ON_BREATHTAKING_ADJACENT_TO_PILIAKALNIS',                  'RWB_REQUIRES_IS_NOT_PILIAKALNIS') UNION
+VALUES          ('REQSET_RWB_PILIAKALNIS_ON_BREATHTAKING_ADJACENT_TO_PILIAKALNIS',                  'RWB_REQUIRES_IS_ON_BREATHTAKING') UNION
+                                                                                                                                       
+VALUES          ('REQSET_RWB_PILIAKALNIS_ON_BREATHTAKING',                                          'RWB_REQUIRES_IS_ON_BREATHTAKING') UNION
+                                                                                                        
+SELECT          'REQSET_RWB_PILIAKALNIS_ADJACENT_TO_PILIAKALNIS_ON'||FeatureType,   'RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS' FROM Rwb_PiliakalnisFeatures_UI UNION
+SELECT          'REQSET_RWB_PILIAKALNIS_ADJACENT_TO_PILIAKALNIS_ON'||FeatureType,   'RWB_REQUIRES_IS_NOT_PILIAKALNIS' FROM Rwb_PiliakalnisFeatures_UI UNION
+SELECT          'REQSET_RWB_PILIAKALNIS_ADJACENT_TO_PILIAKALNIS_ON'||FeatureType,   'RWB_REQUIRES_IS_ON_'||FeatureType FROM Rwb_PiliakalnisFeatures_UI UNION
+                                                                                                                                                       
+SELECT          'REQSET_RWB_PILIAKALNIS_ON'||FeatureType,                           'RWB_REQUIRES_IS_ON_'||FeatureType FROM Rwb_PiliakalnisFeatures_UI;
 
 INSERT OR REPLACE INTO Requirements
-                (RequirementId,								            RequirementType,                                       Inverse)
-VALUES	        ('RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS',		'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES',     '0'),
-                ('RWB_REQUIRES_IS_NOT_PILIAKALNIS',		                'REQUIREMENT_DISTRICT_TYPE_MATCHES',                   '1');
+                (RequirementId,								            RequirementType,                                                Inverse)
+VALUES	        ('RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS',		'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES',              '0'),
+                ('RWB_REQUIRES_IS_NOT_PILIAKALNIS',		                'REQUIREMENT_DISTRICT_TYPE_MATCHES',                            '1'),
+                ('RWB_REQUIRES_IS_ON_BREATHTAKING',		                'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN',                           '0') UNION
+SELECT          'RWB_REQUIRES_IS_ON_'||FeatureType,		'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES',        '0' FROM Rwb_PiliakalnisFeatures_UI;
 
 
 
@@ -163,7 +201,9 @@ INSERT OR REPLACE INTO RequirementArguments
 VALUES	        ('RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS',     'DistrictType',             'DISTRICT_RWB_PILIAKALNIS'),
                 ('RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS',     'MinRange',                 '1'),
                 ('RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS',     'MaxRange',                 '1'),
-                ('RWB_REQUIRES_IS_NOT_PILIAKALNIS',                     'DistrictType',             'DISTRICT_RWB_PILIAKALNIS')
+                ('RWB_REQUIRES_IS_NOT_PILIAKALNIS',                     'DistrictType',             'DISTRICT_RWB_PILIAKALNIS'),
+                ('RWB_REQUIRES_IS_ON_BREATHTAKING',                     'MinimumAppeal',            '4') UNION
+SELECT          'RWB_REQUIRES_IS_ON_'||FeatureType,        'FeatureType',       FeatureType FROM Rwb_PiliakalnisFeatures_UI
 ;
 
 -----------------------------------------------	
