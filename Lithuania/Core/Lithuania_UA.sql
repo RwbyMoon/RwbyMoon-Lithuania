@@ -108,7 +108,7 @@ INSERT OR REPLACE INTO Modifiers
 SELECT      'RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER_'||EraType,
             'MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',
             'REQSET_RWB_DIEVDIRBIAI_HAS_BREATHTAKING_TILE',
-            'REQSET_RWB_DIEVDIRBIAI_PLAYER_IN_'||EraType,
+            null,
             0,
             1
              FROM Rwb_FaithReference_UA UNION
@@ -117,7 +117,7 @@ SELECT      'RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER_'||EraType,
 SELECT      'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||EraType,
             'MODIFIER_PLAYER_GRANT_YIELD',
             null,
-            null,
+            'REQSET_RWB_DIEVDIRBIAI_PLAYER_IN_'||EraType,
             1,
             0
              FROM Rwb_FaithReference_UA UNION
@@ -136,7 +136,7 @@ INSERT OR REPLACE INTO ModifierArguments
             (ModifierId,                                                            Name,                Value)
 SELECT      'RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER_'||EraType,    'ModifierId',  'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||EraType FROM Rwb_FaithReference_UA UNION
 
-SELECT      'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||EraType,                      'Value',       BurstValue FROM Rwb_FaithReference_UA UNION
+SELECT      'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||EraType,                      'Amount',       BurstValue FROM Rwb_FaithReference_UA UNION
 SELECT      'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||EraType,                      'Scale',       '1' FROM Rwb_FaithReference_UA UNION
 SELECT      'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||EraType,                      'YieldType',   'YIELD_FAITH' FROM Rwb_FaithReference_UA UNION
 
