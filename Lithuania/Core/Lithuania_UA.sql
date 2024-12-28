@@ -80,13 +80,13 @@ DROP TABLE TempFaithTable;
 
 --
 
-CREATE TABLE IF NOT EXISTS Rwb_FaithBurstFeatures
+CREATE TABLE IF NOT EXISTS Rwb_FaithBurstFeatures_UA
 (
     FeatureType TEXT,
     BurstValue INT
 );
 
-INSERT OR REPLACE INTO Rwb_FaithBurstFeatures
+INSERT OR REPLACE INTO Rwb_FaithBurstFeatures_UA
 (FeatureType,       BurstValue)
 VALUES ('FEATURE_MARSH',    2) UNION
 SELECT	    Features.FeatureType,1 FROM Features WHERE FeatureType LIKE '%FLOODPLAIN%';
@@ -109,7 +109,7 @@ VALUES      ('MODIFIER_PLAYER_DISTRICTS_ATTACH_MODIFIER',   'COLLECTION_PLAYER_D
 INSERT OR REPLACE INTO	TraitModifiers
             (TraitType,									    ModifierId								)
 SELECT      'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',   'RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER_'||EraType FROM Rwb_FaithReference_UA UNION
-SELECT      'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',   'RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER_'||a.EraType||'_IF_'||b.FeatureType FROM Rwb_FaithReference_UA a, Rwb_FaithBurstFeatures b UNION
+SELECT      'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',   'RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER_'||a.EraType||'_IF_'||b.FeatureType FROM Rwb_FaithReference_UA a, Rwb_FaithBurstFeatures_UA b UNION
 VALUES      ('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',   'RWB_DIEVDIRBIAI_FAITH_GENERATION_MALUS');
 
 
@@ -136,7 +136,7 @@ SELECT      'RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER_'||a.EraType||'_IF_'
             'REQSET_RWB_DIEVDIRBIAI_PLAYER_IN_'||EraType,
             0,
             0
-            FROM Rwb_FaithReference_UA a, Rwb_FaithBurstFeatures b UNION
+            FROM Rwb_FaithReference_UA a, Rwb_FaithBurstFeatures_UA b UNION
 
 SELECT      'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||EraType,
             'MODIFIER_PLAYER_GRANT_YIELD',
@@ -159,7 +159,7 @@ VALUES     ('RWB_DIEVDIRBIAI_FAITH_GENERATION_MALUS',
 INSERT OR REPLACE INTO ModifierArguments
             (ModifierId,                                                                                        Name,                Value)
 SELECT      'RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER_'||EraType,                              'ModifierId',  'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||EraType FROM Rwb_FaithReference_UA UNION
-SELECT      'RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER_'||a.EraType||'_IF_'||b.FeatureType,     'ModifierId',  'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||a.EraType FROM Rwb_FaithReference_UA a, Rwb_FaithBurstFeatures b UNION
+SELECT      'RWB_DIEVDIRBIAI_DISTRICTS_FAITH_MODIFIER_GIVER_'||a.EraType||'_IF_'||b.FeatureType,     'ModifierId',  'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||a.EraType FROM Rwb_FaithReference_UA a, Rwb_FaithBurstFeatures_UA b UNION
 
 SELECT      'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||EraType,                                                'Amount',       BurstValue FROM Rwb_FaithReference_UA UNION
 SELECT      'RWB_DIEVDIRBIAI_FAITH_BURSTS_'||EraType,                                                'Scale',       '1' FROM Rwb_FaithReference_UA UNION
@@ -172,43 +172,43 @@ VALUES      ('RWB_DIEVDIRBIAI_FAITH_GENERATION_MALUS',                          
 INSERT OR REPLACE INTO RequirementSets
             (RequirementSetId,                                                                       RequirementSetType) 
 SELECT      'REQSET_RWB_DIEVDIRBIAI_PLAYER_IN_'||EraType,                            'REQUIREMENTSET_TEST_ALL' FROM Rwb_FaithReference_UA UNION
-SELECT      'REQSET_RWB_DIEVDIRBIAI_HAS_APPROPRIATE_APPEAL_AND_'||FeatureType,       'REQUIREMENTSET_TEST_ALL' FROM Rwb_FaithBurstFeatures UNION
+SELECT      'REQSET_RWB_DIEVDIRBIAI_HAS_APPROPRIATE_APPEAL_AND_'||FeatureType,       'REQUIREMENTSET_TEST_ALL' FROM Rwb_FaithBurstFeatures_UA UNION
 VALUES      ('REQSET_RWB_DIEVDIRBIAI_HAS_APPROPRIATE_APPEAL',                                        'REQUIREMENTSET_TEST_ALL');
 
 
 INSERT OR REPLACE INTO RequirementSetRequirements
             (RequirementSetId,                                                                     RequirementId)
 SELECT      'REQSET_RWB_DIEVDIRBIAI_PLAYER_IN_'||EraType,                          'RWB_DIEVDIRBIAI_PLAYER_IN_'||EraType      FROM Rwb_FaithReference_UA UNION
-SELECT      'REQSET_RWB_DIEVDIRBIAI_HAS_APPROPRIATE_APPEAL_AND_'||FeatureType,     'RWB_DIEVDIRBIAI_PLACED_ON_'||Rwb_FaithBurstFeatures.FeatureType      FROM Rwb_FaithBurstFeatures UNION
-SELECT      'REQSET_RWB_DIEVDIRBIAI_HAS_APPROPRIATE_APPEAL_AND_'||FeatureType,     'RWB_DIEVDIRBIAI_REQUIRES_APPEAL_4'      FROM Rwb_FaithBurstFeatures UNION
+SELECT      'REQSET_RWB_DIEVDIRBIAI_HAS_APPROPRIATE_APPEAL_AND_'||FeatureType,     'RWB_DIEVDIRBIAI_PLACED_ON_'||Rwb_FaithBurstFeatures_UA.FeatureType      FROM Rwb_FaithBurstFeatures_UA UNION
+SELECT      'REQSET_RWB_DIEVDIRBIAI_HAS_APPROPRIATE_APPEAL_AND_'||FeatureType,     'RWB_DIEVDIRBIAI_REQUIRES_APPEAL_4'      FROM Rwb_FaithBurstFeatures_UA UNION
 VALUES      ('REQSET_RWB_DIEVDIRBIAI_HAS_APPROPRIATE_APPEAL',                                      'RWB_DIEVDIRBIAI_REQUIRES_APPEAL_4');
 
 
 INSERT OR REPLACE INTO Requirements
             (RequirementId,                                                                              RequirementType)
 SELECT      'RWB_DIEVDIRBIAI_PLAYER_IN_'||EraType,           'REQUIREMENT_PLAYER_ERA_AT_LEAST'        FROM Rwb_FaithReference_UA UNION
-SELECT      'RWB_DIEVDIRBIAI_PLACED_ON_'||FeatureType,       'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES'  FROM Rwb_FaithBurstFeatures UNION
+SELECT      'RWB_DIEVDIRBIAI_PLACED_ON_'||FeatureType,       'REQUIREMENT_PLOT_FEATURE_TYPE_MATCHES'  FROM Rwb_FaithBurstFeatures_UA UNION
 VALUES      ('RWB_DIEVDIRBIAI_REQUIRES_APPEAL_4',                          'REQUIREMENT_PLOT_IS_APPEAL_BETWEEN');
 
 
 INSERT OR REPLACE INTO RequirementArguments
             (RequirementId,                                                 Name,                       Value)
 SELECT      'RWB_DIEVDIRBIAI_PLAYER_IN_'||EraType,            'EraType',            EraType FROM Rwb_FaithReference_UA UNION
-SELECT      'RWB_DIEVDIRBIAI_PLACED_ON_'||FeatureType,        'FeatureType',        FeatureType FROM Rwb_FaithBurstFeatures UNION
+SELECT      'RWB_DIEVDIRBIAI_PLACED_ON_'||FeatureType,        'FeatureType',        FeatureType FROM Rwb_FaithBurstFeatures_UA UNION
 VALUES      ('RWB_DIEVDIRBIAI_REQUIRES_APPEAL_4',                           'MinimumAppeal',            '4');
 
-DROP TABLE Rwb_FaithBurstFeatures;
+DROP TABLE Rwb_FaithBurstFeatures_UA;
 
 -----------------------------------------------
 -- Owned Floodplains do not alter Appeal on adjacent tiles, and Reefs and Marshes instead generate +1 Appeal.
 -----------------------------------------------                            
-CREATE TABLE IF NOT EXISTS Rwb_AppealFeatures
+CREATE TABLE IF NOT EXISTS Rwb_AppealFeatures_UA
 (
     FeatureType TEXT,
     BurstValue INT
 );
 
-INSERT OR REPLACE INTO Rwb_AppealFeatures
+INSERT OR REPLACE INTO Rwb_AppealFeatures_UA
 (FeatureType,       BurstValue)
 VALUES ('FEATURE_REEF',     1),('FEATURE_MARSH',    2) UNION
 SELECT	    Features.FeatureType,1 FROM Features WHERE FeatureType LIKE '%FLOODPLAIN%';
@@ -218,26 +218,26 @@ SELECT	    Features.FeatureType,1 FROM Features WHERE FeatureType LIKE '%FLOODPL
 INSERT OR REPLACE INTO Types
             (Type,					                                 Kind)
 SELECT	    'MODIFIER_RWB_DIEVDIRBIAI_APPEAL_ON_'||FeatureType,'KIND_MODIFIER'
-FROM Rwb_AppealFeatures;
+FROM Rwb_AppealFeatures_UA;
 
 --
 
 INSERT OR REPLACE INTO	TraitModifiers
             (TraitType,									 ModifierId								)
 SELECT      'TRAIT_LEADER_RWB_UNION_OF_HORODLO','MODIFIER_RWB_DIEVDIRBIAI_APPEAL_ON_'||FeatureType
-FROM Rwb_AppealFeatures;
+FROM Rwb_AppealFeatures_UA;
 
 
 INSERT OR REPLACE INTO Modifiers
             (ModifierId,                                                   ModifierType)
 SELECT      'MODIFIER_RWB_DIEVDIRBIAI_APPEAL_ON_'||FeatureType,  'MODIFIER_PLAYER_CITIES_ADJUST_FEATURE_APPEAL_MODIFIER'
-FROM Rwb_AppealFeatures;
+FROM Rwb_AppealFeatures_UA;
 
 
 INSERT OR REPLACE INTO ModifierArguments
             (ModifierId,                                                   Name,                       Value)
-SELECT      'MODIFIER_RWB_DIEVDIRBIAI_APPEAL_ON_'||FeatureType,   'FeatureType',        FeatureType      FROM Rwb_AppealFeatures     UNION
-SELECT      'MODIFIER_RWB_DIEVDIRBIAI_APPEAL_ON_'||FeatureType,   'Amount',             BurstValue       FROM Rwb_AppealFeatures;
+SELECT      'MODIFIER_RWB_DIEVDIRBIAI_APPEAL_ON_'||FeatureType,   'FeatureType',        FeatureType      FROM Rwb_AppealFeatures_UA     UNION
+SELECT      'MODIFIER_RWB_DIEVDIRBIAI_APPEAL_ON_'||FeatureType,   'Amount',             BurstValue       FROM Rwb_AppealFeatures_UA;
 
 
-DROP TABLE Rwb_AppealFeatures;
+DROP TABLE Rwb_AppealFeatures_UA;
