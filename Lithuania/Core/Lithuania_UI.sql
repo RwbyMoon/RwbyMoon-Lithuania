@@ -85,6 +85,24 @@ VALUES
     'NO_DOMAIN'); -- MilitaryDomain
 
 -----------------------------------------------	
+-- District_TradeRouteYields
+-----------------------------------------------	
+
+INSERT OR REPLACE INTO District_TradeRouteYields
+(DistrictType,
+ YieldType,
+ YieldChangeAsDomesticDestination,
+ YieldChangeAsInternationalDestination)
+VALUES	    (  'DISTRICT_RWB_PILIAKALNIS',
+                 'YIELD_FOOD',
+                 '1',
+                 '0'),
+              (  'DISTRICT_RWB_PILIAKALNIS',
+                 'YIELD_CULTURE',
+                 '0',
+                 '1');
+
+-----------------------------------------------	
 -- This district and those adjacent to it generate 1 Food, an additional 1 when built on a Floodplain, a Reef or a Marsh, and an additional 1 if the tile is Breathtaking.
 -----------------------------------------------	
 
@@ -98,7 +116,8 @@ INSERT OR REPLACE INTO Rwb_PiliakalnisFeatures_UI
 VALUES ('FEATURE_REEF'),('FEATURE_MARSH') UNION
 SELECT	    Features.FeatureType FROM Features WHERE FeatureType LIKE '%FLOODPLAIN%';
 
---
+
+-----
 
 
 INSERT OR REPLACE INTO Types
@@ -111,6 +130,41 @@ SELECT      'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_ON_ADJACENT_DISTRICT_'||Featu
 SELECT    	'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_'||FeatureType,		                    'KIND_MODIFIER' FROM Rwb_PiliakalnisFeatures_UI;
 ;
 
+INSERT OR REPLACE INTO Modifiers
+            (ModifierId,                                                                            ModifierType)
+VALUES	    ('MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT_ON_ADJACENT_DISTRICT',		                        'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE'),
+            ('MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT',		                                            'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE'),
+            ('MODIFIER_RWB_PILIAKALNIS_FOOD_BREATHTAKING_ON_ADJACENT_DISTRICT',		                'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE'),
+            ('MODIFIER_RWB_PILIAKALNIS_FOOD_BREATHTAKING',		                                    'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE') UNION
+SELECT      'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_ON_ADJACENT_DISTRICT_'||FeatureType,	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE' FROM Rwb_PiliakalnisFeatures_UI UNION
+SELECT    	'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_'||FeatureType,		                'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE' FROM Rwb_PiliakalnisFeatures_UI;
+
+
+-- MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE
+-- REQUIREMENT_DISTRICT_TYPE_MATCHES (à inverse pour faire les non-Pilia)
+-- REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES
+------ DistrictType
+------ MinRange
+------ MaxRange
+-- REQUIREMENT_PLOT_IS_APPEAL_BETWEEN
+------ MinimumAppeal
+
+
+
+INSERT OR REPLACE INTO Requirements
+                (RequirementId,								            RequirementType,                                       Inverse)
+VALUES	        ('RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS',		'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES',     '0'),
+                ('RWB_REQUIRES_IS_NOT_PILIAKALNIS',		                'REQUIREMENT_DISTRICT_TYPE_MATCHES',                   '1');
+
+
+
+INSERT OR REPLACE INTO RequirementArguments
+                (RequirementId,								             Name,                      Value)
+VALUES	        ('RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS',     'DistrictType',             'DISTRICT_RWB_PILIAKALNIS'),
+                ('RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS',     'MinRange',                 '1'),
+                ('RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS',     'MaxRange',                 '1'),
+                ('RWB_REQUIRES_IS_NOT_PILIAKALNIS',                     'DistrictType',             'DISTRICT_RWB_PILIAKALNIS')
+;
 
 -----------------------------------------------	
 -- For UA
