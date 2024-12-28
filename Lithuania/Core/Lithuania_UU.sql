@@ -40,14 +40,14 @@ VALUES	('UNIT_RWB_VYTIS', -- UnitType
 		'DOMAIN_LAND', -- Domain
 		'FORMATION_CLASS_LAND_COMBAT', -- FormationClass
         'PROMOTION_CLASS_LIGHT_CAVALRY', -- PromotionClass
-        '36', -- CombatStrength
+        '38', -- CombatStrength
 		'100', -- Cost
 		'0', -- CanCapture
 		'1', -- CanTrain
 		'YIELD_GOLD', -- PurchaseYield
 		'TECH_HORSEBACK_RIDING', -- PrereqTech
         'TECH_SYNTHETIC_MATERIALS', -- MandatoryObsoleteTech
-		'6', -- Maintenance
+		'5', -- Maintenance
 		'1', -- ZoneOfControl
 		'ADVISOR_CONQUEST', -- AdvisorType
         'RESOURCE_HORSES', -- StrategicResource

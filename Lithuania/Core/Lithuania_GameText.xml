@@ -66,10 +66,10 @@
 			<Plurality>1</Plurality>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_VYTIS_DESCRIPTION" Language="en_US">
-			<Text>Unique Lithuanian Light Cavalry unit, replacing the Horseman. More expensive than the Horseman it replaces, it has triple its [ICON_Gold] Gold upkeep and can only upgrade into Cavalry.[NEWLINE][NEWLINE]• Gains +7 [ICON_Strength]Combat Strength against units with stronger base strength.[NEWLINE]Once the technology "Castles" has been researched, it gains +4 [ICON_Strength]Combat Strength.</Text>
+			<Text>Unique Lithuanian Light Cavalry unit, stronger than the Horseman it replaces. More expensive than the Horseman it replaces, it has an higher [ICON_Gold] Gold upkeep and can only upgrade into Cavalry.[NEWLINE][NEWLINE]• Gains +7 [ICON_Strength]Combat Strength against units with stronger base strength.[NEWLINE]Once the technology "Castles" has been researched, it gains +4 [ICON_Strength]Combat Strength.</Text>
 		</Row>
 		<Row Tag="LOC_UNIT_RWB_VYTIS_DESCRIPTION" Language="fr_FR">
-			<Text>Unité unique lituanienne de Cavalerie Légère remplaçant le Cavalier. Plus cher que le Cavalier qu'il remplace, son entretien en [ICON_Gold] Or est triplé comparé à celui-ci et ne peut être amélioré qu'en Cavalerie.[NEWLINE][NEWLINE]Gagne +7 [ICON_Strength] Puissance de Combat contre des unités avec une [ICON_Strength] Puissance de Combat plus haute.[NEWLINE]Après avoir recherché la technologie des "Châteaux", gagne +4 [ICON_Strength] Puissance de Combat.</Text>
+			<Text>Unité unique lituanienne de Cavalerie Légère plus puissante que le Cavalier qu'il remplace. Plus cher que le Cavalier qu'il remplace, son entretien en [ICON_Gold] Or est plus haut comparé à celui-ci et ne peut être amélioré qu'en Cavalerie.[NEWLINE][NEWLINE]Gagne +7 [ICON_Strength] Puissance de Combat contre des unités avec une [ICON_Strength] Puissance de Combat plus haute.[NEWLINE]Après avoir recherché la technologie des "Châteaux", gagne +4 [ICON_Strength] Puissance de Combat.</Text>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_NAME" Language="en_US">
 			<Text>Defiance</Text>
