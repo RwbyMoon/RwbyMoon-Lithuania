@@ -35,12 +35,12 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="en_US">
 			<Text>
-				Districts (excluding City-Centers) can be placed on any passable non-Wonder terrain [ICON_Terrain] Feature (Woods, Marshes, Reefs...) without destroying them.[NEWLINE]Your cities generate -50%[ICON_Faith]Faith per turn. Once a Great Prophet acquired, you gain bursts of 30 [ICON_Faith] Faith when finishing [ICON_District] Districts on Breathtaking tile or better. Founding a [ICON_Religion] religion halves this Faith gain and grant +1 [ICON_Governor] Governor Title.
+				Districts (excluding the capital city-center) can be placed on any passable non-Wonder terrain [ICON_Terrain] features without destroying them. Owned Floodplains do not alter Appeal on adjacent tiles, and Reefs and Marshes generate +1 Appeal instead of reducing it.[NEWLINE]Your cities generate -50% [ICON_Faith] Faith per turn. You gain bursts of Faith (scaling with era) when finishing [ICON_District] Districts on Breathtaking tiles, doubled if built onto Floodplains or Marshes.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Les Quartiers (hors centre-ville) peuvent être placés sur les [ICON_Terrain] Caractéristiques de terrain non-Merveille (Bois, Marais, Récifs...) sans les détruire.[NEWLINE]Vos villes génèrent -50% [ICON_Faith] Foi par tour. Une fois un Prophète Illustre acquis, finir un [ICON_District] Quartier sur une case Époustouflante ou mieux génère 30 [ICON_Faith] Foi. Fonder une [ICON_Religion] religion divise par 2 ce gain de Foi et confère +1 [ICON_Governor] Titre de Gouverneur.
+				Les Quartiers (hors centre-ville de la capitale) peuvent être placés sur les [ICON_Terrain] caractéristiques de terrain non-Merveille sans les détruire. Les Plaines Innndables que vous possédez n'altèrent pas l'Attrait des cases adjacentes, et vos Récifs et Marais génèrent +1 Attrait à la place de le réduire.[NEWLINE]Vos villes génèrent -50% [ICON_Faith] Foi par tour. Finir un [ICON_District] Quartier sur une case Époustouflante ou mieux génère de la [ICON_Faith] Foi (augmentant au fil des ères), doublé si construit sur un Marais ou une Plaine Inondable.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_NAME" Language="en_US">
