@@ -101,16 +101,16 @@
 		<Row Tag="LOC_ABILITY_RWB_LEITIS_CUIRASS_LONG_DESCRIPTION" Language="fr_FR">
 			<Text>+4 [ICON_Strength] Puissance de Combat après avoir recherché "Châteaux".</Text>
 		</Row>
-		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_NAME" Language="en_US">
+		<Row Tag="LOC_TRAIT_DISTRICT_RWB_PILIAKALNIS_NAME" Language="en_US">
 			<Text>Piliakalnis</Text>
 		</Row>
-		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_NAME" Language="fr_FR">
+		<Row Tag="LOC_TRAIT_DISTRICT_RWB_PILIAKALNIS_NAME" Language="fr_FR">
 			<Text>Piliakalnis</Text>
 		</Row>
-		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
+		<Row Tag="LOC_TRAIT_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
 			<Text>A unique district exclusive to Lithuania for Faith generation, city protection and the growth of it.</Text>
 		</Row>
-		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="fr_FR">
+		<Row Tag="LOC_TRAIT_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="fr_FR">
 			<Text>Un Quartier unique exclusif à la Lituanie pour de la génération de Foi, protéger sa ville et supporter sa croissance.</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_NAME" Language="en_US">

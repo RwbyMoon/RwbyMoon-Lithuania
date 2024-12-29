@@ -40,7 +40,7 @@
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION" Language="fr_FR">
 			<Text>
-				Les Quartiers (hors centre-ville de la capitale) peuvent être placés sur les [ICON_Terrain] caractéristiques de terrain non-Merveille sans les détruire. Les Plaines Innndables que vous possédez n'altèrent pas l'Attrait des cases adjacentes, et vos Récifs et Marais génèrent +1 Attrait à la place de le réduire.[NEWLINE]Vos villes génèrent -50% [ICON_Faith] Foi par tour. Finir un [ICON_District] Quartier sur une case Époustouflante ou mieux génère de la [ICON_Faith] Foi (augmentant au fil des ères), doublé si construit sur un Marais ou une Plaine Inondable.
+				Les Quartiers (excluant le centre-ville de la capitale) peuvent être placés sur les [ICON_Terrain] caractéristiques de terrain non-Merveille sans les détruire. Les Plaines Innndables que vous possédez n'altèrent pas l'Attrait des cases adjacentes, et vos Récifs et Marais génèrent +1 Attrait à la place de le réduire.[NEWLINE]Vos villes génèrent -50% [ICON_Faith] Foi par tour. Finir un [ICON_District] Quartier sur une case Époustouflante ou mieux génère de la [ICON_Faith] Foi (augmentant au fil des ères), doublé si construit sur un Marais ou une Plaine Inondable.
 			</Text>
 		</Row>
 		<Row Tag="LOC_TRAIT_CIVILIZATION_UNIT_RWB_VYTIS_NAME" Language="en_US">
@@ -71,54 +71,54 @@
 		<Row Tag="LOC_UNIT_RWB_VYTIS_DESCRIPTION" Language="fr_FR">
 			<Text>Unité unique lituanienne de Cavalerie Légère plus puissante que le Cavalier qu'il remplace. Plus cher que le Cavalier qu'il remplace, son entretien en [ICON_Gold] Or est plus haut comparé à celui-ci et ne peut être amélioré qu'en Cavalerie.[NEWLINE][NEWLINE]Gagne +7 [ICON_Strength] Puissance de Combat contre des unités avec une [ICON_Strength] Puissance de Combat plus haute.[NEWLINE]Après avoir recherché la technologie des "Châteaux", gagne +4 [ICON_Strength] Puissance de Combat.</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_NAME" Language="en_US">
+		<Row Tag="LOC_ABILITY_RWB_VYTIS_DEFIANCE_NAME" Language="en_US">
 			<Text>Defiance</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_NAME" Language="fr_FR">
+		<Row Tag="LOC_ABILITY_RWB_VYTIS_DEFIANCE_NAME" Language="fr_FR">
 			<Text>Défiance</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_DESCRIPTION" Language="en_US">
+		<Row Tag="LOC_ABILITY_RWB_VYTIS_DEFIANCE_DESCRIPTION" Language="en_US">
 			<Text>+7 [ICON_Strength] from Defiance.</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_DESCRIPTION" Language="fr_FR">
+		<Row Tag="LOC_ABILITY_RWB_VYTIS_DEFIANCE_DESCRIPTION" Language="fr_FR">
 			<Text>+7 [ICON_Strength] de Défiance.</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_LONG_DESCRIPTION" Language="en_US">
+		<Row Tag="LOC_ABILITY_RWB_VYTIS_DEFIANCE_LONG_DESCRIPTION" Language="en_US">
 			<Text>+7 [ICON_Strength] Combat Strength against a unit with higher [ICON_Strength] Base Combat Strength.</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_DEFIANCE_LONG_DESCRIPTION" Language="fr_FR">
+		<Row Tag="LOC_ABILITY_RWB_VYTIS_DEFIANCE_LONG_DESCRIPTION" Language="fr_FR">
 			<Text>+7 [ICON_Strength] Puissance de Combat contre des unités avec une [ICON_Strength] Puissance de Combat plus haute.</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_CUIRASS_NAME" Language="en_US">
+		<Row Tag="LOC_ABILITY_RWB_VYTIS_CUIRASS_NAME" Language="en_US">
 			<Text>Cuirass</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_CUIRASS_NAME" Language="fr_FR">
+		<Row Tag="LOC_ABILITY_RWB_VYTIS_CUIRASS_NAME" Language="fr_FR">
 			<Text>Cuirasse</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_CUIRASS_DESCRIPTION" Language="en_US">
+		<Row Tag="LOC_ABILITY_RWB_VYTIS_CUIRASS_DESCRIPTION" Language="en_US">
 			<Text>+4 [ICON_Strength] from Cuirass.</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_CUIRASS_DESCRIPTION" Language="fr_FR">
+		<Row Tag="LOC_ABILITY_RWB_VYTIS_CUIRASS_DESCRIPTION" Language="fr_FR">
 			<Text>+4 [ICON_Strength] de Cuirasse.</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_CUIRASS_LONG_DESCRIPTION" Language="en_US">
+		<Row Tag="LOC_ABILITY_RWB_VYTIS_CUIRASS_LONG_DESCRIPTION" Language="en_US">
 			<Text>+4 [ICON_Strength] Combat Strength after "Castles" has been researched.</Text>
 		</Row>
-		<Row Tag="LOC_ABILITY_RWB_LEITIS_CUIRASS_LONG_DESCRIPTION" Language="fr_FR">
+		<Row Tag="LOC_ABILITY_RWB_VYTIS_CUIRASS_LONG_DESCRIPTION" Language="fr_FR">
 			<Text>+4 [ICON_Strength] Puissance de Combat après avoir recherché "Châteaux".</Text>
 		</Row>
-		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_NAME" Language="en_US">
+		<Row Tag="LOC_TRAIT_DISTRICT_RWB_PILIAKALNIS_NAME" Language="en_US">
 			<Text>Piliakalnis</Text>
 		</Row>
-		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_NAME"	  Language="fr_FR">
+		<Row Tag="LOC_TRAIT_DISTRICT_RWB_PILIAKALNIS_NAME"	  Language="fr_FR">
 			<Text>Piliakalnis|Piliakalnis</Text>
 			<Gender>masculine</Gender>
 			<Plurality>1|2</Plurality>
 		</Row>
-		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
+		<Row Tag="LOC_TRAIT_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
 			<Text>A unique district exclusive to Lithuania for Faith generation, city protection and the growth of it.</Text>
 		</Row>
-		<Row Tag="LOC_TRAIT_CIVILIZATION_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="fr_FR">
+		<Row Tag="LOC_TRAIT_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="fr_FR">
 			<Text>Un Quartier unique exclusif à la Lituanie pour de la génération de Foi, protéger sa ville et supporter sa croissance.</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_NAME" Language="en_US">
@@ -134,7 +134,7 @@
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH_NAME" Language="fr_FR">
 			<Text>Patrouille de Leičiai</Text>
-			<Gender>feminine:vowel</Gender>
+			<Gender>feminine</Gender>
 			<Plurality>1</Plurality>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH_DESCRIPTION" Language="en_US">
@@ -150,7 +150,7 @@
 			<Text>Patrouille de Leičiai</Text>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_DESCRIPTION" Language="en_US">
-			<Text>+3 [ICON_Religion] Religious Strength when within 4 tiles of a Piliakalnis.</Text>
+			<Text>+8 [ICON_Religion] Religious Strength when within 4 tiles of a Piliakalnis.</Text>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_DESCRIPTION" Language="fr_FR">
 			<Text>+8 [ICON_Religion] Puissance Religieuse lorsqu'à 4 cases ou moins d'un Piliakalnis.</Text>
@@ -159,13 +159,13 @@
 			<Text>+3 [ICON_Strength] from a Piliakalnis.</Text>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH_BONUS_DESCRIPTION" Language="fr_FR">
-			<Text>+3 [ICON_Strength] d'un Piliakalnis.</Text>
+			<Text>+3 [ICON_Strength] grâce à un Piliakalnis.</Text>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_BONUS_DESCRIPTION" Language="en_US">
 			<Text>+8 [ICON_Religion] from Piliakalnis</Text>
 		</Row>
 		<Row Tag="LOC_ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_BONUS_DESCRIPTION" Language="fr_FR">
-			<Text>+8 [ICON_Religion] d'un Piliakalnis</Text>
+			<Text>+8 [ICON_Religion] grâce à un Piliakalnis</Text>
 		</Row>
 		<Row Tag="LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION" Language="en_US">
 			<Text>
@@ -220,7 +220,7 @@
 		</Row>
 		<Row Tag="LOC_CIVILIZATION_RWB_LITHUANIA_DESCRIPTION" Language="fr_FR">
 			<Text>Empire Lituanien</Text>
-			<Gender>masculine:vowel</Gender>
+			<Gender>masculine</Gender>
 			<Plurality>1</Plurality>
 		</Row>
 	<!--	Grand Duchy of Lithuania-->
