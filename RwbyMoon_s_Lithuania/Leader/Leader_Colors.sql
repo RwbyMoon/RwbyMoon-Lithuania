@@ -1,6 +1,6 @@
 /*
 	Leader Colours
-	Authors: MC
+	Authors: RwbyMoon
 */
 
 -----------------------------------------------
@@ -14,7 +14,7 @@
 -------------------------------------
 --	PlayerColors
 -------------------------------------
-INSERT OR REPLACE INTO PlayerColors
+INSERT OR IGNORE INTO PlayerColors
     (
         Type,
         Usage,

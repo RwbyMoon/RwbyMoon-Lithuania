@@ -1,6 +1,6 @@
 /*
 	Civilization Text Entries
-	Authors: MC
+	Authors: RwbyMoon
 */
 
 -----------------------------------------------
@@ -11,7 +11,7 @@
 -- In all cases, localisation strings always start with LOC_ - such that we can easily tell them apart from game code.
 -----------------------------------------------
 
-INSERT INTO LocalizedText
+INSERT OR IGNORE INTO LocalizedText
 			(Language, Tag, Gender, Plurality, Text)
 VALUES
 
@@ -37,11 +37,17 @@ VALUES
 -- Please note: The display of in-game icons in text is achieved by using [ICON_Type].
 -----------------------------------------------
 
+--------- VERSION FOR GATHERING STORM AND RISE & FALL
 	('en_US',	'LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_NAME',  	    null,	null,   'Dievdirbiai'),
-	('en_US',	'LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION',  	null,	null,   'Districts can be placed on any passable terrain [ICON_Terrain] features without destroying them. +1 Appeal to tiles adjacent to Floodplains and Reefs, +2 for Marshes[NEWLINE]Your cities generate -50% [ICON_Faith] Faith per turn. You gain bursts of Faith (scaling with era) when finishing [ICON_District] Districts on Breathtaking tiles, doubled if built onto Floodplains or Marshes.'	),
+	('en_US',	'LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION_XP',  	null,	null,   'Districts can be placed on any passable terrain [ICON_Terrain] features without destroying them. +1 Appeal to tiles adjacent to Floodplains and Reefs, +2 for Marshes[NEWLINE]Your cities generate -50% [ICON_Faith] Faith per turn. You gain bursts of Faith (scaling with era) when finishing [ICON_District] Districts on Breathtaking tiles, doubled if built onto Floodplains or Marshes.'	),
 
 	('fr_FR',	'LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_NAME',  	    null,	null,   'Dievdirbiai'),
-	('fr_FR',	'LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION',  	null,	null,   'Les Quartiers peuvent être placés sur les [ICON_Terrain] caractéristiques de terrain sans les détruire. +1 Attrait aux cases adjacentes aux Plaines Inondables et Récifs que vous possédez, +2 pour les Marais.[NEWLINE]Vos villes génèrent -50% [ICON_Faith] Foi par tour. Finir un [ICON_District] Quartier sur une case Époustouflante ou mieux génère de la [ICON_Faith] Foi (augmentant au fil des ères), doublé si construit sur un Marais ou une Plaine Inondable.'),
+	('fr_FR',	'LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION_XP',  	null,	null,   'Les Quartiers peuvent être placés sur les [ICON_Terrain] caractéristiques de terrain sans les détruire. +1 Attrait aux cases adjacentes aux Plaines Inondables et Récifs que vous possédez, +2 pour les Marais.[NEWLINE]Vos villes génèrent -50% [ICON_Faith] Foi par tour. Finir un [ICON_District] Quartier sur une case Époustouflante ou mieux génère de la [ICON_Faith] Foi (augmentant au fil des ères), doublé si construit sur un Marais ou une Plaine Inondable.'),
+
+--------- VERSION FOR STANDARD RULESET
+    ('en_US',	'LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION',  	null,	null,   'Districts can be placed on any passable terrain [ICON_Terrain] features without destroying them. +1 Appeal to tiles adjacent to Floodplains, +2 for Marshes[NEWLINE]Your cities generate -50% [ICON_Faith] Faith per turn. You gain bursts of Faith (scaling with era) when finishing [ICON_District] Districts on Breathtaking tiles, doubled if built onto Floodplains or Marshes.'	),
+    
+    ('fr_FR',	'LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION',  	null,	null,   'Les Quartiers peuvent être placés sur les [ICON_Terrain] caractéristiques de terrain sans les détruire. +1 Attrait aux cases adjacentes aux Plaines Inondables que vous possédez, +2 pour les Marais.[NEWLINE]Vos villes génèrent -50% [ICON_Faith] Foi par tour. Finir un [ICON_District] Quartier sur une case Époustouflante ou mieux génère de la [ICON_Faith] Foi (augmentant au fil des ères), doublé si construit sur un Marais ou une Plaine Inondable.'),
 
 -----------------------------------------------
 -- Civilization Unique Infrastructure (Improvement)
@@ -125,13 +131,17 @@ VALUES
 -- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
 -----------------------------------------------
 
--- 	('en_US',	'LOC_NAMED_MOUNTAIN_CORDILLERA_NEOVOLCANICA',		'Cordillera Neovolcanica'	),
--- 	('en_US',	'LOC_NAMED_MOUNTAIN_MEXICAN_PLATEAU',				'Mexican Plateau'			),
--- 	('en_US',	'LOC_NAMED_MOUNTAIN_SIERRA_MADRE_OCCIDENTAL',		'Sierra Madre Occidental'	),
--- 	('en_US',	'LOC_NAMED_MOUNTAIN_SIERRA_MADRE_DEL_SUR',			'Sierra Madre del Sur'		),
--- 	('en_US',	'LOC_NAMED_MOUNTAIN_SIERRA_MADRE_ORIENTAL',			'Sierra Madre Oriental'		),
--- 	('en_US',	'LOC_NAMED_MOUNTAIN_CHIAPAS',						'Chiapas'					),
--- 	('en_US',	'LOC_NAMED_MOUNTAIN_MONTANAS_GUATEMALA',			'Montañas Guatemala'		),
+	('en_US',	'LOC_NAMED_MOUNTAIN_KRYZIU_KALNAS',     	    null,	    null,   'Kryžiu Kalnas'         ),
+	('en_US',	'LOC_NAMED_MOUNTAIN_AUKSTOJO_KALNO',        	null,	    null,   'Aukštojo Kalno'        ),
+	('en_US',	'LOC_NAMED_MOUNTAIN_MEDININKU_AUKSTUMOS',       null,	    null,   'Medininku Aukštumos'   ),
+	('en_US',	'LOC_NAMED_MOUNTAIN_JUOZAPINES_KALNAS',     	null,	    null,   'Juozapines Kalnas'     ),
+	('en_US',	'LOC_NAMED_MOUNTAIN_KEPALUSKALINS_KALNAS',      null,	    null,   'Kepaluškalins Kalnas'  ),
+	('en_US',	'LOC_NAMED_MOUNTAIN_ZYBARTONIO_KALNAS',     	null,	    null,   'Žybartonio Kalnas'     ),
+	('en_US',	'LOC_NAMED_MOUNTAIN_RAMBYNAS_KALNAS',       	null,	    null,   'Rambynas Kalnas'       ),
+	('en_US',	'LOC_NAMED_MOUNTAIN_OLANDO_KEPURE',     	    null,	    null,   'Olando Kepure'         ),
+	('en_US',	'LOC_NAMED_MOUNTAIN_PLIKASIS_KALNAS',       	null,	    null,   'Plikasis Kalnas'       ),
+	('en_US',	'LOC_NAMED_MOUNTAIN_SATRIJA_KALNAS',        	null,	    null,   'Šatrija Kalnas'        ),
+
 
 -----------------------------------------------
 -- Rivers
@@ -143,17 +153,21 @@ VALUES
 -- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
 -----------------------------------------------
 
--- 	('en_US',	'LOC_NAMED_RIVER_GRANDE',				'Río Grande'				),
--- 	('en_US',	'LOC_NAMED_RIVER_USUMACINTA',			'Río Usumacinta'			),
--- 	('en_US',	'LOC_NAMED_RIVER_NAZAS',				'Río Nazas'					),
--- 	('en_US',	'LOC_NAMED_RIVER_AGUANAVAL',			'Río Aguanaval'				),
--- 	('en_US',	'LOC_NAMED_RIVER_BALSAS',				'Río Balsas'				),
--- 	('en_US',	'LOC_NAMED_RIVER_CULIACAN',				'Río Culiacan'				),
--- 	('en_US',	'LOC_NAMED_RIVER_LERMA',				'Río Lerma'					),
--- 	('en_US',	'LOC_NAMED_RIVER_GRANDE_DE_SANTIAGO',	'Río Grande de Santiago'	),
--- 	('en_US',	'LOC_NAMED_RIVER_FUERTE',				'Río Fuerte'				),
--- 	('en_US',	'LOC_NAMED_RIVER_CONCHOS',				'Río Conchos'				),
+	('en_US',	'LOC_NAMED_RIVER_NEMUNO_UPE',       null,	    null,   'Nemuno Upe'       	),
+	('en_US',	'LOC_NAMED_RIVER_DUBYSA',           null,	    null,   'Dubysa '          	),
+	('en_US',	'LOC_NAMED_RIVER_NERIES_UPE',       null,	    null,   'Neries Upe'       	),
+	('en_US',	'LOC_NAMED_RIVER_VENTA_UPE',        null,	    null,   'Venta Upe'        	),
+	('en_US',	'LOC_NAMED_RIVER_SESUPE_UPE',       null,	    null,   'Šešupe Upe'       	),
+	('en_US',	'LOC_NAMED_RIVER_SVENTOJI_UPE',     null,	    null,   'Šventoji Upe'     	),
+	('en_US',	'LOC_NAMED_RIVER_NEVEZIS_UPE',      null,	    null,   'Nevežis Upe'      	),
+	('en_US',	'LOC_NAMED_RIVER_MERKYS_UPE',       null,	    null,   'Merkys Upe'       	),
+	('en_US',	'LOC_NAMED_RIVER_MINIJA_UPE',       null,	    null,   'Minija Upe'       	),
+	('en_US',	'LOC_NAMED_RIVER_NEMUNELIS_UPE',    null,	    null,   'Nemunelis Upe'    	),
+	('en_US',	'LOC_NAMED_RIVER_DYSNA_UPE',        null,	    null,   'Dysna Upe'        	),
 
+
+
+	
 -----------------------------------------------
 -- Lakes
 
@@ -164,11 +178,32 @@ VALUES
 -- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
 -----------------------------------------------
 
--- 	('en_US',	'LOC_NAMED_LAKE_CHAPALA',				'Chapala'			),
--- 	('en_US',	'LOC_NAMED_LAKE_PATZCUARO',				'Pátzcuaro'			),
--- 	('en_US',	'LOC_NAMED_LAKE_BACALAR',				'Bacalar'			),
--- 	('en_US',	'LOC_NAMED_LAKE_LAGUNA_CATEMACO',		'Laguna Catemaco'	),
--- 	('en_US',	'LOC_NAMED_LAKE_EL_CARACOL',			'El Caracol'		),
+	('en_US',	'LOC_NAMED_LAKE_DRUKSIU_EZERAS',            null,	    null,   'Drūkšiu Ežeras'            ),
+	('en_US',	'LOC_NAMED_LAKE_TAURAGNAS_EZERAS',          null,	    null,   'Tauragnas Ežeras'          ),
+	('en_US',	'LOC_NAMED_LAKE_ASVEJA_EZERAS',             null,	    null,   'Asveja Ežeras'             ),
+	('en_US',	'LOC_NAMED_LAKE_VISTYCIO_EZERAS',           null,	    null,   'Vištyčio Ežeras'           ),
+	('en_US',	'LOC_NAMED_LAKE_PLATELIY_EZERAS',           null,	    null,   'Platelių Ežeras'           ),
+	('en_US',	'LOC_NAMED_LAKE_DYSNU_EZERAS',              null,	    null,   'Dysnu Ežeras'              ),
+	('en_US',	'LOC_NAMED_LAKE_DUSIOS_EZERAS',             null,	    null,   'Dusios Ežeras'             ),
+	('en_US',	'LOC_NAMED_LAKE_SARTU_EZERAS',              null,	    null,   'Sartu Ežeras'              ),
+	('en_US',	'LOC_NAMED_LAKE_LUODZIO_EZERAS',            null,	    null,   'Luodžio Ežeras'            ),
+	('en_US',	'LOC_NAMED_LAKE_METELIO_EZERAS',            null,	    null,   'Metelio Ežeras'            ),
+	('en_US',	'LOC_NAMED_LAKE_AVILIO_EZERAS',             null,	    null,   'Avilio Ežeras'             ),
+	('en_US',	'LOC_NAMED_LAKE_PLATELIU_EZERAS',           null,	    null,   'Plateliu Ežeras'           ),
+	('en_US',	'LOC_NAMED_LAKE_REKYVOS_EZERAS',            null,	    null,   'Rekyvos Ežeras'            ),
+
+
+-----------------------------------------------
+-- Seas
+
+-- Defines the text strings to be used for the custom desert names that were defined in Civilization_Config.sql.
+
+-- These entries need only be here if custom desert names were defined.
+
+-- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
+-----------------------------------------------
+    
+    ('en_US',	'LOC_NAMED_SEAS_BALTIJOS_JURA',             null,	    null,   'Baltijos Jūra'            ),
 
 -----------------------------------------------
 -- Deserts
@@ -180,10 +215,6 @@ VALUES
 -- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
 -----------------------------------------------
 
--- 	('en_US',	'LOC_NAMED_DESERT_SONORA',		'Desierto de Soñora'		),
--- 	('en_US',	'LOC_NAMED_DESERT_LA_GUAJIRA',	'Desierto La Guajira'		),
--- 	('en_US',	'LOC_NAMED_DESERT_SECHURA',		'Desierto de Sechura'		),
-
 -----------------------------------------------
 -- Volcanoes
 
@@ -193,12 +224,6 @@ VALUES
 
 -- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
 -----------------------------------------------
-
--- 	('en_US',	'LOC_NAMED_VOLCANO_PICO_DE_ORIZABA',	'Pico de Orizaba'			),
--- 	('en_US',	'LOC_NAMED_VOLCANO_TAJUMULCO',			'Tajumulco'					),
--- 	('en_US',	'LOC_NAMED_VOLCANO_TACANA',				'Volcan Tacana'				),
--- 	('en_US',	'LOC_NAMED_VOLCANO_SANTIAGUITO',		'Santiaguito'				),
--- 	('en_US',	'LOC_NAMED_VOLCANO_CHAPARRASTIQUE',		'Chaparrastique'			),
 
 -----------------------------------------------
 -- Cities
@@ -393,4 +418,3 @@ VALUES
 	('en_US',	'LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_RWB_PILIAKALNIS_CHAPTER_HISTORY_PARA_1',                             null,	    null,   'The Piliakalniai, or hillforts, were fortified strongholds that shaped the land into havens of both protection and prosperity for Baltic tribes. Strategically positioned on elevated terrain near fertile floodplains and abundant rivers, these sites safeguarded their inhabitants from raiders while fostering agriculture and food security. The surrounding lands, enriched by the proximity to the hillforts, became appealing for settlement, with granaries storing harvests and communal feasts celebrating the bounty of the earth. By offering safety, sustenance, and a sense of belonging, piliakalniai transformed wild landscapes into thriving centers of life, attracting and protecting populations.'	),
 
 	('fr_FR',	'LOC_PEDIA_DISTRICTS_PAGE_DISTRICT_RWB_PILIAKALNIS_CHAPTER_HISTORY_PARA_1',                             null,	    null,   'Les Piliakalniai, ou collines fortifiées, étaient des bastions fortifiés qui transformaient le territoire en refuges de protection et de prospérité pour les tribus baltes. Stratégiquement situés sur des terrains élevés à proximité de plaines fertiles et de rivières abondantes, ces sites protégeaient leurs habitants des pillards tout en favorisant l’agriculture et la sécurité alimentaire. Les terres environnantes, enrichies par la proximité de ces collines, devenaient attrayantes pour l’établissement de nouvelles communautés, avec des greniers à grains préservant les récoltes et des festins communautaires célébrant l''abondance de la nature. En offrant sécurité, subsistance et un sentiment d’appartenance, les piliakalniai transformaient les paysages sauvages en centres de vie florissants, attirant et protégeant les populations.'	);
-

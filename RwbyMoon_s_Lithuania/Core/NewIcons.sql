@@ -1,7 +1,7 @@
 /*
 	Civilization Icons
 
-	Authors: MC
+	Authors: RwbyMoon
 */
 
 -----------------------------------------------
@@ -24,7 +24,7 @@
 -- Please note: I have included a sample configuration for the ICON_ATLAS_COLOSSAL_HEAD but you may note that this is not referenced in the IconDefinitions. The ICON_COLOSSAL_HEAD exists in the base-game and therefore this is just to illustrate which icon-sizes are required for an Improvement.
 -----------------------------------------------
 
-INSERT INTO IconTextureAtlases	
+INSERT OR IGNORE INTO IconTextureAtlases	
 		(Name,									IconSize,	IconsPerRow,	IconsPerColumn,		Filename					)
 VALUES	('ICON_ATLAS_RWB_LITHUANIA',					22,	 		1,				1,					'OlmecAtlas22.dds'			),
 		('ICON_ATLAS_RWB_LITHUANIA',					30,	 		1,				1,					'OlmecAtlas30.dds'			),
@@ -71,10 +71,10 @@ VALUES	('ICON_ATLAS_RWB_LITHUANIA',					22,	 		1,				1,					'OlmecAtlas22.dds'		
 -- The icon Name is defined in the table below and the Atlas tells the game where to pull the graphic from. The Index field directs the game to the right portion of the file, should there be more than one icon. The Index is an integer value in the form of an array - starting from 0, with icons numbered from left-to-right, row-by-row. In this way, we use the ICON_ATLAS_MC_WEREJAGUAR Atlas, which has two icons in a single file, to drive the display of two distinct in-game icons.
 -----------------------------------------------
 
-INSERT INTO IconDefinitions
+INSERT OR IGNORE INTO IconDefinitions
 		(Name,										    Atlas,							'Index'				)
 VALUES	('ICON_CIVILIZATION_RWB_LITHUANIA',				'ICON_ATLAS_RWB_LITHUANIA',		0					),
 		('ICON_LEADER_RWB_VYTAUTAS',					'ICON_ATLAS_RWB_VYTAUTAS',		0					),
 		('ICON_UNIT_RWB_VYTIS_PORTRAIT',		        'ICON_ATLAS_RWB_VYTIS',		    0					),
 		('ICON_UNIT_RWB_VYTIS',					        'ICON_ATLAS_RWB_VYTIS',		    1					),
-		('ICON_UNIT_RWB_PILIAKALNIS',					'ICON_ATLAS_RWB_PILIAKALNIS',	0					);
+		('ICON_DISTRICT_RWB_PILIAKALNIS',				'ICON_ATLAS_RWB_PILIAKALNIS',	0					);

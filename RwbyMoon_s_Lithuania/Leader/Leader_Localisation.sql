@@ -1,6 +1,6 @@
 /*
 	Localisation
-	Authors: MC
+	Authors: RwbyMoon
 */
 
 -----------------------------------------------
@@ -11,7 +11,7 @@
 -- In all cases, localisation strings always start with LOC_ - such that we can easily tell them apart from game code.
 -----------------------------------------------
 
-INSERT INTO LocalizedText
+INSERT OR IGNORE INTO LocalizedText
     (Language, Tag, Gender, Plurality, Text)
 VALUES
 
@@ -25,12 +25,35 @@ VALUES
 -----------------------------------------------
 -- Leader Unique Ability
 -----------------------------------------------	
-
+    
+--------- VERSION FOR GATHERING STORM AND RISE & FALL
     ('en_US',	'LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_NAME',			        null,	                null,			'Union of Horodło'),
-    ('en_US',	'LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION',			null,	                null,			'Lithuanian Theater Squares and Commercial Hubs do not gain their usual Adjacencies but gain one equal to 50% of the Appeal of their tile.[NEWLINE]Buildings from the Government Plaza, Diplomatic Quarter and Encampments can be bought with [ICON_Faith] Faith. These three districts grant +0.25 [ICON_Alliance] alliance points per turn when built on Breathtaking tiles, doubled while at war.'),
+    ('en_US',	'LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION_XP',			null,	                null,			'Lithuanian Theater Squares and Commercial Hubs do not gain their usual Adjacencies but gain one equal to 50% of the Appeal of their tile.[NEWLINE]Buildings from the Government Plaza, Diplomatic Quarter and Encampments can be bought with [ICON_Faith] Faith. These three districts grant +0.25 [ICON_Alliance] alliance points per turn when built on Breathtaking tiles, doubled while at war.'),
 
     ('fr_FR',	'LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_NAME',			        null,	                null,			'Union de Horodło'),
-    ('fr_FR',	'LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION',			null,	                null,			'Les Places du Théâtre et Plateformes Commerciales Lituaniennes ne disposent pas de leurs bonus de proximité usuels, mais en gagnent un équivalent à 50% de l’Attrait de leur case.[NEWLINE]Les bâtiments de la Place de Gouvernance, du Quartier Diplomatique et des Campements peuvent être achetés avec de la [ICON_Faith] Foi. Ces trois quartiers confèrent +0.25 [ICON_Alliance] points d''alliance par tour lorsque construites sur une case ayant un attrait époustouflant, doublés en temps de guerre.'),
+    ('fr_FR',	'LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION_XP',			null,	                null,			'Les Places du Théâtre et Plateformes Commerciales Lituaniennes ne disposent pas de leurs bonus de proximité usuels, mais en gagnent un équivalent à 50% de l’Attrait de leur case.[NEWLINE]Les bâtiments de la Place de Gouvernance, du Quartier Diplomatique et des Campements peuvent être achetés avec de la [ICON_Faith] Foi. Ces trois quartiers confèrent +0.25 [ICON_Alliance] points d''alliance par tour lorsque construites sur une case ayant un attrait époustouflant, doublés en temps de guerre.'),
+
+
+--------- VERSION FOR STANDARD RULESET
+    ('en_US',	'LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION',			null,	                null,			'Lithuanian Theater Squares and Commercial Hubs do not gain their usual Adjacencies but gain one equal to 50% of the Appeal of their tile.[NEWLINE]Buildings from Encampments can be bought with [ICON_Faith] Faith.'),
+    
+    ('fr_FR',	'LOC_TRAIT_LEADER_RWB_UNION_OF_HORODLO_DESCRIPTION',			    null,	                null,			'Les Places du Théâtre et Plateformes Commerciales Lituaniennes ne disposent pas de leurs bonus de proximité usuels, mais en gagnent un équivalent à 50% de l’Attrait de leur case.[NEWLINE]Les bâtiments des Campements peuvent être achetés avec de la [ICON_Faith] Foi.'),
+
+-----------------------------------------------
+-- Appeal Modifiers (for Leader Unique Ability)
+-----------------------------------------------	
+
+    ('en_US',	'LOC_RWB_APPEAL_YIELD_GOLD',			        null,	                null,			'+{1_num} [ICON_Gold] Gold from the tile''s Appeal.'),
+    ('en_US',	'LOC_RWB_APPEAL_YIELD_FAITH',			        null,	                null,			'+{1_num} [ICON_Faith] Faith from the tile''s Appeal.'),
+    ('en_US',	'LOC_RWB_APPEAL_YIELD_PRODUCTION',			    null,	                null,			'+{1_num} [ICON_Production] Production from the tile''s Appeal.'),
+    ('en_US',	'LOC_RWB_APPEAL_YIELD_SCIENCE',			        null,	                null,			'+{1_num} [ICON_Science] Science from the tile''s Appeal.'),
+    ('en_US',	'LOC_RWB_APPEAL_YIELD_CULTURE',			        null,	                null,			'+{1_num} [ICON_Culture] Culture from the tile''s Appeal.'),
+
+    ('fr_FR',	'LOC_RWB_APPEAL_YIELD_GOLD',			        null,	                null,			'Attrait de la case : [ICON_Gold] or +{1_num}.'),
+    ('fr_FR',	'LOC_RWB_APPEAL_YIELD_FAITH',			        null,	                null,			'Attrait de la case : [ICON_Faith] foi +{1_num}.'),
+    ('fr_FR',	'LOC_RWB_APPEAL_YIELD_PRODUCTION',			    null,	                null,			'Attrait de la case : [ICON_Production] production  +{1_num}.'),
+    ('fr_FR',	'LOC_RWB_APPEAL_YIELD_SCIENCE',			        null,	                null,			'Attrait de la case : [ICON_Science] science +{1_num}.'),
+    ('fr_FR',	'LOC_RWB_APPEAL_YIELD_CULTURE',			        null,	                null,			'Attrait de la case : [ICON_Culture] culture +{1_num}.'),
 
 -----------------------------------------------
 -- Leader Agenda
@@ -305,8 +328,8 @@ VALUES
     ('en_US',	'LOC_PEDIA_LEADERS_PAGE_RWB_VYTAUTAS_TITLE',			                    null,	                null,			'Vytautas the Great'),
     ('en_US',	'LOC_PEDIA_LEADERS_PAGE_RWB_VYTAUTAS_SUBTITLE',			                    null,	                null,			'Grand-Duke of Lithuania'),
     
-    ('en_US',	'LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_CHAPTER_CAPSULE_BODY',			                    null,	                null,			'Lithuania excels at transforming wetlands into an appealing domain, allowing it to develop populous and flexible cities with constant bursts of [ICON_Faith] Faith. Vytautas then seeks to secure his position by locking his neighbors into alliances and maintaining a menacing military presence.'),
-    ('en_US',	'LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_CHAPTER_DETAILED_BODY',			                    null,	                null,			'The first thing to do in every city is to place a Piliakalnis district on a Breathtaking tile, which should come easy when paying attention with the Appeal Lens, but beware as Lithuania''s bonus Appeal only applies to tiles you own. Combined with the [ICON_Food] Food and Appeal it gives, Lithuania can pursue any sort of early or mid-game strategy thanks to Vytautas'' faith purchase, alternative adjacencies, the safety net that Piliakalniai and the Vytis horsemen provide but also the flexibility of your large reserves of [ICON_Faith] Faith. [NEWLINE]As Vytautas, it''s important to also consider the speed at which he can establish military with [ICON_Faith] Faith (purchasing encampment buildings and the Grandmaster''s Chapel to then purchase units and great generals.) to then safely conquer neighbors, in the range of your Piliakalniai. Vytautas can grow the best alliances faster than anyone else, locking opponents into high level alliances that you can easily gain large benefits from and keeping them from attacking you. '),
+    ('en_US',	'LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_CHAPTER_CAPSULE_BODY',			                    null,	                null,			'Lithuania excels at transforming wetlands into an appealing domain, allowing it to develop populous and flexible cities with constant bursts of [ICON_Faith] Faith. Vytautas then seeks to secure his position by maintaining a menacing military infrastructure.'),
+    ('en_US',	'LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_CHAPTER_DETAILED_BODY',			                    null,	                null,			'The first thing to do in every city is to place a Piliakalnis district on a Breathtaking tile, which should come easy when paying attention with the Appeal Lens, but beware as Lithuania''s bonus Appeal only applies to tiles you own. Combined with the [ICON_Food] Food and Appeal it gives, Lithuania can pursue any sort of early or mid-game strategy thanks to Vytautas'' faith purchase, alternative adjacencies, the safety net that Piliakalniai, the Vytis horsemen but also the flexibility of your high population. [NEWLINE]As Vytautas, it''s important to also consider the speed at which he can establish military with [ICON_Faith] Faith (purchasing encampment building, units but also great generals.) to then safely conquer neighbors, in the range of your Piliakalniai.'),
     
     ('en_US',	'LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_CHAPTER_HISTORY_PARA_1',			                    null,	                null,			'Vytautas the Great, the Grand Duke of Lithuania, is remembered as one of the most formidable and ambitious rulers in Eastern Europe during the 14th and 15th centuries. His reign transformed Lithuania into a powerful and expansive state, and his leadership cemented his legacy as a national hero. Vytautas is often revered as the architect of Lithuania''s golden age, a time when it spanned the largest territorial expanse in its history, covering much of modern-day Belarus, Ukraine, and parts of Poland and Russia.'),
     ('en_US',	'LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_CHAPTER_HISTORY_PARA_2',			                    null,	                null,			'Vytautas was born into the Lithuanian royal family around 1350, during a time of political instability and external threats. Lithuania, at this point, was a relatively young and fragmented entity, threatened by both the Teutonic Order in the west and the Mongol Empire in the east. From an early age, Vytautas was thrust into the turbulent world of power struggles and wars. His early life was marked by exile and conflict with his cousin, Władysław II Jagiełło, who later became King of Poland. Vytautas, seeking to assert his dominance, fought for the Lithuanian throne and engaged in a complex power struggle with Jogaila, even aligning himself with the Teutonic Order at one point.'),
@@ -321,8 +344,8 @@ VALUES
     ('fr_FR',	'LOC_PEDIA_LEADERS_PAGE_RWB_VYTAUTAS_TITLE',			                    null,	                null,			'Vytautas le Grand'),
     ('fr_FR',	'LOC_PEDIA_LEADERS_PAGE_RWB_VYTAUTAS_SUBTITLE',			                    null,	                null,			'Grand-Duc de Lituanie'),
     
-    ('fr_FR',	'LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_CHAPTER_CAPSULE_BODY',			                    null,	                null,			'La Lituanie excelle à transformer des terres marécageuses en un royaume attrayant, lui permettant de développer des villes très peuplées, flexibles avec des apports constants de [ICON_Faith] Foi. Vytautas cherche alors à sécuriser sa position en verrouillant la posture de ses voisins avec des alliances et une armée menaçante.'),
-    ('fr_FR',	'LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_CHAPTER_DETAILED_BODY',			                    null,	                null,			'Dans chaque ville, la première chose à faire est de placer un Piliakalnis sur une case à l''attrait Époustouflant. Cela devrait être facile en utilisant la Lentille d’Attrait, mais attention car le bonus d''Attrait de la Lituanie ne s''applique qu''aux cases que vous possédez. Combiné à la [ICON_Food] Nourriture et à l''Attrait qu''il offre, la Lituanie peut poursuivre n''importe quelle stratégie en début ou milieu de partie grâce aux achats de foi de Vytautas, ses bonus de proximités alternatifs, au filet de sécurité que procurent les Piliakalniai et les cavaliers Vytis, mais aussi à la flexibilité offerte par vos grandes réserves de [ICON_Faith] Foi.[NEWLINE]En jouant Vytautas, il est également important de considérer la rapidité avec laquelle il peut établir une force militaire grâce à la [ICON_Faith] Foi (achat de bâtiments de Campements et de la Chapelle du Grand Maître pour ensuite acheter des unités et des Généraux Illustres) afin de conquérir en toute sécurité vos voisins, à portée de vos Piliakalniai. Vytautas peut former de meilleures alliances plus rapidement que quiconque, enfermant ses adversaires dans des alliances de haut niveau qui vous procurent de grands avantages tout en les empêchant de vous attaquer.'),
+    ('fr_FR',	'LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_CHAPTER_CAPSULE_BODY',			                    null,	                null,			'La Lituanie excelle à transformer des terres marécageuses en un duché attrayant, lui permettant de développer des villes très peuplées et flexibles, avec des apports constants de [ICON_Faith] Foi. Vytautas cherche alors à sécuriser sa position avec une infrastructure militaire menaçante.'),
+    ('fr_FR',	'LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_CHAPTER_DETAILED_BODY',			                    null,	                null,			'Dans chaque ville, la première chose à faire est de placer un Piliakalnis sur une case à l''attrait Époustouflant. Cela devrait être facile en utilisant la Lentille d’Attrait, mais attention car le bonus d''Attrait de la Lituanie ne s''applique qu''aux cases que vous possédez. Combiné à sa [ICON_Food] Nourriture et son Attrait, la Lituanie peut poursuivre n''importe quelle stratégie en début ou milieu de partie grâce aux achats de foi de Vytautas, ses bonus de proximités alternatifs, au filet de sécurité que procurent les Piliakalniai et les cavaliers Vytis, mais aussi à la flexibilité offerte par votre haute population.[NEWLINE]En jouant Vytautas, il est également important de considérer la rapidité avec laquelle il peut établir une force militaire grâce à la [ICON_Faith] Foi (achat de bâtiments de Campements,d''unités mais aussi de Généraux Illustres) afin de conquérir en toute sécurité vos voisins, à portée de vos Piliakalniai.'),
     
     ('fr_FR',	'LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_CHAPTER_HISTORY_PARA_1',			                    null,	                null,			'Vytautas le Grand, le Grand-Duc de Lituanie, est reconnu comme l''un des souverains les plus redoutables et ambitieux de l''Europe de l''Est aux XIVe et XVe siècles. Son règne transforma la Lituanie en un État puissant et expansif, et son leadership cimenta son héritage en tant que héros national. Vytautas est souvent vénéré comme l''architecte de l''âge d''or de la Lituanie, une époque où elle s''étendait sur la plus grande superficie territoriale de son histoire, couvrant une grande partie de la Biélorussie, de l''Ukraine, ainsi que des parties de la Pologne et de la Russie actuelles.'),
     ('fr_FR',	'LOC_PEDIA_LEADERS_PAGE_LEADER_RWB_VYTAUTAS_CHAPTER_HISTORY_PARA_2',			                    null,	                null,			'Vytautas est né dans la famille royale lituanienne vers 1350, à une époque d’instabilité politique et de menaces extérieures. À ce moment-là, la Lituanie était une entité relativement jeune et fragmentée, menacée à la fois par l''Ordre Teutonique à l''ouest et l''Empire mongol à l''est. Dès son plus jeune âge, Vytautas fut plongé dans le monde turbulent des luttes de pouvoir et des guerres. Sa jeunesse fut marquée par l''exil et les conflits avec son cousin, Ladislas II Jagellon, qui devint plus tard roi de Pologne. Vytautas, cherchant à affirmer sa domination, se battit pour le trône lituanien et engagea une lutte complexe pour le pouvoir avec Jagellon, s’alliant même à l''Ordre Teutonique à un moment donné.'),

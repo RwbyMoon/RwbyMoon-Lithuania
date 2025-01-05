@@ -1,6 +1,6 @@
 /*
 	Civilization Badge Colours
-	Authors: MC
+	Authors: RwbyMoon
 */
 
 -----------------------------------------------
@@ -16,7 +16,7 @@
 --======================================================================
 --	Colors
 -------------------------------------
-INSERT OR REPLACE INTO Colors
+INSERT OR IGNORE INTO Colors
 		(Type,								Color)
 VALUES
 		("COLOR_PLAYER_RWB_VYTAUTAS_1",		"193,0,0,255"),	--#C10000

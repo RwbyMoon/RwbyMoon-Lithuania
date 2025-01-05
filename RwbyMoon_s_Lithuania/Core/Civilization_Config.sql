@@ -1,6 +1,6 @@
 /*
 	Main Civilization Configuration
-	Authors: MC
+	Authors: RwbyMoon
 */
 
 -----------------------------------------------
@@ -14,7 +14,7 @@
 -- CIVNAME: The name of the civilization itself (e.g. FRANCE, GERMANY or RUSSIA).
 -----------------------------------------------
 
-INSERT INTO	Types
+INSERT OR IGNORE INTO Types
 			(Type,								Kind					)
 VALUES		('CIVILIZATION_RWB_LITHUANIA',		'KIND_CIVILIZATION'		);
 		
@@ -31,7 +31,7 @@ VALUES		('CIVILIZATION_RWB_LITHUANIA',		'KIND_CIVILIZATION'		);
 -- Ethnicity: Picked from an explicit list of defined ethnicities, this must be one of ETHNICITY_AFRICAN, ETHNICITY_ASIAN, ETHNICITY_EURO, ETHNICITY_MEDIT or ETHNICITY_SOUTHAM
 -----------------------------------------------
 
-INSERT INTO	Civilizations
+INSERT OR IGNORE INTO Civilizations
 			(
 			CivilizationType,
 			Name,
@@ -64,16 +64,27 @@ VALUES		(
 -- Compatibility: NamedMountains were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
---REPLACE INTO NamedMountains
-		--(NamedMountainType,							Name											)
---VALUES	('NAMED_MOUNTAIN_CORDILLERA_NEOVOLCANICA',	'LOC_NAMED_MOUNTAIN_CORDILLERA_NEOVOLCANICA'	),
-		--('NAMED_MOUNTAIN_MEXICAN_PLATEAU',			'LOC_NAMED_MOUNTAIN_MEXICAN_PLATEAU'			),
-		--('NAMED_MOUNTAIN_SIERRA_MADRE_OCCIDENTAL',	'LOC_NAMED_MOUNTAIN_SIERRA_MADRE_OCCIDENTAL'	),
-		--('NAMED_MOUNTAIN_SIERRA_MADRE_DEL_SUR',		'LOC_NAMED_MOUNTAIN_SIERRA_MADRE_DEL_SUR'		),
-		--('NAMED_MOUNTAIN_SIERRA_MADRE_ORIENTAL',	'LOC_NAMED_MOUNTAIN_SIERRA_MADRE_ORIENTAL'		),
-		--('NAMED_MOUNTAIN_CHIAPAS',					'LOC_NAMED_MOUNTAIN_CHIAPAS'					),
-		--('NAMED_MOUNTAIN_MONTANAS_GUATEMALA',		'LOC_NAMED_MOUNTAIN_MONTANAS_GUATEMALA'			);
+CREATE TABLE IF NOT EXISTS NamedMountains
+        (
+            NamedMountainType TEXT,
+            Name TEXT
+        );
 
+REPLACE INTO NamedMountains
+		(NamedMountainType,							    Name											)
+VALUES	('NAMED_MOUNTAIN_KRYZIU_KALNAS',	            'LOC_NAMED_MOUNTAIN_KRYZIU_KALNAS'     	        ),
+		('NAMED_MOUNTAIN_AUKSTOJO_KALNO',			    'LOC_NAMED_MOUNTAIN_AUKSTOJO_KALNO'      	    ),
+		('NAMED_MOUNTAIN_MEDININKU_AUKSTUMOS',	        'LOC_NAMED_MOUNTAIN_MEDININKU_AUKSTUMOS' 	    ),
+		('NAMED_MOUNTAIN_JUOZAPINES_KALNAS',		    'LOC_NAMED_MOUNTAIN_JUOZAPINES_KALNAS'   	    ),
+		('NAMED_MOUNTAIN_KEPALUSKALINS_KALNAS',	        'LOC_NAMED_MOUNTAIN_KEPALUSKALINS_KALNAS'	    ),
+		('NAMED_MOUNTAIN_ZYBARTONIO_KALNAS',		    'LOC_NAMED_MOUNTAIN_ZYBARTONIO_KALNAS'   	    ),
+		('NAMED_MOUNTAIN_RAMBYNAS_KALNAS',			    'LOC_NAMED_MOUNTAIN_RAMBYNAS_KALNAS'    	    ),
+		('NAMED_MOUNTAIN_OLANDO_KEPURE',			    'LOC_NAMED_MOUNTAIN_OLANDO_KEPURE'     	        ),
+		('NAMED_MOUNTAIN_MONTANAS_PLIKASIS_KALNAS',	    'LOC_NAMED_MOUNTAIN_PLIKASIS_KALNAS'     	    );
+
+    
+    
+    
 -----------------------------------------------
 -- NamedMountainCivilizations
 
@@ -82,15 +93,24 @@ VALUES		(
 -- Compatibility: NamedMountainCivilizations were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
---INSERT INTO NamedMountainCivilizations
-		--(CivilizationType,			NamedMountainType							)
---VALUES	('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_CORDILLERA_NEOVOLCANICA'	),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_MEXICAN_PLATEAU'			),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_SIERRA_MADRE_OCCIDENTAL'	),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_SIERRA_MADRE_DEL_SUR'		),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_SIERRA_MADRE_ORIENTAL'		),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_CHIAPAS'					),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_MONTANAS_GUATEMALA'			);
+CREATE TABLE IF NOT EXISTS NamedMountainCivilizations
+(
+    CivilizationType TEXT,
+    NamedMountainType TEXT
+);
+
+INSERT OR IGNORE INTO NamedMountainCivilizations
+		(CivilizationType,			NamedMountainType							    )
+VALUES	('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_KRYZIU_KALNAS'	            ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_AUKSTOJO_KALNO'	            ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_MEDININKU_AUKSTUMOS'	    ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_JUOZAPINES_KALNAS'	        ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_KEPALUSKALINS_KALNAS' 	    ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_ZYBARTONIO_KALNAS'	        ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_RAMBYNAS_KALNAS'	        ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_OLANDO_KEPURE'	            ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_MONTANAS_PLIKASIS_KALNAS'	);
+
 
 -----------------------------------------------
 -- NamedRivers
@@ -104,18 +124,25 @@ VALUES		(
 -- Compatibility: NamedRivers were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
---REPLACE INTO NamedRivers
-		--(NamedRiverType,					Name									)
---VALUES	('NAMED_RIVER_GRANDE',				'LOC_NAMED_RIVER_GRANDE'				),
-		--('NAMED_RIVER_USUMACINTA',			'LOC_NAMED_RIVER_USUMACINTA'			),
-		--('NAMED_RIVER_NAZAS',				'LOC_NAMED_RIVER_NAZAS'					),
-		--('NAMED_RIVER_AGUANAVAL',			'LOC_NAMED_RIVER_AGUANAVAL'				),
-		--('NAMED_RIVER_BALSAS',				'LOC_NAMED_RIVER_BALSAS'				),
-		--('NAMED_RIVER_CULIACAN',			'LOC_NAMED_RIVER_CULIACAN'				),
-		--('NAMED_RIVER_LERMA',				'LOC_NAMED_RIVER_LERMA'					),
-		--('NAMED_RIVER_GRANDE_DE_SANTIAGO',	'LOC_NAMED_RIVER_GRANDE_DE_SANTIAGO'	),
-		--('NAMED_RIVER_FUERTE',				'LOC_NAMED_RIVER_FUERTE'				),
-		--('NAMED_RIVER_CONCHOS',				'LOC_NAMED_RIVER_CONCHOS'				);
+CREATE TABLE IF NOT EXISTS NamedRivers
+(
+    NamedRiverType TEXT,
+    Name TEXT
+);
+
+REPLACE INTO NamedRivers
+		(NamedRiverType,					Name									)
+VALUES	('NAMED_RIVER_NEMUNO_UPE',           'LOC_NAMED_RIVER_NEMUNO_UPE'   	        ),
+		('NAMED_RIVER_DUBYSA',               'LOC_NAMED_RIVER_DUBYSA'       	        ),
+		('NAMED_RIVER_NERIES_UPE',           'LOC_NAMED_RIVER_NERIES_UPE'   	        ),
+		('NAMED_RIVER_VENTA_UPE',            'LOC_NAMED_RIVER_VENTA_UPE'    	        ),
+		('NAMED_RIVER_SESUPE_UPE',           'LOC_NAMED_RIVER_SESUPE_UPE'   	        ),
+		('NAMED_RIVER_SVENTOJI_UPE',         'LOC_NAMED_RIVER_SVENTOJI_UPE' 	        ),
+		('NAMED_RIVER_NEVEZIS_UPE',          'LOC_NAMED_RIVER_NEVEZIS_UPE'  	        ),
+		('NAMED_RIVER_MERKYS_UPE',           'LOC_NAMED_RIVER_MERKYS_UPE'   	        ),
+		('NAMED_RIVER_MINIJA_UPE',           'LOC_NAMED_RIVER_MINIJA_UPE'   	        ),
+		('NAMED_RIVER_NEMUNELIS_UPE',        'LOC_NAMED_RIVER_NEMUNELIS_UPE'	        ),
+		('NAMED_RIVER_DYSNA_UPE',            'LOC_NAMED_RIVER_DYSNA_UPE'    	        );
 
 -----------------------------------------------
 -- NamedRiverCivilizations
@@ -125,18 +152,26 @@ VALUES		(
 -- Compatibility: NamedRiverCivilizations were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
---INSERT INTO NamedRiverCivilizations
-		--(CivilizationType,			NamedRiverType					)
---VALUES	('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_GRANDE'			),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_USUMACINTA'		),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_NAZAS'				),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_AGUANAVAL'			),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_BALSAS'			),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_CULIACAN'			),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_LERMA'				),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_GRANDE_DE_SANTIAGO'),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_FUERTE'			),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_CONCHOS'			);
+CREATE TABLE IF NOT EXISTS NamedRiverCivilizations
+(
+    CivilizationType TEXT,
+    NamedRiverType TEXT
+);
+
+INSERT OR IGNORE INTO NamedRiverCivilizations
+		(CivilizationType,			    NamedRiverType					 )
+VALUES	('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_NEMUNO_UPE'   	 ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_DUBYSA'       	 ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_NERIES_UPE'   	 ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_VENTA_UPE'    	 ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_SESUPE_UPE'   	 ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_SVENTOJI_UPE' 	 ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_NEVEZIS_UPE'  	 ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_MERKYS_UPE'   	 ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_MINIJA_UPE'   	 ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_NEMUNELIS_UPE'	 ),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_DYSNA_UPE'    	 );
+
 
 -----------------------------------------------
 -- NamedLakes
@@ -150,13 +185,27 @@ VALUES		(
 -- Compatibility: NamedLakes were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
---INSERT OR REPLACE INTO NamedLakes
-		--(NamedLakeType,						Name								)
---VALUES	('NAMED_LAKE_CHAPALA',				'LOC_NAMED_LAKE_CHAPALA'			),
-		--('NAMED_LAKE_PATZCUARO',			'LOC_NAMED_LAKE_PATZCUARO'			),
-		--('NAMED_LAKE_BACALAR',				'LOC_NAMED_LAKE_BACALAR'			),
-		--('NAMED_LAKE_LAGUNA_CATEMACO',		'LOC_NAMED_LAKE_LAGUNA_CATEMACO'	),
-		--('NAMED_LAKE_EL_CARACOL',			'LOC_NAMED_LAKE_EL_CARACOL'			);
+CREATE TABLE IF NOT EXISTS NamedLakes
+(
+    NamedLakeType TEXT,
+    Name TEXT
+);
+
+INSERT OR IGNORE INTO NamedLakes
+		(NamedLakeType,						Name								    )
+VALUES	('NAMED_LAKE_DRUKSIU_EZERAS'  ,		'LOC_NAMED_LAKE_DRUKSIU_EZERAS'    	    ),
+		('NAMED_LAKE_TAURAGNAS_EZERAS',		'LOC_NAMED_LAKE_TAURAGNAS_EZERAS'       ),
+		('NAMED_LAKE_ASVEJA_EZERAS'   ,		'LOC_NAMED_LAKE_ASVEJA_EZERAS'    	    ),
+		('NAMED_LAKE_VISTYCIO_EZERAS' ,		'LOC_NAMED_LAKE_VISTYCIO_EZERAS'   	    ),
+		('NAMED_LAKE_PLATELIY_EZERAS' ,		'LOC_NAMED_LAKE_PLATELIY_EZERAS'   	    ),
+		('NAMED_LAKE_DYSNU_EZERAS'    ,		'LOC_NAMED_LAKE_DYSNU_EZERAS'      	    ),
+		('NAMED_LAKE_DUSIOS_EZERAS'   ,		'LOC_NAMED_LAKE_DUSIOS_EZERAS'     	    ),
+		('NAMED_LAKE_SARTU_EZERAS'    ,		'LOC_NAMED_LAKE_SARTU_EZERAS'      	    ),
+		('NAMED_LAKE_LUODZIO_EZERAS'  ,		'LOC_NAMED_LAKE_LUODZIO_EZERAS'    	    ),
+		('NAMED_LAKE_METELIO_EZERAS'  ,		'LOC_NAMED_LAKE_METELIO_EZERAS'    	    ),
+		('NAMED_LAKE_AVILIO_EZERAS'   ,		'LOC_NAMED_LAKE_AVILIO_EZERAS'     	    ),
+		('NAMED_LAKE_PLATELIU_EZERAS' ,		'LOC_NAMED_LAKE_PLATELIU_EZERAS'   	    ),
+		('NAMED_LAKE_REKYVOS_EZERAS'  ,		'LOC_NAMED_LAKE_REKYVOS_EZERAS'    	    );
 
 -----------------------------------------------
 -- NamedLakeCivilizations
@@ -166,14 +215,27 @@ VALUES		(
 -- Compatibility: NamedLakeCivilizations were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
---INSERT INTO NamedLakeCivilizations
-		--(CivilizationType,			NamedLakeType					)
---VALUES	('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_LAKE_TEXCOCO'		),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_CHAPALA'			),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_PATZCUARO'			),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_BACALAR'			),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_LAGUNA_CATEMACO'	),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_EL_CARACOL'			);
+CREATE TABLE IF NOT EXISTS NamedLakeCivilizations
+(
+    CivilizationType TEXT,
+    NamedLakeType TEXT
+);
+
+INSERT OR IGNORE INTO NamedLakeCivilizations
+		(CivilizationType,			NamedLakeType					)
+VALUES	('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_DRUKSIU_EZERAS'  	),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_TAURAGNAS_EZERAS'	),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_ASVEJA_EZERAS'   	),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_VISTYCIO_EZERAS' 	),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_PLATELIY_EZERAS' 	),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_DYSNU_EZERAS'    	),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_DUSIOS_EZERAS'   	),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_SARTU_EZERAS'    	),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_LUODZIO_EZERAS'  	),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_METELIO_EZERAS'  	),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_AVILIO_EZERAS'   	),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_PLATELIU_EZERAS' 	),
+		('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_REKYVOS_EZERAS'  	);
 
 -----------------------------------------------
 -- NamedSeas
@@ -189,11 +251,16 @@ VALUES		(
 -- Compatibility: NamedSeas were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
---INSERT OR IGNORE INTO NamedSeas
-		--(NamedSeaType,						Name										)
---VALUES	('NAMED_SEA_GULF_OF_CALIFORNIA',	'LOC_NAMED_SEA_GULF_OF_CALIFORNIA_NAME'		),
-		--('NAMED_SEA_GULF_OF_MEXICO',		'LOC_NAMED_SEA_GULF_OF_MEXICO_NAME'			);
+CREATE TABLE IF NOT EXISTS NamedSeas
+(
+    NamedSeaType TEXT,
+    Name TEXT
+);
 
+INSERT OR IGNORE INTO NamedSeas
+		(NamedSeaType,						Name										)
+VALUES	('NAMED_SEA_BALTIJOS_JURA',	'LOC_NAMED_SEAS_BALTIJOS_JURA'		);
+    
 -----------------------------------------------
 -- NamedSeaCivilizations
 
@@ -202,10 +269,15 @@ VALUES		(
 -- Compatibility: NamedSeaCivilizations were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
---INSERT INTO NamedSeaCivilizations
-		--(CivilizationType,			NamedSeaType					)
---VALUES	('CIVILIZATION_RWB_LITHUANIA',	'NAMED_SEA_GULF_OF_CALIFORNIA'	),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_SEA_GULF_OF_MEXICO'		);
+CREATE TABLE IF NOT EXISTS NamedSeaCivilizations
+(
+    CivilizationType TEXT,
+    NamedSeaType TEXT
+);
+
+INSERT OR IGNORE INTO NamedSeaCivilizations
+		(CivilizationType,			NamedSeaType					)
+VALUES	('CIVILIZATION_RWB_LITHUANIA',	'NAMED_SEA_BALTIJOS_JURA'	);
 
 -----------------------------------------------
 -- NamedDeserts
@@ -237,7 +309,7 @@ VALUES		(
 -- Compatibility: NamedDeserts were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
---INSERT INTO NamedDesertCivilizations
+--INSERT OR IGNORE INTO NamedDesertCivilizations
 		--(CivilizationType,			NamedDesertType				)
 --VALUES	('CIVILIZATION_RWB_LITHUANIA',	'NAMED_DESERT_SONORAN'		),
 		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_DESERT_LA_GUAJIRA'	),
@@ -271,7 +343,7 @@ VALUES		(
 -- Compatibility: Volcanoes were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
---INSERT INTO NamedVolcanoCivilizations
+--INSERT OR IGNORE INTO NamedVolcanoCivilizations
 		--(CivilizationType,			NamedVolcanoType				)
 --VALUES	('CIVILIZATION_RWB_LITHUANIA',	'NAMED_VOLCANO_PICO_DE_ORIZABA'	),
 		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_VOLCANO_TAJUMULCO'		),
@@ -287,7 +359,7 @@ VALUES		(
 -- All CityName references have a corresponding entry in Civilization_Localisation.sql. I have named them using a simple, sequential numbering system - however, it is generally accepted/common to give them more descriptive names (e.g. LOC_CITY_NAME_MC_SAN_LORENZO).
 -----------------------------------------------
 
-INSERT OR REPLACE INTO CityNames	
+INSERT OR IGNORE INTO CityNames	
 		(CivilizationType,			    CityName)	
 VALUES	('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_1'),	
 		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_2'),	
@@ -332,7 +404,7 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_1'),
 -- All CitizenName references have a corresponding entry in Civilization_Localisation.sql.
 -----------------------------------------------
 
-INSERT OR REPLACE INTO CivilizationCitizenNames	
+INSERT OR IGNORE INTO CivilizationCitizenNames	
 		(CivilizationType,			CitizenName,								Female,		Modern)
 VALUES	('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_1',				0,			0),
 		('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_2',				0,			0),
@@ -385,7 +457,7 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_1',				0,	
 -- All Header and Caption references have a corresponding entry in Civilization_Localisation.sql.
 -----------------------------------------------
 
-INSERT INTO	CivilizationInfo
+INSERT OR IGNORE INTO	CivilizationInfo
 		(CivilizationType,					Header,						Caption,									SortIndex	)
 VALUES	('CIVILIZATION_RWB_LITHUANIA',		'LOC_CIVINFO_LOCATION',		'LOC_CIVINFO_RWB_LITHUANIA_LOCATION',		10			),
 		('CIVILIZATION_RWB_LITHUANIA',		'LOC_CIVINFO_SIZE',			'LOC_CIVINFO_RWB_LITHUANIA_SIZE',			20			),
@@ -404,10 +476,42 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',		'LOC_CIVINFO_LOCATION',		'LOC_CIVINFO_RWB
 -- ResourceType: This must be an explicit value from the list defined in Resrouces.xml (base game) and Expansion1_Resources.xml (Rise & Fall). The use of a resource from Expansion1 will dictate compatibility for your mod.
 -----------------------------------------------
 
-INSERT INTO	StartBiasFeatures
-		(CivilizationType,				FeatureType,						Tier)
-VALUES	('CIVILIZATION_RWB_LITHUANIA',	'FEATURE_MARSH',					2	),
-		('CIVILIZATION_RWB_LITHUANIA',	'FEATURE_FLOODPLAINS',				3	),
-		('CIVILIZATION_RWB_LITHUANIA',	'FEATURE_FLOODPLAINS_GRASSLAND',	3	),
-		('CIVILIZATION_RWB_LITHUANIA',	'FEATURE_FLOODPLAINS_PLAINS',		3	),
-		('CIVILIZATION_RWB_LITHUANIA',	'FEATURE_FOREST',					4	);
+INSERT OR IGNORE INTO	StartBiasFeatures
+		(CivilizationType,				            FeatureType,						Tier)
+VALUES	('CIVILIZATION_RWB_LITHUANIA',	            'FEATURE_MARSH',					2	),
+		('CIVILIZATION_RWB_LITHUANIA',	            'FEATURE_FOREST',					4	) UNION
+SELECT  'CIVILIZATION_RWB_LITHUANIA',   FeatureType,                        3 FROM Features WHERE FeatureType LIKE '%FLOODPLAIN%';
+
+--==========================================================================================================================
+-- DELIVERATOR MOAR UNITS (8342b98d-80c7-4002-87bb-419646bd9b54)
+-- DELIVERATOR MOAR UNITS (CORE ONLY) (860265f1-73df-47d9-b5dc-c9cdc6b1489a)
+--==========================================================================================================================
+--==========================================================================================================================
+-- GEDEMON YNAEMP (36e88483-48fe-4545-b85f-bafc50dde315)
+--==========================================================================================================================
+-- StartPosition 
+------------------------------------------------------------	
+
+CREATE TABLE IF NOT EXISTS StartPosition (MapName TEXT, Civilization TEXT, Leader TEXT, X INT default 0, Y INT default 0);
+
+INSERT OR IGNORE INTO StartPosition
+(Civilization,                      Leader,                       MapName,                    X,        Y)
+VALUES  ('CIVILIZATION_RWB_LITHUANIA',      'LEADER_RWB_VYTAUTAS',        'GiantEarth',               29,        75),
+        ('CIVILIZATION_RWB_LITHUANIA',      'LEADER_RWB_VYTAUTAS',        'FiraxisTSL',               43,        47),
+        ('CIVILIZATION_RWB_LITHUANIA',      'LEADER_RWB_VYTAUTAS',        'FiraxisTSL_Europe',        47,        30),
+        ('CIVILIZATION_RWB_LITHUANIA',      'LEADER_RWB_VYTAUTAS',        'GreatestEarthMap',         56,        57),
+        ('CIVILIZATION_RWB_LITHUANIA',      'LEADER_RWB_VYTAUTAS',        'PlayEuropeAgain',          61,        65),
+        ('CIVILIZATION_RWB_LITHUANIA',      'LEADER_RWB_VYTAUTAS',        'LargestEarthCustom',       37,        93),
+        ('CIVILIZATION_RWB_LITHUANIA',      'LEADER_RWB_VYTAUTAS',        'LargeEurope',              47,        56),
+
+        ('CIVILIZATION_RWB_LITHUANIA',      'LEADER_RWB_VYTAUTAS',        'Earth128x80',              73,        67),
+        ('CIVILIZATION_RWB_LITHUANIA',      'LEADER_RWB_VYTAUTAS',        'Earth128x80_Alt',              75,        67),
+        ('CIVILIZATION_RWB_LITHUANIA',      'LEADER_RWB_VYTAUTAS',        'EqualAreaEarth',              74,        72);
+
+CREATE TABLE IF NOT EXISTS MapStartPositions (Map TEXT, Plot INT default 0, Type TEXT, Value TEXT);
+
+INSERT OR IGNORE INTO MapStartPositions
+(Map, Plot, Type, Value)
+VALUES  ('{0ffac96e-140c-4389-8ae8-6c0cd6391c40}Maps/Giant Earth/PTW_GiantEarth_WB.Civ6Map',9681,'LEADER',          'LEADER_RWB_VYTAUTAS'),
+--         ('{0ffac96e-140c-4389-8ae8-6c0cd6391c40}Maps/Giant Earth/PTW_GiantEarth_WB.Civ6Map',9681,'CIVILIZATION',    'CIVILIZATION_RWB_LITHUANIA'),
+        ('{4873eb62-8ccc-4574-b784-dda455e74e68}Maps/EarthMaps/TSLWorldMapHuge_XP2.Civ6Map',6830,'LEADER',          'LEADER_RWB_VYTAUTAS');

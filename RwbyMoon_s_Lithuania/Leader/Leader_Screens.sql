@@ -1,6 +1,6 @@
 /*
 	Leader Screen Configuration
-	Authors: MC
+	Authors: RwbyMoon
 */
 
 -----------------------------------------------
@@ -15,9 +15,9 @@
 -- PlayDawnOfManAudio is a boolean value - with 0 disabling the audio speech and 1 enabling it.
 -----------------------------------------------
 
-INSERT INTO LoadingInfo
+INSERT OR IGNORE INTO LoadingInfo
 			(LeaderType,			ForegroundImage,					BackgroundImage,					PlayDawnOfManAudio	)
-VALUES		('LEADER_RWB_VYTAUTAS',	'LEADER_HOJO_BACKGROUND',		    'LEADER_RWB_VYTAUTAS_NEUTRAL',		1					);
+VALUES		('LEADER_RWB_VYTAUTAS',	'LEADER_HOJO_BACKGROUND',		    'LEADER_MC_PO_NGBE_background',		1					);
 
 --------------------------------------------------------------------------------------------------------------------------		
 -- Background Art
@@ -28,6 +28,6 @@ VALUES		('LEADER_RWB_VYTAUTAS',	'LEADER_HOJO_BACKGROUND',		    'LEADER_RWB_VYTAU
 
 -- Please note: the foreground image of the leader, on the Diplomacy Screen, is configured via an ArtDef file and does not require any associated code.
 --------------------------------------------------------------------------------------------------------------------------			
-INSERT INTO DiplomacyInfo			
+INSERT OR IGNORE INTO DiplomacyInfo			
 			(Type,						BackgroundImage					)
 VALUES		('LEADER_RWB_VYTAUTAS',		'LEADER_RWB_VYTAUTAS_DIPLO_BG'		);

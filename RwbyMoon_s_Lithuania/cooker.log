@@ -5,9 +5,9 @@ E:\_Dev\External\RwbyMoon-Lithuania\RwbyMoon_s_Lithuania\XLPs\OlmecAtlas.xlp
 Opened output file: C:\Users\PC GAMING\Documents\My Games\Sid Meier's Civilization VI\Mods\RwbyMoon_s_Lithuania\Platforms\MacOS\BLPs/UI/Icons.blp    For XLP: 'E:\_Dev\External\RwbyMoon-Lithuania\RwbyMoon_s_Lithuania\XLPs\OlmecAtlas.xlp'
 Could not load digest key: ''.  Using mod key to sign BLP.
 Starting 'UI/Icons'
-Load finished for: 'UI/Icons' in 0.038 seconds
-Cook finished for: 'UI/Icons' in 0.224 seconds
-Disk write finished for: 'UI/Icons' in 0.061 seconds
-Cleanup finished for: 'UI/Icons' in 0.004 seconds
+Load finished for: 'UI/Icons' in 0.186 seconds
+Cook finished for: 'UI/Icons' in 0.247 seconds
+Disk write finished for: 'UI/Icons' in 0.069 seconds
+Cleanup finished for: 'UI/Icons' in 0.005 seconds
 XLP cook completed with success.
-Cook completed in 0.339 seconds
+Cook completed in 0.519 seconds

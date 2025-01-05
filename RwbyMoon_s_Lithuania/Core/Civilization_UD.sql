@@ -23,19 +23,19 @@
 -- This defines the civilization to which the TraitType is applied (i.e. which civilization gets the Unique Ability). This is a simple matter of referencing the custom CivilizationType defined in Civilization_Config.sql and using the TraitType defined at the head of this document.
 -----------------------------------------------
 
-INSERT INTO	Types
+INSERT OR IGNORE INTO Types
 (Type,												Kind			)
 VALUES	('TRAIT_DISTRICT_RWB_PILIAKALNIS',		        'KIND_TRAIT'	);
 
 -----------------------------------------------
 
-INSERT INTO	Traits
+INSERT OR IGNORE INTO Traits
 (TraitType,											Name,														Description														)
 VALUES	('TRAIT_DISTRICT_RWB_PILIAKALNIS',		        'LOC_DISTRICT_RWB_PILIAKALNIS_NAME',		        'LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION'	);
 
 -----------------------------------------------
 
-INSERT INTO	CivilizationTraits
+INSERT OR IGNORE INTO CivilizationTraits
 (CivilizationType,				    TraitType										)
 VALUES	('CIVILIZATION_RWB_LITHUANIA',		'TRAIT_DISTRICT_RWB_PILIAKALNIS'	);
 
@@ -44,7 +44,7 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',		'TRAIT_DISTRICT_RWB_PILIAKALNIS'	);
 -----------------------------------------------	
 
 
-INSERT OR REPLACE INTO Types
+INSERT OR IGNORE INTO Types
 (Type,								            Kind)
 VALUES	    ('DISTRICT_RWB_PILIAKALNIS',		            'KIND_DISTRICT');
 
@@ -52,7 +52,7 @@ VALUES	    ('DISTRICT_RWB_PILIAKALNIS',		            'KIND_DISTRICT');
 -- Districts
 -----------------------------------------------	
 
-INSERT OR REPLACE INTO Districts
+INSERT OR IGNORE INTO Districts
 (
     DistrictType,
     Name,
@@ -95,7 +95,7 @@ VALUES
      'LOC_DISTRICT_RWB_PILIAKALNIS_DESCRIPTION', -- Description
 
      'TRAIT_DISTRICT_RWB_PILIAKALNIS', -- TraitType
-     'CIVIC_MYSTICISM', -- PrereqCivic
+     'CIVIC_STATE_WORKFORCE', -- PrereqCivic
 
      '27', -- Cost
      'COST_PROGRESSION_NUM_UNDER_AVG_PLUS_TECH', -- CostProgressionModel
@@ -129,7 +129,7 @@ VALUES
 -- District_TradeRouteYields
 -----------------------------------------------	
 
-INSERT OR REPLACE INTO District_TradeRouteYields
+INSERT OR IGNORE INTO District_TradeRouteYields
 (DistrictType,
  YieldType,
  YieldChangeAsDomesticDestination,
@@ -152,16 +152,17 @@ CREATE TABLE IF NOT EXISTS Rwb_PiliakalnisFeatures_UI
     FeatureType TEXT
 );
 
-INSERT OR REPLACE INTO Rwb_PiliakalnisFeatures_UI
+INSERT OR IGNORE INTO Rwb_PiliakalnisFeatures_UI
 (FeatureType)
-VALUES ('FEATURE_REEF'),('FEATURE_MARSH') UNION
-SELECT	    Features.FeatureType FROM Features WHERE FeatureType LIKE '%FLOODPLAIN%';
+VALUES ('FEATURE_MARSH') UNION
+SELECT	    Features.FeatureType FROM Features WHERE FeatureType LIKE '%FLOODPLAIN%' UNION
+SELECT 'FEATURE_REEF' WHERE EXISTS (SELECT ModifierType FROM DynamicModifiers WHERE ModifierType = 'MODIFIER_SINGLE_CITY_ADJUST_IDENTITY_PER_TURN');
 
 
 -----
 
 
-INSERT OR REPLACE INTO Types
+INSERT OR IGNORE INTO Types
 (Type,														                            Kind)
 VALUES	    ('MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT_ON_ADJACENT_DISTRICT',		                        'KIND_MODIFIER'),
               ('MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT',		                                            'KIND_MODIFIER'),
@@ -171,7 +172,7 @@ SELECT      'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_ON_ADJACENT_DISTRICT_'||Featu
 SELECT    	'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_'||FeatureType,		                    'KIND_MODIFIER' FROM Rwb_PiliakalnisFeatures_UI;
 ;
 
-INSERT OR REPLACE INTO Modifiers
+INSERT OR IGNORE INTO Modifiers
 (ModifierId,                                                                            ModifierType,                                                   SubjectRequirementSetId)
 VALUES	    ('MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT_ON_ADJACENT_DISTRICT',		                        'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',                'REQSET_RWB_PILIAKALNIS_ADJACENT_TO_PILIAKALNIS'),
               ('MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT',		                                            'MODIFIER_PLAYER_DISTRICT_ADJUST_YIELD_CHANGE',                 null),
@@ -180,7 +181,7 @@ VALUES	    ('MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT_ON_ADJACENT_DISTRICT',		        
 SELECT      'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_ON_ADJACENT_DISTRICT_'||FeatureType,	'MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_CHANGE',    'REQSET_RWB_PILIAKALNIS_ADJACENT_TO_PILIAKALNIS_ON_'||FeatureType FROM Rwb_PiliakalnisFeatures_UI UNION
 SELECT    	'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_'||FeatureType,		                'MODIFIER_PLAYER_DISTRICT_ADJUST_YIELD_CHANGE',     'REQSET_RWB_PILIAKALNIS_ON_'||FeatureType FROM Rwb_PiliakalnisFeatures_UI;
 
-INSERT OR REPLACE INTO ModifierArguments
+INSERT OR IGNORE INTO ModifierArguments
             (ModifierId,                                                                            Name,                               Value)
 VALUES	    ('MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT_ON_ADJACENT_DISTRICT',		                        'YieldType',                        'YIELD_FOOD'),
               ('MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT_ON_ADJACENT_DISTRICT',		                        'Amount',                           '1'),
@@ -197,13 +198,13 @@ SELECT     'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_'||FeatureType,		             
 
 --
 
-INSERT OR REPLACE INTO DistrictModifiers
+INSERT OR IGNORE INTO DistrictModifiers
             (DistrictType,                                                  ModifierId)
 VALUES      ('DISTRICT_RWB_PILIAKALNIS',                                    'MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT'),
             ('DISTRICT_RWB_PILIAKALNIS',                                    'MODIFIER_RWB_PILIAKALNIS_FOOD_BREATHTAKING') UNION
 SELECT      'DISTRICT_RWB_PILIAKALNIS',                         'MODIFIER_RWB_PILIAKALNIS_FOOD_FEATURE_'||FeatureType  FROM Rwb_PiliakalnisFeatures_UI;
 
-INSERT OR REPLACE INTO TraitModifiers
+INSERT OR IGNORE INTO TraitModifiers
             (TraitType,                                                     ModifierId)
 VALUES      ('TRAIT_DISTRICT_RWB_PILIAKALNIS',                 'MODIFIER_RWB_PILIAKALNIS_FOOD_FLAT_ON_ADJACENT_DISTRICT'),
             ('TRAIT_DISTRICT_RWB_PILIAKALNIS',                 'MODIFIER_RWB_PILIAKALNIS_FOOD_BREATHTAKING_ON_ADJACENT_DISTRICT') UNION
@@ -211,7 +212,7 @@ SELECT      'TRAIT_DISTRICT_RWB_PILIAKALNIS',        'MODIFIER_RWB_PILIAKALNIS_F
 
 --
 
-INSERT OR REPLACE INTO RequirementSets
+INSERT OR IGNORE INTO RequirementSets
 (RequirementSetId,                                                                  RequirementSetType)
 VALUES          ('REQSET_RWB_PILIAKALNIS_ADJACENT_TO_PILIAKALNIS',                                  'REQUIREMENTSET_TEST_ALL'),
                 ('REQSET_RWB_PILIAKALNIS_ON_BREATHTAKING_ADJACENT_TO_PILIAKALNIS',                  'REQUIREMENTSET_TEST_ALL'),
@@ -219,7 +220,7 @@ VALUES          ('REQSET_RWB_PILIAKALNIS_ADJACENT_TO_PILIAKALNIS',              
 SELECT          'REQSET_RWB_PILIAKALNIS_ADJACENT_TO_PILIAKALNIS_ON_'||FeatureType,   'REQUIREMENTSET_TEST_ALL' FROM Rwb_PiliakalnisFeatures_UI UNION
 SELECT          'REQSET_RWB_PILIAKALNIS_ON_'||FeatureType,                           'REQUIREMENTSET_TEST_ALL' FROM Rwb_PiliakalnisFeatures_UI;
 
-INSERT OR REPLACE INTO RequirementSetRequirements
+INSERT OR IGNORE INTO RequirementSetRequirements
 (RequirementSetId,                                                                                  RequirementId)
 VALUES          ('REQSET_RWB_PILIAKALNIS_ADJACENT_TO_PILIAKALNIS',                                  'RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS') UNION
 
@@ -235,7 +236,7 @@ SELECT          'REQSET_RWB_PILIAKALNIS_ADJACENT_TO_PILIAKALNIS_ON_'||FeatureTyp
 
 SELECT          'REQSET_RWB_PILIAKALNIS_ON_'||FeatureType,                           'RWB_REQUIRES_IS_ON_'||FeatureType FROM Rwb_PiliakalnisFeatures_UI;
 
-INSERT OR REPLACE INTO Requirements
+INSERT OR IGNORE INTO Requirements
 (RequirementId,								            RequirementType,                                                Inverse)
 VALUES	        ('RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS',		'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES',              '0'),
                   ('RWB_REQUIRES_IS_NOT_PILIAKALNIS',		                'REQUIREMENT_DISTRICT_TYPE_MATCHES',                            '1'),
@@ -244,7 +245,7 @@ SELECT          'RWB_REQUIRES_IS_ON_'||FeatureType,		'REQUIREMENT_PLOT_FEATURE_T
 
 
 
-INSERT OR REPLACE INTO RequirementArguments
+INSERT OR IGNORE INTO RequirementArguments
 (RequirementId,								             Name,                      Value)
 VALUES	        ('RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS',     'DistrictType',             'DISTRICT_RWB_PILIAKALNIS'),
                   ('RWB_REQUIRES_PLOT_WITHIN_1_RANGE_OF_PILIAKALNIS',     'MinRange',                 '1'),
@@ -255,74 +256,35 @@ SELECT          'RWB_REQUIRES_IS_ON_'||FeatureType,        'FeatureType',       
 ;
 
 -----------------------------------------------	
--- For UA
------------------------------------------------	
-
-/*INSERT OR REPLACE INTO Types
-(Type,														Kind)
-VALUES	('MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',		'KIND_MODIFIER')
-;
-
-
-INSERT OR REPLACE INTO	TraitModifiers
-(TraitType,											                    ModifierId								)
-SELECT	 'TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'RWB_DIEVDIRBIAI_ALLOW_'||a.FeatureType||'_RWB_PILIAKALNIS'
-FROM Features a WHERE a.Quote IS null AND a.FeatureType IS NOT 'FEATURE_REEF'
-;
-
-
-INSERT OR REPLACE INTO DynamicModifiers
-(ModifierType,												                    CollectionType,				    EffectType)
-VALUES	('MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',		'COLLECTION_PLAYER_CITIES',	    'EFFECT_ADJUST_VALID_FEATURES_DISTRICTS')
-;
-
-
-INSERT OR REPLACE INTO Modifiers
-(ModifierId,												               ModifierType,                                                            Permanent)
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_'||a.FeatureType||'_RWB_PILIAKALNIS',	'MODIFIER_RWB_DIEVDIRBIAI_CITY_ADJUST_VALID_FEATURES_DISTRICT',0
-FROM Features a WHERE a.Quote IS null AND a.FeatureType IS NOT 'FEATURE_REEF'
-;
-
-
-INSERT OR REPLACE INTO ModifierArguments
-(ModifierId,												            Name,				Value)
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_'||a.FeatureType||'_RWB_PILIAKALNIS',					'DistrictType',		'DISTRICT_RWB_PILIAKALNIS'
-FROM Features a WHERE a.Quote IS null AND a.FeatureType IS NOT 'FEATURE_REEF' UNION
-SELECT	'RWB_DIEVDIRBIAI_ALLOW_'||a.FeatureType||'_RWB_PILIAKALNIS',					'FeatureType',		a.FeatureType
-FROM Features a WHERE a.Quote IS null AND a.FeatureType IS NOT 'FEATURE_REEF'
-;*/
-
-
------------------------------------------------	
 -- Strength Aura for Combat & Religious units in a 4-tile range from the UD.
 -----------------------------------------------	
 
-INSERT OR REPLACE INTO Modifiers
+INSERT OR IGNORE INTO Modifiers
 (ModifierId,                                                            ModifierType,                               SubjectRequirementSetId)
 VALUES      ('TRAIT_CIVILIZATION_RWB_PILIAKALNIS_COMBAT_STRENGTH_GIVE_MODIFIER',         'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',      'REQSET_RWB_PLOT_WITHIN_RANGE_OF_PILIAKALNIS'),
             ('TRAIT_CIVILIZATION_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_GIVE_MODIFIER',      'MODIFIER_PLAYER_UNITS_GRANT_ABILITY',      'REQSET_RWB_PLOT_WITHIN_RANGE_OF_PILIAKALNIS');
 
-INSERT OR REPLACE INTO ModifierArguments
+INSERT OR IGNORE INTO ModifierArguments
 (ModifierId,                                                            Name,                   Value)
 VALUES      ('TRAIT_CIVILIZATION_RWB_PILIAKALNIS_COMBAT_STRENGTH_GIVE_MODIFIER',    'AbilityType',          'ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH'),
             ('TRAIT_CIVILIZATION_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_GIVE_MODIFIER', 'AbilityType',          'ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH');
 
-INSERT OR REPLACE INTO TraitModifiers
+INSERT OR IGNORE INTO TraitModifiers
 (TraitType, ModifierId)
 VALUES      ('TRAIT_DISTRICT_RWB_PILIAKALNIS', 'TRAIT_CIVILIZATION_RWB_PILIAKALNIS_COMBAT_STRENGTH_GIVE_MODIFIER') ,
             ('TRAIT_DISTRICT_RWB_PILIAKALNIS', 'TRAIT_CIVILIZATION_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_GIVE_MODIFIER') ;
 
-INSERT OR REPLACE INTO Types
+INSERT OR IGNORE INTO Types
 (Type, Kind)
 VALUES      ('ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH',       'KIND_ABILITY'),
             ('ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH',    'KIND_ABILITY');
 
-INSERT OR REPLACE INTO TypeTags
+INSERT OR IGNORE INTO TypeTags
 (Type, Tag)
 VALUES      ('ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH',       'CLASS_ALL_COMBAT_UNITS'),
             ('ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH',    'CLASS_RELIGIOUS_ALL');
 
-INSERT OR REPLACE INTO UnitAbilities
+INSERT OR IGNORE INTO UnitAbilities
 (UnitAbilityType,
  Name,
  Description,
@@ -336,39 +298,39 @@ VALUES      ('ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH',
              'LOC_ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_DESCRIPTION',
              '1');
 
-INSERT OR REPLACE INTO Modifiers
+INSERT OR IGNORE INTO Modifiers
 (ModifierId,                                                        ModifierType)
 VALUES      ('RWB_MODIFIER_PILIAKALNIS_COMBAT_STRENGTH',               'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH'),
             ('RWB_MODIFIER_PILIAKALNIS_RELIGIOUS_STRENGTH',            'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH');
 
-INSERT OR REPLACE INTO ModifierArguments
+INSERT OR IGNORE INTO ModifierArguments
 (ModifierId,                                                Name,                   Value)
 VALUES      ('RWB_MODIFIER_PILIAKALNIS_COMBAT_STRENGTH',       'Amount',               '3'),
             ('RWB_MODIFIER_PILIAKALNIS_RELIGIOUS_STRENGTH',    'Amount',               '8');
 
-INSERT OR REPLACE INTO UnitAbilityModifiers
+INSERT OR IGNORE INTO UnitAbilityModifiers
 (UnitAbilityType,                                                   ModifierId)
 VALUES      ('ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH',            'RWB_MODIFIER_PILIAKALNIS_COMBAT_STRENGTH'),
             ('ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH',         'RWB_MODIFIER_PILIAKALNIS_RELIGIOUS_STRENGTH');
 
-INSERT OR REPLACE INTO ModifierStrings
+INSERT OR IGNORE INTO ModifierStrings
 (ModifierId,                                       Context,           Text)
 VALUES      ('RWB_MODIFIER_PILIAKALNIS_COMBAT_STRENGTH',       'Preview',          'LOC_ABILITY_RWB_PILIAKALNIS_COMBAT_STRENGTH_BONUS_DESCRIPTION'),
             ('RWB_MODIFIER_PILIAKALNIS_RELIGIOUS_STRENGTH',    'Preview',          'LOC_ABILITY_RWB_PILIAKALNIS_RELIGIOUS_STRENGTH_BONUS_DESCRIPTION');
 
-INSERT OR REPLACE INTO RequirementSets
+INSERT OR IGNORE INTO RequirementSets
 (RequirementSetId,                                                   RequirementSetType)
 VALUES      ('REQSET_RWB_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',          'REQUIREMENTSET_TEST_ALL');
 
-INSERT OR REPLACE INTO RequirementSetRequirements
+INSERT OR IGNORE INTO RequirementSetRequirements
 (RequirementSetId,                                             RequirementId)
 VALUES      ('REQSET_RWB_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',    'RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS');
 
-INSERT OR REPLACE INTO Requirements
+INSERT OR IGNORE INTO Requirements
 (RequirementId,                                                         RequirementType)
 VALUES      ('RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',    'REQUIREMENT_PLOT_ADJACENT_DISTRICT_TYPE_MATCHES');
 
-INSERT OR REPLACE INTO RequirementArguments
+INSERT OR IGNORE INTO RequirementArguments
 (RequirementId,                                    Name,               Value)
 VALUES      ('RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',  'DistrictType',     'DISTRICT_RWB_PILIAKALNIS'),
             ('RWB_REQUIRES_PLOT_WITHIN_RANGE_OF_PILIAKALNIS',  'MinRange',         '0'),

@@ -41,7 +41,7 @@ XML code example:
 
 SQL code example:
 
-INSERT INTO Types
+INSERT OR IGNORE INTO Types
 (Type, Kind)
 VALUES ('CIVILIZATION_AMERICA', 'KIND_CIVILIZATION');
 

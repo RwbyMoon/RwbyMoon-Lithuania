@@ -1,6 +1,6 @@
 /*
 	Leader Agendas
-	Authors: MC
+	Authors: RwbyMoon
 */
 
 -----------------------------------------------
@@ -11,17 +11,17 @@
 -- It is customary for this to take the following format: TRAIT_AGENDA_PREFIX_LEADERNAME
 -----------------------------------------------
 
-INSERT INTO Types
+INSERT OR IGNORE INTO Types
 			(Type,							Kind			)
 VALUES		('TRAIT_AGENDA_RWB_VYTAUTAS',		'KIND_TRAIT'	);
 
 
-INSERT INTO Agendas
+INSERT OR IGNORE INTO Agendas
 			(AgendaType,			Name,							Description								)
 VALUES 		('AGENDA_RWB_VYTAUTAS',	'LOC_AGENDA_RWB_VYTAUTAS_NAME',	'LOC_AGENDA_RWB_VYTAUTAS_DESCRIPTION'		);
 
 
-INSERT INTO Traits				
+INSERT OR IGNORE INTO Traits				
 			(TraitType,						Name,							Description								)
 VALUES		('TRAIT_AGENDA_RWB_VYTAUTAS',		'LOC_AGENDA_RWB_VYTAUTAS_NAME',	'LOC_AGENDA_RWB_VYTAUTAS_DESCRIPTION'		);
 
@@ -33,7 +33,7 @@ VALUES		('TRAIT_AGENDA_RWB_VYTAUTAS',		'LOC_AGENDA_RWB_VYTAUTAS_NAME',	'LOC_AGEN
 -- We'll use the TraitType, later in this document, to apply some modifiers that influence the leader's behaviour.
 -----------------------------------------------
 
-INSERT INTO AgendaTraits
+INSERT OR IGNORE INTO AgendaTraits
 			(AgendaType,			TraitType					)
 VALUES 		('AGENDA_RWB_VYTAUTAS',	'TRAIT_AGENDA_RWB_VYTAUTAS'	);
 
@@ -43,7 +43,7 @@ VALUES 		('AGENDA_RWB_VYTAUTAS',	'TRAIT_AGENDA_RWB_VYTAUTAS'	);
 -- In this section, we assign our custom leader the AgendaType we've defined. This ensures that our leader's behaviour (when controlled by the AI) is influenced by the factors we'll specify (further down in this file).
 -----------------------------------------------
 
-INSERT INTO HistoricalAgendas
+INSERT OR IGNORE INTO HistoricalAgendas
 			(LeaderType,			AgendaType				)
 VALUES 		('LEADER_RWB_VYTAUTAS',	'AGENDA_RWB_VYTAUTAS'		);
 
@@ -57,7 +57,7 @@ VALUES 		('LEADER_RWB_VYTAUTAS',	'AGENDA_RWB_VYTAUTAS'		);
 -- The list of base-game hidden agendas can be found in Agendas.xml (lins 250-273).
 -----------------------------------------------
 
-INSERT INTO ExclusiveAgendas
+INSERT OR IGNORE INTO ExclusiveAgendas
 			(AgendaOne,				AgendaTwo					)
 VALUES 		('AGENDA_RWB_VYTAUTAS',	'AGENDA_INDUSTRIALIST'		);
 
@@ -69,7 +69,7 @@ VALUES 		('AGENDA_RWB_VYTAUTAS',	'AGENDA_INDUSTRIALIST'		);
 -- We'll flesh these out further in the sections below - but the general principle is that we will modify the 'happiness' value dependent on certain circumstances. This has the effect of adjusting the leader's opinion of you, over time, depending on the factors stipulated by the Requirement Sets.
 -----------------------------------------------
 
-INSERT INTO TraitModifiers
+INSERT OR IGNORE INTO TraitModifiers
 			(TraitType,						ModifierId								)
 VALUES		('TRAIT_AGENDA_RWB_VYTAUTAS',		'AGENDA_MODIFIER_RWB_VYTAUTAS_UNHAPPY'	),
 			('TRAIT_AGENDA_RWB_VYTAUTAS',		'AGENDA_MODIFIER_RWB_VYTAUTAS_HAPPY'		);
@@ -82,7 +82,7 @@ VALUES		('TRAIT_AGENDA_RWB_VYTAUTAS',		'AGENDA_MODIFIER_RWB_VYTAUTAS_UNHAPPY'	),
 -- The ModifierType is important - it governs the sphere of application of the effect(s) in question. Again, in the case of Diplomacy interactions, we leverage existing modifiers that exist in the game - which are configured to adjust a leader's stance from a diplomacy perspective. The SubjectRequirementSetId entries will be defined by us, further down in this file.
 -----------------------------------------------
 
-INSERT INTO Modifiers	
+INSERT OR IGNORE INTO Modifiers	
 			(ModifierId,								ModifierType,									SubjectRequirementSetId			)
 VALUES		('AGENDA_MODIFIER_RWB_VYTAUTAS_UNHAPPY',	'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',	'REQSET_RWB_VYTAUTAS_UNHAPPY'		),
 			('AGENDA_MODIFIER_RWB_VYTAUTAS_HAPPY',		'MODIFIER_PLAYER_DIPLOMACY_SIMPLE_MODIFIER',	'REQSET_RWB_VYTAUTAS_HAPPY'		);
@@ -94,7 +94,7 @@ VALUES		('AGENDA_MODIFIER_RWB_VYTAUTAS_UNHAPPY',	'MODIFIER_PLAYER_DIPLOMACY_SIMP
 
 -- It is recommended not to amend these entries, except to ensure the ModifierId values match the ones you are configuring.
 -----------------------------------------------	
-INSERT INTO ModifierStrings
+INSERT OR IGNORE INTO ModifierStrings
 			(ModifierId,								Context,	Text								)
 VALUES		('AGENDA_MODIFIER_RWB_VYTAUTAS_UNHAPPY',	'Sample',	'LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL'	),
 			('AGENDA_MODIFIER_RWB_VYTAUTAS_HAPPY',		'Sample',	'LOC_TOOLTIP_SAMPLE_DIPLOMACY_ALL'	);
@@ -116,7 +116,7 @@ VALUES		('AGENDA_MODIFIER_RWB_VYTAUTAS_UNHAPPY',	'Sample',	'LOC_TOOLTIP_SAMPLE_D
 -- The values used here are just examples. It is worth exploring the existing Agendas (via Agendas.xml) to get a sense of the types of values used by the game, for balance purposes.
 -----------------------------------------------
 
-INSERT INTO ModifierArguments
+INSERT OR IGNORE INTO ModifierArguments
 			(ModifierId,							Name,							Value												)
 VALUES		('AGENDA_MODIFIER_RWB_VYTAUTAS_UNHAPPY',	'InitialValue',					-5													),
 			('AGENDA_MODIFIER_RWB_VYTAUTAS_UNHAPPY',	'IncrementValue',				-1													),
@@ -145,7 +145,7 @@ VALUES		('AGENDA_MODIFIER_RWB_VYTAUTAS_UNHAPPY',	'InitialValue',					-5									
 -- In this section, we are specifying two different Requirement Sets - which set up the conditions to trigger either an UNHAPPY or HAPPY change to the leader's attitude.
 -----------------------------------------------
 
-INSERT INTO RequirementSets
+INSERT OR IGNORE INTO RequirementSets
 			(RequirementSetId,				    RequirementSetType			)
 VALUES		('REQSET_RWB_VYTAUTAS_UNHAPPY',	    'REQUIREMENTSET_TEST_ALL'	),
 			('REQSET_RWB_VYTAUTAS_HAPPY',		'REQUIREMENTSET_TEST_ALL'	);
@@ -165,7 +165,7 @@ VALUES		('REQSET_RWB_VYTAUTAS_UNHAPPY',	    'REQUIREMENTSET_TEST_ALL'	),
 -- There are plenty of existing diplomacy-affecting requirements that can be found in Agendas.xml - I would recommend taking a look there and piecing together a personality for your custom leader accordingly.
 -----------------------------------------------
 
-INSERT INTO RequirementSetRequirements
+INSERT OR IGNORE INTO RequirementSetRequirements
 			(RequirementSetId,				    RequirementId						)
 VALUES		('REQSET_RWB_VYTAUTAS_UNHAPPY',	    'REQUIRES_MAJOR_CIV_OPPONENT'		),
 			('REQSET_RWB_VYTAUTAS_UNHAPPY',	    'REQUIRES_MET_10_TURNS_AGO'			),

@@ -5,7 +5,7 @@
 
 	It is, however, not required that a unique unit replaces an existing unit.
 	
-	Authors: MC
+	Authors: RwbyMoon
 */
 
 -----------------------------------------------
@@ -18,16 +18,16 @@
 -- Configuring a Unique Unit for your custom civilization is entirely optional, but it is typically considered appropriate for balance to configure at least one, such that your custom civilization matches those from the base games in terms of complexity, both for flavour and gameplay balance (in my opinion).
 -----------------------------------------------	
 	
-INSERT INTO Types
+INSERT OR IGNORE INTO Types
 		(Type,									Kind			)
 VALUES	('TRAIT_CIVILIZATION_UNIT_RWB_VYTIS',	'KIND_TRAIT'	),
 		('UNIT_RWB_VYTIS',					'KIND_UNIT'		);
 
-INSERT INTO Traits
+INSERT OR IGNORE INTO Traits
         (TraitType,								Name,								Description								)
 VALUES	('TRAIT_CIVILIZATION_UNIT_RWB_VYTIS',	'LOC_UNIT_RWB_VYTIS_NAME',		'LOC_UNIT_RWB_VYTIS_DESCRIPTION'	);
 
-INSERT INTO CivilizationTraits
+INSERT OR IGNORE INTO CivilizationTraits
         (CivilizationType,				TraitType								)
 VALUES	('CIVILIZATION_RWB_LITHUANIA',		'TRAIT_CIVILIZATION_UNIT_RWB_VYTIS'		);
 
@@ -35,7 +35,7 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',		'TRAIT_CIVILIZATION_UNIT_RWB_VYTIS'		);
 -- Units
 -----------------------------------------------	
 
-INSERT OR REPLACE INTO Units (
+INSERT OR IGNORE INTO Units (
             UnitType,
             Name,
             Description,
@@ -79,7 +79,14 @@ VALUES	('UNIT_RWB_VYTIS', -- UnitType
            'TRAIT_CIVILIZATION_UNIT_RWB_VYTIS' -- TraitType
           );
 
-INSERT OR REPLACE INTO Units_XP2
+CREATE TABLE IF NOT EXISTS Units_XP2
+            (
+                UnitType TEXT,
+                ResourceCost INTEGER,
+                ResourceMaintenanceType TEXT
+            );
+
+INSERT OR IGNORE INTO Units_XP2
             (UnitType,
              ResourceCost,
              ResourceMaintenanceType)
@@ -91,7 +98,7 @@ VALUES      ('UNIT_RWB_VYTIS',
 -- UnitReplaces
 -----------------------------------------------	
 
-INSERT OR REPLACE INTO UnitReplaces
+INSERT OR IGNORE INTO UnitReplaces
         (CivUniqueUnitType,											ReplacesUnitType)
 VALUES	('UNIT_RWB_VYTIS',						                    'UNIT_HORSEMAN');
 
@@ -100,7 +107,7 @@ VALUES	('UNIT_RWB_VYTIS',						                    'UNIT_HORSEMAN');
 -- UnitUpgrades
 -----------------------------------------------	
 
-INSERT OR REPLACE INTO UnitUpgrades
+INSERT OR IGNORE INTO UnitUpgrades
         (Unit,										UpgradeUnit)
 VALUES	('UNIT_RWB_VYTIS',						    'UNIT_CAVALRY');
 
@@ -108,7 +115,7 @@ VALUES	('UNIT_RWB_VYTIS',						    'UNIT_CAVALRY');
 -- UnitAiInfos
 -----------------------------------------------	
 
-INSERT OR REPLACE INTO UnitAiInfos
+INSERT OR IGNORE INTO UnitAiInfos
         (UnitType,									AiType)
 VALUES	('UNIT_RWB_VYTIS',						    'UNITAI_COMBAT'),
         ('UNIT_RWB_VYTIS',						    'UNITAI_EXPLORE'),
@@ -120,18 +127,18 @@ VALUES	('UNIT_RWB_VYTIS',						    'UNITAI_COMBAT'),
 -- TypeTags
 -----------------------------------------------	
 
-INSERT OR REPLACE INTO TypeTags
+INSERT OR IGNORE INTO TypeTags
         (Type,									    Tag)
 VALUES	('UNIT_RWB_VYTIS',						    'CLASS_LIGHT_CAVALRY'),
         ('UNIT_RWB_VYTIS',						'CLASS_RWB_VYTIS'),
         ('ABILITY_RWB_VYTIS_DEFIANCE',			'CLASS_RWB_VYTIS'),
         ('ABILITY_RWB_VYTIS_CUIRASS',				'CLASS_RWB_VYTIS');
 
-INSERT OR REPLACE INTO Tags
+INSERT OR IGNORE INTO Tags
         (Tag,									            Vocabulary)
 VALUES	('CLASS_RWB_VYTIS',						        'ABILITY_CLASS');
 
-INSERT OR REPLACE INTO Types
+INSERT OR IGNORE INTO Types
         (Type,									            Kind)
 VALUES	('ABILITY_RWB_VYTIS_DEFIANCE',						        'KIND_ABILITY'),
         ('ABILITY_RWB_VYTIS_CUIRASS',						        'KIND_ABILITY');
@@ -140,13 +147,13 @@ VALUES	('ABILITY_RWB_VYTIS_DEFIANCE',						        'KIND_ABILITY'),
 -- UnitAbilities
 -----------------------------------------------	
 
-INSERT OR REPLACE INTO UnitAbilities
+INSERT OR IGNORE INTO UnitAbilities
         (UnitAbilityType,									 Name,                                   Description)
 VALUES	('ABILITY_RWB_VYTIS_DEFIANCE',						        'LOC_ABILITY_RWB_VYTIS_DEFIANCE_NAME',          'LOC_ABILITY_RWB_VYTIS_DEFIANCE_DESCRIPTION'),
         ('ABILITY_RWB_VYTIS_CUIRASS',						        'LOC_ABILITY_RWB_VYTIS_CUIRASS_NAME',          'LOC_ABILITY_RWB_VYTIS_CUIRASS_DESCRIPTION');
 
 
-INSERT OR REPLACE INTO UnitAbilityModifiers
+INSERT OR IGNORE INTO UnitAbilityModifiers
         (UnitAbilityType,								            ModifierId)
 VALUES	('ABILITY_RWB_VYTIS_DEFIANCE',						                'RWB_VYTIS_DEFIANCE'),
         ('ABILITY_RWB_VYTIS_CUIRASS',						                'RWB_VYTIS_CUIRASS');
@@ -155,19 +162,30 @@ VALUES	('ABILITY_RWB_VYTIS_DEFIANCE',						                'RWB_VYTIS_DEFIANCE')
 -- Modifiers
 -----------------------------------------------	
 
-INSERT OR REPLACE INTO Modifiers
+INSERT OR IGNORE INTO Modifiers
         (ModifierId,							ModifierType,                                SubjectRequirementSetId,						OwnerRequirementSetId)
 VALUES	('RWB_VYTIS_DEFIANCE',				    'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',      'COMBAT_AGAINST_STRONGER_UNIT_REQUIREMENTS',	null),
         ('RWB_VYTIS_CUIRASS',				    'MODIFIER_UNIT_ADJUST_COMBAT_STRENGTH',      null,											'PLAYER_HAS_CASTLES_TECHNOLOGY');
 
-INSERT OR REPLACE INTO ModifierArguments
+INSERT OR IGNORE INTO ModifierArguments
         (ModifierId,							Name,                                           Value)
 VALUES	('RWB_VYTIS_DEFIANCE',					'Amount',                                        '7'),
         ('RWB_VYTIS_CUIRASS',					'Amount',                                        '4');
 
 
-INSERT OR REPLACE INTO ModifierStrings
+INSERT OR IGNORE INTO ModifierStrings
         (ModifierId,							Context,                                Text)
 VALUES	('RWB_VYTIS_DEFIANCE',				    'Preview',                              'LOC_ABILITY_RWB_VYTIS_DEFIANCE_LONG_DESCRIPTION'),
         ('RWB_VYTIS_CUIRASS',				    'Preview',                              'LOC_ABILITY_RWB_VYTIS_CUIRASS_LONG_DESCRIPTION');
 
+INSERT OR IGNORE INTO RequirementSets
+        (RequirementSetId,                              RequirementSetType) 
+VALUES  ('COMBAT_AGAINST_STRONGER_UNIT_REQUIREMENTS',   'REQUIREMENTSET_TEST_ALL');
+
+INSERT OR IGNORE INTO RequirementSetRequirements
+        (RequirementSetId, RequirementId) 
+VALUES ('COMBAT_AGAINST_STRONGER_UNIT_REQUIREMENTS',    'REQUIRES_COMBAT_AGAINST_STRONGER_UNIT');
+
+INSERT OR IGNORE INTO Requirements
+        (RequirementId,                             RequirementType) 
+VALUES ('REQUIRES_COMBAT_AGAINST_STRONGER_UNIT',    'REQUIREMENT_OPPONENT_IS_STRONGER');
