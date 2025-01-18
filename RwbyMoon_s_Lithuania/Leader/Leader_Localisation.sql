@@ -98,7 +98,7 @@ VALUES
     ('fr_FR',	'LOC_DIPLO_FIRST_MEET_LEADER_RWB_VYTAUTAS_ANY',			                                null,	                null,			'Je suis Vytautas, Grand-Duc de Lituanie, protecteur de nos terres sacrées. Mes actes façonnent les nations, mes paroles scellent leur destin. Exposez votre objectif.'),
 
 	-- AI invitation to visit nearby City (ANY)
-    ('en_US',	'LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_RWB_VYTAUTAS_ANY',			                    null,	                null,			'Come and see the castles and the upper towns of our cities. Shall you visit our territory and witnessi their flourishing population?'),
+    ('en_US',	'LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_RWB_VYTAUTAS_ANY',			                    null,	                null,			'Come and see the castles and the upper towns of our cities. Shall you visit our territory and witness their flourishing population?'),
     ('fr_FR',	'LOC_DIPLO_FIRST_MEET_VISIT_RECIPIENT_LEADER_RWB_VYTAUTAS_ANY',			                    null,	                null,			'Venez voir les châteaux et les villes hautes de nos cités. Voulez-vous visiter notre territoire et témoigner de leur population florissante ?'),
 
 	-- AI accepts human invitation (ANY)
