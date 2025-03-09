@@ -1,14 +1,5 @@
-/*
-	Leader Colours
-	Authors: RwbyMoon
-*/
-
 -----------------------------------------------
 -- PlayerColors
-
--- This assigns the civilization's colours to the leader - when selecting the leader, this will control the order in which the colour-combinations appear (with PrimaryColor and SecondaryColor representing the default values).
-
--- These eight colour references are locally-defined values, taken straight from the code section above. Again, as we only have one leader, we simply match the order.
 -----------------------------------------------
 
 -------------------------------------

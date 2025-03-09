@@ -1,24 +1,9 @@
-/*
-	Civilization Text Entries
-	Authors: RwbyMoon
-*/
-
------------------------------------------------
--- General notes on 'localization' (or 'in-game text')
-
--- The entries in this file, as well as those in Leader_Localisation.sql, are where we define the text that will actually display, in-game. Fundamentally, certain unique code strings have associated 'localisation' strings. In this file, we specify the exact string of characters that will display in place of the unique code string.
-
--- In all cases, localisation strings always start with LOC_ - such that we can easily tell them apart from game code.
------------------------------------------------
-
 INSERT OR IGNORE INTO LocalizedText
 			(Language, Tag, Gender, Plurality, Text)
 VALUES
 
 -----------------------------------------------
 -- Civilization
-
--- Defines the text strings that identify your custom civilization by name.
 -----------------------------------------------
 
 	('en_US',	'LOC_CIVILIZATION_RWB_LITHUANIA_NAME',			null,	null,			'Lithuania'										),
@@ -31,10 +16,6 @@ VALUES
 	('fr_FR',	'LOC_CIVILIZATION_RWB_LITHUANIA_ADJECTIVE',  	'masculine|feminine|masculine|feminine',		1|1|2|2,	'lituanien|lituanienne|lituaniens|lituaniennes'				),
 -----------------------------------------------
 -- Civilization Unique Ability
-
--- Defines the text strings that name and describe your custom civilization's Unique Ability.
-
--- Please note: The display of in-game icons in text is achieved by using [ICON_Type].
 -----------------------------------------------
 
 --------- VERSION FOR GATHERING STORM AND RISE & FALL
@@ -50,11 +31,7 @@ VALUES
     ('fr_FR',	'LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION',  	null,	null,   'Les Quartiers peuvent être placés sur les [ICON_Terrain] caractéristiques de terrain sans les détruire. +1 Attrait aux cases adjacentes aux Plaines Inondables que vous possédez, +2 pour les Marais.[NEWLINE]Vos villes génèrent -50% [ICON_Faith] Foi par tour. Finir un [ICON_District] Quartier sur une case Époustouflante ou mieux génère de la [ICON_Faith] Foi (augmentant au fil des ères), doublé si construit sur un Marais ou une Plaine Inondable.'),
 
 -----------------------------------------------
--- Civilization Unique Infrastructure (Improvement)
-
--- Defines the text strings that name and describe your custom civilization's Unique Infrastructure (in this case, Improvement) and its capability.
-
--- Please note: The display of in-game icons in text is achieved by using [ICON_Type].
+-- Civilization Unique Infrastructure
 -----------------------------------------------
 
 	('en_US',	'LOC_DISTRICT_RWB_PILIAKALNIS_NAME',  	                    null,	    null,   'Piliakalnis'),
@@ -83,12 +60,6 @@ VALUES
     
 -----------------------------------------------
 -- Civilization Unique Unit
-
--- Defines the text strings that name and describe your custom civilization's Unique Unit and its capability. Where this replaces an existing unit, it's customary to mention this.
-
--- The LOC_ABILITY_UNITNAME is a brief description that appears in a separate Civilopedia entry, as well as part of a hover 'tooltip' in-game (I think).
-
--- Please note: The display of in-game icons in text is achieved by using [ICON_Type].
 -----------------------------------------------
 
 	('en_US',	'LOC_UNIT_RWB_VYTIS_NAME',                              null,	    null,   'Vytis'),
@@ -123,12 +94,6 @@ VALUES
 
 -----------------------------------------------
 -- Mountains
-
--- Defines the text strings to be used for the custom mountain range names that were defined in Civilization_Config.sql.
-
--- These entries need only be here if custom mountain range names were defined.
-
--- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
 -----------------------------------------------
 
 	('en_US',	'LOC_NAMED_MOUNTAIN_KRYZIU_KALNAS',     	    null,	    null,   'Kryžiu Kalnas'         ),
@@ -145,12 +110,6 @@ VALUES
 
 -----------------------------------------------
 -- Rivers
-
--- Defines the text strings to be used for the custom river names that were defined in Civilization_Config.sql.
-
--- These entries need only be here if custom river names were defined.
-
--- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
 -----------------------------------------------
 
 	('en_US',	'LOC_NAMED_RIVER_NEMUNO_UPE',       null,	    null,   'Nemuno Upe'       	),
@@ -170,12 +129,6 @@ VALUES
 	
 -----------------------------------------------
 -- Lakes
-
--- Defines the text strings to be used for the custom lake names that were defined in Civilization_Config.sql.
-
--- These entries need only be here if custom lake names were defined.
-
--- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
 -----------------------------------------------
 
 	('en_US',	'LOC_NAMED_LAKE_DRUKSIU_EZERAS',            null,	    null,   'Drūkšiu Ežeras'            ),
@@ -195,42 +148,20 @@ VALUES
 
 -----------------------------------------------
 -- Seas
-
--- Defines the text strings to be used for the custom desert names that were defined in Civilization_Config.sql.
-
--- These entries need only be here if custom desert names were defined.
-
--- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
 -----------------------------------------------
     
     ('en_US',	'LOC_NAMED_SEAS_BALTIJOS_JURA',             null,	    null,   'Baltijos Jūra'            ),
 
 -----------------------------------------------
 -- Deserts
-
--- Defines the text strings to be used for the custom desert names that were defined in Civilization_Config.sql.
-
--- These entries need only be here if custom desert names were defined.
-
--- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
 -----------------------------------------------
 
 -----------------------------------------------
 -- Volcanoes
-
--- Defines the text strings to be used for the custom volcano names that were defined in Civilization_Config.sql. As per the note in that file, these should only be present if you are developing a mod that will leverage/require Gathering Storm (Expansion2) functionality.
-
--- These entries need only be here if custom volcano names were defined.
-
--- Please note: Special characters are able to be used as this file has been saved using the "Unicode (UTF-8 without signature)" encoding in ModBuddy's Save As feature.
 -----------------------------------------------
 
 -----------------------------------------------
 -- Cities
-
--- Defines the text strings to be used for city names by the custom civilization, that were defined in Civilization_Config.sql.
-
--- The order in which city names for a civilization appear is partly affected by the value set for the RandomCityNameDepth within the Civilizations table (again, in Civilization_Config.sql).
 -----------------------------------------------
 
     ('en_US',	'LOC_CITY_NAME_RWB_LITHUANIA_1',                              null,	    null,   'Trakai'),
@@ -298,8 +229,6 @@ VALUES
     
 -----------------------------------------------
 -- Citizens
-
--- Defines the text strings to be used for the names of citizens by the custom civilization, that were defined in Civilization_Config.sql.
 -----------------------------------------------
 	
 	('en_US',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_1',                    'masculine',	    null,   'János'		),
@@ -345,10 +274,6 @@ VALUES
 	
 -----------------------------------------------
 -- Info
-
--- These define the text strings that primarily appear in the Civilopedia - specifically in the side-bar that describes some further flavour information about your custom civilization.
-
--- Please note: the entries here are for flavour only. The values do not affect gameplay in any way - specifically, the LOC_CIVINFO_PREFIX_CIVNAME_CAPITAL value does not dictate the capital in-game.
 -----------------------------------------------
 
 	('en_US',	'LOC_CIVINFO_RWB_LITHUANIA_LOCATION',                         null,	    null,   'Northeastern Europe'		),
@@ -363,14 +288,6 @@ VALUES
 
 -----------------------------------------------
 -- Civilopedia
-
--- The content of the below entries represents the detailed entry for your custom civilization in the Civilopedia.
-
--- The format for the element references must follow: LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_PREFIX_CIVNAME_CHAPTER_HISTORY_PARA_X (where X is the ascending paragraph number).
-
--- These elements are inserted through this mod, but are not referenced in other parts of it - the game logic understands that when the elements follow this naming convention, they are to be used to populate the Civilopedia.
-
--- The total number of paragraphs defined is entirely optional - this can be extended/shortened as required.
 -----------------------------------------------
 
 	('en_US',	'LOC_PEDIA_CIVILIZATIONS_PAGE_CIVILIZATION_RWB_LITHUANIA_CHAPTER_HISTORY_PARA_1',                             null,	    null,   'Founded in the 13th century amidst the vast floodplains and dense forests of Eastern Europe, the Grand Duchy of Lithuania arose as a haven of resilience and cultural synthesis. Emerging from a coalition of Baltic tribes, the Grand Duchy was forged under the leadership of Mindaugas, who unified disparate groups into a cohesive polity and became its first and only crowned king in 1253. Despite his assassination a decade later, Lithuania''s foundations as a powerful pagan state were firmly laid.'),	
@@ -396,17 +313,6 @@ VALUES
 
 	-----------------------------------------------
 -- Unique Unit Civilopedia Entry
-
--- The content of the below entry represents the detailed entry for your custom civilization's unique unit in the Civilopedia.
-
--- The format for the element references must follow: LOC_PEDIA_UNITS_PAGE_UNIT_PREFIX_CIVNAME_UU_CHAPTER_HISTORY_PARA_X (where X is the ascending paragraph number). Other entries are possible for different unique element-types - such as BUILDINGS or IMPROVEMENTS. These require replacing UNITS, UNIT and UU respectively in the below example with the appropriate strings.
-
--- Unique Building example:			LOC_PEDIA_BUILDINGS_PAGE_BUILDING_PREFIX_CIVNAME_UI_CHAPTER_HISTORY_PARA_X
--- Unique Improvement example:		LOC_PEDIA_IMPROVEMENTS_PAGE_IMPROVEMENT_PREFIX_CIVNAME_UI_CHAPTER_HISTORY_PARA_X
-
--- These elements are inserted through this mod, but are not referenced in other parts of it - the game logic understands that when the elements follow this naming convention, they are to be used to populate the Civilopedia.
-
--- The total number of paragraphs defined is entirely optional - this can be extended/shortened as required.
 -----------------------------------------------
 
 	('en_US',	'LOC_PEDIA_UNITS_PAGE_UNIT_RWB_VYTIS_CHAPTER_HISTORY_PARA_1',                             null,	    null,   'The Vytis, named after the iconic knight symbol of Lithuania, embodied the ideals of protection, resilience, and unity that defined the Grand Duchy’s rise. Mounted on swift warhorses and clad in armor, these soldiers patrolled the vast plains and dense forests, safeguarding trade routes and defending settlements from invaders such as the Teutonic Knights. Their presence brought security to the land, making it appealing for communities to settle and thrive. Beyond their martial prowess, Vytis soldiers symbolized the courage and determination of a people uniting under a shared banner, their victories ensuring not only the survival but the flourishing of Lithuanian culture and society.'	),

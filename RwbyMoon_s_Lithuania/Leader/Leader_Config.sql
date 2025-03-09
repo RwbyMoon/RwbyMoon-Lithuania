@@ -1,16 +1,5 @@
-/*
-	Core Leader Configuration
-	Authors: RwbyMoon
-*/
-
 -----------------------------------------------
 -- Players (Base Game / Vanilla)
-
--- The below section instructs the game to make this leader available as a selection when running the base-game ruleset.
-
--- Every value inserted into the Players table is locally-defined in this mod - if working through 'in order' these should all be familiar by this stage.
-
--- Please note: this is commented-out, as this example is only compatible with Gathering Storm and above. I've left this in as an example.
 -----------------------------------------------
 
 INSERT OR IGNORE INTO Players (CivilizationType, CivilizationName, CivilizationIcon, CivilizationAbilityName, CivilizationAbilityDescription, CivilizationAbilityIcon, LeaderType, LeaderName, LeaderIcon, LeaderAbilityName, LeaderAbilityDescription, LeaderAbilityIcon)
@@ -34,12 +23,6 @@ VALUES	(
 
 -----------------------------------------------
 -- Players (Rise & Fall)
-
--- The below section instructs the game to make this leader available as a selection when running the Rise & Fall ruleset.
-
--- This is identical to the above, except for the additional Domain value - which instructs the game to which expansion this leader becomes available.
-
--- Please note: this is commented-out, as this example is only compatible with Gathering Storm and above. I've left this in as an example.
 -----------------------------------------------
 
 INSERT OR IGNORE INTO Players (Domain, CivilizationType, CivilizationName, CivilizationIcon, CivilizationAbilityName, CivilizationAbilityDescription, CivilizationAbilityIcon, LeaderType, LeaderName, LeaderIcon, LeaderAbilityName, LeaderAbilityDescription, LeaderAbilityIcon)
@@ -64,10 +47,6 @@ VALUES	(
 
 -----------------------------------------------
 -- Players (Gathering Storm)
-
--- The below section instructs the game to make this leader available as a selection when running the Gathering Storm ruleset.
-
--- This is identical to the Rise & Fall entry, directly above - though in this case, the Domain is Players:Expansion2_Players, which refers to Gathering Storm.
 -----------------------------------------------
 
 INSERT OR IGNORE INTO Players (Domain, CivilizationType, CivilizationName, CivilizationIcon, CivilizationAbilityName, CivilizationAbilityDescription, CivilizationAbilityIcon, LeaderType, LeaderName, LeaderIcon, LeaderAbilityName, LeaderAbilityDescription, LeaderAbilityIcon)
@@ -92,10 +71,6 @@ VALUES	(
 
 -----------------------------------------------
 -- PlayerItems (Base Game / Vanilla)
-
--- These sections associate the PlayerItems with the CivilizationType and LeaderType and also primarily drive the display on certain screens (Loading Screen & Diplomacy Screen).
-
--- As above, I have commented-out this section as this template requires the Gathering Storm expansion.
 -----------------------------------------------
 
 INSERT OR IGNORE INTO PlayerItems
@@ -122,12 +97,6 @@ VALUES	(
 		
 -----------------------------------------------
 -- PlayerItems (Rise & Fall)
-
--- These sections associate the PlayerItems with the CivilizationType and LeaderType and also primarily drive the display on certain screens (Loading Screen & Diplomacy Screen).
-
--- Identical to the base-game version, except for the added Domain property that indicates the ruleset of the active Expansion.
-
--- Again, this is commented-out as this template requires the Gathering Storm expansion.
 -----------------------------------------------
 
 INSERT OR IGNORE INTO PlayerItems
@@ -156,10 +125,6 @@ VALUES	(
 
 -----------------------------------------------
 -- PlayerItems (Gathering Storm)
-
--- These sections associate the PlayerItems with the CivilizationType and LeaderType and also primarily drive the display on certain screens (Loading Screen & Diplomacy Screen).
-
--- Identical to the base-game version, except for the added Domain property that indicates the ruleset of the active Expansion.
 -----------------------------------------------
 
 INSERT OR IGNORE INTO PlayerItems

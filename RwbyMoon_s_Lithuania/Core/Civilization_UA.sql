@@ -1,28 +1,11 @@
 /*
-	Civilization Unique Ability
-	Authors: RwbyMoon
+DIEVDIRBIAI
+Lithuanian Theater Squares and Commercial Hub do not gain their usual Adjacencies but gain one equal to 50% of the Appeal of their tile. 
+Buildings from the Government Plaza, Diplomatic Quarter and Encampments can be bought with Faith. These three districts grant +0.25 Alliance points per turn when on Breathtaking tiles, doubled while at war.
 */
 
 -----------------------------------------------
--- Types
-
--- The game code cites the Civilization Ability as a 'Trait', hence we're using that term here (and throughout this section). 
-
--- This inserts the Unique Ability reference into the primary Data Types table as a recognised trait. This is mandatory, if configuring a custom trait for your civilization. The string listed under 'Type' must be used throughout the mod when referring to the TraitType.
-
--- The standard naming convention follows: TRAIT_CIVILIZATION_PREFIX_TRAITNAME
-
--- As with everywhere else, we're using our PREFIX to try and keep things unique. This also helps us differentiate the things we are creating and the things we are borrowing from the game.
-
--- Configuring a Unique Ability for your custom civilization is entirely optional, but it is typically considered appropriate for balance to configure one, such that your custom civilization matches those from the base games in terms of complexity, both for flavour and gameplay balance.
------------------------------------------------
--- Traits
-
--- With the TraitType defined (above), the below then inserts it into the overall Traits table. This allows it to exist in its own right, alongside other TraitType elements and ties it to the locally-referenced Name and Description text strings that name and describe the trait, respectively.
------------------------------------------------
--- CivilizationTraits
-
--- This defines the civilization to which the TraitType is applied (i.e. which civilization gets the Unique Ability). This is a simple matter of referencing the custom CivilizationType defined in Civilization_Config.sql and using the TraitType defined at the head of this document.
+-- Setup
 -----------------------------------------------
 
 INSERT OR IGNORE INTO Types
@@ -32,8 +15,8 @@ VALUES	('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		        'KIND_TRAIT'	);
 -----------------------------------------------
 
 INSERT OR IGNORE INTO Traits	
-		(TraitType,											Name,														Description														)
-VALUES	('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		        'LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_NAME',		        'LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION'	);
+		(TraitType,									Name,											Description)
+VALUES	('TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI',		'LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_NAME',  'LOC_TRAIT_CIVILIZATION_RWB_DIEVDIRBIAI_DESCRIPTION'	);
 		
 -----------------------------------------------
 

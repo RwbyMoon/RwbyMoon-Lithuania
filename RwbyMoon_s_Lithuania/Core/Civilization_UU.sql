@@ -1,22 +1,11 @@
-/*
-	Civilization Unique Unit
-
-	Please note: the unique unit configured here replaces an existing unit in the 'food-chain' - which is the case for the majority of unique units that are included in the base game.
-
-	It is, however, not required that a unique unit replaces an existing unit.
-	
-	Authors: RwbyMoon
+/* 
+VYTIS
+Unique Lithuanian Light Cavalry unit, replacing the Horseman. More expensive than a Horseman, it has an higher Gold upkeep and can only upgrade into Cavalry. Gains +7 Combat Strength against units with stronger base strength. Once the technology "Castles" has been researched, gains +4 Combat Strength permanently.
 */
 
 -----------------------------------------------
--- Types
-
--- This inserts the Unique Unit reference into the primary Data Types table as a recognised trait. This is mandatory, if configuring a custom trait for your civilization. The string listed under 'Type' must be used throughout the mod when referring to the TraitType. In addition, we are inserting the Unit itself (UNIT_MC_WEREJAGUAR) and defining the UnitAbility (ABILITY_WEREJAGUAR), which is then tied to this unit (and no others).
-
--- The standard naming convention follows: TRAIT_CIVILIZATION_UNIQUEUNITNAME
-
--- Configuring a Unique Unit for your custom civilization is entirely optional, but it is typically considered appropriate for balance to configure at least one, such that your custom civilization matches those from the base games in terms of complexity, both for flavour and gameplay balance (in my opinion).
------------------------------------------------	
+-- Setup
+-----------------------------------------------
 	
 INSERT OR IGNORE INTO Types
 		(Type,									Kind			)

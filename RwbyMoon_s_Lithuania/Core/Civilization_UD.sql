@@ -1,26 +1,15 @@
--- Civilization_UD
--- Author: Matt
--- DateCreated: 10/21/2021 12:06:35 PM
+/*
+PILIAKALNIS
+Lithuanian unique district dedicated to growing the city and protecting, significantly influencing Appeal. Cannot be placed adjacent to City-Center.
+- This district and those adjacent to it generate 1 Food, an additional 1 when built on a Floodplain, a Reef or a Marsh, and an additional 1 if the tile is Breathtaking.
+- Within 4 tiles of a Piliakalnis, military units gain +3 Combat Strength and religious units gain +8 Religious Strength.
+- +2 Appeal on adjacent tiles
+- Causes Zone of Control on enemy units.
+*/
+
+
 -----------------------------------------------
--- Types
-
--- The game code cites the Civilization Ability as a 'Trait', hence we're using that term here (and throughout this section). 
-
--- This inserts the Unique Ability reference into the primary Data Types table as a recognised trait. This is mandatory, if configuring a custom trait for your civilization. The string listed under 'Type' must be used throughout the mod when referring to the TraitType.
-
--- The standard naming convention follows: TRAIT_CIVILIZATION_PREFIX_TRAITNAME
-
--- As with everywhere else, we're using our PREFIX to try and keep things unique. This also helps us differentiate the things we are creating and the things we are borrowing from the game.
-
--- Configuring a Unique Ability for your custom civilization is entirely optional, but it is typically considered appropriate for balance to configure one, such that your custom civilization matches those from the base games in terms of complexity, both for flavour and gameplay balance.
------------------------------------------------
--- Traits
-
--- With the TraitType defined (above), the below then inserts it into the overall Traits table. This allows it to exist in its own right, alongside other TraitType elements and ties it to the locally-referenced Name and Description text strings that name and describe the trait, respectively.
------------------------------------------------
--- CivilizationTraits
-
--- This defines the civilization to which the TraitType is applied (i.e. which civilization gets the Unique Ability). This is a simple matter of referencing the custom CivilizationType defined in Civilization_Config.sql and using the TraitType defined at the head of this document.
+-- Setup
 -----------------------------------------------
 
 INSERT OR IGNORE INTO Types

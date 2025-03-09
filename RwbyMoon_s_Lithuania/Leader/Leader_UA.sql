@@ -1,26 +1,12 @@
 /*
-	Leader Unique Ability
-	Authors: RwbyMoon
+UNION OF HORODLO
+Lithuanian Theater Squares and Commercial Hub do not gain their usual Adjacencies but gain one equal to 50% of the Appeal of their tile. 
+Buildings from the Government Plaza, Diplomatic Quarter and Encampments can be bought with Faith. 
+
+XPAC : These three districts grant +0.25 Alliance points per turn when on Breathtaking tiles, doubled while at war.
 */
-
 -----------------------------------------------
--- Types
-
--- This inserts the Unique Ability reference into the primary Data Types table as a recognised trait. This is mandatory, if configuring a custom trait for your leader. The string listed under 'Type' must be used throughout the mod when referring to the TraitType.
-
--- The standard naming convention follows: TRAIT_LEADER_PREFIX_TRAITNAME
-
--- Configuring a Unique Ability for your custom leader is entirely optional, but it is typically considered appropriate for balance to configure one, such that your custom leader matches those from the base games in terms of complexity, both for flavour and gameplay balance.
-
--- In this example, we also define a new ability, which this particular Unique Ability will leverage. You'll note this is denoted under KIND_ABILITY, which ensures the game is acknowledging this item in the right way.
------------------------------------------------
--- Traits
-
--- With the TraitType defined (above), the below then inserts it into the overall Traits table. This allows it to exist in its own right, alongside other TraitType elements and ties it to the locally-referenced Name and Description text strings that name and describe the trait, respectively.
------------------------------------------------
--- LeaderTraits
-
--- This defines the leader to which the TraitType is applied (i.e. which leader gets the Unique Ability). This is a simple matter of referencing the custom LeaderType defined in Leader_Config.sql and using the TraitType defined at the head of this document.
+-- Setup
 -----------------------------------------------
 
 INSERT OR IGNORE INTO Types
@@ -36,11 +22,7 @@ INSERT OR IGNORE INTO LeaderTraits
 		(LeaderType,			TraitType								)
 VALUES	('LEADER_RWB_VYTAUTAS',	'TRAIT_LEADER_RWB_UNION_OF_HORODLO'	);
 
------------------------------------------------
--- Modifiers
 
--- In this section, we apply the Ability we defined earlier via the use of another Modifier. In this case, our ModifierId is defined and it is defined with the ModifierType that allows us to grant an ability. We set it as Permanent, as we want this application of the Ability to happen once (at the very start of the game when our custom leader is in-play).
------------------------------------------------
 -----------------------------------------------
 -- NO ADJACENCY + ADJACENCY FROM APPEAL
 -----------------------------------------------
@@ -96,7 +78,6 @@ FROM District_Adjacencies WHERE DistrictType IN (SELECT DistrictType FROM Rwb_Ad
 
 
 -- Adjacency from Appeal on Districts MODIFIER_PLAYER_DISTRICTS_ADJUST_YIELD_BASED_ON_APPEAL
--- 1 modifier = 1 quartier -> je me base sur le yieldchangeid District_something de DistrictAdjacencies
 
 INSERT OR IGNORE INTO Modifiers
 (ModifierId,

@@ -1,17 +1,5 @@
-/*
-	Main Civilization Configuration
-	Authors: RwbyMoon
-*/
-
 -----------------------------------------------
 -- Types
-
--- This inserts the civilization reference into the primary Data Types table as a playable Civilization. This is mandatory. The string listed under 'Type' must be used throughout the mod when referring to the CivilizationType.
-
--- It is customary for this to take the following format: CIVILIZATION_PREFIX_CIVNAME
-
--- PREFIX: A 'unique', brief string of characters - often derived from the modder's initials, name or other alias (e.g. MC, MATT or MYALIAS). This is used to differentiate from other mods, primarily.
--- CIVNAME: The name of the civilization itself (e.g. FRANCE, GERMANY or RUSSIA).
 -----------------------------------------------
 
 INSERT OR IGNORE INTO Types
@@ -20,15 +8,6 @@ VALUES		('CIVILIZATION_RWB_LITHUANIA',		'KIND_CIVILIZATION'		);
 		
 -----------------------------------------------
 -- Civilizations
-
--- This inserts some basic configuration into the list of Civilizations that the game recognises. The below entry contains all seven columns required for this table to be fully populated - no fields are ommitted in the below example.
-
--- Locally-referenced values (i.e. those defined in this mod): CivilizationType, Name, Description, Adjective
--- Game-referenced values (i.e. those drawn from the base game):
-
--- StartingCivilizationLevelType: For a playable civilization, this must always be: CIVILIZATION_LEVEL_FULL_CIV. The game utilises this string to differentiate between playable civilizations and city-states (and any other lesser entities).
--- RandomCityNameDepth: An integer value, this is the size of the pool of city names from which the game chooses the next built city's name. The capital will always be built first; after which, the game will pick randomly from the next X cities listed (where X = value).
--- Ethnicity: Picked from an explicit list of defined ethnicities, this must be one of ETHNICITY_AFRICAN, ETHNICITY_ASIAN, ETHNICITY_EURO, ETHNICITY_MEDIT or ETHNICITY_SOUTHAM
 -----------------------------------------------
 
 INSERT OR IGNORE INTO Civilizations
@@ -54,14 +33,6 @@ VALUES		(
 
 -----------------------------------------------
 -- NamedMountains
-
--- This list of locally-referenced values ensures that flavour text is displayed wherever a named mountain range has been linked to your custom civilization.
-
--- All Name references have a corresponding entry in Civilization_Localisation.sql.
-
--- This is an optional section and only required if there are new, custom mountain range names defined in the NamedMountainCivilizations, below.
-
--- Compatibility: NamedMountains were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
 CREATE TABLE IF NOT EXISTS NamedMountains
@@ -87,10 +58,6 @@ VALUES	('NAMED_MOUNTAIN_KRYZIU_KALNAS',	            'LOC_NAMED_MOUNTAIN_KRYZIU_K
     
 -----------------------------------------------
 -- NamedMountainCivilizations
-
--- This ties named mountain ranges to your custom civilization. This is optional. The entries for NamedMountainType can either be new, custom mountain ranges or those that exist in the Gathering Storm (Expansion2) files.
-
--- Compatibility: NamedMountainCivilizations were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
 CREATE TABLE IF NOT EXISTS NamedMountainCivilizations
@@ -114,14 +81,6 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',	'NAMED_MOUNTAIN_KRYZIU_KALNAS'	           
 
 -----------------------------------------------
 -- NamedRivers
-
--- This list of locally-referenced values ensures that flavour text is displayed wherever a named river has been linked to your custom civilization.
-
--- All Name references have a corresponding entry in Civilization_Localisation.sql.
-
--- This is an optional section and only required if there are new, custom river names defined in the NamedRiverCivilizations, below.
-
--- Compatibility: NamedRivers were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
 CREATE TABLE IF NOT EXISTS NamedRivers
@@ -130,7 +89,7 @@ CREATE TABLE IF NOT EXISTS NamedRivers
     Name TEXT
 );
 
-REPLACE INTO NamedRivers
+INSERT OR REPLACE INTO NamedRivers
 		(NamedRiverType,					Name									)
 VALUES	('NAMED_RIVER_NEMUNO_UPE',           'LOC_NAMED_RIVER_NEMUNO_UPE'   	        ),
 		('NAMED_RIVER_DUBYSA',               'LOC_NAMED_RIVER_DUBYSA'       	        ),
@@ -146,10 +105,6 @@ VALUES	('NAMED_RIVER_NEMUNO_UPE',           'LOC_NAMED_RIVER_NEMUNO_UPE'   	    
 
 -----------------------------------------------
 -- NamedRiverCivilizations
-
--- This ties named rivers to your custom civilization. This is optional. The entries for NamedRiverType can either be new, custom rivers or those that exist in the Gathering Storm (Expansion2) files.
-
--- Compatibility: NamedRiverCivilizations were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
 CREATE TABLE IF NOT EXISTS NamedRiverCivilizations
@@ -175,14 +130,6 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',	'NAMED_RIVER_NEMUNO_UPE'   	 ),
 
 -----------------------------------------------
 -- NamedLakes
-
--- This list of locally-referenced values ensures that flavour text is displayed wherever a named lake has been linked to your custom civilization.
-
--- All Name references have a corresponding entry in Civilization_Localisation.sql.
-
--- This is an optional section and only required if there are new, custom lake names defined in the NamedLakeCivilizations, below.
-
--- Compatibility: NamedLakes were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
 CREATE TABLE IF NOT EXISTS NamedLakes
@@ -209,10 +156,6 @@ VALUES	('NAMED_LAKE_DRUKSIU_EZERAS'  ,		'LOC_NAMED_LAKE_DRUKSIU_EZERAS'    	    
 
 -----------------------------------------------
 -- NamedLakeCivilizations
-
--- This ties named lakes to your custom civilization. This is optional. The entries for NamedLakeType can either be new, custom lakes or those that exist in the Gathering Storm (Expansion2) files. In the below example, the first entry exists already in the game - all of the others we have created ourselves.
-
--- Compatibility: NamedLakeCivilizations were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
 CREATE TABLE IF NOT EXISTS NamedLakeCivilizations
@@ -239,16 +182,6 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',	'NAMED_LAKE_DRUKSIU_EZERAS'  	),
 
 -----------------------------------------------
 -- NamedSeas
-
--- This list of locally-referenced values ensures that flavour text is displayed wherever a named sea has been linked to your custom civilization.
-
--- All Name references have a corresponding entry in Civilization_Localisation.sql.
-
--- This is an optional section and only required if there are new, custom sea names defined in the NamedSeaCivilizations, below.
-
--- In order to present the code required for NamedSeas, but also to showcase the use of another SQL command - INSERT OR IGNORE - I have chosen, for this example, to only stipulate two NamedSeas, both of which already exist in the game files. Using 'INSERT OR IGNORE', our attempts to create duplicate entries will be ignored. As all of our entries already exist, the four lines of code are not actually needed at all - they are here to provide a representative code example only.
-
--- Compatibility: NamedSeas were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
 CREATE TABLE IF NOT EXISTS NamedSeas
@@ -263,10 +196,6 @@ VALUES	('NAMED_SEA_BALTIJOS_JURA',	'LOC_NAMED_SEAS_BALTIJOS_JURA'		);
     
 -----------------------------------------------
 -- NamedSeaCivilizations
-
--- This ties named seas to your custom civilization. This is optional. The entries for NamedSeaType can either be new, custom seas or those that exist in the Gathering Storm (Expansion2) files. In the below example, both of the entries already exist in the Gathering Storm game files.
-
--- Compatibility: NamedSeaCivilizations were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
 CREATE TABLE IF NOT EXISTS NamedSeaCivilizations
@@ -281,82 +210,17 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',	'NAMED_SEA_BALTIJOS_JURA'	);
 
 -----------------------------------------------
 -- NamedDeserts
-
--- This list of locally-referenced values ensures that flavour text is displayed wherever a named desert has been linked to your custom civilization.
-
--- All Name references have a corresponding entry in Civilization_Localisation.sql.
-
--- This is an optional section and only required if there are new, custom desert names defined in the NamedDesertCivilizations, below.
-
--- Learning Point: In this example, we're configuring three named deserts. Two of these deserts do not exist in the game's NamedDeserts table. However, NAMED_DESERT_SONORAN does. This example illustrates the usefulness of the REPLACE command. It will replace the Name value for NAMED_DESERT_SONORAN with the one we specify. For the other entries - which we're creating - it will add them to the table.
-
--- The LOC_NAMED_DESERT_SONORA will allow us to give the NAMED_DESERT_SONORAN a new display name, whilst still maintaining the link between NAMED_DESERT_SONORAN and CIVILIZATION_AMERICA. It's a small amendment, but it allows us to adjust the display/flavour text and implement a link to our custom civilization, in one go. If we did not want to adjust the display/flavour text, we could just exclude the entry from the NamedDeserts table, directly below, and include it only in the NamedDesertCivilizations table (in the section after the one below).
-
--- Compatibility: NamedDeserts were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
------------------------------------------------
-
---REPLACE INTO NamedDeserts
-		--(NamedDesertType,			Name							)
---VALUES	('NAMED_DESERT_SONORAN',	'LOC_NAMED_DESERT_SONORA'		),
-		--('NAMED_DESERT_LA_GUAJIRA',	'LOC_NAMED_DESERT_LA_GUAJIRA'	),
-		--('NAMED_DESERT_SECHURA',	'LOC_NAMED_DESERT_SECHURA'		);
-
 -----------------------------------------------
 -- NamedDesertCivilizations
-
--- This ties named deserts to your custom civilization. This is optional. The entries for NamedDesertType can either be new, custom deserts (those defined above) or those that exist in the Gathering Storm (Expansion2) files.
-
--- Compatibility: NamedDeserts were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
------------------------------------------------
-
---INSERT OR IGNORE INTO NamedDesertCivilizations
-		--(CivilizationType,			NamedDesertType				)
---VALUES	('CIVILIZATION_RWB_LITHUANIA',	'NAMED_DESERT_SONORAN'		),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_DESERT_LA_GUAJIRA'	),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_DESERT_SECHURA'		);
-
 -----------------------------------------------
 -- NamedVolcanoes
-
--- This list of locally-referenced values ensures that flavour text is displayed wherever a named volcano has been linked to your custom civilization.
-
--- All Name references have a corresponding entry in Civilization_Localisation.sql.
-
--- This is an optional section and only required if there are new, custom desert names defined in the NamedVolcanoCivilizations, below.
-
--- Compatibility: Volcanoes were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
------------------------------------------------
-
---REPLACE INTO NamedVolcanoes
-		--(NamedVolcanoType,					Name								)
---VALUES	('NAMED_VOLCANO_PICO_DE_ORIZABA',	'LOC_NAMED_VOLCANO_PICO_DE_ORIZABA'	),
-		--('NAMED_VOLCANO_TAJUMULCO',			'LOC_NAMED_VOLCANO_TAJUMULCO'		),
-		--('NAMED_VOLCANO_TACANA',			'LOC_NAMED_VOLCANO_TACANA'			),
-		--('NAMED_VOLCANO_SANTIAGUITO',		'LOC_NAMED_VOLCANO_SANTIAGUITO'		),
-		--('NAMED_VOLCANO_CHAPARRASTIQUE',	'LOC_NAMED_VOLCANO_CHAPARRASTIQUE'	);
-
 -----------------------------------------------
 -- NamedVolcanoCivilizations
-
--- This ties named volcanoes to your custom civilization. This is optional. The entries for NamedVolcanoType can either be new, custom volcanoes or those that exist in the Gathering Storm (Expansion2) files.
-
--- Compatibility: Volcanoes were introduced in the Gathering Storm expansion (Expansion2). This section should only be used where there is an intention to develop a mod with a dependency on Gathering Storm (Expansion2).
 -----------------------------------------------
 
---INSERT OR IGNORE INTO NamedVolcanoCivilizations
-		--(CivilizationType,			NamedVolcanoType				)
---VALUES	('CIVILIZATION_RWB_LITHUANIA',	'NAMED_VOLCANO_PICO_DE_ORIZABA'	),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_VOLCANO_TAJUMULCO'		),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_VOLCANO_TACANA'			),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_VOLCANO_SANTIAGUITO'		),
-		--('CIVILIZATION_RWB_LITHUANIA',	'NAMED_VOLCANO_CHAPARRASTIQUE'	);
 
 -----------------------------------------------
 -- CityNames
-
--- This list of locally-referenced values ensures provides the list of city names used by the custom civilization. It is extendable, but is recommended to be at least 15 entries long. The entries in the list below interact with the RandomCityNameDepth value that is set in the Civilizations table near the head of this document.
-
--- All CityName references have a corresponding entry in Civilization_Localisation.sql. I have named them using a simple, sequential numbering system - however, it is generally accepted/common to give them more descriptive names (e.g. LOC_CITY_NAME_MC_SAN_LORENZO).
 -----------------------------------------------
 
 INSERT OR IGNORE INTO CityNames	
@@ -394,14 +258,6 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITY_NAME_RWB_LITHUANIA_1'),
 		
 -----------------------------------------------
 -- CivilizationCitizenNames
-
--- The below locally-referenced values provide yet further flavour to the game. These names are used to populate the 'Gossip' items that appear from time-to-time within the game.
-
--- Further flavour can be achieved by including referenced CitizenName values with equivalent 'MODERN' entries, in the format: LOC_CITIZEN_RWB_LITHUANIA_MODERN_MALE_1
-
--- If using the MODERN CitizenName entries in addition, you must also specify a fourth column (Boolean) to the table below, named Modern. This operates as a true/false (0,1) flag, in the same way as the Female entry.
-
--- All CitizenName references have a corresponding entry in Civilization_Localisation.sql.
 -----------------------------------------------
 
 INSERT OR IGNORE INTO CivilizationCitizenNames	
@@ -449,12 +305,6 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',	'LOC_CITIZEN_RWB_LITHUANIA_MALE_1',				0,	
 
 -----------------------------------------------
 -- CivilizationInfo
-
--- The below entries are primarily used in the Civilopedia - specifically in the side-bar that describes some further flavour information about your custom civilization.
-
--- Please note: the entries here are for flavour only. The values do not affect gameplay in any way - specifically, the LOC_CIVINFO_PREFIX_CIVNAME_CAPITAL value does not dictate the capital in-game.
-
--- All Header and Caption references have a corresponding entry in Civilization_Localisation.sql.
 -----------------------------------------------
 
 INSERT OR IGNORE INTO	CivilizationInfo
@@ -466,14 +316,6 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',		'LOC_CIVINFO_LOCATION',		'LOC_CIVINFO_RWB
 		
 -----------------------------------------------
 -- Start Bias
-
--- The below game-referenced values dictate the influence on your custom civilization's starting location by the terrain, features, resources and rivers that are generated on the map. The use of the below are optional.
-
--- The tiered system works on a scale from 1-5, with 1 providing the strongest bias towards the named TerrainType, FeatureType, ResourceType or indeed bias towards rivers as defined in StartBiasRivers.
-
--- TerrainType: This must be an explicit value from the list defined within the Terrains.xml in the base game.
--- FeatureType: This must be an explicit value from the list defined in a combination of Features.xml (base game), Expansion1_Features.xml (Rise & Fall) and/or Expansion2_Features.xml (Gathering Storm). Naturally, the use of FeatureType entries from either Expansion1 or Expansion2 will dictate compatibility for your mod.
--- ResourceType: This must be an explicit value from the list defined in Resrouces.xml (base game) and Expansion1_Resources.xml (Rise & Fall). The use of a resource from Expansion1 will dictate compatibility for your mod.
 -----------------------------------------------
 
 INSERT OR IGNORE INTO	StartBiasFeatures
@@ -482,13 +324,8 @@ VALUES	('CIVILIZATION_RWB_LITHUANIA',	            'FEATURE_MARSH',					2	),
 		('CIVILIZATION_RWB_LITHUANIA',	            'FEATURE_FOREST',					4	) UNION
 SELECT  'CIVILIZATION_RWB_LITHUANIA',   FeatureType,                        3 FROM Features WHERE FeatureType LIKE '%FLOODPLAIN%';
 
---==========================================================================================================================
--- DELIVERATOR MOAR UNITS (8342b98d-80c7-4002-87bb-419646bd9b54)
--- DELIVERATOR MOAR UNITS (CORE ONLY) (860265f1-73df-47d9-b5dc-c9cdc6b1489a)
---==========================================================================================================================
---==========================================================================================================================
--- GEDEMON YNAEMP (36e88483-48fe-4545-b85f-bafc50dde315)
---==========================================================================================================================
+
+------------------------------------------------------------	
 -- StartPosition 
 ------------------------------------------------------------	
 
