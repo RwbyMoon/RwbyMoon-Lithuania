@@ -1,0 +1,19 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# ModBuddy Solution File, Format Version 12.00
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{ffd7d44b-5ada-4262-97e6-9d889a953a78}") = "RwbyMoon_s_Lithuania", "RwbyMoon_s_Lithuania\RwbyMoon_s_Lithuania.civ6proj", "{F1D6E542-03EA-4E6D-BAB2-6E3BC6353DDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Civ6 = Default|Civ6
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1D6E542-03EA-4E6D-BAB2-6E3BC6353DDA}.Default|Civ6.ActiveCfg = Default|Civ6
+		{F1D6E542-03EA-4E6D-BAB2-6E3BC6353DDA}.Default|Civ6.Build.0 = Default|Civ6
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,13 @@
+Starting AssetCooker...
+Argument '--shaders' has been deprecated and is no longer used.
+XLP cook starting...
+E:\_Dev\External\RwbyMoon-Lithuania\RwbyMoon_s_Lithuania\XLPs\OlmecAtlas.xlp
+Opened output file: C:\Users\PC GAMING\Documents\My Games\Sid Meier's Civilization VI\Mods\RwbyMoon_s_Lithuania\Platforms\MacOS\BLPs/UI/Icons.blp    For XLP: 'E:\_Dev\External\RwbyMoon-Lithuania\RwbyMoon_s_Lithuania\XLPs\OlmecAtlas.xlp'
+Could not load digest key: ''.  Using mod key to sign BLP.
+Starting 'UI/Icons'
+Load finished for: 'UI/Icons' in 0.045 seconds
+Cook finished for: 'UI/Icons' in 0.286 seconds
+Disk write finished for: 'UI/Icons' in 0.072 seconds
+Cleanup finished for: 'UI/Icons' in 0.005 seconds
+XLP cook completed with success.
+Cook completed in 0.424 seconds
